@@ -1,0 +1,46 @@
+.piedepagina-container {
+  background-color: #0D0D0D;
+  padding: 10px;
+}
+.piedepagina-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+}
+
+.piedepagina-grid h4 {
+  font-size: 25px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.piedepagina-grid p {
+  font-size: 18px;
+  margin-bottom: 10px;
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+.piedepagina-grid input {
+  margin-top: 10px;
+  padding: 10px;
+  background: transparent;
+  border: 1px solid white;
+  width: 100%;
+}
+
+.piedepagina-grid input[type="email"] {
+    width: 80%;        
+    padding: 8px;
+    border-radius: 4px;
+}
+
+.btn-arrow {
+  background: white;
+  border: none;
+  color: black;
+  font-size: 18px;
+  cursor: pointer;
+}
