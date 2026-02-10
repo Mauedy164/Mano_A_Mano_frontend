@@ -71,6 +71,23 @@
 ==================================
 */
 
+/* Estilo Mision, vision y valores */
+div {
+    font-family: 'Poppins', sans-serif;
+}
+
+div h4 {
+    color: #DB4444;
+    font-weight: 700;
+}
+
+div h6 {
+    font-weight: 700;
+}
+
+div p {
+    font-weight: 400;
+}
 
 /*  NUESTRA HISTORIA */
 
