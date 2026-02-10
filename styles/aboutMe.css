@@ -1,3 +1,12 @@
+h3 {
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 1rem;
+    margin: 1px 600px 1px 600px;
+    box-shadow: #a3a2a28f 0px 1px 3px;
+    border-radius: 10px;
+
+}
 
 /* Misión, visión y valores */
 .mision p, 
