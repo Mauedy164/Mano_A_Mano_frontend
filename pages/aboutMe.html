@@ -7,7 +7,7 @@
     <title>Sobre nosotros</title>
 
     <!-- Estilos -->
-    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="/styles/aboutMe.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 </head>
@@ -21,6 +21,66 @@
 
         <section> <!-- Navbar -->
             <nav>
+
+                <nav class="navbar navbar-expand-lg bg-light px-4">
+  <div class="container-fluid">
+
+    <!-- Logo ManoAMano -->
+    <a class="navbar-brand fw-bold" href="#">ManoAMano</a>
+
+    <!-- Botón responsivo -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Contenido -->
+    <div class="collapse navbar-collapse" id="navbarContent">
+
+      <!-- Menú -->
+      <ul class="navbar-nav mx-auto mb-2 mb-lg-0 gap-4">
+        <li class="nav-item">
+          <a class="nav-link text-dark" href="#">Inicio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-dark" href="#">Contacto</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-dark" href="#">Nosotros</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-dark" href="#">Iniciar Sesión</a>
+        </li>
+      </ul>
+
+      <!-- Buscador y iconos -->
+      <div class="d-flex align-items-center gap-3">
+        <form class="d-flex align-items-center border rounded-pill px-2">
+          <input class="form-control border-0" type="search" placeholder="Que buscas?">
+          <i class="bi bi-search"></i>
+        </form>
+
+        <i class="bi bi-cart-fill"></i>
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16">
+        <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15"/>
+        </svg>
+        <i class="bi bi-cart fs-5"></i>
+        <svg xmlns="http://www.w3.org/2000/svg"
+       width="20"
+       height="20"
+       fill="currentColor"
+       class="bi bi-cart-fill"
+       viewBox="0 0 16 16">
+    <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 0 0 1 0-2"/>
+    </svg>
+        <i class="bi bi-person fs-5"></i>
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person" viewBox="0 0 16 16">
+     <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10s-3.516.68-4.168 1.332c-.678.678-.83 1.418-.832 1.664z"/>
+     </svg>
+      </div>
+
+    </div>
+  </div>
+</nav>
 
             </nav>
         </section>
@@ -117,64 +177,229 @@
 
         <section> <!-- Nuestro equipo -->
             
-            <div class="container person_container">
-                <!-- Persona 1 -->
-                <div class="row align-items-center border p-3 rounded shadow-sm" >
-                    <div class="row img_container col-12 col-md-2 text-center mb-3 mb-md-0">
-                        <img src="../media/aboutMe/Eduardo_Hernandez_Java_Full_Stack.png" alt="" style="height: 100px; width: 100px;"> <!-- Hay que añadir estilos con CSS para quitar el style="height: 100px; width: 100px;" -->
+    <div class="container person_container">
+        <!-- Persona 1 -->
+        <div class="row align-items-center border p-3 rounded shadow-sm">
+            <div class="row img_container col-12 col-md-2 text-center mb-3 mb-md-0">
+                <img src="../media/aboutMe/Eduardo_Hernandez_Java_Full_Stack.png" alt="Sobre mí Imagen"> 
+            </div>
+            <div class="row data_container col-12 col-md-10">
+                <div class="d-flex justify-content-between align-items-start">
+                    <div class="col data_person_container">
+                        <p>Eduardo Hernández</p>
+                        <p>Desarrollador FullStack</p>
                     </div>
-                    <div class="row data_container col-12 col-md-10">
-                        <div class="d-flex justify-content-between align-items-start">
-                            <div class="col data_person_container">
-                                <p>Eduardo Hernández</p>
-                                <p>Desarrollador FullStack</p>
-                            </div>
-                            <div class="col-auto social_container col-1 d-flex flex-column">
-                                <a href="https://portafolio-khaki-iota.vercel.app/"><img src="../media/aboutMe/Portafolio_logo.png" alt="Portafolio de proyectos" style="width: 20px; width: 20px;"></a>  <!-- Hay que añadir estilos con CSS para quitar el style="width: 20px; width: 20px;" -->
-                                <a href="https://www.linkedin.com/in/eduardo-hernandez-fullstack-java/"><img src="../media/aboutMe/linkedin_logo.png" alt="Logo linkedIn" style="width: 20px; width: 20px;"></a>  <!-- Hay que añadir estilos con CSS para quitar el style="width: 20px; width: 20px;" -->
-                                <a href="https://github.com/Mauedy164"><img src="../media/aboutMe/logo_github.png" alt="Logo Github" style="width: 20px; width: 20px;"></a> <!-- Hay que añadir estilos con CSS para quitar el style="width: 20px; width: 20px;" -->
-                            </div>
-
-                            <!-- Hay que añadir estilos con CSS para quitar el style="width: 20px; width: 20px;" -->
-                        </div>
-                        <div class="row biography_container">
-                            <p>
-                                Desarrollador Full Stack Junior y estudiante de Ingeniería de Software certificado en
-                                Oracle Cloud (OCI) y Scrum. Cuento con experiencia práctica en el ciclo completo de desarrollo, destacando la creación de modelos predictivos y APIs REST. Combino una sólida trayectoria previa en ingeniería y gestión de procesos con habilidades técnicas en HTML5, CSS, JavaScript, Java, Python y React para construir soluciones escalables y eficientes en la nube. Busco integrarme a equipos ágiles para aportar en el desarrollo de arquitectura backend y frontend
-                            </p>
-                        </div>
+                    <div class="col-auto social_container col-1 d-flex flex-row">
+                        <a href="https://portafolio-khaki-iota.vercel.app/"><img src="../media/aboutMe/Portafolio_logo.png" alt="Portafolio de proyectos"></a>  
+                        <a href="https://www.linkedin.com/in/eduardo-hernandez-fullstack-java/"><img src="../media/aboutMe/linkedin_logo.png" alt="Logo linkedIn"></a>  
+                        <a href="https://github.com/Mauedy164"><img src="../media/aboutMe/logo_github.png" alt="Logo Github"></a> 
                     </div>
-                </div>
 
-                <!-- Persona 2 -->
-                <div class="row align-items-center border p-3 rounded shadow-sm" >
+
                     
-                    <div class="row data_container col-12 col-md-10">
-                        <div class="d-flex justify-content-between align-items-start">
-                            <div class="col data_person_container">
-                                <p>Ezequiel Sanchez</p>
-                                <p>Desarrollador FullStack</p>
-                            </div>
-                            <div class="col-auto social_container col-1 d-flex flex-column">
-                                <a href="#"><img src="../media/aboutMe/Portafolio_logo.png" alt="Portafolio de proyectos" style="width: 20px; width: 20px;"></a>  <!-- Hay que añadir estilos con CSS para quitar el style="width: 20px; width: 20px;" -->
-                                <a href="https://www.linkedin.com/in/ezequielsanchezcanul/"><img src="../media/aboutMe/linkedin_logo.png" alt="Logo linkedIn" style="width: 20px; width: 20px;"></a>  <!-- Hay que añadir estilos con CSS para quitar el style="width: 20px; width: 20px;" -->
-                                <a href=""><img src="../media/aboutMe/logo_github.png" alt="Logo Github" style="width: 20px; width: 20px;"></a> <!-- Hay que añadir estilos con CSS para quitar el style="width: 20px; width: 20px;" -->
-                            </div>
-
-                            <!-- Hay que añadir estilos con CSS para quitar el style="width: 20px; width: 20px;" -->
-                        </div>
-                        <div class="row biography_container">
-                            <p>
-                            Soy Desarrollador Java Fullstack Jr y estudiante de Ingeniería en Software, con formación en Negocios Internacionales. Vengo de entornos orientados al análisis de procesos, manejo y validación de datos, y uso de sistemas. Cuento con habilidades técnicas en HTML, CSS, JavaScript, Java, Python para contribuir al diseño y mejora de aplicaciones web alineadas a procesos de negocio.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="row img_container col-12 col-md-2 text-center mb-3 mb-md-0">
-                        <img src="../media/aboutMe/Ezequiel_Sanchez_ FullStack.jpg" alt="" style="height: 100px; width: 100px;"> <!-- Hay que añadir estilos con CSS para quitar el style="height: 100px; width: 100px;" -->
-                    </div>
+                </div>
+                <div class="row biography_container">
+                    <p>
+                        Desarrollador Full Stack Junior y estudiante de Ingeniería de Software certificado en
+                        Oracle Cloud (OCI) y Scrum. Cuento con experiencia práctica en el ciclo completo de desarrollo, destacando la creación de modelos predictivos y APIs REST. Combino una sólida trayectoria previa en ingeniería y gestión de procesos con habilidades técnicas en HTML5, CSS, JavaScript, Java, Python y React para construir soluciones escalables y eficientes en la nube. Busco integrarme a equipos ágiles para aportar en el desarrollo de arquitectura backend y frontend
+                    </p>
                 </div>
             </div>
-        </section>
+        </div>
+        
+
+
+        <!-- Persona 2 -->
+        <div class="row align-items-center border p-3 rounded shadow-sm">
+            
+            <div class="row data_container col-12 col-md-10">
+                <div class="d-flex justify-content-between align-items-start">
+                    <div class="col data_person_container">
+                        <p>Ezequiel Sanchez</p>
+                        <p>Desarrollador FullStack</p>
+                    </div>
+                    <div class="col-auto social_container col-1 d-flex flex-row">
+                        <a href="https://portafolio-khaki-iota.vercel.app/"><img src="../media/aboutMe/Portafolio_logo.png" alt="Portafolio de proyectos"></a>  
+                        <a href="https://www.linkedin.com/in/eduardo-hernandez-fullstack-java/"><img src="../media/aboutMe/linkedin_logo.png" alt="Logo linkedIn"></a>  
+                        <a href="https://github.com/Mauedy164"><img src="../media/aboutMe/logo_github.png" alt="Logo Github"></a> 
+                    </div>
+
+
+                    
+                </div>
+                <div class="row biography_container">
+                    <p>
+                        Desarrollador Full Stack Junior y estudiante de Ingeniería de Software certificado en
+                        Oracle Cloud (OCI) y Scrum. Cuento con experiencia práctica en el ciclo completo de desarrollo, destacando la creación de modelos predictivos y APIs REST. Combino una sólida trayectoria previa en ingeniería y gestión de procesos con habilidades técnicas en HTML5, CSS, JavaScript, Java, Python y React para construir soluciones escalables y eficientes en la nube. Busco integrarme a equipos ágiles para aportar en el desarrollo de arquitectura backend y frontend
+                    </p>
+                </div>
+            </div>
+            <div class="row img_container col-12 col-md-2 text-center mb-3 mb-md-0">
+                <img src="../media/aboutMe/Eduardo_Hernandez_Java_Full_Stack.png" alt="Sobre mí Imagen"> 
+            </div>
+        </div>
+        
+
+
+        <!--Persona 3-->
+        <div class="row align-items-center border p-3 rounded shadow-sm">
+            <div class="row img_container col-12 col-md-2 text-center mb-3 mb-md-0">
+                <img src="../media/aboutMe/Eduardo_Hernandez_Java_Full_Stack.png" alt="Sobre mí Imagen"> 
+            </div>
+            <div class="row data_container col-12 col-md-10">
+                <div class="d-flex justify-content-between align-items-start">
+                    <div class="col data_person_container">
+                        <p>Eduardo Hernández</p>
+                        <p>Desarrollador FullStack</p>
+                    </div>
+                    <div class="col-auto social_container col-1 d-flex flex-row">
+                        <a href="https://portafolio-khaki-iota.vercel.app/"><img src="../media/aboutMe/Portafolio_logo.png" alt="Portafolio de proyectos"></a>  
+                        <a href="https://www.linkedin.com/in/eduardo-hernandez-fullstack-java/"><img src="../media/aboutMe/linkedin_logo.png" alt="Logo linkedIn"></a>  
+                        <a href="https://github.com/Mauedy164"><img src="../media/aboutMe/logo_github.png" alt="Logo Github"></a> 
+                    </div>
+
+
+                    
+                </div>
+                <div class="row biography_container">
+                    <p>
+                        Desarrollador Full Stack Junior y estudiante de Ingeniería de Software certificado en
+                        Oracle Cloud (OCI) y Scrum. Cuento con experiencia práctica en el ciclo completo de desarrollo, destacando la creación de modelos predictivos y APIs REST. Combino una sólida trayectoria previa en ingeniería y gestión de procesos con habilidades técnicas en HTML5, CSS, JavaScript, Java, Python y React para construir soluciones escalables y eficientes en la nube. Busco integrarme a equipos ágiles para aportar en el desarrollo de arquitectura backend y frontend
+                    </p>
+                </div>
+            </div>
+        </div>
+        
+
+
+        <!-- Persona 4 -->
+        <div class="row align-items-center border p-3 rounded shadow-sm">
+            
+            <div class="row data_container col-12 col-md-10">
+                <div class="d-flex justify-content-between align-items-start">
+                    <div class="col data_person_container">
+                        <p>Eduardo Hernández</p>
+                        <p>Desarrollador FullStack</p>
+                    </div>
+                    <div class="col-auto social_container col-1 d-flex flex-row">
+                        <a href="https://portafolio-khaki-iota.vercel.app/"><img src="../media/aboutMe/Portafolio_logo.png" alt="Portafolio de proyectos"></a>  
+                        <a href="https://www.linkedin.com/in/eduardo-hernandez-fullstack-java/"><img src="../media/aboutMe/linkedin_logo.png" alt="Logo linkedIn"></a>  
+                        <a href="https://github.com/Mauedy164"><img src="../media/aboutMe/logo_github.png" alt="Logo Github"></a> 
+                    </div>
+
+
+                    
+                </div>
+                <div class="row biography_container">
+                    <p>
+                        Desarrollador Full Stack Junior y estudiante de Ingeniería de Software certificado en
+                        Oracle Cloud (OCI) y Scrum. Cuento con experiencia práctica en el ciclo completo de desarrollo, destacando la creación de modelos predictivos y APIs REST. Combino una sólida trayectoria previa en ingeniería y gestión de procesos con habilidades técnicas en HTML5, CSS, JavaScript, Java, Python y React para construir soluciones escalables y eficientes en la nube. Busco integrarme a equipos ágiles para aportar en el desarrollo de arquitectura backend y frontend
+                    </p>
+                </div>
+            </div>
+            <div class="row img_container col-12 col-md-2 text-center mb-3 mb-md-0">
+                <img src="../media/aboutMe/Eduardo_Hernandez_Java_Full_Stack.png" alt="Sobre mí Imagen"> 
+            </div>
+        </div>
+        
+
+
+        <!-- Persona 5 -->
+        <div class="row align-items-center border p-3 rounded shadow-sm">
+            <div class="row img_container col-12 col-md-2 text-center mb-3 mb-md-0">
+                <img src="../media/aboutMe/Eduardo_Hernandez_Java_Full_Stack.png" alt="Sobre mí Imagen"> 
+            </div>
+            <div class="row data_container col-12 col-md-10">
+                <div class="d-flex justify-content-between align-items-start">
+                    <div class="col data_person_container">
+                        <p>Eduardo Hernández</p>
+                        <p>Desarrollador FullStack</p>
+                    </div>
+                    <div class="col-auto social_container col-1 d-flex flex-row">
+                        <a href="https://portafolio-khaki-iota.vercel.app/"><img src="../media/aboutMe/Portafolio_logo.png" alt="Portafolio de proyectos"></a>  
+                        <a href="https://www.linkedin.com/in/eduardo-hernandez-fullstack-java/"><img src="../media/aboutMe/linkedin_logo.png" alt="Logo linkedIn"></a>  
+                        <a href="https://github.com/Mauedy164"><img src="../media/aboutMe/logo_github.png" alt="Logo Github"></a> 
+                    </div>
+
+
+                    
+                </div>
+                <div class="row biography_container">
+                    <p>
+                        Desarrollador Full Stack Junior y estudiante de Ingeniería de Software certificado en
+                        Oracle Cloud (OCI) y Scrum. Cuento con experiencia práctica en el ciclo completo de desarrollo, destacando la creación de modelos predictivos y APIs REST. Combino una sólida trayectoria previa en ingeniería y gestión de procesos con habilidades técnicas en HTML5, CSS, JavaScript, Java, Python y React para construir soluciones escalables y eficientes en la nube. Busco integrarme a equipos ágiles para aportar en el desarrollo de arquitectura backend y frontend
+                    </p>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Persona 6 -->
+        <div class="row align-items-center border p-3 rounded shadow-sm">
+            
+            <div class="row data_container col-12 col-md-10">
+                <div class="d-flex justify-content-between align-items-start">
+                    <div class="col data_person_container">
+                        <p>Gabriel Castro</p>
+                        <p>Desarrollador FullStack</p>
+                    </div>
+                    <div class="col-auto social_container col-1 d-flex flex-row">
+                        <a href="###"><img src="../media/aboutMe/Portafolio_logo.png" alt="Portafolio de proyectos"></a>  <!--Pendiente-->
+                        <a href="https://www.linkedin.com/in/GabrielCastro01"><img src="../media/aboutMe/linkedin_logo.png" alt="Logo linkedIn"></a>  
+                        <a href="https://github.com/Axsort"><img src="../media/aboutMe/logo_github.png" alt="Logo Github"></a> 
+                    </div>
+
+
+                </div>
+                <div class="row biography_container">
+                    <p>
+                        Desarrollador de software enfocado en aplicaciones web, especializado en construir experiencias de E‑Commerce claras, funcionales y orientadas a la conversión.
+                        Trabajo con JavaScript, Python, Java, HTML y CSS para crear interfaces intuitivas y lógica robusta que conecte correctamente con APIs y bases de datos, 
+                        asegurando que cada compra sea sencilla y segura para el usuario.
+                        Mi experiencia combinando tecnología, atención al cliente y gestión operativa me permite entender tanto las necesidades del negocio como las del cliente final dentro de la tienda en línea.
+                    </p>
+                </div>
+            </div>
+            <div class="row img_container col-12 col-md-2 text-center mb-3 mb-md-0">
+                <img src="../media/aboutMe/GabrielCastro.jpeg" alt="Sobre mí Imagen"> 
+            </div>
+        </div>
+
+
+        <!-- Persona 7 -->
+        <div class="row align-items-center border p-3 rounded shadow-sm">
+            <div class="row img_container col-12 col-md-2 text-center mb-3 mb-md-0">
+                <img src="../media/aboutMe/Eduardo_Hernandez_Java_Full_Stack.png" alt="Sobre mí Imagen"> 
+            </div>
+            <div class="row data_container col-12 col-md-10">
+                <div class="d-flex justify-content-between align-items-start">
+                    <div class="col data_person_container">
+                        <p>Eduardo Hernández</p>
+                        <p>Desarrollador FullStack</p>
+                    </div>
+                    <div class="col-1 social_container d-flex flex-row" >
+                        <a href="https://portafolio-khaki-iota.vercel.app/"><img src="../media/aboutMe/Portafolio_logo.png" alt="Portafolio de proyectos"></a>  
+                        <a href="https://www.linkedin.com/in/eduardo-hernandez-fullstack-java/"><img src="../media/aboutMe/linkedin_logo.png" alt="Logo linkedIn"></a>  
+                        <a href="https://github.com/Mauedy164"><img src="../media/aboutMe/logo_github.png" alt="Logo Github"></a> 
+                    </div>
+
+
+                    
+                </div>
+                <div class="row biography_container">
+                    <p>
+                        Desarrollador Full Stack Junior y estudiante de Ingeniería de Software certificado en
+                        Oracle Cloud (OCI) y Scrum. Cuento con experiencia práctica en el ciclo completo de desarrollo, destacando la creación de modelos predictivos y APIs REST. 
+                        Combino una sólida trayectoria previa en ingeniería y gestión de procesos con habilidades técnicas en HTML5, CSS, JavaScript, Java, Python y React para construir soluciones escalables y eficientes en la nube. 
+                        Busco integrarme a equipos ágiles para aportar en el desarrollo de arquitectura backend y frontend
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+            
+</section>
+
 
         <section> <!-- Nuestros sellos -->
 
