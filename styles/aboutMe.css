@@ -142,3 +142,89 @@ h4 {
 .biography_container:hover p {
     color: #040404;
 }
+
+.piedepagina-container {
+  background-color: #0D0D0D;
+  padding: 10px;
+}
+.piedepagina-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+}
+
+.piedepagina-grid h4 {
+  font-size: 25px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.piedepagina-grid p {
+  font-size: 18px;
+  margin-bottom: 10px;
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+.piedepagina-grid input {
+  margin-top: 10px;
+  padding: 10px;
+  background: transparent;
+  border: 1px solid white;
+  width: 100%;
+}
+
+.piedepagina-grid input[type="email"] {
+    width: 80%;        
+    padding: 8px;
+    border-radius: 4px;
+}
+
+.input-wrapper {
+  display: flex;
+  border: 1px solid white;
+  border-radius: 10px;
+  overflow: hidden;
+  width: 100%;
+  max-width: 400px;
+}
+
+.input-wrapper input {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  outline: none;
+  color: white;
+  background-color: #0D0D0D;
+}
+
+.input-wrapper input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.input-wrapper button {
+  border: none;
+  margin: 0;
+  padding: 10px 15px;
+  background-color: #0D0D0D;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  flex-shrink: 0;
+}
+
+.input-wrapper button:hover {
+  background-color: white;
+}
+
+.arrow-icon {
+  display: inline-block;
+  transition: transform 0.2s ease;
+}
+
+.input-wrapper button:hover .arrow-icon {
+  transform: translateX(3px);
+  color: #0D0D0D;
+} 
