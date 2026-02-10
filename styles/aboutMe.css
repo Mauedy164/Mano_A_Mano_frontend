@@ -155,7 +155,9 @@ h4 {
 .piedepagina-container {
   background-color: #0D0D0D;
   padding: 10px;
+
 }
+
 .piedepagina-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -168,6 +170,7 @@ h4 {
   font-size: 25px;
   font-weight: 600;
   margin-bottom: 20px;
+  text-align: left;
 }
 
 .piedepagina-grid p {
