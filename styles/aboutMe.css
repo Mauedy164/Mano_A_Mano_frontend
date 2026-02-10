@@ -1,4 +1,31 @@
 
+/* Misión, visión y valores */
+.mision p, 
+.vision p {
+    text-align: justify;
+}
+
+.lista-valores {
+    width: fit-content;
+}
+
+.mision, 
+.vision, 
+.valores {
+    display:flex;
+    flex-direction: column;
+    border: 1px solid black;
+    border-radius: 16px;
+    margin: 30px auto;
+    padding: 20px;
+    width: fit-content;
+}
+
+h4 {
+    text-align: center;
+}
+
+/*  */
 .person_container {
     margin: 2rem auto;
     padding: 0.5rem 0;
