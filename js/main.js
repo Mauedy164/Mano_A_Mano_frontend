@@ -96,3 +96,17 @@
 */
 
 
+/*  
+======================================
+| Validación de formularios (general) |
+======================================
+*/
+
+// Validación de formulario de correo electrónico
+
+// Validación de teléfono
+
+// Validación de nombre
+
+// Validación de mensaje 
+
