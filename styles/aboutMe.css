@@ -1,3 +1,12 @@
+h3 {
+  text-align: center;
+  margin: 1.5rem auto;
+  font-size: 1.25rem;
+  max-width: 320px;
+  box-shadow: #a3a2a28f 0px 1px 3px;
+  border-radius: 10px;
+}
+
 
 /* Misión, visión y valores */
 .mision p, 
@@ -25,7 +34,7 @@ h4 {
     text-align: center;
 }
 
-/*  */
+/* Tarjetas */
 .person_container {
     margin: 2rem auto;
     padding: 0.5rem 0;
@@ -143,6 +152,8 @@ h4 {
     color: #040404;
 }
 
+
+/* Pie de página */
 .piedepagina-container {
   background-color: #0D0D0D;
   padding: 10px;
