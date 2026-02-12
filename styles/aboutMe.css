@@ -162,7 +162,7 @@ h4 {
 
 .piedepagina-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 16px;
   color: white;
   font-family: 'Poppins', sans-serif;
@@ -243,3 +243,14 @@ h4 {
   transform: translateX(3px);
   color: #0D0D0D;
 } 
+
+.qr {
+    width: 80px;
+}
+
+.social-icons a {
+  color: #aaa;
+  font-size: 20px;
+  margin-right: 18px;
+  transition: 0.3s ease;
+}
