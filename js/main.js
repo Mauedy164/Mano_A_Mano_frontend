@@ -157,5 +157,24 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
-// Validación de mensaje 
+// Manda el formulario al correo auxiliarmanoamano@gmail.com
+
+// Inicializar EmailJS
+(function(){
+    emailjs.init("iO5ES5byaaXR9w8yL");
+})();
+
+// Event listener para el formulario
+document.getElementById("miFormulario").addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    emailjs.sendForm("service_trf8ktq", "template_4q07cia", this)
+        .then(function() {
+            alert("Mensaje enviado correctamente ✅");
+        })
+        .catch(function(error) {
+            console.log("Error:", error);
+            alert("Hubo un error al enviar el mensaje ❌");
+        });
+});
 

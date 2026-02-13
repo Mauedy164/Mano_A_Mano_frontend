@@ -97,91 +97,48 @@
     <main class="py-5 bg-light"><!-- Contacto -->
 
         <div class="container">
-    
-    <div class="row mb-4">
-      <p class="text-muted">
-        <a href="../index.html" class="text-decoration-none text-muted">Inicio</a> / Contacto
-      </p>
-    </div>
-
-    <div class="row justify-content-center">
-
-      <!-- CONTENEDOR FLEX -->
-      <div class="d-flex flex-column flex-md-row gap-4 col-12">
-
-        <!-- INFORMACIÓN DE NOSOSTROS -->
-        <div class="info_container col-12 col-md-4 bg-white p-4 shadow-sm rounded">
-
-          <div class="row info_contactanos mb-4">
-            <section class="d-flex align-items-center gap-3 mb-3">
-              <img src="../media/contact/icons-phone.png" width="40">
-              <h5 class="mb-0">Contáctanos</h5>
-            </section>
-            <section>
-              <p class="text-muted small">
-                Estamos disponibles 24/7, los 7 días de la semana
-              </p>
-              <p class="fw-semibold">Celular +544512554</p>
-            </section>
-          </div>
-
-          <hr>
-
-          <div class="row info_escribenos mt-4">
-            <section class="d-flex align-items-center gap-3 mb-3">
-              <img src="../media/contact/icons-mail.png" width="40">
-              <h5 class="mb-0">Escríbenos</h5>
-            </section>
-            <section>
-              <p class="text-muted small">
-                Llena nuestro formulario y te contactaremos en menos de 24 horas.
-              </p>
-              <p class="mb-1">customer@manoamano.com</p>
-              <p>support@manoamano.com</p>
-            </section>
-          </div>
-
-        </div>
-
-        <!-- FORMULARIO -->
-        <div class="form_container col-12 col-md-8 bg-white p-5 shadow-sm rounded">
-
-          <form action="" method="post">
-
-            <fieldset class="user_data_container row g-3 mb-4">
-              <div class="col-md-4">
-                <input type="text" id="user_name" name="user_name"
-                  class="form-control"
-                  placeholder="Nombre*">
-              </div>
-
-              <div class="col-md-4">
-                <input type="email" id="user_email" name="user_email"
-                  class="form-control"
-                  placeholder="Correo electrónico*">
-              </div>
-
-              <div class="col-md-4">
-                <input type="tel" id="user_phone" name="user_phone"
-                  class="form-control"
-                  placeholder="Numero de celular*">
-              </div>
-            </fieldset>
-
-            <fieldset class="message_container mb-4">
-              <textarea id="user_message"
-                name="user_message"
-                rows="4"
-                class="form-control"
-                placeholder="Tu mensaje"></textarea>
-            </fieldset>
-
-            <div class="text-end">
-              <button type="submit"
-                id="btn_form"
-                class="btn btn-danger px-4">
-                Enviar mensaje
-              </button>
+            <div class="row">
+                <p><a href="../index.html">inicio</a>/contacto</p>
+            </div>
+            <div class="d-flex col-8 col-md-12">
+                <div class="info_container col-2 col-md-4">
+                    <div class="row info_contactanos">
+                        <section>
+                            <img src="../media/contact/icons-phone.png" alt="Ícono redondo de un teléfono blanco con fondo rojo">
+                            <h3> Contáctanos</h3>
+                        </section>
+                        <section>
+                            <p>Estamos disponibles 24/7, los 7 días de la semana</p>
+                            <p>Celular +544512554</p>
+                        </section>
+                    </div>
+                    <div class="row info_escribenos">
+                        <section>
+                            <img src="../media/contact/icons-mail.png" alt="Ícono redondo de un sobre blanco con fondo rojo">
+                            <h3>Escríbenos</h3>
+                        </section>
+                        <section>
+                            <p>Llena nuestro formulario y te contactaremos en menos de 24 horas.</p>
+                            <p>Emails: customer@manoamano.com</p>
+                            <p>Emails: support@manoamano.com</p>
+                        </section>
+                    </div>
+                    
+                </div>
+                 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+                <div class="form_container col-6 col-md-8">
+                    <form id="miFormulario">
+                        <fieldset class="user_data_container">
+                            <input type="text" id="user_name" name="user_name" placeholder="Nombre*">
+                            <input type="email" id="user_email" name="user_email" placeholder="Correo electrónico*">
+                            <input type="tel" id="user_phone" name="user_phone" placeholder="Numero de celular*">
+                        </fieldset>
+                        <fieldset class="message_container">
+                            <input type="text" id="user_message" name="user_message" placeholder="Tu mensaje">
+                        </fieldset>
+                        <button type="submit" id="btn_form">Enviar mensaje</button>
+                    </form>
+                </div>
             </div>
 
           </form>
