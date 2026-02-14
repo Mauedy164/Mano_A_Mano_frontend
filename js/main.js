@@ -106,6 +106,39 @@
 
 // Validación de teléfono
 
+// 1. Seleccionamos los elementos del teléfono
+const inputPhone = document.getElementById('user_phone');
+let errorPhone = document.getElementById('errorPhone');
+
+// 2. Creamos el contenedor de error si no existe
+if (!errorPhone) {
+    errorPhone = document.createElement('div');
+    errorPhone.id = 'errorPhone';
+    errorPhone.style.cssText = 'color: red; font-size: 0.9em; margin-top: 5px;';
+    inputPhone.parentNode.appendChild(errorPhone);
+}
+
+// 3. EVENTO "INPUT": Esto borra o cambia el mensaje mientras escribes
+inputPhone.addEventListener('input', function() {
+    const phone = inputPhone.value.trim();
+    const regexPhone = /^[0-9]{10}$/;
+
+    if (phone === '') {
+        // Si está vacío, limpiamos todo
+        errorPhone.textContent = '';
+        inputPhone.classList.remove('is-invalid');
+    } else if (!regexPhone.test(phone)) {
+        // Si no cumple la RegEx, mostramos el mensaje de error
+        errorPhone.textContent = 'Deben ser exactamente 10 dígitos numéricos.';
+        inputPhone.classList.add('is-invalid');
+    } else {
+        // ¡Si todo está bien, borramos el error!
+        errorPhone.textContent = '';
+        inputPhone.classList.remove('is-invalid');
+        // Opcional: poner borde verde si usas Bootstrap
+        inputPhone.classList.add('is-valid'); 
+    }
+});
 // Validación de nombre
 
 document.addEventListener('DOMContentLoaded', function() {
