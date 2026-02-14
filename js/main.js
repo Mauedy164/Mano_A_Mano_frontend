@@ -104,6 +104,40 @@
 
 // Validación de formulario de correo electrónico
 
+const form = document.querySelector (".form_container form");
+const correoIpt = document.getElementById("user_email");
+
+// Declaración de constante que almacena una expresión regular para correo 
+const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+
+// Agregamos un evento para cuando se haga click en el botón
+form.addEventListener ("submit", (e) => {
+
+  //Limpiar error previo si existe
+  const errorCorreo = document.getElementById("error-correo");
+  if (errorCorreo){
+    errorCorreo.remove();
+  }
+
+   // Crea constante de correo con el valor ingresado en el formulario y se eliminan los espacios en blanco de una cadena de texto
+  const correo = correoIpt.value.trim();
+
+  // Si el correo es inválido
+  if (!regex.test(correo)) {
+    e.preventDefault();  // Evita  que  el formulario se envíe
+
+    // Crear elemento de error
+    const mensajeError = document.createElement ("div");
+    mensajeError.id = "error-correo";
+    mensajeError.style.cssText = "color: red; font-size: 0.9em; margin-top: 5px;";
+    mensajeError.textContent = "Por favor, ingresa un correo válido.";
+
+    correoIpt.parentNode.appendChild(mensajeError);    
+  }
+  
+});
+
+
 // Validación de teléfono
 
 // Validación de nombre
