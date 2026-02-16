@@ -391,144 +391,146 @@ if(footer_container){
 
 // Validación de formulario de correo electrónico
 
-const form = document.querySelector (".form_container form");
-const correoIpt = document.getElementById("user_email");
+// const form = document.querySelector (".form_container form");
+// const correoIpt = document.getElementById("user_email");
+// const miFormulario = document.getElementById("miFormulario");
 
-// Declaración de constante que almacena una expresión regular para correo 
-const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 
-// Agregamos un evento para cuando se haga click en el botón
-form.addEventListener ("submit", (e) => {
+// // Declaración de constante que almacena una expresión regular para correo 
+// const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 
-  //Limpiar error previo si existe
-  const errorCorreo = document.getElementById("error-correo");
-  if (errorCorreo){
-    errorCorreo.remove();
-  }
+// // Agregamos un evento para cuando se haga click en el botón
+// form.addEventListener ("submit", (e) => {
 
-   // Crea constante de correo con el valor ingresado en el formulario y se eliminan los espacios en blanco de una cadena de texto
-  const correo = correoIpt.value.trim();
+//   //Limpiar error previo si existe
+//   const errorCorreo = document.getElementById("error-correo");
+//   if (errorCorreo){
+//     errorCorreo.remove();
+//   }
 
-  // Si el correo es inválido
-  if (!regex.test(correo)) {
-    e.preventDefault();  // Evita  que  el formulario se envíe
+//    // Crea constante de correo con el valor ingresado en el formulario y se eliminan los espacios en blanco de una cadena de texto
+//   const correo = correoIpt.value.trim();
 
-    // Crear elemento de error
-    const mensajeError = document.createElement ("div");
-    mensajeError.id = "error-correo";
-    mensajeError.style.cssText = "color: red; font-size: 0.9em; margin-top: 5px;";
-    mensajeError.textContent = "Por favor, ingresa un correo válido.";
+//   // Si el correo es inválido
+//   if (!regex.test(correo)) {
+//     e.preventDefault();  // Evita  que  el formulario se envíe
 
-    correoIpt.parentNode.appendChild(mensajeError);    
-  }
+//     // Crear elemento de error
+//     const mensajeError = document.createElement ("div");
+//     mensajeError.id = "error-correo";
+//     mensajeError.style.cssText = "color: red; font-size: 0.9em; margin-top: 5px;";
+//     mensajeError.textContent = "Por favor, ingresa un correo válido.";
+
+//     correoIpt.parentNode.appendChild(mensajeError);    
+//   }
   
-});
+// });
 
 
-// Validación de teléfono
+// // Validación de teléfono
 
-// 1. Seleccionamos los elementos del teléfono
-const inputPhone = document.getElementById('user_phone');
-let errorPhone = document.getElementById('errorPhone');
+// // 1. Seleccionamos los elementos del teléfono
+// const inputPhone = document.getElementById('user_phone');
+// let errorPhone = document.getElementById('errorPhone');
 
-// 2. Creamos el contenedor de error si no existe
-if (!errorPhone) {
-    errorPhone = document.createElement('div');
-    errorPhone.id = 'errorPhone';
-    errorPhone.style.cssText = 'color: red; font-size: 0.9em; margin-top: 5px;';
-    inputPhone.parentNode.appendChild(errorPhone);
-}
+// // 2. Creamos el contenedor de error si no existe
+// if (!errorPhone) {
+//     errorPhone = document.createElement('div');
+//     errorPhone.id = 'errorPhone';
+//     errorPhone.style.cssText = 'color: red; font-size: 0.9em; margin-top: 5px;';
+//     inputPhone.parentNode.appendChild(errorPhone);
+// }
 
-// 3. EVENTO "INPUT": Esto borra o cambia el mensaje mientras escribes
-inputPhone.addEventListener('input', function() {
-    const phone = inputPhone.value.trim();
-    const regexPhone = /^[0-9]{10}$/;
+// // 3. EVENTO "INPUT": Esto borra o cambia el mensaje mientras escribes
+// inputPhone.addEventListener('input', function() {
+//     const phone = inputPhone.value.trim();
+//     const regexPhone = /^[0-9]{10}$/;
 
-    if (phone === '') {
-        // Si está vacío, limpiamos todo
-        errorPhone.textContent = '';
-        inputPhone.classList.remove('is-invalid');
-    } else if (!regexPhone.test(phone)) {
-        // Si no cumple la RegEx, mostramos el mensaje de error
-        errorPhone.textContent = 'Deben ser exactamente 10 dígitos numéricos.';
-        inputPhone.classList.add('is-invalid');
-    } else {
-        // ¡Si todo está bien, borramos el error!
-        errorPhone.textContent = '';
-        inputPhone.classList.remove('is-invalid');
-        // Opcional: poner borde verde si usas Bootstrap
-        inputPhone.classList.add('is-valid'); 
-    }
-});
-// Validación de nombre
+//     if (phone === '') {
+//         // Si está vacío, limpiamos todo
+//         errorPhone.textContent = '';
+//         inputPhone.classList.remove('is-invalid');
+//     } else if (!regexPhone.test(phone)) {
+//         // Si no cumple la RegEx, mostramos el mensaje de error
+//         errorPhone.textContent = 'Deben ser exactamente 10 dígitos numéricos.';
+//         inputPhone.classList.add('is-invalid');
+//     } else {
+//         // ¡Si todo está bien, borramos el error!
+//         errorPhone.textContent = '';
+//         inputPhone.classList.remove('is-invalid');
+//         // Opcional: poner borde verde si usas Bootstrap
+//         inputPhone.classList.add('is-valid'); 
+//     }
+// });
+// // Validación de nombre
 
-document.addEventListener('DOMContentLoaded', function() {
-  const form = document.querySelector('.form_container form');
-  const inputNombre = document.getElementById('user_name');
+// document.addEventListener('DOMContentLoaded', function() {
+//   const form = document.querySelector('.form_container form');
+//   const inputNombre = document.getElementById('user_name');
   
-  let error = document.getElementById('errorNombre'); //Se crea el error debajo del input
-  if (!error) {
-    error = document.createElement('div');
-    error.id = 'errorNombre';
-    error.style.cssText = 'color: red; font-size: 0.9em; margin-top: 5px;';
-    inputNombre.parentNode.appendChild(error);
-  }
+//   let error = document.getElementById('errorNombre'); //Se crea el error debajo del input
+//   if (!error) {
+//     error = document.createElement('div');
+//     error.id = 'errorNombre';
+//     error.style.cssText = 'color: red; font-size: 0.9em; margin-top: 5px;';
+//     inputNombre.parentNode.appendChild(error);
+//   }
 
-  form.addEventListener('submit', function(event) {
-    const nombre = inputNombre.value.trim();
+//   form.addEventListener('submit', function(event) {
+//     const nombre = inputNombre.value.trim();
     
-    // Limpiar error previo
-    error.textContent = '';
-    inputNombre.classList.remove('is-invalid');
+//     // Limpiar error previo
+//     error.textContent = '';
+//     inputNombre.classList.remove('is-invalid');
 
-    // Validar nombre
+//     // Validar nombre
 
-    if (nombre === '') { //El nombre no debe estar en blanco
-      error.textContent = 'El nombre es requerido.';
-      inputNombre.classList.add('is-invalid');
-      event.preventDefault();
-      inputNombre.focus();
-      return false;
-    }
+//     if (nombre === '') { //El nombre no debe estar en blanco
+//       error.textContent = 'El nombre es requerido.';
+//       inputNombre.classList.add('is-invalid');
+//       event.preventDefault();
+//       inputNombre.focus();
+//       return false;
+//     }
     
-    if (nombre.length < 2) { //El nombre debe tener al menos 2 caracteres
-      error.textContent = 'El nombre debe tener al menos 2 caracteres.';
-      inputNombre.classList.add('is-invalid');
-      event.preventDefault();
-      inputNombre.focus();
-      return false;
-    }
+//     if (nombre.length < 2) { //El nombre debe tener al menos 2 caracteres
+//       error.textContent = 'El nombre debe tener al menos 2 caracteres.';
+//       inputNombre.classList.add('is-invalid');
+//       event.preventDefault();
+//       inputNombre.focus();
+//       return false;
+//     }
     
-    const regex = /^[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+$/; //Admite letras mayúsculas, minúsculas, acentos y espacios
-    if (!regex.test(nombre)) {
-      error.textContent = 'Solo letras y espacios permitidos.';
-      inputNombre.classList.add('is-invalid');
-      event.preventDefault();
-      inputNombre.focus();
-      return false;
-    }
-  });
-});
+//     const regex = /^[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+$/; //Admite letras mayúsculas, minúsculas, acentos y espacios
+//     if (!regex.test(nombre)) {
+//       error.textContent = 'Solo letras y espacios permitidos.';
+//       inputNombre.classList.add('is-invalid');
+//       event.preventDefault();
+//       inputNombre.focus();
+//       return false;
+//     }
+//   });
+// });
 
 
-// Manda el formulario al correo auxiliarmanoamano@gmail.com
+// // Manda el formulario al correo auxiliarmanoamano@gmail.com
 
-// Inicializar EmailJS
-(function(){
-    emailjs.init("iO5ES5byaaXR9w8yL");
-})();
+// // Inicializar EmailJS
+// (function(){
+//     emailjs.init("iO5ES5byaaXR9w8yL");
+// })();
 
-// Event listener para el formulario
-document.getElementById("miFormulario").addEventListener("submit", function(event) {
-    event.preventDefault();
+// // Event listener para el formulario
+// document.getElementById("miFormulario").addEventListener("submit", function(event) {
+//     event.preventDefault();
 
-    emailjs.sendForm("service_trf8ktq", "template_4q07cia", this)
-        .then(function() {
-            alert("Mensaje enviado correctamente ✅");
-        })
-        .catch(function(error) {
-            console.log("Error:", error);
-            alert("Hubo un error al enviar el mensaje ❌");
-        });
-});
+//     emailjs.sendForm("service_trf8ktq", "template_4q07cia", this)
+//         .then(function() {
+//             alert("Mensaje enviado correctamente ✅");
+//         })
+//         .catch(function(error) {
+//             console.log("Error:", error);
+//             alert("Hubo un error al enviar el mensaje ❌");
+//         });
+// });
 

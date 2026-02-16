@@ -257,6 +257,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Si alguno es inválido, no enviar
     if (!isNombreValid || !isEmailValid || !isPhoneValid || !isMessageValid) {
+      alert("Por favor, rellena el formulario como se indica");
       return;
     }
     emailjs
