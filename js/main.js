@@ -10,7 +10,155 @@
 
 /* Navbar */
 
+const navbar_container_index = document.getElementById("navbar_container_index");
+const navbar_container = document.getElementById("navbar_container");
 
+if(navbar_container_index){
+  navbar_container_index.innerHTML = `
+  <nav>
+                <nav class="navbar navbar-expand-lg bg-light px-4">
+                    <div class="container-fluid">
+
+                        <!-- Logo ManoAMano -->
+                        <a class="navbar-brand fw-bold" href="./index.html">ManoAMano</a>
+
+                        <!-- Botón responsivo -->
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#navbarContent">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+
+                        <!-- Contenido -->
+                        <div class="collapse navbar-collapse" id="navbarContent">
+
+                            <!-- Menú -->
+                            <ul class="navbar-nav mx-auto mb-2 mb-lg-0 gap-4">
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" href="./index.html">Inicio</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" href="./pages/contact.html">Contacto</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" href="./pages/aboutMe.html">Nosotros</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" href="#">Iniciar Sesión</a>
+                                </li>
+                            </ul>
+
+                            <!-- Buscador y iconos -->
+                            <div class="d-flex align-items-center gap-3">
+                                <form class="d-flex align-items-center border rounded-pill px-2">
+                                    <input class="form-control border-0" type="search" placeholder="¿Qué buscas?">
+                                    <i class="bi bi-search"></i>
+                                </form>
+
+                                <i class="bi bi-cart-fill"></i>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-heart" viewBox="0 0 16 16">
+                                    <path
+                                        d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15" />
+                                </svg>
+                                <i class="bi bi-cart fs-5"></i>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                                    class="bi bi-cart-fill" viewBox="0 0 16 16">
+                                    <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5
+                                    0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01
+                                    3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7
+                                    0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1
+                                    1 0 1 1 0 2 1 1 0 0 1 0-2" />
+                                </svg>
+
+                                <i class="bi bi-person fs-5"></i>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-person" viewBox="0 0 16 16">
+                                    <path
+                                        d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10s-3.516.68-4.168 1.332c-.678.678-.83 1.418-.832 1.664z" />
+                                </svg>
+                            </div>
+
+                        </div>
+                    </div>
+                </nav>
+
+            </nav>
+  `
+}
+
+if(navbar_container){
+  navbar_container.innerHTML = `
+              <nav>
+
+                <nav class="navbar navbar-expand-lg bg-light px-4">
+                    <div class="container-fluid">
+
+                        <!-- Logo ManoAMano -->
+                        <a class="navbar-brand fw-bold" href="../index.html">ManoAMano</a>
+
+                        <!-- Botón responsivo -->
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#navbarContent">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+
+                        <!-- Contenido -->
+                        <div class="collapse navbar-collapse" id="navbarContent">
+
+                            <!-- Menú -->
+                            <ul class="navbar-nav mx-auto mb-2 mb-lg-0 gap-4">
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" href="../index.html">Inicio</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" href="../pages/contact.html">Contacto</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" href="../pages/aboutMe.html">Nosotros</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" href="#">Iniciar Sesión</a>
+                                </li>
+                            </ul>
+
+                            <!-- Buscador y iconos -->
+                            <div class="d-flex align-items-center gap-3">
+                                <form class="d-flex align-items-center border rounded-pill px-2">
+                                    <input class="form-control border-0" type="search" placeholder="¿Qué buscas?">
+                                    <i class="bi bi-search"></i>
+                                </form>
+
+                                <i class="bi bi-cart-fill"></i>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-heart" viewBox="0 0 16 16">
+                                    <path
+                                        d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15" />
+                                </svg>
+                                <i class="bi bi-cart fs-5"></i>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                                    class="bi bi-cart-fill" viewBox="0 0 16 16">
+                                    <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5
+                                    0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01
+                                    3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7
+                                    0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1
+                                    1 0 1 1 0 2 1 1 0 0 1 0-2" />
+                                </svg>
+
+                                <i class="bi bi-person fs-5"></i>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-person" viewBox="0 0 16 16">
+                                    <path
+                                        d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10s-3.516.68-4.168 1.332c-.678.678-.83 1.418-.832 1.664z" />
+                                </svg>
+                            </div>
+
+                        </div>
+                    </div>
+                </nav>
+
+            </nav>
+  `
+}
 
 
 /*
@@ -19,8 +167,147 @@
 ==============================
 */
 
+const footer_container_index = document.getElementById("footer_container_index");
+const footer_container = document.getElementById("footer_container");
+
+if(footer_container_index){
+  footer_container_index.innerHTML = 
+  `
+  <div class="piedepagina">
+            <div class="piedepagina-container container-fluid">
+                <div class="piedepagina-grid row row-col-1 row-col-md-12">
+                    <div class="col">
+                        <h4>Exclusivo</h4>
+                        <p>Suscribirse</p>
+                        <p>Obtén 10% en tu primera orden</p>
+                        <div class="input-wrapper">
+                            <input type="email" placeholder="Ingresa tu correo" required />
+                            <button type="submit">
+                                <span class="arrow-icon">➤</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <h4>Soporte</h4>
+                        <p>111 Bijoy sarani, Dhaka</p>
+                        <p>manoamano@gmail.com</p>
+                        <p>+88015-88888-9999</p>
+                    </div>
+                    <div class="col">
+                        <h4>Cuenta</h4>
+                        <p>Mi cuenta</p>
+                        <p>Ingresar / Registrar</p>
+                        <p>Carrito</p>
+                        <p>Lista de deseos</p>
+                        <p>Tienda</p>
+                    </div>
+                    <div class="col">
+                        <h4>Enlace rápido</h4>
+                        <p>Política de privacidad</p>
+                        <p>Términos de uso</p>
+                        <p>FAQ</p>
+                        <p>Contacto</p>
+                    </div>
+                    <div class="col">
+                        <h4>Descarga la app</h4>
+                        <div class="app-section d-flex flex-col ">
+                            <img src="../media/aboutMe/codigoQR.PNG" alt="QR" class="qr img-fluid">
+                            <div class="botones-seccion ">
+                                    <a href="URL_APP_STORE" target="_blank">
+                                    <img src="../media/aboutMe/AppStore.png" alt="Descargar en App Store">
+                                    </a>
+                                    <a href="URL_PLAY_STORE" target="_blank">
+                                    <img src="../media/aboutMe/GooglePlay.png" alt="Disponible en Google Play">
+                                    </a>
+                             </div>
+                        </div>
+                            <div class="social-icons">
+                                <a href="URL_DE_TU_INSTAGRAM" target="_blank"><i class="fab fa-instagram"></i></a>
+                                <a href="URL_DE_TU_X" target="_blank"><i class="fab fa-twitter"></i></a>
+                                <a href="URL_DE_TU_FACEBOOK" target="_blank"><i class="fab fa-facebook"></i></a>
+                                <a href="URL_DE_TU_LINKEDIN" target="_blank"><i class="fab fa-linkedin"></i></a>
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+  `
+}
+
+if(footer_container){
+  footer_container.innerHTML = 
+  `
+          <div class="piedepagina">
+            <div class="piedepagina-container container-fluid">
+                <div class="piedepagina-grid row row-col-1 row-col-md-12">
+                    <div class="col">
+                        <h4>Exclusivo</h4>
+                        <p>Suscribirse</p>
+                        <p>Obtén 10% en tu primera orden</p>
+                        <div class="input-wrapper">
+                            <input type="email" placeholder="Ingresa tu correo" required />
+                            <button type="submit">
+                                <span class="arrow-icon">➤</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <h4>Soporte</h4>
+                        <p>111 Bijoy sarani, Dhaka</p>
+                        <p>manoamano@gmail.com</p>
+                        <p>+88015-88888-9999</p>
+                    </div>
+
+                    <div class="col">
+                        <h4>Cuenta</h4>
+                        <p>Mi cuenta</p>
+                        <p>Ingresar / Registrar</p>
+                        <p>Carrito</p>
+                        <p>Lista de deseos</p>
+                        <p>Tienda</p>
+                    </div>
+
+                    <div class="col">
+                        <h4>Enlace rápido</h4>
+                        <p>Política de privacidad</p>
+                        <p>Términos de uso</p>
+                        <p>FAQ</p>
+                        <p>Contacto</p>
+                    </div>
+
+                    <div class="col">
+                        <h4>Descarga la app</h4>
+
+                        <div class="app-section d-flex flex-col ">
+                            <img src="../media/aboutMe/codigoQR.PNG" alt="QR" class="qr img-fluid">
+                            <div class="botones-seccion ">
+                                    <a href="URL_APP_STORE" target="_blank">
+                                    <img src="../media/aboutMe/AppStore.png" alt="Descargar en App Store">
+                                    </a>
+                                    <a href="URL_PLAY_STORE" target="_blank">
+                                    <img src="../media/aboutMe/GooglePlay.png" alt="Disponible en Google Play">
+                                    </a>
+                             </div>
+
+                        </div>
+
+                            <div class="social-icons">
+                                <a href="URL_DE_TU_INSTAGRAM" target="_blank"><i class="fab fa-instagram"></i></a>
+                                <a href="URL_DE_TU_X" target="_blank"><i class="fab fa-twitter"></i></a>
+                                <a href="URL_DE_TU_FACEBOOK" target="_blank"><i class="fab fa-facebook"></i></a>
+                                <a href="URL_DE_TU_LINKEDIN" target="_blank"><i class="fab fa-linkedin"></i></a>
+                            </div>
 
 
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+  `
+}
 
 /*
 ==============================
