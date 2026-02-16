@@ -208,19 +208,17 @@ if(footer_container_index){
                         <p>FAQ</p>
                         <p>Contacto</p>
                     </div>
-                    <div class="col">
+                    <div class="col"> 
                         <h4>Descarga la app</h4>
-                        <div class="app-section d-flex flex-col ">
+                    <div class="app-section d-flex flex-column align-items-center">
                             <img src="../media/aboutMe/codigoQR.PNG" alt="QR" class="qr img-fluid">
-                            <div class="botones-seccion ">
-                                    <a href="URL_APP_STORE" target="_blank">
-                                    <img src="../media/aboutMe/AppStore.png" alt="Descargar en App Store">
-                                    </a>
-                                    <a href="URL_PLAY_STORE" target="_blank">
-                                    <img src="../media/aboutMe/GooglePlay.png" alt="Disponible en Google Play">
-                                    </a>
-                             </div>
+                        <div class="botones-seccion d-flex flex-column flex-md-row gap-2 mt-3">
+                            <a href="URL_APP_STORE" target="_blank">
+                            <img src="../media/aboutMe/AppStore.png" alt="Descargar en App Store" class="img-fluid store-logo"></a>
+                            <a href="URL_PLAY_STORE" target="_blank">
+                            <img src="../media/aboutMe/GooglePlay.png" alt="Disponible en Google Play" class="img-fluid store-logo"></a>
                         </div>
+                    </div>
                             <div class="social-icons">
                                 <a href="URL_DE_TU_INSTAGRAM" target="_blank"><i class="fab fa-instagram"></i></a>
                                 <a href="URL_DE_TU_X" target="_blank"><i class="fab fa-twitter"></i></a>
@@ -276,21 +274,18 @@ if(footer_container){
                         <p>Contacto</p>
                     </div>
 
-                    <div class="col">
+                    <div class="col"> 
                         <h4>Descarga la app</h4>
-
-                        <div class="app-section d-flex flex-col ">
+                    <div class="app-section d-flex flex-column align-items-center">
                             <img src="../media/aboutMe/codigoQR.PNG" alt="QR" class="qr img-fluid">
-                            <div class="botones-seccion ">
-                                    <a href="URL_APP_STORE" target="_blank">
-                                    <img src="../media/aboutMe/AppStore.png" alt="Descargar en App Store">
-                                    </a>
-                                    <a href="URL_PLAY_STORE" target="_blank">
-                                    <img src="../media/aboutMe/GooglePlay.png" alt="Disponible en Google Play">
-                                    </a>
-                             </div>
-
+                        <div class="botones-seccion d-flex flex-column flex-md-row gap-2 mt-3">
+                            <a href="URL_APP_STORE" target="_blank">
+                            <img src="../media/aboutMe/AppStore.png" alt="Descargar en App Store" class="img-fluid store-logo"></a>
+                            <a href="URL_PLAY_STORE" target="_blank">
+                            <img src="../media/aboutMe/GooglePlay.png" alt="Disponible en Google Play" class="img-fluid store-logo"></a>
                         </div>
+                    </div>
+
 
                             <div class="social-icons">
                                 <a href="URL_DE_TU_INSTAGRAM" target="_blank"><i class="fab fa-instagram"></i></a>
