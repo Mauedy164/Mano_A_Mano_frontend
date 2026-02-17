@@ -109,7 +109,7 @@ if (navbar_container_index) {
                             aqui agrega los produtos
 
                             <div class="mt-auto">
-                            <a href="./pages/checkout.html" class="btn btn-dark w-100">
+                            <a href="./pages/carrito.html" class="btn btn-dark w-100">
                                 Proceder al pago
                             </a>
                             </div>
@@ -240,7 +240,7 @@ if (navbar_container) {
                             aqui agrega los produtos
 
                             <div class="mt-auto">
-                            <a href="./pages/checkout.html" class="btn btn-dark w-100">
+                            <a href="../pages/carrito.html" class="btn btn-dark w-100">
                                 Proceder al pago
                             </a>
                             </div>
