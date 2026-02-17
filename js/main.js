@@ -6,14 +6,12 @@
 
 /* barra anuncio oferta */
 
-
-
 /* Navbar */
 
 const navbar_container_index = document.getElementById("navbar_container_index");
 const navbar_container = document.getElementById("navbar_container");
 
-if(navbar_container_index){
+if (navbar_container_index) {
   navbar_container_index.innerHTML = `
   <nav>
                 <nav class="navbar navbar-expand-lg bg-light px-4">
@@ -62,6 +60,7 @@ if(navbar_container_index){
                                 </svg>
                                 <i class="bi bi-cart fs-5"></i>
                                 <button class="btn p-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+                                    
                                     <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="currentColor"
                                         class="bi bi-cart-fill" viewBox="0 0 16 16">
                                         <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5
@@ -71,16 +70,16 @@ if(navbar_container_index){
                                         1 0 1 1 0 2 1 1 0 0 1 0-2" />
                                     </svg>
                                 </button>
-                         
-
-
-
+        
                                 <i class="bi bi-person fs-5"></i>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor"
-                                    class="bi bi-person" viewBox="0 0 16 16">
-                                    <path
-                                        d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10s-3.516.68-4.168 1.332c-.678.678-.83 1.418-.832 1.664z" />
-                                </svg>
+                                    <a class="nav-link text-dark" href="./pages/comprador.html">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor"
+                                        class="bi bi-person" viewBox="0 0 16 16">
+                                        <path
+                                            d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10s-3.516.68-4.168 1.332c-.678.678-.83 1.418-.832 1.664z" />
+                                        </svg>
+                                    </a>
+                                
                             </div>
 
                         </div>
@@ -98,7 +97,7 @@ if(navbar_container_index){
                 aqui agrega los produtos
 
                 <div class="mt-auto">
-                <a href="./pages/checkout.html" class="btn btn-dark w-100">
+                <a href="./pages/carrito.html" class="btn btn-dark w-100">
                     Proceder al pago
                 </a>
                 </div>
@@ -109,10 +108,10 @@ if(navbar_container_index){
             
             </div>            
 
-  `
+  `;
 }
 
-if(navbar_container){
+if (navbar_container) {
   navbar_container.innerHTML = `
               <nav>
 
@@ -162,22 +161,27 @@ if(navbar_container){
                                 </svg>
                                 <i class="bi bi-cart fs-5"></i>
                                 <button class="btn p-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="currentColor"
-                                        class="bi bi-cart-fill" viewBox="0 0 16 16">
-                                        <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5
-                                        0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01
-                                        3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7
-                                        0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1
-                                        1 0 1 1 0 2 1 1 0 0 1 0-2" />
-                                    </svg>
+                                        
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="currentColor"
+                                            class="bi bi-cart-fill" viewBox="0 0 16 16">
+                                            <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5
+                                            0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01
+                                            3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7
+                                            0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1
+                                            1 0 1 1 0 2 1 1 0 0 1 0-2" />
+                                            </svg>
+                                        
                                 </button>
 
                                 <i class="bi bi-person fs-5"></i>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor"
+                                <a class="nav-link text-dark" href="../pages/comprador.html">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor"
                                     class="bi bi-person" viewBox="0 0 16 16">
                                     <path
                                         d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10s-3.516.68-4.168 1.332c-.678.678-.83 1.418-.832 1.664z" />
-                                </svg>
+                                    </svg>
+                                </a>
+                                
                             </div>
 
                         </div>
@@ -195,15 +199,14 @@ if(navbar_container){
                 aqui agrega los produtos
 
                 <div class="mt-auto">
-                <a href="./pages/checkout.html" class="btn btn-dark w-100">
+                <a href="../pages/carrito.html" class="btn btn-dark w-100">
                     Proceder al pago
                 </a>
                 </div>
                 
             </div>            
-  `
+  `;
 }
-
 
 /*
 ==============================
@@ -214,9 +217,8 @@ if(navbar_container){
 const footer_container_index = document.getElementById("footer_container_index");
 const footer_container = document.getElementById("footer_container");
 
-if(footer_container_index){
-  footer_container_index.innerHTML = 
-  `
+if (footer_container_index) {
+  footer_container_index.innerHTML = `
   <div class="piedepagina">
             <div class="piedepagina-container container-fluid">
                 <div class="piedepagina-grid row row-col-1 row-col-md-12">
@@ -273,12 +275,11 @@ if(footer_container_index){
                 </div>
             </div>
         </div>
-  `
+  `;
 }
 
-if(footer_container){
-  footer_container.innerHTML = 
-  `
+if (footer_container) {
+  footer_container.innerHTML = `
           <div class="piedepagina">
             <div class="piedepagina-container container-fluid">
                 <div class="piedepagina-grid row row-col-1 row-col-md-12">
@@ -345,7 +346,7 @@ if(footer_container){
                 </div>
             </div>
         </div>
-  `
+  `;
 }
 
 /*
@@ -354,18 +355,11 @@ if(footer_container){
 ==============================
 */
 
-
-
 /*
 ==============================
 |    singUp (Crear cuenta)   |
 ==============================
 */
-
-
-
-
-
 
 /*
 ==============================
@@ -373,15 +367,11 @@ if(footer_container){
 ==============================
 */
 
-
-
-
 /*
 ==============================
 |       cart (Carrito)       |
 ==============================
 */
-
 
 /*
 =================================
@@ -389,14 +379,11 @@ if(footer_container){
 =================================
 */
 
-
-
 /*
 ==================================
 |  aboutMe (Acerca de nosotros)  |
 ==================================
 */
-
 
 // NUESTRA HISTORIA
 
@@ -406,21 +393,17 @@ if(footer_container){
 
 // NUESTROS SELLOS
 
-
 /*
 ==================================
 |  contact (Página de contacto)  |
 ==================================
 */
 
-
-
 /*
 ===================================
 |  producto (Página de producto)  |
 ===================================
 */
-
 
 /*  
 ======================================
@@ -434,8 +417,7 @@ if(footer_container){
 // const correoIpt = document.getElementById("user_email");
 // const miFormulario = document.getElementById("miFormulario");
 
-
-// // Declaración de constante que almacena una expresión regular para correo 
+// // Declaración de constante que almacena una expresión regular para correo
 // const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 
 // // Agregamos un evento para cuando se haga click en el botón
@@ -460,11 +442,10 @@ if(footer_container){
 //     mensajeError.style.cssText = "color: red; font-size: 0.9em; margin-top: 5px;";
 //     mensajeError.textContent = "Por favor, ingresa un correo válido.";
 
-//     correoIpt.parentNode.appendChild(mensajeError);    
+//     correoIpt.parentNode.appendChild(mensajeError);
 //   }
-  
-// });
 
+// });
 
 // // Validación de teléfono
 
@@ -498,7 +479,7 @@ if(footer_container){
 //         errorPhone.textContent = '';
 //         inputPhone.classList.remove('is-invalid');
 //         // Opcional: poner borde verde si usas Bootstrap
-//         inputPhone.classList.add('is-valid'); 
+//         inputPhone.classList.add('is-valid');
 //     }
 // });
 // // Validación de nombre
@@ -506,7 +487,7 @@ if(footer_container){
 // document.addEventListener('DOMContentLoaded', function() {
 //   const form = document.querySelector('.form_container form');
 //   const inputNombre = document.getElementById('user_name');
-  
+
 //   let error = document.getElementById('errorNombre'); //Se crea el error debajo del input
 //   if (!error) {
 //     error = document.createElement('div');
@@ -517,7 +498,7 @@ if(footer_container){
 
 //   form.addEventListener('submit', function(event) {
 //     const nombre = inputNombre.value.trim();
-    
+
 //     // Limpiar error previo
 //     error.textContent = '';
 //     inputNombre.classList.remove('is-invalid');
@@ -531,7 +512,7 @@ if(footer_container){
 //       inputNombre.focus();
 //       return false;
 //     }
-    
+
 //     if (nombre.length < 2) { //El nombre debe tener al menos 2 caracteres
 //       error.textContent = 'El nombre debe tener al menos 2 caracteres.';
 //       inputNombre.classList.add('is-invalid');
@@ -539,7 +520,7 @@ if(footer_container){
 //       inputNombre.focus();
 //       return false;
 //     }
-    
+
 //     const regex = /^[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+$/; //Admite letras mayúsculas, minúsculas, acentos y espacios
 //     if (!regex.test(nombre)) {
 //       error.textContent = 'Solo letras y espacios permitidos.';
@@ -550,7 +531,6 @@ if(footer_container){
 //     }
 //   });
 // });
-
 
 // // Manda el formulario al correo auxiliarmanoamano@gmail.com
 
@@ -572,4 +552,3 @@ if(footer_container){
 //             alert("Hubo un error al enviar el mensaje ❌");
 //         });
 // });
-
