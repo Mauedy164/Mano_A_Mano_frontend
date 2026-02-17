@@ -80,9 +80,6 @@ if (navbar_container_index) {
                                 1 0 1 1 0 2 1 1 0 0 1 0-2" />
                             </svg>
                                 </button>
-                         
-
-
 
                                 <i class="bi bi-person fs-5"></i>
                                     <a class="nav-link text-dark" href="./pages/comprador.html">
@@ -112,17 +109,33 @@ if (navbar_container_index) {
                         <div id="carrito_productos" class="offcanvas-body">
                             aqui agrega los produtos
 
-                <div class="mt-auto">
-                <a href="./pages/checkout.html" class="btn btn-dark w-100">
-                    Proceder al pago
-                </a>
-                </div>
-                
-            </div>
-            
+                            <div class="mt-auto">
+                            <a href="./pages/checkout.html" class="btn btn-dark w-100">
+                                Proceder al pago
+                            </a>
+                            </div>
+                        </div>
+                        </div>
 
-            
-            </div>            
+                        <!-- Offcanvas FAVORITOS -->
+                        <div class="offcanvas offcanvas-end" tabindex="-1"
+                            id="offcanvasFavoritos" aria-labelledby="offcanvasFavoritosLabel">
+                        <div class="offcanvas-header">
+                            <h5 id="offcanvasFavoritosLabel">Mis favoritos</h5>
+                            <button type="button" class="btn-close text-reset"
+                                    data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                        </div>
+                        <div id="favoritos_productos" class="offcanvas-body">
+                            Aquí van tus productos favoritos
+
+                            <div class="mt-auto">
+                            <button class="btn btn-dark w-100 mb-2" id="moverAlCarrito">
+                                Mover todo al carrito
+                            </button>
+                            <a href="#" class="btn btn-dark w-100">Ver lista completa</a>
+                            </div>
+                        </div>
+                        </div>
 
   `;
 }
@@ -169,22 +182,31 @@ if (navbar_container) {
                                     <i class="bi bi-search"></i>
                                 </form>
 
-                                <i class="bi bi-cart-fill"></i>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="currentColor"
-                                    class="bi bi-heart" viewBox="0 0 16 16">
-                                    <path
-                                        d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15" />
-                                </svg>
-                                <i class="bi bi-cart fs-5"></i>
-                                <button class="btn p-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="currentColor"
-                                        class="bi bi-cart-fill" viewBox="0 0 16 16">
-                                        <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5
-                                        0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01
-                                        3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7
-                                        0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1
-                                        1 0 1 1 0 2 1 1 0 0 1 0-2" />
-                                    </svg>
+                                <button class="btn p-0" type="button"
+                                data-bs-toggle="offcanvas"
+                                data-bs-target="#offcanvasFavoritos"
+                                aria-controls="offcanvasFavoritos">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23"
+                                fill="currentColor" class="bi bi-heart-fill" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd"
+                                d="M8 1.314C12.438-3.248 23.534 4.735 8 15
+                                -7.534 4.736 3.562-3.248 8 1.314z"/>
+                            </svg>
+                        </button>
+
+                        <!-- Botón Carrito -->
+                        <button class="btn p-0" type="button"
+                                data-bs-toggle="offcanvas"
+                                data-bs-target="#offcanvasRight"
+                                aria-controls="offcanvasRight">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23"
+                                fill="currentColor" class="bi bi-cart-fill" viewBox="0 0 16 16">
+                            <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5
+                                0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01
+                                3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7
+                                0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1
+                                1 0 1 1 0 2 1 1 0 0 1 0-2" />
+                            </svg>
                                 </button>
 
                                 <i class="bi bi-person fs-5"></i>
@@ -215,13 +237,34 @@ if (navbar_container) {
                         <div id="carrito_productos" class="offcanvas-body">
                             aqui agrega los produtos
 
-                <div class="mt-auto">
-                <a href="./pages/checkout.html" class="btn btn-dark w-100">
-                    Proceder al pago
-                </a>
-                </div>
-                
-            </div>            
+                            <div class="mt-auto">
+                            <a href="./pages/checkout.html" class="btn btn-dark w-100">
+                                Proceder al pago
+                            </a>
+                            </div>
+                        </div>
+                        </div>
+
+                        <!-- Offcanvas FAVORITOS -->
+                        <div class="offcanvas offcanvas-end" tabindex="-1"
+                            id="offcanvasFavoritos" aria-labelledby="offcanvasFavoritosLabel">
+                        <div class="offcanvas-header">
+                            <h5 id="offcanvasFavoritosLabel">Mis favoritos</h5>
+                            <button type="button" class="btn-close text-reset"
+                                    data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                        </div>
+                        <div id="favoritos_productos" class="offcanvas-body">
+                            Aquí van tus productos favoritos
+
+                            <div class="mt-auto">
+                            <button class="btn btn-dark w-100 mb-2" id="moverAlCarrito">
+                                Mover todo al carrito
+                            </button>
+                            <a href="#" class="btn btn-dark w-100">Ver lista completa</a>
+                            </div>
+                        </div>
+                        </div>
+            
   `
 }
 
