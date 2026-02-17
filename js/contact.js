@@ -8,7 +8,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Regex
   const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
-  const regexPhone = /^[0-9]{10}$/;
   const regexNombre = /^[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+$/;
 
   // Crear contenedores de error
@@ -106,6 +105,46 @@ document.addEventListener("DOMContentLoaded", function () {
     return true;
   }
 
+  function validatePhoneNumber(phone) {
+    const num = phone.replace(/\D/g, '');
+
+    if (num.length !== 10) {
+      return { valid: false, message: "Deben ser exactamente 10 dígitos numéricos." };
+    }
+
+    if (num[0] === '0') {
+      return { valid: false, message: "El número no puede comenzar con 0." };
+    }
+
+    if (/^(\d)\1{9}$/.test(num)) {
+      return { valid: false, message: "El número no puede tener todos los dígitos iguales." };
+    }
+
+    if (/^(\d)(\d)\1\2\1\2\1\2\1\2$/.test(num)) {
+      return { valid: false, message: "El número contiene un patrón no válido." };
+    }
+
+    const digits = num.split('').map(Number);
+
+    const isAsc = digits.every((d, idx) => {
+      if (idx === 0) return true;
+      const prev = digits[idx - 1];
+      return d === (prev + 1) % 10;
+    });
+
+    const isDesc = digits.every((d, idx) => {
+      if (idx === 0) return true;
+      const prev = digits[idx - 1];
+      return d === (prev - 1 + 10) % 10;
+    });
+
+    if (isAsc || isDesc) {
+      return { valid: false, message: "El número contiene una secuencia no válida." };
+    }
+
+    return { valid: true, message: "" };
+  }
+
   function validatePhone() {
     const phone = inputPhone.value.trim();
 
@@ -117,8 +156,10 @@ document.addEventListener("DOMContentLoaded", function () {
       return false;
     }
 
-    if (!regexPhone.test(phone)) {
-      errorPhone.textContent = "Deben ser exactamente 10 dígitos numéricos.";
+    const validation = validatePhoneNumber(phone);
+
+    if (!validation.valid) {
+      errorPhone.textContent = validation.message;
       errorPhone.style.display = "block";
       inputPhone.classList.add("is-invalid");
       inputPhone.classList.remove("is-valid");
@@ -163,20 +204,26 @@ document.addEventListener("DOMContentLoaded", function () {
   inputNombre.addEventListener("input", function () {
     const nombre = inputNombre.value.trim();
 
-    if (nombre.length > 0) {
+    if (nombre === "") {
       errorNombre.textContent = "";
       errorNombre.style.display = "none";
       inputNombre.classList.remove("is-invalid");
+      inputNombre.classList.remove("is-valid");
+    } else {
+      validateNombre();
     }
   });
 
   correoIpt.addEventListener("input", function () {
     const correo = correoIpt.value.trim();
 
-    if (correo.length > 0) {
+    if (correo === "") {
       errorCorreo.textContent = "";
       errorCorreo.style.display = "none";
       correoIpt.classList.remove("is-invalid");
+      correoIpt.classList.remove("is-valid");
+    } else {
+      validateEmail();
     }
   });
 
@@ -187,21 +234,44 @@ document.addEventListener("DOMContentLoaded", function () {
       errorPhone.textContent = "";
       errorPhone.style.display = "none";
       inputPhone.classList.remove("is-invalid");
-    } else if (!regexPhone.test(phone)) {
-      errorPhone.textContent = "Deben ser exactamente 10 dígitos numéricos.";
-      errorPhone.style.display = "block";
-      inputPhone.classList.add("is-invalid");
     } else {
+      const validation = validatePhoneNumber(phone);
+      if (!validation.valid) {
+        errorPhone.textContent = validation.message;
+        errorPhone.style.display = "block";
+        inputPhone.classList.add("is-invalid");
+      } else {
+        errorPhone.textContent = "";
+        errorPhone.style.display = "none";
+        inputPhone.classList.remove("is-invalid");
+      }
+    }
+  });
+
+  inputPhone.addEventListener("input", function () {
+    const phone = inputPhone.value.trim();
+
+    if (phone === "") {
       errorPhone.textContent = "";
       errorPhone.style.display = "none";
       inputPhone.classList.remove("is-invalid");
+    } else {
+      const validation = validatePhoneNumber(phone);
+      if (!validation.valid) {
+        errorPhone.textContent = validation.message;
+        errorPhone.style.display = "block";
+        inputPhone.classList.add("is-invalid");
+      } else {
+        errorPhone.textContent = "";
+        errorPhone.style.display = "none";
+        inputPhone.classList.remove("is-invalid");
+      }
     }
   });
 
   messageInput.addEventListener("input", function () {
     const length = messageInput.value.length;
 
-    // Crear/actualizar contador
     let charCounter = document.getElementById("charCounter");
     if (!charCounter) {
       charCounter = document.createElement("div");
@@ -221,7 +291,6 @@ document.addEventListener("DOMContentLoaded", function () {
       charCounter.textContent = `${length}/500`;
       charCounter.style.color = length > 500 ? "red" : "#666";
 
-      // Mostrar error cuando > 500
       if (length > 500) {
         messageError.textContent =
           "El mensaje debe tener máximo 500 caracteres";
@@ -229,7 +298,6 @@ document.addEventListener("DOMContentLoaded", function () {
         messageInput.classList.add("is-invalid");
         messageInput.classList.remove("is-valid");
       } else {
-        // Remover error cuando <= 500
         messageError.textContent = "";
         messageError.style.display = "none";
         messageInput.classList.remove("is-invalid");
@@ -244,18 +312,16 @@ document.addEventListener("DOMContentLoaded", function () {
   inputPhone.addEventListener("blur", validatePhone);
   messageInput.addEventListener("blur", validateMessage);
 
-  // ==================== FORM SUBMIT ====================
+  // ==================== SUBMIT ====================
 
   form.addEventListener("submit", function (e) {
     e.preventDefault();
 
-    // Validar todos los campos
     const isNombreValid = validateNombre();
     const isEmailValid = validateEmail();
     const isPhoneValid = validatePhone();
     const isMessageValid = validateMessage();
 
-    // Si alguno es inválido, no enviar
     if (!isNombreValid || !isEmailValid || !isPhoneValid || !isMessageValid) {
       alert("Por favor, rellena el formulario como se indica");
       return;
@@ -274,7 +340,6 @@ document.addEventListener("DOMContentLoaded", function () {
       });
   });
 
-  // ==================== EMAILJS INIT ====================
   (function () {
     emailjs.init("iO5ES5byaaXR9w8yL");
   })();
