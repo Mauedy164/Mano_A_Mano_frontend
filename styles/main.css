@@ -11,7 +11,8 @@
 
 /* Navbar */
 
-a{
+a svg{
+    color: rgb(41, 41, 41);
     text-decoration: none;
 }
 
