@@ -9,6 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // Regex
   const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
   const regexNombre = /^[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+$/;
+  const regexNombre2 = /^(?!.*(.)\1{2}).*$/;
 
   // Crear contenedores de error
   let errorNombre = document.getElementById("errorNombre");
@@ -64,8 +65,16 @@ document.addEventListener("DOMContentLoaded", function () {
       return false;
     }
 
-    if (nombre.length < 2) {
-      errorNombre.textContent = "El nombre debe tener al menos 2 caracteres.";
+    if (nombre === "") {
+      errorNombre.textContent = "El nombre es requerido.";
+      errorNombre.style.display = "block";
+      inputNombre.classList.add("is-invalid");
+      inputNombre.classList.remove("is-valid");
+      return false;
+    }
+
+    if (nombre.length < 3) {
+      errorNombre.textContent = "El nombre debe tener al menos 3 caracteres.";
       errorNombre.style.display = "block";
       inputNombre.classList.add("is-invalid");
       inputNombre.classList.remove("is-valid");
@@ -74,6 +83,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (!regexNombre.test(nombre)) {
       errorNombre.textContent = "Solo letras y espacios permitidos.";
+      errorNombre.style.display = "block";
+      inputNombre.classList.add("is-invalid");
+      inputNombre.classList.remove("is-valid");
+      return false;
+    }
+
+    if (!regexNombre2.test(nombre)) {
+      errorNombre.textContent = "Ningún carácter puede repetirse más de 2 veces consecutivas.";
       errorNombre.style.display = "block";
       inputNombre.classList.add("is-invalid");
       inputNombre.classList.remove("is-valid");
