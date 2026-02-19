@@ -6,14 +6,12 @@
 
 /* barra anuncio oferta */
 
-
-
 /* Navbar */
 
 const navbar_container_index = document.getElementById("navbar_container_index");
 const navbar_container = document.getElementById("navbar_container");
 
-if(navbar_container_index){
+if (navbar_container_index) {
   navbar_container_index.innerHTML = `
   <nav>
                 <nav class="navbar navbar-expand-lg bg-light px-4">
@@ -83,11 +81,14 @@ if(navbar_container_index){
                             </svg>
                                 </button>
 
-                                <i class="bi bi-person-fill fs-5"></i>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="black"
+                                <i class="bi bi-person-fill fs-5">
+                                <a href="./pages/comprador.html">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
                                     <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/>
                                     </svg>
+                                </a>
+
+                                </i>
                             </div>
 
                         </div>
@@ -108,7 +109,7 @@ if(navbar_container_index){
                             aqui agrega los produtos
 
                             <div class="mt-auto">
-                            <a href="./pages/checkout.html" class="btn btn-dark w-100">
+                            <a href="./pages/carrito.html" class="btn btn-dark w-100">
                                 Proceder al pago
                             </a>
                             </div>
@@ -135,10 +136,10 @@ if(navbar_container_index){
                         </div>
                         </div>
 
-  `
+  `;
 }
 
-if(navbar_container){
+if (navbar_container) {
   navbar_container.innerHTML = `
               <nav>
 
@@ -207,10 +208,17 @@ if(navbar_container){
                             </svg>
                                 </button>
 
-                                <i class="bi bi-person-fill fs-5"></i>
+                                <i class="bi bi-person-fill fs-5">
+                                <a href="../pages/comprador.html">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
                                     <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/>
                                     </svg>
+                                </a>
+
+                                </i>
+
+                                
+                                    
 
                                </div>
 
@@ -232,7 +240,7 @@ if(navbar_container){
                             aqui agrega los produtos
 
                             <div class="mt-auto">
-                            <a href="./pages/checkout.html" class="btn btn-dark w-100">
+                            <a href="../pages/carrito.html" class="btn btn-dark w-100">
                                 Proceder al pago
                             </a>
                             </div>
@@ -259,9 +267,8 @@ if(navbar_container){
                         </div>
                         </div>
             
-  `
+  `;
 }
-
 
 /*
 ==============================
@@ -272,9 +279,8 @@ if(navbar_container){
 const footer_container_index = document.getElementById("footer_container_index");
 const footer_container = document.getElementById("footer_container");
 
-if(footer_container_index){
-  footer_container_index.innerHTML = 
-  `
+if (footer_container_index) {
+  footer_container_index.innerHTML = `
   <div class="piedepagina">
             <div class="piedepagina-container container-fluid">
                 <div class="piedepagina-grid row row-col-1 row-col-md-12">
@@ -331,12 +337,11 @@ if(footer_container_index){
                 </div>
             </div>
         </div>
-  `
+  `;
 }
 
-if(footer_container){
-  footer_container.innerHTML = 
-  `
+if (footer_container) {
+  footer_container.innerHTML = `
           <div class="piedepagina">
             <div class="piedepagina-container container-fluid">
                 <div class="piedepagina-grid row row-col-1 row-col-md-12">
@@ -403,7 +408,7 @@ if(footer_container){
                 </div>
             </div>
         </div>
-  `
+  `;
 }
 
 /*
@@ -412,18 +417,11 @@ if(footer_container){
 ==============================
 */
 
-
-
 /*
 ==============================
 |    singUp (Crear cuenta)   |
 ==============================
 */
-
-
-
-
-
 
 /*
 ==============================
@@ -431,15 +429,11 @@ if(footer_container){
 ==============================
 */
 
-
-
-
 /*
 ==============================
 |       cart (Carrito)       |
 ==============================
 */
-
 
 /*
 =================================
@@ -447,14 +441,11 @@ if(footer_container){
 =================================
 */
 
-
-
 /*
 ==================================
 |  aboutMe (Acerca de nosotros)  |
 ==================================
 */
-
 
 // NUESTRA HISTORIA
 
@@ -464,21 +455,17 @@ if(footer_container){
 
 // NUESTROS SELLOS
 
-
 /*
 ==================================
 |  contact (Página de contacto)  |
 ==================================
 */
 
-
-
 /*
 ===================================
 |  producto (Página de producto)  |
 ===================================
 */
-
 
 /*  
 ======================================
@@ -492,8 +479,7 @@ if(footer_container){
 // const correoIpt = document.getElementById("user_email");
 // const miFormulario = document.getElementById("miFormulario");
 
-
-// // Declaración de constante que almacena una expresión regular para correo 
+// // Declaración de constante que almacena una expresión regular para correo
 // const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 
 // // Agregamos un evento para cuando se haga click en el botón
@@ -518,11 +504,10 @@ if(footer_container){
 //     mensajeError.style.cssText = "color: red; font-size: 0.9em; margin-top: 5px;";
 //     mensajeError.textContent = "Por favor, ingresa un correo válido.";
 
-//     correoIpt.parentNode.appendChild(mensajeError);    
+//     correoIpt.parentNode.appendChild(mensajeError);
 //   }
-  
-// });
 
+// });
 
 // // Validación de teléfono
 
@@ -556,7 +541,7 @@ if(footer_container){
 //         errorPhone.textContent = '';
 //         inputPhone.classList.remove('is-invalid');
 //         // Opcional: poner borde verde si usas Bootstrap
-//         inputPhone.classList.add('is-valid'); 
+//         inputPhone.classList.add('is-valid');
 //     }
 // });
 // // Validación de nombre
@@ -564,7 +549,7 @@ if(footer_container){
 // document.addEventListener('DOMContentLoaded', function() {
 //   const form = document.querySelector('.form_container form');
 //   const inputNombre = document.getElementById('user_name');
-  
+
 //   let error = document.getElementById('errorNombre'); //Se crea el error debajo del input
 //   if (!error) {
 //     error = document.createElement('div');
@@ -575,7 +560,7 @@ if(footer_container){
 
 //   form.addEventListener('submit', function(event) {
 //     const nombre = inputNombre.value.trim();
-    
+
 //     // Limpiar error previo
 //     error.textContent = '';
 //     inputNombre.classList.remove('is-invalid');
@@ -589,7 +574,7 @@ if(footer_container){
 //       inputNombre.focus();
 //       return false;
 //     }
-    
+
 //     if (nombre.length < 2) { //El nombre debe tener al menos 2 caracteres
 //       error.textContent = 'El nombre debe tener al menos 2 caracteres.';
 //       inputNombre.classList.add('is-invalid');
@@ -597,7 +582,7 @@ if(footer_container){
 //       inputNombre.focus();
 //       return false;
 //     }
-    
+
 //     const regex = /^[A-Za-zÁÉÍÓÚÑáéíóúñ\s]+$/; //Admite letras mayúsculas, minúsculas, acentos y espacios
 //     if (!regex.test(nombre)) {
 //       error.textContent = 'Solo letras y espacios permitidos.';
@@ -608,7 +593,6 @@ if(footer_container){
 //     }
 //   });
 // });
-
 
 // // Manda el formulario al correo auxiliarmanoamano@gmail.com
 
@@ -630,4 +614,3 @@ if(footer_container){
 //             alert("Hubo un error al enviar el mensaje ❌");
 //         });
 // });
-
