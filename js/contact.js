@@ -120,6 +120,10 @@ document.addEventListener("DOMContentLoaded", function () {
       return { valid: false, message: "El número no puede tener todos los dígitos iguales." };
     }
 
+    if (!/^(?!.*(\d)\1{3})\d{10}$/.test(num)){
+      return { valid: false, message: "El número no puede tener más de cuatro numeros iguales consecutivos." };
+    }
+
     if (/^(\d)(\d)\1\2\1\2\1\2\1\2$/.test(num)) {
       return { valid: false, message: "El número contiene un patrón no válido." };
     }
