@@ -4,7 +4,7 @@
     "id": 1,
     "Name": "Bolso artesanal de palma",
     "Description":"Bolso tejido a mano con fibras naturales de palma, ideal para uso diario.",
-    "img": "",
+    "img": "./media/productos_carrito/Bolso artesanal de palma.png",
     "Price": 350,
     "Tags" : ["artesanal", "bolso", "palma"],
     "Seller": "Artesanías López",
