@@ -17,8 +17,7 @@ document.addEventListener("DOMContentLoaded", function () {
     errorNombre = document.createElement("div");
     errorNombre.id = "errorNombre";
     errorNombre.classList.add("invalid-feedback");
-    errorNombre.style.cssText =
-      "display: block; color: red; font-size: 0.9em; margin-top: 5px;";
+    errorNombre.style.cssText = "display: block; color: red; font-size: 0.9em; margin-top: 5px;";
     inputNombre.parentNode.appendChild(errorNombre);
   }
 
@@ -27,8 +26,7 @@ document.addEventListener("DOMContentLoaded", function () {
     errorCorreo = document.createElement("div");
     errorCorreo.id = "error-correo";
     errorCorreo.classList.add("invalid-feedback");
-    errorCorreo.style.cssText =
-      "display: block; color: red; font-size: 0.9em; margin-top: 5px;";
+    errorCorreo.style.cssText = "display: block; color: red; font-size: 0.9em; margin-top: 5px;";
     correoIpt.parentNode.appendChild(errorCorreo);
   }
 
@@ -37,8 +35,7 @@ document.addEventListener("DOMContentLoaded", function () {
     errorPhone = document.createElement("div");
     errorPhone.id = "errorPhone";
     errorPhone.classList.add("invalid-feedback");
-    errorPhone.style.cssText =
-      "display: block; color: red; font-size: 0.9em; margin-top: 5px;";
+    errorPhone.style.cssText = "display: block; color: red; font-size: 0.9em; margin-top: 5px;";
     inputPhone.parentNode.appendChild(errorPhone);
   }
 
@@ -47,8 +44,7 @@ document.addEventListener("DOMContentLoaded", function () {
     messageError = document.createElement("div");
     messageError.id = "messageError";
     messageError.classList.add("invalid-feedback");
-    messageError.style.cssText =
-      "display: block; color: red; font-size: 0.9em; margin-top: 5px;";
+    messageError.style.cssText = "display: block; color: red; font-size: 0.9em; margin-top: 5px;";
     messageInput.parentNode.appendChild(messageError);
   }
 
@@ -123,13 +119,13 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function validatePhoneNumber(phone) {
-    const num = phone.replace(/\D/g, '');
+    const num = phone.replace(/\D/g, "");
 
     if (num.length !== 10) {
       return { valid: false, message: "Deben ser exactamente 10 dígitos numéricos." };
     }
 
-    if (num[0] === '0') {
+    if (num[0] === "0") {
       return { valid: false, message: "El número no puede comenzar con 0." };
     }
 
@@ -137,15 +133,18 @@ document.addEventListener("DOMContentLoaded", function () {
       return { valid: false, message: "El número no puede tener todos los dígitos iguales." };
     }
 
-    if (!/^(?!.*(\d)\1{3})\d{10}$/.test(num)){
-      return { valid: false, message: "El número no puede tener más de cuatro numeros iguales consecutivos." };
+    if (!/^(?!.*(\d)\1{3})\d{10}$/.test(num)) {
+      return {
+        valid: false,
+        message: "El número no puede tener más de cuatro numeros iguales consecutivos.",
+      };
     }
 
     if (/^(\d)(\d)\1\2\1\2\1\2\1\2$/.test(num)) {
       return { valid: false, message: "El número contiene un patrón no válido." };
     }
 
-    const digits = num.split('').map(Number);
+    const digits = num.split("").map(Number);
 
     const isAsc = digits.every((d, idx) => {
       if (idx === 0) return true;
@@ -197,8 +196,8 @@ document.addEventListener("DOMContentLoaded", function () {
   function validateMessage() {
     const messageValue = messageInput.value.trim();
 
-    if (messageValue === "") {
-      messageError.textContent = "El mensaje es requerido";
+    if (messageValue < 10) {
+      messageError.textContent = "El mensaje debe tener mínimo 10 caracteres";
       messageError.style.display = "block";
       messageInput.classList.add("is-invalid");
       messageInput.classList.remove("is-valid");
@@ -310,11 +309,15 @@ document.addEventListener("DOMContentLoaded", function () {
     } else {
       charCounter.style.display = "block";
       charCounter.textContent = `${length}/500`;
-      charCounter.style.color = length > 500 ? "red" : "#666";
+      charCounter.style.color = length < 10 || length > 500 ? "red" : "#666";
 
       if (length > 500) {
-        messageError.textContent =
-          "El mensaje debe tener máximo 500 caracteres";
+        messageError.textContent = "El mensaje debe tener máximo 500 caracteres";
+        messageError.style.display = "block";
+        messageInput.classList.add("is-invalid");
+        messageInput.classList.remove("is-valid");
+      } else if (length < 10) {
+        messageError.textContent = "El mensaje debe tener mínimo 10 caracteres";
         messageError.style.display = "block";
         messageInput.classList.add("is-invalid");
         messageInput.classList.remove("is-valid");
