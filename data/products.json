@@ -1,0 +1,205 @@
+[
+
+    {
+    "id": 1,
+    "Name": "Bolso artesanal de palma",
+    "Description":"Bolso tejido a mano con fibras naturales de palma, ideal para uso diario.",
+    "img": "",
+    "Price": 350,
+    "Tags" : ["artesanal", "bolso", "palma"],
+    "Seller": "Artesanías López",
+    "Product_details" : {
+        "color" : ["beige", "café", "natural"],
+        "brand" : "ManoAMano Artesanos",
+        "sizes" : ["chico", "mediano", "grande"],
+        "model" : "BP-2026",
+        "dimensions" : "30 x 25 cm",
+        "weight" :"400 g",
+        "volume" :"8 L" 
+    }
+
+},
+
+    {
+    "id": 2,
+    "Name": "Taza de barro pintada a mano",
+    "Description":"Taza de barro cocido con diseños tradicionales mexicanos.",
+    "img": "",
+    "Price": 180,
+    "Tags" : ["barro", "taza", "cocina"],
+    "Seller": "Cerámica Hernández",
+    "Product_details" : {
+        "color" : ["rojo", "azul", "blanco","morado"],
+        "brand" : "Tradición Viva",
+        "sizes" : ["único"],
+        "model" : "TB-110",
+        "dimensions" : "10 x 8 cm",
+        "weight" :"300 g",
+        "volume" :"350 ml" 
+    }
+
+},
+
+    {
+    "id": 3,
+    "Name": "Collar artesanal de chaquira",
+    "Description":"Collar elaborado a mano con chaquiras de colores.",
+    "img": "",
+    "Price": 220,
+    "Tags" : ["joyería", "collar", "chaquira"],
+    "Seller": "Arte Wixárika",
+    "Product_details" : {
+        "color" : ["multicolor", "azul", "verde"],
+        "brand" : "Arte Ancestral",
+        "sizes" : ["ajustable"],
+        "model" : "CC-220",
+        "dimensions" : "45 x 2 cm",
+        "weight" :"80 g",
+        "volume" :"N/A" 
+    }
+
+},
+
+    {
+    "id": 4,
+    "Name": "Alebrije de madera",
+    "Description":"Figura tallada y pintada a mano con colores vibrantes.",
+    "img": "",
+    "Price": 550,
+    "Tags" : ["alebrije", "decoración", "madera"],
+    "Seller": "Taller Oaxaca",
+    "Product_details" : {
+        "color" : ["multicolor"],
+        "brand" : "Alebrijes del Sur",
+        "sizes" : ["mediano"],
+        "model" : "AL-330",
+        "dimensions" : "20 x 15 cm",
+        "weight" :"600 g",
+        "volume" :"N/A"
+    }
+
+},
+
+    {
+    "id": 5,
+    "Name": "Rebozo artesanal",
+    "Description":"Rebozo tejido en telar tradicional.",
+    "img": "",
+    "Price": 480,
+    "Tags" : ["ropa", "rebozo", "textil"],
+    "Seller": "Textiles García",
+    "Product_details" : {
+        "color" : ["rojo", "negro", "azul"],
+        "brand" : "Raíces Mexicanas",
+        "sizes" : ["único"],
+        "model" : "RB-501",
+        "dimensions" : "180 x 60 cm",
+        "weight" :"350 g",
+        "volume" :"N/A"
+    }
+
+},
+
+    {
+    "id": 6,
+    "Name": "Pulsera de cuero artesanal",
+    "Description":"Pulsera hecha a mano con cuero genuino.",
+    "img": "",
+    "Price": 150,
+    "Tags" : ["joyería", "cuero", "pulsera"],
+    "Seller": "Cuero Fino",
+    "Product_details" : {
+        "color" : ["café", "negro"],
+        "brand" : "Cuero Artesanal",
+        "sizes" : ["ajustable"],
+        "model" : "ajustable",
+        "dimensions" : "22 x 2 cm",
+        "weight" :"50 g",
+        "volume" :"N/A" 
+    }
+
+},
+
+    {
+    "id": 7,
+    "Name": "Canasta de mimbre",
+    "Description":"Producto 7",
+    "img": "",
+    "Price": 300,
+    "Tags" : ["hogar", "canasta", "mimbre"],
+    "Seller": "Artesanos del Campo",
+    "Product_details" : {
+        "color" : ["natural", "café"],
+        "brand" : "Campo Vivo",
+        "sizes" : ["mediano", "grande"],
+        "model" : "CM-700",
+        "dimensions" : "35 x 30 cm",
+        "weight" :"500 g",
+        "volume" :"12 L" 
+    }
+
+},
+
+    {
+    "id": 8,
+    "Name": "Portavasos tejidos",
+    "Description":"Set de portavasos tejidos a mano.",
+    "img": "",
+    "Price": 120,
+    "Tags" : ["hogar", "tejido", "decoración"],
+    "Seller": "Tejidos Ana",
+    "Product_details" : {
+        "color" : ["beige", "blanco"],
+        "brand" : "Tejidos Tradicionales",
+        "sizes" : ["único"],
+        "model" : "PV-88",
+        "dimensions" : "10 x 10 cm",
+        "weight" :"120 g",
+        "volume" :"N/A" 
+    }
+
+},
+
+    {
+    "id": 9,
+    "Name": "Figura de barro decorativa",
+    "Description":"Figura artesanal decorativa hecha de barro.",
+    "img": "",
+    "Price": 260,
+    "Tags" : ["decoración", "barro", "arte"],
+    "Seller": "Barro Vivo",
+    "Product_details" : {
+        "color" : ["terracota"],
+        "brand" : "Arte Popular",
+        "sizes" : ["mediano"],
+        "model" : "FB-909",
+        "dimensions" : "18 x 12 cm",
+        "weight" :"700 g",
+        "volume" :"N/A" 
+    }
+
+},
+
+    {
+    "id": 10,
+    "Name": "Sombrero artesanal",
+    "Description":"Sombrero tejido a mano con palma natural.",
+    "img": "",
+    "Price": 420,
+    "Tags" : ["sombrero", "ropa", "palma"],
+    "Seller": "Sombreros del Norte",
+    "Product_details" : {
+        "color" : ["beige", "natural"],
+        "brand" : "Tradición Norteña",
+        "sizes" : ["chico", "mediano", "grande"],
+        "model" : "SH-300",
+        "dimensions" : "40 x 35 cm",
+        "weight" :"250 g",
+        "volume" :"N/A" 
+    }
+
+}
+
+
+
+]
