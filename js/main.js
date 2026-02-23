@@ -342,11 +342,12 @@ if (footer_container_index) {
                         <p>Suscribirse</p>
                         <p>Obtén 10% en tu primera orden</p>
                         <div class="input-wrapper">
-                            <input type="email" placeholder="Ingresa tu correo" required />
-                            <button type="submit">
-                                <span class="arrow-icon">➤</span>
-                            </button>
+                        <input type="email" id="footer_email" placeholder="Ingresa tu correo" required />
+                        <button type="button" id="footer_subscribe">
+                            <span class="arrow-icon">➤</span>
+                        </button>
                         </div>
+                        <div id="footer_email_error" class="footer-error"></div>
                     </div>
                     <div class="col">
                         <h4>Soporte</h4>
@@ -403,11 +404,12 @@ if (footer_container) {
                         <p>Suscribirse</p>
                         <p>Obtén 10% en tu primera orden</p>
                         <div class="input-wrapper">
-                            <input type="email" placeholder="Ingresa tu correo" required />
-                            <button type="submit">
+                            <input type="email" id="footer_email" placeholder="Ingresa tu correo" required />
+                            <button type="button" id="footer_subscribe">
                                 <span class="arrow-icon">➤</span>
                             </button>
                         </div>
+                        <div id="footer_email_error" class="footer-error"></div>
                     </div>
 
                     <div class="col">
@@ -463,6 +465,55 @@ if (footer_container) {
         </div>
   `;
 }
+
+/*
+==============================
+|     Footer Email Validate  |
+==============================
+*/
+
+document.addEventListener("click", function (e) {
+
+  if (e.target.closest("#footer_subscribe")) {
+
+    const emailInput = document.getElementById("footer_email");
+
+    if (!emailInput) return;
+
+    const email = emailInput.value.trim();
+
+    const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+
+    // Crear mensaje error si no existe
+    let errorDiv = document.getElementById("footer_email_error");
+
+    if (!errorDiv) {
+      errorDiv = document.createElement("div");
+      errorDiv.id = "footer_email_error";
+      errorDiv.style.color = "red";
+      errorDiv.style.fontSize = "0.9em";
+      errorDiv.style.marginTop = "5px";
+      emailInput.parentNode.appendChild(errorDiv);
+    }
+
+    if (!regexEmail.test(email)) {
+      errorDiv.textContent = "Ingresa un correo válido nombre@dominio.com";
+      emailInput.classList.add("is-invalid");
+      emailInput.classList.remove("is-valid");
+      return;
+    }
+
+    // Si es válido
+    errorDiv.textContent = "";
+    emailInput.classList.remove("is-invalid");
+    emailInput.classList.add("is-valid");
+
+    alert("Ya estás suscrito");
+  }
+
+});
+
+
 
 /*
 ==============================
