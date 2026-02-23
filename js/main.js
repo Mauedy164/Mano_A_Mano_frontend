@@ -13,7 +13,7 @@ const navbar_container = document.getElementById("navbar_container");
 
 if (navbar_container_index) {
   navbar_container_index.innerHTML = `
-  <nav>
+            <nav>
                 <nav class="navbar navbar-expand-lg bg-light px-4">
                     <div class="container-fluid">
 
@@ -73,13 +73,17 @@ if (navbar_container_index) {
                                 aria-controls="offcanvasRight">
                             <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23"
                                 fill="currentColor" class="bi bi-cart-fill" viewBox="0 0 16 16">
-                            <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5
+                                <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5
                                 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01
                                 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7
                                 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1
                                 1 0 1 1 0 2 1 1 0 0 1 0-2" />
                             </svg>
-                                </button>
+
+                            <!-- Contador carrito-->
+                            <span id = "cuenta-carrito"> 0 </span>
+
+                        </button>
 
                                 <i class="bi bi-person-fill fs-5">
                                 <a href="./pages/comprador.html">
@@ -97,24 +101,47 @@ if (navbar_container_index) {
 
             </nav>
 
-                                    <!-- Offcanvas CARRITO -->
-                        <div class="offcanvas offcanvas-end" tabindex="-1"
-                            id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
-                        <div class="offcanvas-header">
-                            <h5 id="offcanvasRightLabel">Carrito de compras</h5>
-                            <button type="button" class="btn-close text-reset"
-                                    data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                        </div>
-                        <div id="carrito_productos" class="offcanvas-body">
-                            aqui agrega los produtos
-
-                            <div class="mt-auto">
-                            <a href="./pages/carrito.html" class="btn btn-dark w-100">
-                                Proceder al pago
-                            </a>
+           <!-- Offcanvas CARRITO -->
+            <div class="offcanvas offcanvas-end" tabindex="-1"
+                id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+                <div class="offcanvas-header">
+                    <h5 id="offcanvasRightLabel">Carrito de compras</h5>
+                    <button type="button" class="btn-close text-reset"
+                         data-bs-dismiss="offcanvas" aria-label="Close">
+                    </button>
+                </div>
+                
+                <div id="carrito_productos" class="offcanvas-body">
+                    <div class="card mb-2">
+                        <div class="row g-0">
+                            <div class="col-4">
+                                <img src="./img/zapato.png" class="img-fluid rounded-start">
+                            </div>
+                            
+                            <div class="col-8">
+                                <div class="card-body">
+                                    <h6>Zapatos SAM</h6>
+                                    <p>$450</p>
+                                    <p>Cantidad: 1</p>
+                                </div>
                             </div>
                         </div>
-                        </div>
+                    </div>
+
+                    <h5> Total: $ <span id = "TotalCarrito"> 0 </span> <h5>
+                    <button class = "btn btn-dark w-100" onclick = "limpiarCarrito()">
+                        Limpiar carrito
+                    </button>
+                </div>
+
+                <div class="mt-auto">
+                    <a href="../pages/carrito.html" class="btn btn-dark w-100">
+                        Proceder al pago
+                    </a>
+                </div>
+            </div>
+                    
+
 
                         <!-- Offcanvas FAVORITOS -->
                         <div class="offcanvas offcanvas-end" tabindex="-1"
@@ -206,7 +233,10 @@ if (navbar_container) {
                                 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1
                                 1 0 1 1 0 2 1 1 0 0 1 0-2" />
                             </svg>
-                                </button>
+
+                            <!-- Contador carrito-->
+                            <span id = "cuenta-carrito"> 0 </span>
+                        </button>
 
                                 <i class="bi bi-person-fill fs-5">
                                 <a href="../pages/comprador.html">
@@ -228,44 +258,67 @@ if (navbar_container) {
 
             </nav>
 
-                                    <!-- Offcanvas CARRITO -->
-                        <div class="offcanvas offcanvas-end" tabindex="-1"
-                            id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
-                        <div class="offcanvas-header">
-                            <h5 id="offcanvasRightLabel">Carrito de compras</h5>
-                            <button type="button" class="btn-close text-reset"
-                                    data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                        </div>
-                        <div id="carrito_productos" class="offcanvas-body">
-                            aqui agrega los produtos
-
-                            <div class="mt-auto">
-                            <a href="../pages/carrito.html" class="btn btn-dark w-100">
-                                Proceder al pago
-                            </a>
+           <!-- Offcanvas CARRITO -->
+            <div class="offcanvas offcanvas-end" tabindex="-1"
+                id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+                <div class="offcanvas-header">
+                    <h5 id="offcanvasRightLabel">Carrito de compras</h5>
+                    <button type="button" class="btn-close text-reset"
+                         data-bs-dismiss="offcanvas" aria-label="Close">
+                    </button>
+                </div>
+                
+                <div id="carrito_productos" class="offcanvas-body">
+                    <div class="card mb-2">
+                        <div class="row g-0">
+                            <div class="col-4">
+                                <img src="./img/zapato.png" class="img-fluid rounded-start">
+                            </div>
+                            
+                            <div class="col-8">
+                                <div class="card-body">
+                                    <h6>Zapatos SAM</h6>
+                                    <p>$450</p>
+                                    <p>Cantidad: 1</p>
+                                </div>
                             </div>
                         </div>
-                        </div>
+                    </div>
 
-                        <!-- Offcanvas FAVORITOS -->
-                        <div class="offcanvas offcanvas-end" tabindex="-1"
-                            id="offcanvasFavoritos" aria-labelledby="offcanvasFavoritosLabel">
-                        <div class="offcanvas-header">
-                            <h5 id="offcanvasFavoritosLabel">Mis favoritos</h5>
-                            <button type="button" class="btn-close text-reset"
-                                    data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                        </div>
-                        <div id="favoritos_productos" class="offcanvas-body">
-                            Aquí van tus productos favoritos
+                    <h5> Total: $ <span id = "TotalCarrito"> 0 </span> <h5>
+                    <button class = "btn btn-dark w-100" onclick = "limpiarCarrito()">
+                        Limpiar carrito
+                    </button>
+                </div>
 
-                            <div class="mt-auto">
-                            <button class="btn btn-dark w-100 mb-2" id="moverAlCarrito">
-                                Mover todo al carrito
-                            </button>
-                            <a href="#" class="btn btn-dark w-100">Ver lista completa</a>
-                            </div>
-                        </div>
-                        </div>
+                <div class="mt-auto">
+                    <a href="../pages/carrito.html" class="btn btn-dark w-100">
+                        Proceder al pago
+                    </a>
+                </div>
+            </div>
+
+            <!-- Offcanvas FAVORITOS -->
+            <div class="offcanvas offcanvas-end" tabindex="-1"
+                id="offcanvasFavoritos" aria-labelledby="offcanvasFavoritosLabel">
+                <div class="offcanvas-header">
+                    <h5 id="offcanvasFavoritosLabel">Mis favoritos</h5>
+                    <button type="button" class="btn-close text-reset"
+                            data-bs-dismiss="offcanvas" aria-label="Close">
+                    </button>
+                </div>
+                    
+                <div id="favoritos_productos" class="offcanvas-body">
+                    Aquí van tus productos favoritos
+
+                    <div class="mt-auto">
+                        <button class="btn btn-dark w-100 mb-2" id="moverAlCarrito">
+                            Mover todo al carrito
+                        </button>
+                        <a href="#" class="btn btn-dark w-100">Ver lista completa</a>
+                    </div>
+                </div>
+            </div>
             
   `;
 }
