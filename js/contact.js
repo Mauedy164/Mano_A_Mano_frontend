@@ -197,7 +197,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const messageValue = messageInput.value.trim();
 
     if (messageValue < 10) {
-      messageError.textContent = "Ingrese al menos 10 caracteres.";
+      messageError.textContent = "El mensaje debe tener mínimo 10 caracteres";
       messageError.style.display = "block";
       messageInput.classList.add("is-invalid");
       messageInput.classList.remove("is-valid");
@@ -309,10 +309,15 @@ document.addEventListener("DOMContentLoaded", function () {
     } else {
       charCounter.style.display = "block";
       charCounter.textContent = `${length}/500`;
-      charCounter.style.color = length > 500 ? "red" : "#666";
+      charCounter.style.color = length < 10 || length > 500 ? "red" : "#666";
 
       if (length > 500) {
         messageError.textContent = "El mensaje debe tener máximo 500 caracteres";
+        messageError.style.display = "block";
+        messageInput.classList.add("is-invalid");
+        messageInput.classList.remove("is-valid");
+      } else if (length < 10) {
+        messageError.textContent = "El mensaje debe tener mínimo 10 caracteres";
         messageError.style.display = "block";
         messageInput.classList.add("is-invalid");
         messageInput.classList.remove("is-valid");
