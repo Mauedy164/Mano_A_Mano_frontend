@@ -35,6 +35,9 @@ if (navbar_container_index) {
                                     <a class="nav-link text-dark" href="./index.html">Inicio</a>
                                 </li>
                                 <li class="nav-item">
+                                    <a class="nav-link text-dark" href="./products.html">Productos</a>
+                                </li>
+                                <li class="nav-item">
                                     <a class="nav-link text-dark" href="./pages/contact.html">Contacto</a>
                                 </li>
                                 <li class="nav-item">
@@ -190,6 +193,10 @@ if (navbar_container) {
                                 <li class="nav-item">
                                     <a class="nav-link text-dark" href="../index.html">Inicio</a>
                                 </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" href="./products.html">Productos</a>
+                                </li>
+                                
                                 <li class="nav-item">
                                     <a class="nav-link text-dark" href="../pages/contact.html">Contacto</a>
                                 </li>
