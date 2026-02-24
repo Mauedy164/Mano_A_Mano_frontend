@@ -234,7 +234,7 @@ body {
 /* Botones e input */
 .qty-btn {
   flex: 1 1 25%;
-  height: 40px;
+  height: 100%;
   border: none;
   background: #faf9f8;
   font-weight: 600;
