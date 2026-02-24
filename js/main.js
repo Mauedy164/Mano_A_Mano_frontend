@@ -35,7 +35,7 @@ if (navbar_container_index) {
                                     <a class="nav-link text-dark" href="./index.html">Inicio</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link text-dark" href="./products.html">Productos</a>
+                                    <a class="nav-link text-dark" href="./pages/products.html">Productos</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link text-dark" href="./pages/contact.html">Contacto</a>
