@@ -42,6 +42,35 @@ main{
     flex: 1;
 }
 
+/*
+|================  Tarjetas de productos  ===============|
+*/
+
+/* Evita que el texto se encime si no hay imagen */
+.product-card img {
+    display: block;
+    margin: 0 auto;
+}
+
+
+.text-warning {
+    color: #ffc107 !important;
+    font-size: 1.1rem;
+}
+
+
+.add-to-cart-overlay {
+    opacity: 0;
+    transform: translateY(10px);
+    transition: 0.3s ease;
+}
+
+.product-card:hover .add-to-cart-overlay {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
 
 /*
 ==============================
