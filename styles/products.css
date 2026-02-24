@@ -562,21 +562,19 @@ body {
   }
 }
 
-/* Desktop: 3 columnas + alturas iguales galería */
 @media (min-width: 992px) {
   .product-detail-container {
     padding: 2rem 1rem;
     display: grid;
     grid-template-columns: 100px minmax(0, 520px) minmax(0, 1fr);
     column-gap: 2.5rem;
-    align-items: stretch; /* columnas con la misma altura */
+    align-items: stretch; 
   }
 
   .product-gallery {
     display: contents;
   }
 
-  /* Thumbnails: toda la altura de la fila */
   .gallery {
     grid-column: 1;
     display: flex;
@@ -614,7 +612,6 @@ body {
   }
 }
 
-/* Accesibilidad: sin outline feo en thumbs */
 .gallery button:focus,
 .btn-icon:focus,
 .btn-buy-now:focus,
