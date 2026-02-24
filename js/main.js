@@ -419,11 +419,12 @@ if (footer_container) {
                         <div id="footer_email_error" class="footer-error"></div>
                     </div>
 
+                    
                     <div class="col">
                         <h4>Soporte</h4>
-                        <p>111 Bijoy sarani, Dhaka</p>
-                        <p>manoamano@gmail.com</p>
-                        <p>+88015-88888-9999</p>
+                        <p>Reforma 226 Piso 15, CDMX</p>
+                        <p>auxiliarmanoamano@gmail.com</p>
+                        <p>+5445125545</p>
                     </div>
 
                     <div class="col">
