@@ -46,6 +46,14 @@ main{
 |================  Tarjetas de productos  ===============|
 */
 
+/* Botones izquierda derecha */
+
+.btn_left_right{
+    display: flex;
+    justify-content: end;
+    margin-right: 2vh;
+}
+
 /* Evita que el texto se encime si no hay imagen */
 .product-card img {
     display: block;
