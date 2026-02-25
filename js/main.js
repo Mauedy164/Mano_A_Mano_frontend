@@ -516,7 +516,12 @@ document.addEventListener("click", function (e) {
     emailInput.classList.remove("is-invalid");
     emailInput.classList.add("is-valid");
 
-    alert("Ya estás suscrito");
+    Swal.fire({
+      title: "¡Gracias por suscribirte!",
+      icon: "success",
+      confirmButtonText: "Aceptar",
+      confirmButtonColor: "#3085d6"
+    });
   }
 
 });
