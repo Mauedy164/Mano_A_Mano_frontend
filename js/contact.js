@@ -353,7 +353,13 @@ document.addEventListener("DOMContentLoaded", function () {
     emailjs
       .sendForm("service_trf8ktq", "template_4q07cia", form)
       .then(function () {
-        alert("Mensaje enviado correctamente ✅");
+        Swal.fire({
+      title: "¡Mensaje enviado!",
+      text: "El formulario fue enviado correctamente.",
+      icon: "success",
+      confirmButtonText: "Aceptar",
+      confirmButtonColor: "#db4444"
+      });
         form.reset();
         const counter = document.getElementById("charCounter");
         if (counter) counter.style.display = "none";
