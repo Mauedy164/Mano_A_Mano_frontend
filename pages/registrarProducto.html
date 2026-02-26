@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sobre nosotros</title>
+
+    <!-- Estilos -->
+    <link rel="stylesheet" href="../styles/main.css" />
+    <link rel="stylesheet" href="../styles/aboutMe.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    
+  </head>
+
+  <body>
+    <header>
+      <section><!-- barra anuncio oferta --></section>
+
+      <section id="navbar_container">
+        <!-- Navbar -->
+        <!-- Añadido mediante JavaScript -->
+      </section>
+    </header>
+        <main>
+    <nav aria-label="breadcrumb" class="text-decoration-none breadcrumb">
+        <ul>
+            <a href="#PorDefinir">Cuenta /</a> <!-- Por definir el enlace -->
+            <a href="#MiCuenta">Mi cuenta /</a> <!-- Por definir el enlace -->
+            <a href="#Vendedor">Vendedor /</a> <!-- Por definir el enlace -->
+            <a href="./registrarProducto.html" class="active"><strong>Registrar producto</strong></a>
+        </ul>
+    </nav>
+
+    <section class="container my-5">
+    <h1>Datos del producto: </h1>
+
+<div class="mb-3">
+  <label for="formularioNombreProducto" class="form-label">Nombre del producto<strong class="required">*</strong></label>
+  <input type="text" class="form-control" id="formularioNombreProducto" placeholder="Bolso de cuero artesanal">
+</div>
+<div class="mb-3">
+  <label for="formularioDescripcionProducto" class="form-label">Descripción del producto<strong class="required">*</strong></label>
+  <textarea class="form-control" id="formularioDescripcionProducto" rows="3" placeholder="Bolso 100% cuero de vaca con incrustaciones de diamantes y bañado en oro"></textarea>
+</div>
+<div class="mb-3">
+  <label for="formularioPrecioProducto" class="form-label">Precio Individual (MXN)<strong class="required">*</strong></label>
+  <input type="number" class="form-control" id="formularioPrecioProducto" placeholder="1499.99">
+</div>
+<div class="mb-3">
+  <label for="formularioCantidadProducto" class="form-label">Cantidad de productos a vender<strong class="required">*</strong></label>
+    <input type="number" class="form-control" id="formularioCantidadProducto" placeholder="0">
+</div>
+<div class="mb-3">
+  <label for="formularioTagsProducto" class="form-label">Tags<strong class="required">*</strong></label>
+  <input type="text" class="form-control" id="formularioTagsProducto" placeholder="Etiquetas para encontar tu producto. Ej: #bolso #cuero #artesanal">
+</div>
+<!-- Imagen principal -->
+<div class="mb-3">
+  <label class="form-label" for="formularioImagenPrincipalProducto">Agrega tu imagen principal <strong class="required">*</strong></label>
+    <label 
+        for="formularioImagenPrincipalProducto"
+        class="form-control border-dashed d-flex flex-column align-items-center justify-content-center py-4 text-center bg-light drop-zone"
+        id="dropZonaPrincipal"
+        style="cursor:pointer;">
+    <i class="bi bi-cloud-arrow-up fs-1 text-muted mb-2"></i>
+    <span class="fw-semibold">Arrastra tu imagen aquí</span>
+    <span class="text-muted d-block">o haz clic para subir tu imagen</span>
+    <input class="d-none" type="file" id="formularioImagenPrincipalProducto" accept="image/jpeg,image/png">
+  </label>
+  <div id="previewPrincipal" class="mt-2"></div>
+</div>
+
+<!-- Imágenes adicionales -->
+<div class="mb-3" >
+  <label class="form-label" for="formularioImagenesAdicionalesProducto">Agrega más imágenes en diferentes ángulos</label>
+  <label for="formularioImagenesAdicionalesProducto"
+         class="form-control border-dashed d-flex flex-column align-items-center justify-content-center py-4 text-center bg-light drop-zone"
+         id="dropZonaAdicionales"
+         style="cursor:pointer;">
+    <i class="bi bi-cloud-arrow-up fs-1 text-muted mb-2"></i>
+    <span class="fw-semibold">Arrastra tus imágenes aquí</span>
+    <span class="text-muted d-block">o haz clic para subir tus imágenes</span>
+    <input class="d-none" type="file" id="formularioImagenesAdicionalesProducto"
+           accept="image/jpeg,image/png" multiple>
+  </label>
+  <div id="previewAdicionales" class="mt-2 d-flex flex-wrap gap-2"></div>
+</div>
+<span><strong class="required">*</strong>Campos obligatorios</span>
+
+
+<!-- Texto Detalles Producto-->
+  <div class="container my-4">
+  <h5 class="mb-3">Detalles del producto</h5>
+
+
+<!-- Contenedor checks -->
+  <div class="row g-4">
+    <!-- Colores -->
+    <div class="col-md-6">
+      <h6>Colores:</h6>
+
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="colores" id="coloresSin" value="sin" checked>
+        <label class="form-check-label" for="coloresSin">Sin Colores</label>
+      </div>
+
+      <div class="mt-2">
+        <label class="form-label" for="colorPrincipal">Color:</label>
+        <select id="colorPrincipal" class="form-select">
+          <option selected disabled>Selecciona un color</option>
+        </select>
+      </div>
+
+      <div class="mt-2">
+        <label class="form-label" for="colorSecundario">Color:</label>
+        <select id="colorSecundario" class="form-select">
+          <option selected disabled>Selecciona un color</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Marca -->
+    <div class="col-md-6">
+      <h6>Marca:</h6>
+
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="marca" id="marcaSin" value="sin" checked>
+        <label class="form-check-label" for="marcaSin">Sin Marca</label>
+      </div>
+
+      <div class="mt-2">
+        <label class="form-label" for="marcaTexto">Marca:</label>
+        <input type="text" id="marcaTexto" class="form-control" placeholder="">
+      </div>
+    </div>
+
+    <!-- Tamaño -->
+    <div class="col-md-6">
+      <h6>Tamaño:</h6>
+
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="tamano" id="tamanoNo" value="no" checked>
+        <label class="form-check-label" for="tamanoNo">No aplica</label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="tamano" id="tamanoGrande" value="grande">
+        <label class="form-check-label" for="tamanoGrande">Grande</label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="tamano" id="tamanoMediana" value="mediana">
+        <label class="form-check-label" for="tamanoMediana">Mediana</label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="tamano" id="tamanoPequena" value="pequena">
+        <label class="form-check-label" for="tamanoPequena">Pequeña</label>
+      </div>
+    </div>
+
+    <!-- Modelo -->
+    <div class="col-md-6">
+      <h6>Modelo:</h6>
+
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="modelo" id="modeloSin" value="sin" checked>
+        <label class="form-check-label" for="modeloSin">Sin Modelo</label>
+      </div>
+
+      <div class="mt-2">
+        <label class="form-label" for="modeloTexto">Modelo:</label>
+        <input type="text" id="modeloTexto" class="form-control" placeholder="">
+      </div>
+    </div>
+
+    <!-- Dimensiones -->
+    <div class="col-md-6">
+      <h6>Dimensiones del producto:</h6>
+
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="dimensiones" id="dimensionesNo" value="no" checked>
+        <label class="form-check-label" for="dimensionesNo">No aplica</label>
+      </div>
+
+      <div class="form-check mt-2">
+        <input class="form-check-input" type="radio" name="dimensiones" id="dimensionesSi" value="si">
+        <label class="form-check-label" for="dimensionesSi">
+          00 cm x 00 cm x 00 cm : largo x ancho x profundo
+        </label>
+      </div>
+
+      <div class="mt-2">
+        <input type="text" class="form-control" id="dimensionesTexto" placeholder="">
+      </div>
+    </div>
+
+    <!-- Peso -->
+    <div class="col-md-6">
+      <h6>Peso:</h6>
+
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="peso" id="pesoNo" value="no" checked>
+        <label class="form-check-label" for="pesoNo">No aplica</label>
+      </div>
+
+      <div class="form-check mt-2">
+        <input class="form-check-input" type="radio" name="peso" id="pesoSi" value="si">
+        <label class="form-check-label" for="pesoSi">Peso (gramos):</label>
+      </div>
+
+      <div class="mt-2">
+        <input type="number" class="form-control" id="pesoTexto" placeholder="">
+      </div>
+    </div>
+
+    <!-- Volumen -->
+    <div class="col-md-6">
+      <h6>Volumen:</h6>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="volumen" id="volumenNo" value="no" checked>
+        <label class="form-check-label" for="volumenNo">No aplica</label>
+      </div>
+      <div class="form-check mt-2">
+        <input class="form-check-input" type="radio" name="volumen" id="volumenSi" value="si">
+        <label class="form-check-label" for="volumenSi">Volumen (litros):</label>
+      </div>
+      <div class="mt-2">
+        <input type="number" class="form-control" id="volumenTexto" placeholder="">
+      </div>
+    </div>
+
+    <!-- Botón -->
+    <div class="col-12 text-end mt-3">
+      <button type="submit" class="btn btn-danger">Registrar Producto</button>
+    </div>
+
+  </div>
+</div>
+
+</section>
+
+
+        </main>
+    
+
+    <footer id="footer_container">
+      <!-- Footer -->
+      <!-- Añadido mediante JavaScript -->
+    </footer>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/contact.js"></script>
+    <script src="../js/carrito.js"></script>
+  </body>
+</html>
