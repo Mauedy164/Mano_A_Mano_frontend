@@ -59,8 +59,7 @@ if (navbar_container_index) {
                                 <button class="btn p-0" type="button"
                                 data-bs-toggle="offcanvas"
                                 data-bs-target="#offcanvasFavoritos"
-                                aria-controls="offcanvasFavoritos"
-                                ">
+                                aria-controls="offcanvasFavoritos">
                             <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23"
                                 fill="currentColor" class="bi bi-heart-fill" viewBox="0 0 16 16">
                             <path fill-rule="evenodd"
@@ -70,7 +69,7 @@ if (navbar_container_index) {
                         </button>
 
                         <!-- Icono Carrito -->
-                        <button class="btn p-0" type="button"
+                        <button class="btn p-0 position-relative" type="button"
                                 data-bs-toggle="offcanvas"
                                 data-bs-target="#offcanvasRight"
                                 aria-controls="offcanvasRight">
@@ -84,7 +83,7 @@ if (navbar_container_index) {
                             </svg>
 
                             <!-- Contador carrito-->
-                            <span id = "cuenta-carrito"> 0 </span>
+                            <span id = "cuenta_carrito"> 0 </span>
 
                         </button>
 
@@ -115,26 +114,7 @@ if (navbar_container_index) {
                 </div>
                 
                 <div id="carrito_productos" class="offcanvas-body">
-                    <div class="card mb-2">
-                        <div class="row g-0">
-                            <div class="col-4">
-                                <img src="./img/zapato.png" class="img-fluid rounded-start">
-                            </div>
-                            
-                            <div class="col-8">
-                                <div class="card-body">
-                                    <h6>Zapatos SAM</h6>
-                                    <p>$450</p>
-                                    <p>Cantidad: 1</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <h5> Total: $ <span id = "TotalCarrito"> 0 </span> <h5>
-                    <button class = "btn btn-dark w-100" onclick = "limpiarCarrito()">
-                        Limpiar carrito
-                    </button>
+                    Total:$<span id="total_carrito"> 0 </span>
                 </div>
 
                 <div class="mt-auto">
@@ -228,7 +208,7 @@ if (navbar_container) {
                         </button>
 
                         <!-- Botón Carrito -->
-                        <button class="btn p-0" type="button"
+                        <button class="btn p-0 position-relative" type="button"
                                 data-bs-toggle="offcanvas"
                                 data-bs-target="#offcanvasRight"
                                 aria-controls="offcanvasRight">
@@ -242,7 +222,7 @@ if (navbar_container) {
                             </svg>
 
                             <!-- Contador carrito-->
-                            <span id = "cuenta-carrito"> 0 </span>
+                            <span id = "cuenta_carrito"> 0 </span>
                         </button>
 
                                 <i class="bi bi-person-fill fs-5">
@@ -265,7 +245,7 @@ if (navbar_container) {
 
             </nav>
 
-           <!-- Offcanvas CARRITO -->
+          <!-- Offcanvas CARRITO -->
             <div class="offcanvas offcanvas-end" tabindex="-1"
                 id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
                 <div class="offcanvas-header">
@@ -276,26 +256,8 @@ if (navbar_container) {
                 </div>
                 
                 <div id="carrito_productos" class="offcanvas-body">
-                    <div class="card mb-2">
-                        <div class="row g-0">
-                            <div class="col-4">
-                                <img src="./img/zapato.png" class="img-fluid rounded-start">
-                            </div>
-                            
-                            <div class="col-8">
-                                <div class="card-body">
-                                    <h6>Zapatos SAM</h6>
-                                    <p>$450</p>
-                                    <p>Cantidad: 1</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
 
-                    <h5> Total: $ <span id = "TotalCarrito"> 0 </span> <h5>
-                    <button class = "btn btn-dark w-100" onclick = "limpiarCarrito()">
-                        Limpiar carrito
-                    </button>
+                    Total:$<span id="total_carrito"> 0 </span>
                 </div>
 
                 <div class="mt-auto">
@@ -304,6 +266,7 @@ if (navbar_container) {
                     </a>
                 </div>
             </div>
+
 
             <!-- Offcanvas FAVORITOS -->
             <div class="offcanvas offcanvas-end" tabindex="-1"
@@ -481,9 +444,7 @@ if (footer_container) {
 */
 
 document.addEventListener("click", function (e) {
-
   if (e.target.closest("#footer_subscribe")) {
-
     const emailInput = document.getElementById("footer_email");
 
     if (!emailInput) return;
@@ -523,10 +484,7 @@ document.addEventListener("click", function (e) {
       confirmButtonColor: "#3085d6"
     });
   }
-
 });
-
-
 
 /*
 ==============================

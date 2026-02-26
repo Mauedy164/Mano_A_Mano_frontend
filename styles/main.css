@@ -6,14 +6,11 @@
 
 /* barra anuncio oferta */
 
-
-
-
 /* Navbar */
 
-a svg{
-    color: rgb(41, 41, 41);
-    text-decoration: none;
+a svg {
+  color: rgb(41, 41, 41);
+  text-decoration: none;
 }
 
 #logo_Ajolote{
@@ -35,24 +32,20 @@ a svg{
 ==============================
 */
 
-
-
-
 /*
 ==============================
 |  index (página de inicio)  |
 ==============================
 */
 
-body{
-
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
-main{
-    flex: 1;
+main {
+  flex: 1;
 }
 
 /*
@@ -69,26 +62,24 @@ main{
 
 /* Evita que el texto se encime si no hay imagen */
 .product-card img {
-    display: block;
-    margin: 0 auto;
+  display: block;
+  margin: 0 auto;
 }
-
 
 .text-warning {
-    color: #ffc107 !important;
-    font-size: 1.1rem;
+  color: #ffc107 !important;
+  font-size: 1.1rem;
 }
 
-
 .add-to-cart-overlay {
-    opacity: 0;
-    transform: translateY(10px);
-    transition: 0.3s ease;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: 0.3s ease;
 }
 
 .product-card:hover .add-to-cart-overlay {
-    opacity: 1;
-    transform: translateY(0);
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .btn-favorito-producto {
@@ -305,15 +296,32 @@ main{
 ==============================
 */
 
-
-
-
 /*
 ==============================
 |       cart (Carrito)       |
 ==============================
 */
 
+#cuenta_carrito {
+  position: absolute; /* Saca el número del flujo normal */
+  top: -5px;
+  right: -8px;
+
+  min-width: 20px;
+  height: 20px;
+  padding: 0 6px;
+  
+  background-color: #db4444;
+  color: white;
+
+  border-radius: 999px;
+
+  font-size: 10px; /* Tamaño del número */
+  font-weight: bold;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
 /*
 =================================
@@ -321,28 +329,26 @@ main{
 =================================
 */
 
-
-
 /*
 ==================================
 |  aboutMe (Acerca de nosotros)  |
 ==================================
 */
 div {
-    font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 div h4 {
-    color: #DB4444;
-    font-weight: 700;
+  color: #db4444;
+  font-weight: 700;
 }
 
-div h6{
-    font-weight: 600;
+div h6 {
+  font-weight: 600;
 }
 
 div p {
-    font-weight: 400;
+  font-weight: 400;
 }
 
 /*  NUESTRA HISTORIA */
@@ -353,14 +359,11 @@ div p {
 
 /* NUESTROS SELLOS */
 
-
 /*
 ==================================
 |  contact (Página de contacto)  |
 ==================================
 */
-
-
 
 /*
 ===================================
