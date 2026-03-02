@@ -18,7 +18,7 @@ if (navbar_container_index) {
                     <div class="container-fluid">
 
                         <!-- Logo ManoAMano -->
-                        <a class="navbar-brand fw-bold" href="./index.html">ManoAMano</a>
+                      <img id="logo_Ajolote" src="../media/NavBar/Logoajolote5.png"
 
                         <!-- Botón responsivo -->
                         <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -177,7 +177,7 @@ if (navbar_container) {
                     <div class="container-fluid">
 
                         <!-- Logo ManoAMano -->
-                        <a class="navbar-brand fw-bold" href="../index.html">ManoAMano</a>
+                        <img id="logo_Ajolote" src="../media/NavBar/Logoajolote5.png"
 
                         <!-- Botón responsivo -->
                         <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
