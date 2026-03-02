@@ -220,3 +220,56 @@ function isValidBrand(){
         marcaTexto.classList.add("is-valid")
     }
 }
+
+
+// Validar modelo
+
+const modeloSin = document.getElementById("modeloSin")
+const modeloTexto = document.getElementById("modeloTexto")
+const modeloTexto_container = document.getElementById("modeloTexto_container")
+
+
+if(modeloSin.checked){
+    modeloTexto.disabled = true;
+} else{
+    modeloTexto.disabled = false;
+}
+
+modeloSin.addEventListener("change", function() {
+    if(modeloSin.checked){
+        modeloTexto.disabled = true;
+        modeloTexto.value = ""; 
+        modeloTexto.classList.remove("is-valid", "is-invalid");
+    } else{
+        modeloTexto.disabled = false;
+    
+        modeloTexto.focus();
+    }
+});
+
+
+modeloTexto.addEventListener("input", isValidModelo)
+
+function isValidModelo(){
+    modeloTexto.classList.remove("is-invalid", "is-valid")
+     let errorPrevioModelo = modeloTexto_container.querySelector(".invalid-feedback")
+
+     if ( errorPrevioModelo ){
+         errorPrevioModelo.remove()
+    }
+
+    let modelo = modeloTexto.value
+    const regexModelo = /^[a-zA-Z0-9ÁÉÍÓÚáéíóúÑñüÜ\s&'.-]{2,50}$/
+     const esValido = regexModelo.test(modelo);
+
+    if (!esValido){
+
+        modeloTexto.classList.add("is-invalid")
+        let errorModelo = document.createElement("div")
+        errorModelo.classList.add("invalid-feedback")
+        errorModelo.textContent=""
+        modeloTexto_container.appendChild(errorMarca)
+    } else {
+        modeloTexto.classList.add("is-valid")
+    }
+}
