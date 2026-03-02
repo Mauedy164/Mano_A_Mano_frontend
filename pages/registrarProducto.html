@@ -147,23 +147,26 @@
     </div>
 
     <!-- Tamaño -->
-    <div class="col-md-6">
+    <div class="col-md-6" id="tamano_container">
       <h6>Tamaño:</h6>
 
       <div class="form-check">
-        <input class="form-check-input" type="radio" name="tamano" id="tamanoNo" value="no" checked>
+        <input class="form-check-input" type="checkbox" name="tamano" id="tamanoNo" value="no" checked>
         <label class="form-check-label" for="tamanoNo">No aplica</label>
       </div>
+
       <div class="form-check">
-        <input class="form-check-input" type="radio" name="tamano" id="tamanoGrande" value="grande">
+        <input class="form-check-input radio-size" type="radio" name="tamano" id="tamanoGrande" value="grande">
         <label class="form-check-label" for="tamanoGrande">Grande</label>
       </div>
+
       <div class="form-check">
-        <input class="form-check-input" type="radio" name="tamano" id="tamanoMediana" value="mediana">
+        <input class="form-check-input radio-size" type="radio" name="tamano" id="tamanoMediana" value="mediana">
         <label class="form-check-label" for="tamanoMediana">Mediana</label>
       </div>
+
       <div class="form-check">
-        <input class="form-check-input" type="radio" name="tamano" id="tamanoPequena" value="pequena">
+        <input class="form-check-input radio-size" type="radio" name="tamano" id="tamanoPequena" value="pequena">
         <label class="form-check-label" for="tamanoPequena">Pequeña</label>
       </div>
     </div>
@@ -205,27 +208,28 @@
     </div>
 
     <!-- Peso -->
-    <div class="col-md-6">
-      <h6>Peso:</h6>
+    <div class="col-md-6" id="peso_container">
+      <h6 class="fw-bold">Peso:</h6>
 
       <div class="form-check">
-        <input class="form-check-input" type="radio" name="peso" id="pesoNo" value="no" checked>
+        <input class="form-check-input" type="radio" name="opcionPeso" id="pesoNo" value="no" checked>
         <label class="form-check-label" for="pesoNo">No aplica</label>
       </div>
 
       <div class="form-check mt-2">
-        <input class="form-check-input" type="radio" name="peso" id="pesoSi" value="si">
+        <input class="form-check-input" type="radio" name="opcionPeso" id="pesoSi" value="si">
         <label class="form-check-label" for="pesoSi">Peso (gramos):</label>
       </div>
 
-      <div class="mt-2">
-        <input type="number" class="form-control" id="pesoTexto" placeholder="">
+      <div class="mt-2" id="pesoNum_container">
+        <input type="number" class="form-control" id="pesoNum" placeholder="0" min="0" disabled>
       </div>
     </div>
 
     <!-- Volumen -->
     <div class="col-md-6">
       <h6>Volumen:</h6>
+      
       <div class="form-check">
         <input class="form-check-input" type="radio" name="volumen" id="volumenNo" value="no" checked>
         <label class="form-check-label" for="volumenNo">No aplica</label>
@@ -234,8 +238,8 @@
         <input class="form-check-input" type="radio" name="volumen" id="volumenSi" value="si">
         <label class="form-check-label" for="volumenSi">Volumen (litros):</label>
       </div>
-      <div class="mt-2">
-        <input type="number" class="form-control" id="volumenTexto" placeholder="">
+      <div class="mt-2" id="volumenNum_container">
+        <input type="number" class="form-control" id="volumenNum" placeholder="0" min="0" disabled>
       </div>
     </div>
 
