@@ -273,3 +273,119 @@ function isValidModelo(){
         modeloTexto.classList.add("is-valid")
     }
 }
+
+
+// Validar peso
+
+const pesoNo = document.getElementById("pesoNo");
+const pesoSi = document.getElementById("pesoSi"); // Ahora usamos el radio de "Si"
+const pesoNum = document.getElementById("pesoNum");
+const pesoNum_container = document.getElementById("pesoNum_container");
+
+// Función para manejar el estado del input (Habilitar/Deshabilitar)
+function actualizarEstadoPeso() {
+    if (pesoNo.checked) {
+        pesoNum.disabled = true;
+        pesoNum.value = ""; 
+        pesoNum.classList.remove("is-valid", "is-invalid");
+        
+        let errorPrevio = pesoNum_container.querySelector(".invalid-feedback");
+        if (errorPrevio) errorPrevio.remove();
+    } else {
+        pesoNum.disabled = false;
+        pesoNum.focus();
+    }
+}
+
+pesoNo.addEventListener("change", actualizarEstadoPeso);
+pesoSi.addEventListener("change", actualizarEstadoPeso);
+
+pesoNum.addEventListener("input", isValidPeso); // Evento de validación
+
+function isValidPeso() {
+    // Limpiar estados previos
+    pesoNum.classList.remove("is-invalid", "is-valid");
+    let errorPrevioPeso = pesoNum_container.querySelector(".invalid-feedback");
+
+    if (errorPrevioPeso) {
+        errorPrevioPeso.remove();
+    }
+
+    let pesoValue = pesoNum.value;
+
+    const esValido = pesoValue !== "" && !isNaN(pesoValue) && parseFloat(pesoValue) > 0;
+
+    if (!esValido) {
+        pesoNum.classList.add("is-invalid");
+        let errorPeso = document.createElement("div");
+        errorPeso.classList.add("invalid-feedback");
+        
+        // Mensaje personalizado según el error
+        if (parseFloat(pesoValue) < 0) {
+            errorPeso.textContent = "El peso no puede ser un número negativo.";
+        } else {
+            errorPeso.textContent = "Por favor, ingrese un peso válido.";
+        }
+        
+        pesoNum_container.appendChild(errorPeso);
+    } else {
+        pesoNum.classList.add("is-valid");
+    }
+}
+
+// Validar Volumen
+
+const volumenNo = document.getElementById("volumenNo");
+const volumenSi = document.getElementById("volumenSi");
+const volumenNum = document.getElementById("volumenNum");
+const volumenNum_container = document.getElementById("volumenNum_container");
+
+// Función para manejar el estado del input (Habilitar/Deshabilitar)
+function actualizarEstadoVolumen() {
+    if (volumenNo.checked) {
+        volumenNum.disabled = true;
+        volumenNum.value = ""; 
+        volumenNum.classList.remove("is-valid", "is-invalid");
+        
+        let errorPrevio = volumenNum_container.querySelector(".invalid-feedback");
+        if (errorPrevio) errorPrevio.remove();
+    } else {
+        volumenNum.disabled = false;
+        if(volumenSi.checked) volumenNum.focus()
+    }
+}
+
+volumenNo.addEventListener("change", actualizarEstadoVolumen);
+volumenSi.addEventListener("change", actualizarEstadoVolumen);
+
+volumenNum.addEventListener("input", isValidVolumen); // Evento de validación
+
+function isValidVolumen() {
+    // Limpiar estados previos
+    volumenNum.classList.remove("is-invalid", "is-valid");
+    let errorPrevioVolum = volumenNum_container.querySelector(".invalid-feedback");
+
+    if (errorPrevioVolum) {
+        errorPrevioVolum.remove();
+    }
+
+    let volumenValue = volumenNum.value;
+
+    const esValido = volumenValue !== "" && !isNaN(volumenValue) && parseFloat(volumenValue) > 0;
+
+    if (!esValido) {
+        volumenNum.classList.add("is-invalid");
+        let errorVolumen = document.createElement("div");
+        errorVolumen.classList.add("invalid-feedback");
+        
+        if (parseFloat(volumenValue) < 0) {
+            errorVolumen.textContent = "El volumen no puede ser un número negativo.";
+        } else {
+            errorVolumen.textContent = "Por favor, ingrese un volumen válido.";
+        }
+        
+        volumenNum_container.appendChild(errorVolumen);
+    } else {
+        volumenNum.classList.add("is-valid");
+    }
+}
