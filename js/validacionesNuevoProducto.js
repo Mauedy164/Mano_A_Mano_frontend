@@ -98,3 +98,125 @@ function isValidPrice(){
 
 //CANTIDAD DE PRODUCTOS A VENDER
 
+const formularioCantidadProducto = document.getElementById("formularioCantidadProducto")
+
+const amountProductForm_container = document.getElementById("amountProductForm_container")
+
+formularioCantidadProducto.addEventListener("input", isValdidAmount)
+
+//Valida que no sean cantidades menores a 1 ni mayores a 150 piezas
+function isValdidAmount(){
+    formularioCantidadProducto.classList.remove("is-invalid", "is-valid")
+
+    let errorPrevioCantidad = amountProductForm_container.querySelector(".invalid-feedback")
+
+    if (errorPrevioCantidad){
+        errorPrevioCantidad.remove()
+    }
+    
+    let cantidad = formularioCantidadProducto.value
+    if (cantidad <1 || cantidad>150 || (cantidad%1 >0)){
+
+        formularioCantidadProducto.classList.add("is-invalid")
+
+        let errorCantidad = document.createElement("div")
+        errorCantidad.classList.add("invalid-feedback")
+        errorCantidad.textContent="Sólo se admiten cantidades desde 1 hasta 150 piezas y que sean enteros"
+        amountProductForm_container.appendChild(errorCantidad)
+    } else {
+        formularioCantidadProducto.classList.add("is-valid")
+    }
+
+}
+
+//Tags
+
+
+
+//Valida que sean máximo 20, que inicien con #, que sea almenos 1
+
+const formularioTagsProducto = document.getElementById("formularioTagsProducto")
+
+const tagProductForm_container = document.getElementById("tagProductForm_container")
+
+formularioTagsProducto.addEventListener("input", isValidTag)
+
+function isValidTag(){
+     formularioTagsProducto.classList.remove("is-invalid", "is-valid")
+     let errorPrevioTag = tagProductForm_container.querySelector(".invalid-feedback")
+
+     if (errorPrevioTag ){
+         errorPrevioTag.remove()
+    }
+    let cantidadTags = formularioTagsProducto.value.toLowerCase().split(/\s+/)
+    const hayDuplicados= new Set(cantidadTags).size !== cantidadTags.length
+    cantidadTags = cantidadTags.length
+    let tags = formularioTagsProducto.value
+    const regex = /^(#[a-zA-Z0-9áéíóúñ]+\s*)+$/;
+    const esValido = regex.test(tags);
+
+
+
+    if(cantidadTags<1 || !esValido || cantidadTags>20 || hayDuplicados){
+        formularioTagsProducto.classList.add("is-invalid")
+        let errorTag = document.createElement("div")
+        errorTag.classList.add("invalid-feedback")
+        errorTag.textContent="Debes ingresar al menos 1 tag y máximo 20, Todos deben iniciar con # y no se deben repetir"
+        tagProductForm_container.appendChild(errorTag)
+    } else {
+        formularioTagsProducto.classList.add("is-valid")
+    }
+
+}
+
+// Validar marca
+
+const marcaCheck = document.getElementById("marcaCheck")
+const marcaTexto = document.getElementById("marcaTexto")
+const marcaTexto_container = document.getElementById("marcaTexto_container")
+
+
+if(marcaCheck.checked){
+    marcaTexto.disabled = true;
+} else{
+    marcaTexto.disabled = false;
+}
+
+marcaCheck.addEventListener("change", function() {
+    if(marcaCheck.checked){
+        marcaTexto.disabled = true;
+        marcaTexto.value = ""; 
+        marcaTexto.classList.remove("is-valid", "is-invalid");
+    } else{
+        marcaTexto.disabled = false;
+    
+        marcaTexto.focus();
+    }
+});
+
+
+marcaTexto.addEventListener("input", isValidBrand)
+
+function isValidBrand(){
+    marcaTexto.classList.remove("is-invalid", "is-valid")
+     let errorPrevioMarca = marcaTexto_container.querySelector(".invalid-feedback")
+
+     if (errorPrevioMarca ){
+         errorPrevioMarca.remove()
+    }
+
+    let marca = marcaTexto.value
+    const regexMarca = /^[a-zA-Z0-9ÁÉÍÓÚáéíóúÑñüÜ\s&'.-]{2,50}$/
+     const esValido = regexMarca.test(marca);
+
+    if (!esValido){
+
+        marcaTexto.classList.add("is-invalid")
+        let errorMarca = document.createElement("div")
+        errorMarca.classList.add("invalid-feedback")
+        errorMarca.textContent=""
+        marcaTexto_container.appendChild(errorMarca)
+    } else {
+        marcaTexto.classList.add("is-valid")
+    }
+}

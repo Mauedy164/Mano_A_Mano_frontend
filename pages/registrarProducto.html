@@ -58,13 +58,13 @@
   <label for="formularioPrecioProducto" class="form-label">Precio Individual (MXN)<strong class="required">*</strong></label>
   <input type="number" class="form-control" id="formularioPrecioProducto" placeholder="1499.99" min="0.01" step="0.01" max="100000" required>
 </div>
-<div class="mb-3">
+<div class="mb-3" id="amountProductForm_container">
   <label for="formularioCantidadProducto" class="form-label">Cantidad de productos a vender<strong class="required">*</strong></label>
-    <input type="number" class="form-control" id="formularioCantidadProducto" placeholder="0">
+    <input type="number" class="form-control" id="formularioCantidadProducto" placeholder="0" min="1.00" step="1" max="150" required>
 </div>
-<div class="mb-3">
+<div class="mb-3" id="tagProductForm_container">
   <label for="formularioTagsProducto" class="form-label">Tags<strong class="required">*</strong></label>
-  <input type="text" class="form-control" id="formularioTagsProducto" placeholder="Etiquetas para encontar tu producto. Ej: #bolso #cuero #artesanal">
+  <input type="text" class="form-control" id="formularioTagsProducto" placeholder="Añade hasta 20 etiquetas para encontar tu producto. Ej: #bolso #cuero ">
 </div>
 <!-- Imagen principal -->
 <div class="mb-3">
@@ -136,13 +136,13 @@
       <h6>Marca:</h6>
 
       <div class="form-check">
-        <input class="form-check-input" type="radio" name="marca" id="marcaSin" value="sin" checked>
+        <input class="form-check-input" type="checkbox" name="marca" id="marcaCheck"  checked = true>
         <label class="form-check-label" for="marcaSin">Sin Marca</label>
       </div>
 
-      <div class="mt-2">
-        <label class="form-label" for="marcaTexto">Marca:</label>
-        <input type="text" id="marcaTexto" class="form-control" placeholder="">
+      <div class="mt-2" id="marcaTexto_container">
+        <label class="form-label " for="marcaTexto" >Marca:</label>
+        <input type="text" id="marcaTexto" class="form-control" placeholder="" disabled>
       </div>
     </div>
 
