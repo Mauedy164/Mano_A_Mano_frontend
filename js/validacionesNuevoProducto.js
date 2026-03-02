@@ -169,6 +169,37 @@ function isValidTag(){
 
 }
 
+
+//Tamaño
+const tamanoNo = document.getElementById("tamanoNo");
+const opcionesTamano = document.querySelectorAll(".radio-size");
+const tamano_container = document.getElementById("tamano_container");
+
+function actualizarEstadoTamano() {
+    if (tamanoNo.checked) {
+        // Bloqueamos y desmarcamos todos los radios
+        opcionesTamano.forEach(radio => {
+            radio.disabled = true;
+            radio.checked = false;
+        });
+        
+        opcionesTamano.forEach(radio => radio.classList.remove("is-invalid", "is-valid"));
+        
+        let errorPrevio = tamano_container.querySelector(".invalid-feedback");
+        if (errorPrevio) errorPrevio.remove();
+    } else {
+        // Habilitamos los radios para que el usuario elija
+        opcionesTamano.forEach(radio => {
+            radio.disabled = false;
+        });
+    }
+}
+
+tamanoNo.addEventListener("change", actualizarEstadoTamano);
+
+actualizarEstadoTamano();
+
+
 // Validar marca
 
 const marcaCheck = document.getElementById("marcaCheck")
@@ -332,6 +363,7 @@ function isValidPeso() {
         pesoNum.classList.add("is-valid");
     }
 }
+
 
 // Validar Volumen
 
