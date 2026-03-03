@@ -1,0 +1,17 @@
+.required {
+  color: #db4444;
+}
+
+.contenedor {
+  display: inline-block;
+  text-align: right;
+}
+
+.derecha {
+  text-align: end;
+}
+
+.form-check-input:checked {
+  background-color: #000 !important;
+  border-color: #000 !important;
+}
