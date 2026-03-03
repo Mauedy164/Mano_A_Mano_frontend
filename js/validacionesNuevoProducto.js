@@ -421,3 +421,23 @@ function isValidVolumen() {
         volumenNum.classList.add("is-valid");
     }
 }
+
+/*=======================
+| FORMULARIO DE COLORES |
+========================*/
+
+document.addEventListener('DOMContentLoaded', function() {
+  const radios = document.querySelectorAll('input[name="colores"]');
+  const colorPrincipalContainer = document.getElementById('colorPrincipal_container');
+  const colorSecundarioContainer = document.getElementById('colorSecundario_container');
+
+  radios.forEach(radio => {
+    radio.addEventListener('change', function() {
+      const showPrincipal = this.value === 'si' || this.value === 'mas';
+      const showSecundario = this.value === 'mas';
+      
+      colorPrincipalContainer.style.display = showPrincipal ? 'block' : 'none';
+      colorSecundarioContainer.style.display = showSecundario ? 'block' : 'none';
+    });
+  });
+});

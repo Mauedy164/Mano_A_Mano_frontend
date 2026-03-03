@@ -183,6 +183,7 @@
                 <div class="col-md-6">
                   <h6>Colores:</h6>
 
+<<<<<<< Updated upstream
                   <div class="form-check">
                     <input
                       class="form-check-input"
@@ -411,6 +412,176 @@
         </div>
       </div>
     </main>
+=======
+<!-- Contenedor checks -->
+  <div class="row g-4">
+    <!-- Colores -->
+    <div class="col-md-6">
+  <h6 class="form-label fw-bold mb-3">Colores:</h6>
+
+  <!-- Radios verticales apilados -->
+  <div class="form-check mb-3">
+    <input class="form-check-input" type="radio" name="colores" id="coloresSin" value="sin" checked>
+    <label class="form-check-label" for="coloresSin">Sin Colores</label>
+  </div>
+  
+  <div class="form-check mb-3">
+    <input class="form-check-input" type="radio" name="colores" id="coloresSi" value="si">
+    <label class="form-check-label" for="coloresSi">Agrega un color</label>
+  </div>
+
+  <div class="mt-3 mb-3 col-3" id="colorPrincipal_container" style="display: none;">
+    <label class="form-label fw-semibold" for="colorPrincipal">Color principal:</label>
+    <input type="color" id="colorPrincipal" class="form-control form-control-color w-100" value="#007bff" title="Elige color">
+  </div>
+
+  <div class="form-check mb-3">
+    <input class="form-check-input" type="radio" name="colores" id="coloresMas" value="mas">
+    <label class="form-check-label" for="coloresMas">Agrega otro color</label>
+  </div>
+
+  <div class="mt-3 col-3" id="colorSecundario_container" style="display: none;">
+    <label class="form-label fw-semibold" for="colorSecundario">Color secundario:</label>
+    <input type="color" id="colorSecundario" class="form-control form-control-color w-100" value="#dc3545" title="Elige color">
+  </div>
+</div>
+
+
+    <!-- Marca -->
+    <div class="col-md-6">
+      <h6>Marca:</h6>
+
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" name="marca" id="marcaCheck"  checked = true>
+        <label class="form-check-label" for="marcaSin">Sin Marca</label>
+      </div>
+
+      <div class="mt-2" id="marcaTexto_container">
+        <label class="form-label " for="marcaTexto" >Marca:</label>
+        <input type="text" id="marcaTexto" class="form-control" placeholder="" disabled>
+      </div>
+    </div>
+
+    <!-- Tamaño -->
+    <div class="col-md-6" id="tamano_container">
+      <h6>Tamaño:</h6>
+
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" name="tamano" id="tamanoNo" value="no" checked>
+        <label class="form-check-label" for="tamanoNo">No aplica</label>
+      </div>
+
+      <div class="form-check">
+        <input class="form-check-input radio-size" type="radio" name="tamano" id="tamanoGrande" value="grande">
+        <label class="form-check-label" for="tamanoGrande">Grande</label>
+      </div>
+
+      <div class="form-check">
+        <input class="form-check-input radio-size" type="radio" name="tamano" id="tamanoMediana" value="mediana">
+        <label class="form-check-label" for="tamanoMediana">Mediana</label>
+      </div>
+
+      <div class="form-check">
+        <input class="form-check-input radio-size" type="radio" name="tamano" id="tamanoPequena" value="pequena">
+        <label class="form-check-label" for="tamanoPequena">Pequeña</label>
+      </div>
+    </div>
+
+    <!-- Modelo -->
+    <div class="col-md-6">
+      <h6>Modelo:</h6>
+
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" name="modelo" id="modeloSin" value="sin" checked = true>
+        <label class="form-check-label" for="modeloSin">Sin Modelo</label>
+      </div>
+
+      <div class="mt-2" id="modeloTexto_container">
+        <label class="form-label" for="modeloTexto">Modelo:</label>
+        <input type="text" id="modeloTexto" class="form-control" placeholder="">
+      </div>
+    </div>
+
+    <!-- Dimensiones -->
+    <div class="col-md-6">
+      <h6>Dimensiones del producto:</h6>
+
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="dimensiones" id="dimensionesNo" value="no" checked>
+        <label class="form-check-label" for="dimensionesNo">No aplica</label>
+      </div>
+
+      <div class="form-check mt-2">
+        <input class="form-check-input" type="radio" name="dimensiones" id="dimensionesSi" value="si">
+        <label class="form-check-label" for="dimensionesSi">
+        Dimensiones
+        </label>
+        <div>
+      </div>
+    <div class="row">
+      <div class="mt-2 col-3">
+        <input type="text" class="form-control" id="dimensionesTexto" placeholder="Largo (cm)">
+      </div>
+      <div class="mt-2 col-3">
+        <input type="text" class="form-control" id="dimensionesTexto" placeholder="Ancho (cm)">
+      </div>
+      <div class="mt-2 col-3">
+        <input type="text" class="form-control" id="dimensionesTexto" placeholder="Alto (cm)">
+      </div>
+    </div>
+    </div>
+    
+
+    <!-- Peso -->
+    <div class="col-md-6" id="peso_container">
+      <h6 class="fw-bold">Peso:</h6>
+
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="opcionPeso" id="pesoNo" value="no" checked>
+        <label class="form-check-label" for="pesoNo">No aplica</label>
+      </div>
+
+      <div class="form-check mt-2">
+        <input class="form-check-input" type="radio" name="opcionPeso" id="pesoSi" value="si">
+        <label class="form-check-label" for="pesoSi">Peso (gramos):</label>
+      </div>
+
+      <div class="mt-2" id="pesoNum_container">
+        <input type="number" class="form-control" id="pesoNum" placeholder="0" min="0" disabled>
+      </div>
+    </div>
+
+    <!-- Volumen -->
+    <div class="col-md-6">
+      <h6>Volumen:</h6>
+      
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="volumen" id="volumenNo" value="no" checked>
+        <label class="form-check-label" for="volumenNo">No aplica</label>
+      </div>
+      <div class="form-check mt-2">
+        <input class="form-check-input" type="radio" name="volumen" id="volumenSi" value="si">
+        <label class="form-check-label" for="volumenSi">Volumen (litros):</label>
+      </div>
+      <div class="mt-2" id="volumenNum_container">
+        <input type="number" class="form-control" id="volumenNum" placeholder="0" min="0" disabled>
+      </div>
+    </div>
+
+    <!-- Botón -->
+    <div class="col-12 text-end mt-3">
+      <button type="submit" class="btn btn-danger">Registrar Producto</button>
+    </div>
+
+  </div>
+</div>
+
+</section>
+
+
+        </main>
+    
+>>>>>>> Stashed changes
 
     <footer id="footer_container">
       <!-- Footer -->
