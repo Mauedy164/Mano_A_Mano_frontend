@@ -389,62 +389,80 @@
                 </div>
 
                 <!-- Dimensiones -->
-                <div class="col-md-6">
-                  <h6>Dimensiones del producto:</h6>
+               <div class="col-md-6" id="dimensiones_main_container">
+                <h6 class="fw-bold mb-3">Dimensiones del producto:</h6>
 
-                  <div class="form-check">
-                    <input
-                      class="form-check-input"
-                      type="radio"
-                      name="dimensiones"
-                      id="dimensionesNo"
-                      value="no"
-                      checked
-                    />
-                    <label class="form-check-label" for="dimensionesNo">
-                      No aplica
-                    </label>
-                  </div>
+                <div class="form-check mb-2">
+                  <input 
+                    class="form-check-input" 
+                    type="radio" 
+                    name="dimensiones" 
+                    id="dimensionesNo" 
+                    value="no" 
+                    checked 
+                  />
+                  <label class="form-check-label" for="dimensionesNo">
+                    No aplica
+                  </label>
+                </div>
 
-                  <div class="form-check mt-2 col-12">
-                    <input
-                      class="form-check-input"
-                      type="radio"
-                      name="dimensiones"
-                      id="dimensionesSi"
-                      value="si"
-                    />
-                    <label class="form-check-label" for="dimensionesSi">
-                      Dimensiones (cm)
-                    </label>
-                    <div class="row mt-2">
-                      <div class="col-4">
-                        <label for="largo">Largo</label>
-                        <input
-                          type="text"
-                          class="form-control"
-                          id="largo"
-                        />
-                      </div>
-                      <div class="col-4">
-                        <label for="ancho">Ancho</label>
-                        <input
-                          type="text"
-                          class="form-control"
-                          id="ancho"
-                        />
-                      </div>
-                      <div class="col-4">
-                        <label for="alto">Alto</label>
-                        <input
-                          type="text"
-                          class="form-control"
-                          id="alto"
-                        />
-                      </div>
+                <div class="form-check col-12">
+                  <input 
+                    class="form-check-input" 
+                    type="radio" 
+                    name="dimensiones" 
+                    id="dimensionesSi" 
+                    value="si" 
+                  />
+                  <label class="form-check-label" for="dimensionesSi">
+                    Dimensiones (cm)
+                  </label>
+    
+                  <div class="row g-2 mt-1" id="dimensionesInputs_container">
+                    <div class="col-4">
+                      <label for="largo" class="small fw-secondary text-muted">
+                        Largo
+                      </label>
+                      <input 
+                        type="number" 
+                        class="form-control form-control-sm input-dimension" 
+                        id="largo" 
+                        placeholder="0" 
+                        min="0" 
+                        disabled 
+                      />
+                    </div>
+                  
+                    <div class="col-4">
+                      <label for="ancho" class="small fw-secondary text-muted">
+                        Ancho
+                      </label>
+                      <input 
+                        type="number" 
+                        class="form-control form-control-sm input-dimension" 
+                        id="ancho" 
+                        placeholder="0" 
+                        min="0" 
+                        disabled 
+                      />
+                    </div>
+                  
+                    <div class="col-4">
+                      <label for="alto" class="small fw-secondary text-muted">
+                        Alto
+                      </label>
+                      <input 
+                        type="number" 
+                        class="form-control form-control-sm input-dimension" 
+                        id="alto" 
+                        placeholder="0" 
+                        min="0" 
+                        disabled 
+                      />
                     </div>
                   </div>
                 </div>
+              </div>
 
                 <!-- Peso -->
                 <div class="col-6" id="peso_container">
