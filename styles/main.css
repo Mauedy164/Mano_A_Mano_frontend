@@ -289,6 +289,14 @@ main {
 |   logIn (Iniciar sesión)   |
 ==============================
 */
+.login{
+  color: #e6182d !important;
+  font-weight: 100 !important;
+}
+
+.login-container{
+  align-content: center;
+}
 
 /*
 ==============================
