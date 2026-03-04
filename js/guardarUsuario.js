@@ -5,6 +5,10 @@ document.addEventListener("DOMContentLoaded", function () {
     form.addEventListener("submit", function (e) {
       e.preventDefault();
 
+      if (!validarFormularioCompleto()) {
+        return;
+      }
+
       const userData = {
         id: Date.now(),
         nombre: document.getElementById("nombreInput").value,
@@ -29,6 +33,10 @@ document.addEventListener("DOMContentLoaded", function () {
       }
 
       form.reset();
+
+      form.querySelectorAll(".is-valid, .is-invalid").forEach((input) => {
+        input.classList.remove("is-valid", "is-invalid");
+      });
     });
   }
 });
