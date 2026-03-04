@@ -725,6 +725,209 @@ function muestraAnterior() {
 
 loadProductsFromStorage()
 
+/*
+==============================
+|    Tajetas de Este Mes Mas Vendidos  |
+==============================
+*/
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    cargarMasVendidos();
+});
+
+async function cargarMasVendidos() {
+    try {
+        const response = await fetch("./data/products.json");
+        const productos = await response.json();
+
+        const contenedor = document.getElementById("masVendidosContainer");
+
+        //limita cuántos mostrar
+        productos.slice(0, 4).forEach(producto => {
+
+            const card = document.createElement("div");
+            card.classList.add("col-md-3", "mb-4");
+
+            card.innerHTML = `
+    <div class="card h-100 shadow-sm card-masvendidos">
+
+        <div class="position-relative">
+
+            <img src="${producto.img}" 
+                 class="card-img-top"
+                 style="height: 250px; object-fit: cover;" 
+                 alt="${producto.Name}">
+
+            <!-- Botón Favorito -->
+            <button class="btn-favorito">
+                <img src="./media/products/botonfavoritos.png" alt="Favorito">
+            </button>
+
+            <!-- Botón Agregar -->
+            <button class="btn btn-dark w-100 py-2 fw-bold text-uppercase btn-add-to-cart">
+                Agregar al carrito
+            </button>
+
+        </div>
+
+        <div class="card-body">
+            <h6 class="card-title">${producto.Name}</h6>
+
+            <p class="text-danger fw-bold">
+                $${producto.Price}
+            </p>
+
+            <p class="text-muted small">
+                ${producto.Seller}
+            </p>
+        </div>
+
+    </div>
+`;
+
+            contenedor.appendChild(card);
+        });
+
+    } catch (error) {
+        console.error("Error cargando productos:", error);
+    }
+}
+/*
+==============================
+|    Tajetas de Nuestros Productos  |
+==============================
+*/
+document.addEventListener("DOMContentLoaded", () => {
+    cargarExplorarProductos();
+});
+
+async function cargarExplorarProductos() {
+    try {
+        const response = await fetch("./data/products.json");
+        const productos = await response.json();
+
+        const contenedor = document.getElementById("explorarContainer");
+
+        productos.slice(0, 8).forEach(producto => {
+
+            const card = document.createElement("div");
+            card.classList.add("col-md-3", "mb-4");
+
+            card.innerHTML = `
+                <div class="card h-100 shadow-sm card-masvendidos">
+
+                    <button class="btn-favorito">
+                        <img src="./media/products/botonfavoritos.png" alt="Favorito">
+                    </button>
+
+                    <img src="${producto.img}" 
+                         class="card-img-top"
+                         style="height: 250px; object-fit: cover;" 
+                         alt="${producto.Name}">
+
+                    <button class="btn btn-dark w-100 py-2 fw-bold text-uppercase btn-add-to-cart">
+                        Agregar al carrito
+                    </button>
+
+                    <div class="card-body">
+                        <h6 class="card-title">${producto.Name}</h6>
+
+                        <p class="text-danger fw-bold">
+                            $${producto.Price}
+                        </p>
+
+                        <p class="text-muted small">
+                            ${producto.Seller}
+                        </p>
+                    </div>
+
+                </div>
+            `;
+
+            contenedor.appendChild(card);
+        });
+
+    } catch (error) {
+        console.error("Error cargando productos:", error);
+    }
+}
+
+/*
+==============================
+|    DESTACADOS |
+==============================
+*/
+
+document.addEventListener("DOMContentLoaded", () => {
+  cargarNovedades();
+});
+
+async function cargarNovedades() {
+
+  const response = await fetch("./data/products.json");
+  const productos = await response.json();
+
+  // Mezclar productos (shuffle)
+  const shuffled = productos.sort(() => 0.5 - Math.random());
+
+  // Dividir en 4 grupos sin repetir
+  const grupo1 = shuffled.slice(0, 3);
+  const grupo2 = shuffled.slice(3, 6);
+  const grupo3 = shuffled.slice(6, 8);
+  const grupo4 = shuffled.slice(8, 10);
+
+  crearCarousel("carousel1", grupo1);
+  crearCarousel("carousel2", grupo2);
+  crearCarousel("carousel3", grupo3);
+  crearCarousel("carousel4", grupo4);
+}
+
+function crearCarousel(id, productos) {
+
+  const container = document.getElementById(id);
+
+  let index = 0;
+
+  container.innerHTML = `
+    <img src="${productos[0].img}" alt="">
+    <button class="carousel-btn carousel-prev">&#10094;</button>
+    <button class="carousel-btn carousel-next">&#10095;</button>
+  `;
+
+  const img = container.querySelector("img");
+
+  container.querySelector(".carousel-next").addEventListener("click", () => {
+    index = (index + 1) % productos.length;
+    img.style.opacity = 0;
+    setTimeout(() => {
+      img.src = productos[index].img;
+      img.style.opacity = 1;
+    }, 200);
+  });
+
+  container.querySelector(".carousel-prev").addEventListener("click", () => {
+    index = (index - 1 + productos.length) % productos.length;
+    img.style.opacity = 0;
+    setTimeout(() => {
+      img.src = productos[index].img;
+      img.style.opacity = 1;
+    }, 200);
+  });
+
+  setInterval(() => {
+  index = (index + 1) % productos.length;
+  img.style.opacity = 0;
+
+  setTimeout(() => {
+    img.src = productos[index].img;
+    img.style.opacity = 1;
+  }, 200);
+
+}, 4000);
+}
+
+
 
 /*
 ==============================

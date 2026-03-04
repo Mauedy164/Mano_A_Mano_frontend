@@ -326,11 +326,99 @@
       </div>
     </main>
 
+<!-- Este mes -->
+
+<section class="container my-5">
+    <div class="etiqueta-mes">
+        <span class="cuadro-rosa"></span>
+        <span class="texto-mes">Este mes</span>
+    </div>
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2 class="titulo-seccion">Más vendidos</h2>
+        <button class="btn btn-danger">Ver todo</button>
+    </div>
+
+    <div class="row" id="masVendidosContainer">
+        <!-- Aquí se insertan los productos dinámicamente del json-->
+    </div>
+</section>
+
+<!-- Nuestro productos -->
+
+<section class="container my-5">
+      <div class="etiqueta-mes">
+        <span class="cuadro-rosa"></span>
+        <span class="texto-mes">Nuestros Productos</span>
+    </div>
+    
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <div>
+          <h2 class="titulo-seccion">Explora nuestros productos</h2>
+
+        </div>
+
+        <div>
+            <button class="btn btn-light rounded-circle shadow-sm me-2">
+                ←
+            </button>
+            <button class="btn btn-light rounded-circle shadow-sm">
+                →
+            </button>
+        </div>
+    </div>
+
+    <!-- Contenedor de cards -->
+    <div class="row" id="explorarContainer"></div>
+
+    <!-- Botón ver todo -->
+    <div class="text-center mt-4">
+        <button class="btn btn-danger px-4 py-2">Ver todo</button>
+    </div>
+
+</section>
+
+
+
+<!-- Destacados -->
+
+<section class="container my-5">
+
+    <div class="etiqueta-mes">
+        <span class="cuadro-rosa"></span>
+        <span class="texto-mes">Destacados</span>
+    </div>
+  <h2 class="titulo-seccion">Novedades</h2>
+
+  <div class="row g-3">
+
+    <div class="col-md-6">
+      <div id="carousel1" class="custom-carousel"></div>
+    </div>
+
+    <div class="col-md-6">
+      <div id="carousel2" class="custom-carousel mb-3"></div>
+      <div class="row g-3">
+        <div class="col-6">
+          <div id="carousel3" class="custom-carousel small-carousel"></div>
+        </div>
+        <div class="col-6">
+          <div id="carousel4" class="custom-carousel small-carousel"></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+
+
     <footer id="footer_container_index">
       <!-- Footer -->
       <!-- Añadido mediante JavaScript -->
     </footer>
 
+    <script src="./js/masVendidos.js"></script>
     <script src="./js/main.js"></script>
     <script src="./js/carrito.js"></script>
     <script
