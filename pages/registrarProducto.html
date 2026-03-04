@@ -33,8 +33,9 @@
         <!-- Añadido mediante JavaScript -->
       </section>
     </header>
+
     <main>
-      <nav aria-label="breadcrumb" class="text-decoration-none breadcrumb">
+      <nav aria-label="breadcrumb" class="text-decoration-none breadcrumb mt-4">
         <ol>
           <a href="#PorDefinir" class="text-decoration-none text-reset">Cuenta /</a>
           <!-- Por definir el enlace -->
@@ -42,22 +43,26 @@
           <!-- Por definir el enlace -->
           <a href="#Vendedor" class="text-decoration-none text-reset">Vendedor /</a>
           <!-- Por definir el enlace -->
-          <a href="./registrarProducto.html" class="text-decoration-none text-reset active"
-            ><strong>Registrar producto</strong></a
+          <a
+            href="./registrarProducto.html"
+            class="text-decoration-none text-reset active"
           >
+            <strong>Registrar producto</strong>
+          </a>
         </ol>
       </nav>
 
-      <div class="container my-4">
+      <div class="container my-4 col-12">
         <div class="row mx-5 g-5">
-          <div class="col-12 col-lg-5">
+          <!-- Columna izquierda -->
+          <div class="col-12 col-lg-7">
             <h2>Datos del producto:</h2>
             <br />
 
             <div class="mb-3" id="nameProductForm_container">
-              <label for="formularioNombreProducto" class="form-label"
-                >Nombre del producto<strong class="required">*</strong></label
-              >
+              <label for="formularioNombreProducto" class="form-label">
+                Nombre del producto<strong class="required">*</strong>
+              </label>
               <input
                 type="text"
                 class="form-control"
@@ -65,10 +70,11 @@
                 placeholder="Bolso de cuero artesanal"
               />
             </div>
+
             <div class="mb-3" id="descriptionProductForm_container">
-              <label for="formularioDescripcionProducto" class="form-label"
-                >Descripción del producto<strong class="required">*</strong></label
-              >
+              <label for="formularioDescripcionProducto" class="form-label">
+                Descripción del producto<strong class="required">*</strong>
+              </label>
               <textarea
                 class="form-control"
                 id="formularioDescripcionProducto"
@@ -76,10 +82,11 @@
                 placeholder="Bolso 100% cuero de vaca con incrustaciones de diamantes y bañado en oro"
               ></textarea>
             </div>
+
             <div class="mb-3" id="priceProductForm_container">
-              <label for="formularioPrecioProducto" class="form-label"
-                >Precio Individual (MXN)<strong class="required">*</strong></label
-              >
+              <label for="formularioPrecioProducto" class="form-label">
+                Precio Individual (MXN)<strong class="required">*</strong>
+              </label>
               <input
                 type="number"
                 class="form-control"
@@ -91,10 +98,11 @@
                 required
               />
             </div>
+
             <div class="mb-3" id="amountProductForm_container">
-              <label for="formularioCantidadProducto" class="form-label"
-                >Cantidad de productos a vender<strong class="required">*</strong></label
-              >
+              <label for="formularioCantidadProducto" class="form-label">
+                Cantidad de productos a vender<strong class="required">*</strong>
+              </label>
               <input
                 type="number"
                 class="form-control"
@@ -106,10 +114,11 @@
                 required
               />
             </div>
+
             <div class="mb-3" id="tagProductForm_container">
-              <label for="formularioTagsProducto" class="form-label"
-                >Tags<strong class="required">*</strong></label
-              >
+              <label for="formularioTagsProducto" class="form-label">
+                Tags<strong class="required">*</strong>
+              </label>
               <input
                 type="text"
                 class="form-control"
@@ -117,11 +126,12 @@
                 placeholder="Añade hasta 20 etiquetas para encontar tu producto. Ej: #bolso #cuero "
               />
             </div>
+
             <!-- Imagen principal -->
             <div class="mb-3">
-              <label class="form-label" for="formularioImagenPrincipalProducto"
-                >Agrega tu imagen principal <strong class="required">*</strong></label
-              >
+              <label class="form-label" for="formularioImagenPrincipalProducto">
+                Agrega tu imagen principal <strong class="required">*</strong>
+              </label>
               <label
                 for="formularioImagenPrincipalProducto"
                 class="form-control border-dashed d-flex flex-column align-items-center justify-content-center py-4 text-center bg-light drop-zone"
@@ -143,9 +153,9 @@
 
             <!-- Imágenes adicionales -->
             <div class="mb-3">
-              <label class="form-label" for="formularioImagenesAdicionalesProducto"
-                >Agrega más imágenes en diferentes ángulos</label
-              >
+              <label class="form-label" for="formularioImagenesAdicionalesProducto">
+                Agrega más imágenes en diferentes ángulos
+              </label>
               <label
                 for="formularioImagenesAdicionalesProducto"
                 class="form-control border-dashed d-flex flex-column align-items-center justify-content-center py-4 text-center bg-light drop-zone"
@@ -165,26 +175,24 @@
               </label>
               <div id="previewAdicionales" class="mt-2 d-flex flex-wrap gap-2"></div>
             </div>
+
             <div class="derecha">
               <span><strong class="required">*</strong>Campos obligatorios</span>
             </div>
           </div>
 
-          <div class="col-12 col-lg-7">
-            <!-- Texto Detalles Producto-->
-            <div class="container my-5">
-              <br />
-              <h6 class="mb-3">Detalles del producto</h6>
-
+          <!-- Columna derecha -->
+          <div class="col-12 col-lg-5">
+            <h6 class="mt-5">Detalles del producto:</h6>
+            <div class="row g-4 ms-4">
               <!-- Contenedor checks -->
-
-              <div class="row g-4 ms-4">
+              <div class="row g-4">
                 <!-- Colores -->
                 <div class="col-md-6">
-                  <h6>Colores:</h6>
+                  <h6 class="form-label fw-bold mb-3">Colores:</h6>
 
-<<<<<<< Updated upstream
-                  <div class="form-check">
+                  <!-- Radios verticales apilados -->
+                  <div class="form-check mb-3">
                     <input
                       class="form-check-input"
                       type="radio"
@@ -193,21 +201,72 @@
                       value="sin"
                       checked
                     />
-                    <label class="form-check-label text-black" for="coloresSin">Sin Colores</label>
+                    <label class="form-check-label" for="coloresSin">
+                      Sin Colores
+                    </label>
                   </div>
 
-                  <div class="mt-2">
-                    <label class="form-label" for="colorPrincipal">Color:</label>
-                    <select id="colorPrincipal" class="form-select">
-                      <option selected disabled>Selecciona un color</option>
-                    </select>
+                  <div class="form-check mb-3">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="colores"
+                      id="coloresSi"
+                      value="si"
+                    />
+                    <label class="form-check-label" for="coloresSi">
+                      Agrega un color
+                    </label>
                   </div>
 
-                  <div class="mt-2">
-                    <label class="form-label" for="colorSecundario">Color:</label>
-                    <select id="colorSecundario" class="form-select">
-                      <option selected disabled>Selecciona un color</option>
-                    </select>
+                  <div
+                    class="mt-3 mb-3 col-12"
+                    id="colorPrincipal_container"
+                    style="display: none;"
+                  >
+                    <label class="form-label fw-semibold" for="colorPrincipal">
+                      Color principal:
+                    </label>
+                    <input
+                      type="color"
+                      id="colorPrincipal"
+                      class="form-control form-control-color w-100"
+                      value="#007bff"
+                      title="Elige color"
+                    />
+                  </div>
+
+                  <div class="form-check mb-3">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="colores"
+                      id="coloresMas"
+                      value="mas"
+                    />
+                    <label class="form-check-label" for="coloresMas">
+                      Agrega otro color
+                    </label>
+                  </div>
+
+                  <div
+                    class="mt-3 col-12"
+                    id="colorSecundario_container"
+                    style="display: none;"
+                  >
+                    <label
+                      class="form-label fw-semibold"
+                      for="colorSecundario"
+                    >
+                      Color secundario:
+                    </label>
+                    <input
+                      type="color"
+                      id="colorSecundario"
+                      class="form-control form-control-color w-100"
+                      value="#dc3545"
+                      title="Elige color"
+                    />
                   </div>
                 </div>
 
@@ -221,9 +280,11 @@
                       type="checkbox"
                       name="marca"
                       id="marcaCheck"
-                      checked="true"
+                      checked
                     />
-                    <label class="form-check-label" for="marcaSin">Sin Marca</label>
+                    <label class="form-check-label" for="marcaCheck">
+                      Sin Marca
+                    </label>
                   </div>
 
                   <div class="mt-2" id="marcaTexto_container">
@@ -239,49 +300,60 @@
                 </div>
 
                 <!-- Tamaño -->
-                <div class="col-md-6">
+                <div class="col-md-6" id="tamano_container">
                   <h6>Tamaño:</h6>
 
                   <div class="form-check">
                     <input
                       class="form-check-input"
-                      type="radio"
+                      type="checkbox"
                       name="tamano"
                       id="tamanoNo"
                       value="no"
                       checked
                     />
-                    <label class="form-check-label" for="tamanoNo">No aplica</label>
+                    <label class="form-check-label" for="tamanoNo">
+                      No aplica
+                    </label>
                   </div>
+
                   <div class="form-check">
                     <input
-                      class="form-check-input"
+                      class="form-check-input radio-size"
                       type="radio"
                       name="tamano"
                       id="tamanoGrande"
                       value="grande"
                     />
-                    <label class="form-check-label" for="tamanoGrande">Grande</label>
+                    <label class="form-check-label" for="tamanoGrande">
+                      Grande
+                    </label>
                   </div>
+
                   <div class="form-check">
                     <input
-                      class="form-check-input"
+                      class="form-check-input radio-size"
                       type="radio"
                       name="tamano"
                       id="tamanoMediana"
                       value="mediana"
                     />
-                    <label class="form-check-label" for="tamanoMediana">Mediana</label>
+                    <label class="form-check-label" for="tamanoMediana">
+                      Mediana
+                    </label>
                   </div>
+
                   <div class="form-check">
                     <input
-                      class="form-check-input"
+                      class="form-check-input radio-size"
                       type="radio"
                       name="tamano"
                       id="tamanoPequena"
                       value="pequena"
                     />
-                    <label class="form-check-label" for="tamanoPequena">Pequeña</label>
+                    <label class="form-check-label" for="tamanoPequena">
+                      Pequeña
+                    </label>
                   </div>
                 </div>
 
@@ -296,14 +368,23 @@
                       name="modelo"
                       id="modeloSin"
                       value="sin"
-                      checked="true"
+                      checked
                     />
-                    <label class="form-check-label" for="modeloSin">Sin Modelo</label>
+                    <label class="form-check-label" for="modeloSin">
+                      Sin Modelo
+                    </label>
                   </div>
 
                   <div class="mt-2" id="modeloTexto_container">
-                    <label class="form-label" for="modeloTexto">Modelo:</label>
-                    <input type="text" id="modeloTexto" class="form-control" placeholder="" />
+                    <label class="form-label" for="modeloTexto">
+                      Modelo:
+                    </label>
+                    <input
+                      type="text"
+                      id="modeloTexto"
+                      class="form-control"
+                      placeholder=""
+                    />
                   </div>
                 </div>
 
@@ -320,10 +401,12 @@
                       value="no"
                       checked
                     />
-                    <label class="form-check-label" for="dimensionesNo">No aplica</label>
+                    <label class="form-check-label" for="dimensionesNo">
+                      No aplica
+                    </label>
                   </div>
 
-                  <div class="form-check mt-2">
+                  <div class="form-check mt-2 col-12">
                     <input
                       class="form-check-input"
                       type="radio"
@@ -332,50 +415,84 @@
                       value="si"
                     />
                     <label class="form-check-label" for="dimensionesSi">
-                      00 cm x 00 cm x 00 cm : largo x ancho x profundo
+                      Dimensiones (cm)
                     </label>
-                  </div>
-
-                  <div class="mt-2">
-                    <input type="text" class="form-control" id="dimensionesTexto" placeholder="" />
+                    <div class="row mt-2">
+                      <div class="col-4">
+                        <label for="largo">Largo</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="largo"
+                        />
+                      </div>
+                      <div class="col-4">
+                        <label for="ancho">Ancho</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="ancho"
+                        />
+                      </div>
+                      <div class="col-4">
+                        <label for="alto">Alto</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="alto"
+                        />
+                      </div>
+                    </div>
                   </div>
                 </div>
 
                 <!-- Peso -->
-                <div class="col-md-6">
-                  <h6>Peso:</h6>
+                <div class="col-6" id="peso_container">
+                  <h6 class="fw-bold">Peso:</h6>
 
                   <div class="form-check">
                     <input
                       class="form-check-input"
                       type="radio"
-                      name="peso"
+                      name="opcionPeso"
                       id="pesoNo"
                       value="no"
                       checked
                     />
-                    <label class="form-check-label" for="pesoNo">No aplica</label>
+                    <label class="form-check-label" for="pesoNo">
+                      No aplica
+                    </label>
                   </div>
 
                   <div class="form-check mt-2">
                     <input
                       class="form-check-input"
                       type="radio"
-                      name="peso"
+                      name="opcionPeso"
                       id="pesoSi"
                       value="si"
                     />
-                    <label class="form-check-label" for="pesoSi">Peso (gramos):</label>
+                    <label class="form-check-label" for="pesoSi">
+                      Peso (gramos):
+                    </label>
                   </div>
 
-                  <div class="mt-2">
-                    <input type="number" class="form-control" id="pesoTexto" placeholder="" />
+                  <div class="mt-2" id="pesoNum_container">
+                    <input
+                      type="number"
+                      class="form-control"
+                      id="pesoNum"
+                      placeholder="0"
+                      min="0"
+                      disabled
+                    />
                   </div>
                 </div>
 
                 <!-- Volumen -->
                 <div class="col-md-6">
                   <h6>Volumen:</h6>
+
                   <div class="form-check">
                     <input
                       class="form-check-input"
@@ -385,8 +502,11 @@
                       value="no"
                       checked
                     />
-                    <label class="form-check-label" for="volumenNo">No aplica</label>
+                    <label class="form-check-label" for="volumenNo">
+                      No aplica
+                    </label>
                   </div>
+
                   <div class="form-check mt-2">
                     <input
                       class="form-check-input"
@@ -395,193 +515,35 @@
                       id="volumenSi"
                       value="si"
                     />
-                    <label class="form-check-label" for="volumenSi">Volumen (litros):</label>
+                    <label class="form-check-label" for="volumenSi">
+                      Volumen (litros):
+                    </label>
                   </div>
-                  <div class="mt-2">
-                    <input type="number" class="form-control" id="volumenTexto" placeholder="" />
+
+                  <div class="mt-2" id="volumenNum_container">
+                    <input
+                      type="number"
+                      class="form-control"
+                      id="volumenNum"
+                      placeholder="0"
+                      min="0"
+                      disabled
+                    />
                   </div>
                 </div>
 
                 <!-- Botón -->
                 <div class="col-12 text-end mt-3">
-                  <button type="submit" class="btn btn-danger">Registrar Producto</button>
+                  <button type="submit" class="btn btn-danger">
+                    Registrar Producto
+                  </button>
                 </div>
               </div>
             </div>
-          </div>
+          </div> 
         </div>
       </div>
     </main>
-=======
-<!-- Contenedor checks -->
-  <div class="row g-4">
-    <!-- Colores -->
-    <div class="col-md-6">
-  <h6 class="form-label fw-bold mb-3">Colores:</h6>
-
-  <!-- Radios verticales apilados -->
-  <div class="form-check mb-3">
-    <input class="form-check-input" type="radio" name="colores" id="coloresSin" value="sin" checked>
-    <label class="form-check-label" for="coloresSin">Sin Colores</label>
-  </div>
-  
-  <div class="form-check mb-3">
-    <input class="form-check-input" type="radio" name="colores" id="coloresSi" value="si">
-    <label class="form-check-label" for="coloresSi">Agrega un color</label>
-  </div>
-
-  <div class="mt-3 mb-3 col-3" id="colorPrincipal_container" style="display: none;">
-    <label class="form-label fw-semibold" for="colorPrincipal">Color principal:</label>
-    <input type="color" id="colorPrincipal" class="form-control form-control-color w-100" value="#007bff" title="Elige color">
-  </div>
-
-  <div class="form-check mb-3">
-    <input class="form-check-input" type="radio" name="colores" id="coloresMas" value="mas">
-    <label class="form-check-label" for="coloresMas">Agrega otro color</label>
-  </div>
-
-  <div class="mt-3 col-3" id="colorSecundario_container" style="display: none;">
-    <label class="form-label fw-semibold" for="colorSecundario">Color secundario:</label>
-    <input type="color" id="colorSecundario" class="form-control form-control-color w-100" value="#dc3545" title="Elige color">
-  </div>
-</div>
-
-
-    <!-- Marca -->
-    <div class="col-md-6">
-      <h6>Marca:</h6>
-
-      <div class="form-check">
-        <input class="form-check-input" type="checkbox" name="marca" id="marcaCheck"  checked = true>
-        <label class="form-check-label" for="marcaSin">Sin Marca</label>
-      </div>
-
-      <div class="mt-2" id="marcaTexto_container">
-        <label class="form-label " for="marcaTexto" >Marca:</label>
-        <input type="text" id="marcaTexto" class="form-control" placeholder="" disabled>
-      </div>
-    </div>
-
-    <!-- Tamaño -->
-    <div class="col-md-6" id="tamano_container">
-      <h6>Tamaño:</h6>
-
-      <div class="form-check">
-        <input class="form-check-input" type="checkbox" name="tamano" id="tamanoNo" value="no" checked>
-        <label class="form-check-label" for="tamanoNo">No aplica</label>
-      </div>
-
-      <div class="form-check">
-        <input class="form-check-input radio-size" type="radio" name="tamano" id="tamanoGrande" value="grande">
-        <label class="form-check-label" for="tamanoGrande">Grande</label>
-      </div>
-
-      <div class="form-check">
-        <input class="form-check-input radio-size" type="radio" name="tamano" id="tamanoMediana" value="mediana">
-        <label class="form-check-label" for="tamanoMediana">Mediana</label>
-      </div>
-
-      <div class="form-check">
-        <input class="form-check-input radio-size" type="radio" name="tamano" id="tamanoPequena" value="pequena">
-        <label class="form-check-label" for="tamanoPequena">Pequeña</label>
-      </div>
-    </div>
-
-    <!-- Modelo -->
-    <div class="col-md-6">
-      <h6>Modelo:</h6>
-
-      <div class="form-check">
-        <input class="form-check-input" type="checkbox" name="modelo" id="modeloSin" value="sin" checked = true>
-        <label class="form-check-label" for="modeloSin">Sin Modelo</label>
-      </div>
-
-      <div class="mt-2" id="modeloTexto_container">
-        <label class="form-label" for="modeloTexto">Modelo:</label>
-        <input type="text" id="modeloTexto" class="form-control" placeholder="">
-      </div>
-    </div>
-
-    <!-- Dimensiones -->
-    <div class="col-md-6">
-      <h6>Dimensiones del producto:</h6>
-
-      <div class="form-check">
-        <input class="form-check-input" type="radio" name="dimensiones" id="dimensionesNo" value="no" checked>
-        <label class="form-check-label" for="dimensionesNo">No aplica</label>
-      </div>
-
-      <div class="form-check mt-2">
-        <input class="form-check-input" type="radio" name="dimensiones" id="dimensionesSi" value="si">
-        <label class="form-check-label" for="dimensionesSi">
-        Dimensiones
-        </label>
-        <div>
-      </div>
-    <div class="row">
-      <div class="mt-2 col-3">
-        <input type="text" class="form-control" id="dimensionesTexto" placeholder="Largo (cm)">
-      </div>
-      <div class="mt-2 col-3">
-        <input type="text" class="form-control" id="dimensionesTexto" placeholder="Ancho (cm)">
-      </div>
-      <div class="mt-2 col-3">
-        <input type="text" class="form-control" id="dimensionesTexto" placeholder="Alto (cm)">
-      </div>
-    </div>
-    </div>
-    
-
-    <!-- Peso -->
-    <div class="col-md-6" id="peso_container">
-      <h6 class="fw-bold">Peso:</h6>
-
-      <div class="form-check">
-        <input class="form-check-input" type="radio" name="opcionPeso" id="pesoNo" value="no" checked>
-        <label class="form-check-label" for="pesoNo">No aplica</label>
-      </div>
-
-      <div class="form-check mt-2">
-        <input class="form-check-input" type="radio" name="opcionPeso" id="pesoSi" value="si">
-        <label class="form-check-label" for="pesoSi">Peso (gramos):</label>
-      </div>
-
-      <div class="mt-2" id="pesoNum_container">
-        <input type="number" class="form-control" id="pesoNum" placeholder="0" min="0" disabled>
-      </div>
-    </div>
-
-    <!-- Volumen -->
-    <div class="col-md-6">
-      <h6>Volumen:</h6>
-      
-      <div class="form-check">
-        <input class="form-check-input" type="radio" name="volumen" id="volumenNo" value="no" checked>
-        <label class="form-check-label" for="volumenNo">No aplica</label>
-      </div>
-      <div class="form-check mt-2">
-        <input class="form-check-input" type="radio" name="volumen" id="volumenSi" value="si">
-        <label class="form-check-label" for="volumenSi">Volumen (litros):</label>
-      </div>
-      <div class="mt-2" id="volumenNum_container">
-        <input type="number" class="form-control" id="volumenNum" placeholder="0" min="0" disabled>
-      </div>
-    </div>
-
-    <!-- Botón -->
-    <div class="col-12 text-end mt-3">
-      <button type="submit" class="btn btn-danger">Registrar Producto</button>
-    </div>
-
-  </div>
-</div>
-
-</section>
-
-
-        </main>
-    
->>>>>>> Stashed changes
 
     <footer id="footer_container">
       <!-- Footer -->
