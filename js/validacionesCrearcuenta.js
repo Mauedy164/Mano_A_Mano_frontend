@@ -194,3 +194,31 @@ function iniciarValidacionConfirmPassword() {
 }
 
 document.addEventListener("DOMContentLoaded", iniciarValidacionConfirmPassword);
+
+
+/*
+==============================
+|Validacion Numero Telefonico  |
+==============================
+*/
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const telefonoInput = document.getElementById("telefono");
+
+    telefonoInput.addEventListener("input", function () {
+
+        const telefono = telefonoInput.value.trim();
+
+        telefonoInput.classList.remove("is-valid", "is-invalid");
+
+        // Solo números y exactamente 10 dígitos
+        if (/^\d{10}$/.test(telefono)) {
+            telefonoInput.classList.add("is-valid");
+        } else {
+            telefonoInput.classList.add("is-invalid");
+        }
+
+    });
+
+});
