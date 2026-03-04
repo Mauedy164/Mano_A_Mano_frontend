@@ -44,7 +44,7 @@ if (navbar_container_index) {
                                     <a class="nav-link text-dark" href="./pages/aboutMe.html">Nosotros</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link text-dark" href="#">Iniciar Sesión</a>
+                                    <a class="nav-link text-dark" href="../pages/iniciarSesion.html">Iniciar Sesión</a>
                                 </li>
                             </ul>
 
@@ -184,7 +184,7 @@ if (navbar_container) {
                                     <a class="nav-link text-dark" href="../pages/aboutMe.html">Nosotros</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link text-dark" href="#">Iniciar Sesión</a>
+                                    <a class="nav-link text-dark" href="../pages/iniciarSesion.html">Iniciar Sesión</a>
                                 </li>
                             </ul>
 
