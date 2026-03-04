@@ -441,3 +441,86 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 });
+
+//Validar dimensiones
+
+const dimensionesNo = document.getElementById("dimensionesNo");
+const dimensionesSi = document.getElementById("dimensionesSi");
+const inputsDimension = document.querySelectorAll(".input-dimension"); 
+const dimensiones_main_container = document.getElementById("dimensiones_main_container"); 
+
+// 2. FUNCIÓN PARA HABILITAR / DESHABILITAR
+function actualizarEstadoDimensiones() {
+    if (dimensionesNo.checked) {
+        // Bloqueamos los 3 inputs y limpiamos valores/estilos
+        inputsDimension.forEach(input => {
+            input.disabled = true;
+            input.value = "";
+            input.classList.remove("is-valid", "is-invalid");
+        });
+        
+        // Borramos el mensaje de error si existía
+        const errorPrevio = dimensiones_main_container.querySelector(".error-mensaje-js");
+        if (errorPrevio) errorPrevio.remove();
+    } else {
+        // Habilitamos los campos para escribir
+        inputsDimension.forEach(input => input.disabled = false);
+        // Ponemos el foco en el primer campo (largo)
+        const largoInput = document.getElementById("largo");
+        if (largoInput) largoInput.focus();
+    }
+}
+
+
+function isValidDimensiones() {
+    // Limpiamos estilos de los inputs y buscamos errores previos
+    inputsDimension.forEach(input => input.classList.remove("is-invalid", "is-valid"));
+    const errorPrevio = dimensiones_main_container.querySelector(".error-mensaje-js");
+    if (errorPrevio) errorPrevio.remove();
+
+    let todasValidas = true;
+    let algunNegativo = false;
+
+    // Evaluamos los 3 campos (Largo, Ancho, Alto)
+    inputsDimension.forEach(input => {
+        const val = parseFloat(input.value);
+        // Si está vacío, no es un número o es menor/igual a 0
+        if (input.value === "" || isNaN(val) || val <= 0) {
+            todasValidas = false;
+            if (val < 0) algunNegativo = true;
+        }
+    });
+
+    if (!todasValidas) {
+        // Marcamos los campos en rojo
+        inputsDimension.forEach(input => {
+            if (input.value === "" || parseFloat(input.value) <= 0) {
+                input.classList.add("is-invalid");
+            }
+        });
+        
+        
+        const errorDiv = document.createElement("div");
+        errorDiv.className = "error-mensaje-js text-danger small mt-1";
+        errorDiv.style.fontSize = "0.75rem";
+        errorDiv.textContent = algunNegativo 
+            ? "Las dimensiones deben ser números positivos." 
+            : "Por favor, complete las tres dimensiones (cm).";
+        
+        dimensiones_main_container.appendChild(errorDiv);
+        return false;
+    } else {
+        inputsDimension.forEach(input => input.classList.add("is-valid"));
+        return true;
+    }
+}
+
+
+dimensionesNo.addEventListener("change", actualizarEstadoDimensiones);
+dimensionesSi.addEventListener("change", actualizarEstadoDimensiones);
+
+inputsDimension.forEach(input => {
+    input.addEventListener("input", isValidDimensiones);
+});
+
+actualizarEstadoDimensiones();

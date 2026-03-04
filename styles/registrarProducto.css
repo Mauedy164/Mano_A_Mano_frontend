@@ -15,3 +15,17 @@
   background-color: #000 !important;
   border-color: #000 !important;
 }
+
+/* Reduce el tamaño de la fuente de las etiquetas internas para que quepan */
+#dimensionesInputs_container label {
+    font-size: 0.75rem; 
+    margin-bottom: 2px;
+    display: block;
+}
+
+/* Asegura que los números se vean grandes y centrados dentro del input */
+.input-dimension {
+    text-align: center;
+    padding: 0.25rem 0.5rem;
+    font-weight: 400;
+}
