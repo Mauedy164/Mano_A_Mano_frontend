@@ -27,5 +27,24 @@
 .input-dimension {
     text-align: center;
     padding: 0.25rem 0.5rem;
-    font-weight: 400;
+    font-weight: 350;
+}
+
+/* Alinea el contenedor de inputs con el radio button */
+#dimensionesInputs_container {
+    margin-left: -1.25rem !important; /* Compensa el padding de .form-check */
+    width: calc(100% + 1.25rem);    /* Recupera el ancho perdido al moverlo */
+}
+
+.dim-label {
+    font-size: 0.7rem;
+    color: #6c757d;
+    margin-bottom: 2px;
+    display: block;
+}
+
+.form-control.is-valid {
+    background-size: 1rem 1rem !important; /* Por defecto es mas grande, aquí lo achicamos */
+    background-position: right calc(0.375em + 0.1875rem) center !important;
+    padding-right: calc(1.5em + 0.75rem) !important;
 }

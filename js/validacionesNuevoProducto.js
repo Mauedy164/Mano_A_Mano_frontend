@@ -426,6 +426,7 @@ function isValidVolumen() {
 | FORMULARIO DE COLORES |
 ========================*/
 
+/*
 document.addEventListener('DOMContentLoaded', function() {
   const radios = document.querySelectorAll('input[name="colores"]');
   const colorPrincipalContainer = document.getElementById('colorPrincipal_container');
@@ -441,6 +442,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 });
+*/
 
 //Validar dimensiones
 
@@ -449,7 +451,7 @@ const dimensionesSi = document.getElementById("dimensionesSi");
 const inputsDimension = document.querySelectorAll(".input-dimension"); 
 const dimensiones_main_container = document.getElementById("dimensiones_main_container"); 
 
-// 2. FUNCIÓN PARA HABILITAR / DESHABILITAR
+// FUNCIÓN PARA HABILITAR / DESHABILITAR
 function actualizarEstadoDimensiones() {
     if (dimensionesNo.checked) {
         // Bloqueamos los 3 inputs y limpiamos valores/estilos
@@ -524,3 +526,45 @@ inputsDimension.forEach(input => {
 });
 
 actualizarEstadoDimensiones();
+
+
+//Validar color
+
+document.addEventListener('DOMContentLoaded', function() {
+  const coloresSin = document.getElementById('coloresSin');
+  const opcionesRadios = document.querySelectorAll('.radio-color');
+  const colorPrincipalContainer = document.getElementById('colorPrincipal_container');
+  const colorSecundarioContainer = document.getElementById('colorSecundario_container');
+
+  // Función para manejar el bloqueo y la visibilidad
+  function actualizarEstadoColores() {
+    if (coloresSin.checked) {
+      // BLOQUEAR: Si no hay colores, desactivamos y desmarcamos radios
+      opcionesRadios.forEach(radio => {
+        radio.disabled = true;
+        radio.checked = false;
+      });
+      // OCULTAR: Escondemos los selectores de color
+      colorPrincipalContainer.style.display = 'none';
+      colorSecundarioContainer.style.display = 'none';
+    } else {
+      // DESBLOQUEAR: El usuario quiere colores, habilitamos los radios
+      opcionesRadios.forEach(radio => radio.disabled = false);
+    }
+  }
+
+  // Escuchar el Checkbox maestro
+  coloresSin.addEventListener('change', actualizarEstadoColores);
+
+  // Escuchar los radios para mostrar 1 o 2 colores
+  opcionesRadios.forEach(radio => {
+    radio.addEventListener('change', function() {
+      const valor = this.value;
+      colorPrincipalContainer.style.display = (valor === 'si' || valor === 'mas') ? 'block' : 'none';
+      colorSecundarioContainer.style.display = (valor === 'mas') ? 'block' : 'none';
+    });
+  });
+
+  // Inicialización al cargar la página
+  actualizarEstadoColores();
+});
