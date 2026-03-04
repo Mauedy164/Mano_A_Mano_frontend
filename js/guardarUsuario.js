@@ -33,6 +33,10 @@ document.addEventListener("DOMContentLoaded", function () {
       }
 
       form.reset();
+
+      form.querySelectorAll(".is-valid, .is-invalid").forEach((input) => {
+        input.classList.remove("is-valid", "is-invalid");
+      });
     });
   }
 });
