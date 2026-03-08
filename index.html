@@ -39,7 +39,7 @@
         <div class="card-body">
           <h5 class="card-title">Zapatos SAM</h5>
           <p class="card-text">$ 450 MX</p>
-          <button class="btn btn-dark" onclick="agregarAlCarrito(1, 'Zapato Guinda', 450)">
+          <button class="btn btn-dark" onclick="agregarAlCarrito(1, 'Zapato Guinda', 450,'/media/productos_carrito/ZapatosSAM.png')">
             Agregar al carrito
           </button>
         </div>
@@ -358,10 +358,10 @@
         </div>
 
         <div>
-            <button class="btn btn-light rounded-circle shadow-sm me-2">
+            <button class="btn btn-light rounded-circle shadow-sm me-2" id="btnAnterior">
                 ←
             </button>
-            <button class="btn btn-light rounded-circle shadow-sm">
+            <button class="btn btn-light rounded-circle shadow-sm" id="btnSiguiente">
                 →
             </button>
         </div>
@@ -410,6 +410,59 @@
   </div>
 
 </section>
+
+<!-- Beneficios -->
+
+<section class="benefits">
+
+    <!-- Envíos -->
+    <div class="benefit-item">
+      <div class="icon-wrapper">
+        <div class="icon-inner">
+          <svg viewBox="0 0 24 24">
+            <rect x="1" y="3" width="15" height="13" rx="1"/>
+            <path d="M16 8h4l3 5v4h-7V8z"/>
+            <circle cx="5.5" cy="18.5" r="2.5"/>
+            <circle cx="18.5" cy="18.5" r="2.5"/>
+          </svg>
+        </div>
+      </div>
+      <span class="benefit-title">Envíos gratis y rápidos</span>
+      <p class="benefit-desc">Envío gratis a todas las compras arriba de $1500 MXN.</p>
+    </div>
+
+    <!-- Atención -->
+    <div class="benefit-item">
+      <div class="icon-wrapper">
+        <div class="icon-inner">
+          <svg viewBox="0 0 24 24">
+            <path d="M3 18v-6a9 9 0 0 1 18 0v6"/>
+            <path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3z"/>
+            <path d="M3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/>
+          </svg>
+        </div>
+      </div>
+      <span class="benefit-title">Atención al cliente 24/7</span>
+      <p class="benefit-desc">El mejor servicio al consumidor 24/7.</p>
+    </div>
+
+    <!-- Garantía -->
+    <div class="benefit-item">
+      <div class="icon-wrapper">
+        <div class="icon-inner">
+          <svg viewBox="0 0 24 24">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            <polyline points="9 12 11 14 15 10"/>
+          </svg>
+        </div>
+      </div>
+      <span class="benefit-title">Garantía de satisfacción</span>
+      <p class="benefit-desc">Reembolsos dentro de los primeros 30 días.</p>
+    </div>
+
+  </section>
+
+
 
 
 
