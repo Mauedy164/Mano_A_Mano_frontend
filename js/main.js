@@ -861,7 +861,8 @@ function mostrarProductos() {
                     <img src="./media/products/botonfavoritos.png" alt="Favorito">
                 </button>
 
-                <button class="btn btn-dark w-100 py-2 fw-bold text-uppercase btn-add-to-cart">
+                <button class="btn btn-dark w-100 py-2 fw-bold text-uppercase btn-add-to-cart"
+                onclick="agregarAlCarrito(${producto.id}, '${producto.Name}', ${producto.Price},'${producto.img}')">
                     Agregar al carrito
                 </button>
 
