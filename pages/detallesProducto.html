@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Products</title>
+
+    <!-- Estilos -->
+    <link rel="stylesheet" href="../styles/aboutMe.css" />
+    <link rel="stylesheet" href="../styles/main.css" />
+    <link rel="stylesheet" href="../styles/products.css">
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <header>
+      <section><!-- barra anuncio oferta --></section>
+
+      <section id="navbar_container">
+        <!-- Navbar -->
+        <!-- Añadido mediante JavaScript -->
+      </section>
+    </header>
+    <main class="content container-fluid">
+      <h1></h1>
+    </main>
+
+   
+    <nav aria-label="breadcrumb" class="text-decoration-none text-muted breadcrumb">
+        <ul>
+            <a href="../index.html">Inicio /</a>
+            <a href="./products.html"><strong>Detalles del producto</strong></a>
+        </ul>
+    </nav>
+
+    <main>
+        <section class="product-detail-container">
+            
+            <div class="product-gallery ">
+                
+                <div class="gallery">
+                    <button><img class="Vistalateral" src="" alt="Vista lateral del producto"></button>
+                    <button><img class="Vistalateral1" src="" alt="Vista frontal del producto"></button>
+                    <button><img class="Vistalateral2" src="" alt="Vista lateral del producto"></button>
+                    <button><img class="Vistalateral3" src="" alt="Vista frontal del producto"></button>
+                </div>
+                <div class="gallery-main-image">
+                    <img src="../media/productos_carrito/Canasta_de_mimbre.png" alt="Foto main del producto">
+                </div>
+            </div>
+
+            <div class="product-info">
+                <h1 class="product-title">Detalles del producto</h1>
+                
+                <div class="product-meta">
+                    <div class="rating" aria-label="4 de 5 estrellas">
+                        ⭐⭐⭐⭐☆
+                        <span class="reviews-count">(150 Reseñas)</span>
+                    </div>
+                    <span class="separator">|</span>
+                    <span class="stock-status text-green">En Stock</span>
+                </div>
+
+                <div class="product-price">$120.00</div>
+
+                <p class="product-description">
+                    ¡Descubre el organizador de relojes y anillos perfecto para mantener tu colección impecable y elegante! Esta caja multifuncional es ideal para cualquier tocador o mesita de noche.
+                </p>
+
+                <div class="product-variants">
+                    <span class="variant-label">Colores:</span>
+                    <div class="color-options"></div>
+                </div>
+
+                <div class="purchase-actions">
+                    <div class="quantity-selector">
+                        <button class="qty-btn minus" aria-label="Disminuir cantidad">-</button>
+                        <input type="number" value="2" min="1" aria-label="Cantidad">
+                        <button class="qty-btn plus" aria-label="Aumentar cantidad">+</button>
+                    </div>
+                    <button class="btn-buy-now">Comprar ahora</button>
+                    <button class="btn-wishlist" aria-label="Agregar a lista de deseos">♡</button>
+                </div>
+
+                <div class="logistics-info">
+                    <div class="info-card shipping">
+                        
+                        <span class="icon-truck">
+                            <img src="../media/products/carritoenvio.png" alt="Ícono de envío">
+                        </span>
+                        <div class="info-text">
+                            <strong>Envío gratis</strong>
+                            <p>Ingresa tu código postal para verificar disponibilidad de envío</p>
+                        </div>
+                    </div>
+                    <div class="info-card returns">
+                        <span class="icon-refresh">
+                             <img src="../media/products/devoluciones.png" alt="Ícono de devoluciones">
+                        </span>
+                        <div class="info-text">
+                            <strong>Devoluciones</strong>
+                            <p>Devoluciones gratis por 30 días. <a href="#">Detalles</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="product-grid" id="relatedProducts"></div>
+    </main>
+
+
+
+
+    <footer id="footer_container">
+      <!-- Footer -->
+      <!-- Añadido mediante JavaScript -->
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/carrito.js"></script>
+    <script src="../js/detallesProducto.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

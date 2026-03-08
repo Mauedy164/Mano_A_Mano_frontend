@@ -765,7 +765,8 @@ async function cargarMasVendidos() {
             </button>
 
             <!-- Botón Agregar -->
-            <button class="btn btn-dark w-100 py-2 fw-bold text-uppercase btn-add-to-cart">
+            <button class="btn btn-dark w-100 py-2 fw-bold text-uppercase btn-add-to-cart"
+             onclick="agregarAlCarrito(${producto.id}, '${producto.Name}', ${producto.Price},'${producto.img}')">
                 Agregar al carrito
             </button>
 
@@ -802,55 +803,88 @@ document.addEventListener("DOMContentLoaded", () => {
     cargarExplorarProductos();
 });
 
+let productos = [];
+let indiceActual = 0;
+
+const productosIni = 8;
+const productosScroll = 4;
+
 async function cargarExplorarProductos() {
     try {
         const response = await fetch("./data/products.json");
-        const productos = await response.json();
+        productos = await response.json();
 
-        const contenedor = document.getElementById("explorarContainer");
+        mostrarProductos();
 
-        productos.slice(0, 8).forEach(producto => {
+        document.getElementById("btnSiguiente").addEventListener("click", () => {
+            if (indiceActual + productosIni < productos.length) {
+                indiceActual += productosScroll;
+                mostrarProductos();
+            }
+        });
 
-            const card = document.createElement("div");
-            card.classList.add("col-md-3", "mb-4");
-
-            card.innerHTML = `
-                <div class="card h-100 shadow-sm card-masvendidos">
-
-                    <button class="btn-favorito">
-                        <img src="./media/products/botonfavoritos.png" alt="Favorito">
-                    </button>
-
-                    <img src="${producto.img}" 
-                         class="card-img-top"
-                         style="height: 250px; object-fit: cover;" 
-                         alt="${producto.Name}">
-
-                    <button class="btn btn-dark w-100 py-2 fw-bold text-uppercase btn-add-to-cart">
-                        Agregar al carrito
-                    </button>
-
-                    <div class="card-body">
-                        <h6 class="card-title">${producto.Name}</h6>
-
-                        <p class="text-danger fw-bold">
-                            $${producto.Price}
-                        </p>
-
-                        <p class="text-muted small">
-                            ${producto.Seller}
-                        </p>
-                    </div>
-
-                </div>
-            `;
-
-            contenedor.appendChild(card);
+        document.getElementById("btnAnterior").addEventListener("click", () => {
+            if (indiceActual - productosScroll >= 0) {
+                indiceActual -= productosScroll;
+                mostrarProductos();
+            }
         });
 
     } catch (error) {
         console.error("Error cargando productos:", error);
     }
+}
+
+function mostrarProductos() {
+
+    const contenedor = document.getElementById("explorarContainer");
+    contenedor.innerHTML = "";
+
+    const productosMostrar = productos.slice(indiceActual, indiceActual + productosIni);
+
+    productosMostrar.forEach(producto => {
+
+        const card = document.createElement("div");
+        card.classList.add("col-md-3", "mb-4");
+
+        card.innerHTML = `
+        <div class="card h-100 shadow-sm card-masvendidos">
+
+            <div class="position-relative">
+
+                <img src="${producto.img}" 
+                     class="card-img-top"
+                     style="height: 250px; object-fit: cover;" 
+                     alt="${producto.Name}">
+
+                <button class="btn-favorito">
+                    <img src="./media/products/botonfavoritos.png" alt="Favorito">
+                </button>
+
+                <button class="btn btn-dark w-100 py-2 fw-bold text-uppercase btn-add-to-cart"
+                onclick="agregarAlCarrito(${producto.id}, '${producto.Name}', ${producto.Price},'${producto.img}')">
+                    Agregar al carrito
+                </button>
+
+            </div>
+
+            <div class="card-body">
+                <h6 class="card-title">${producto.Name}</h6>
+
+                <p class="text-danger fw-bold">
+                    $${producto.Price}
+                </p>
+
+                <p class="text-muted small">
+                    ${producto.Seller}
+                </p>
+            </div>
+
+        </div>
+        `;
+
+        contenedor.appendChild(card);
+    });
 }
 
 /*

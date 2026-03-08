@@ -8,9 +8,8 @@ function guardarCarrito() {
 } //  function guardarCarrito
 
 // Agregar producto al carrito
-function agregarAlCarrito(id, nombre, precio) {
-  const imagen = window.location.origin + "/media/productos_carrito/ZapatosSAM.png";
-
+function agregarAlCarrito(id, nombre, precio, imagen) {
+  
   //Buscar si el producto ya existe en el carrito;
   const memoria = carrito.find((item) => item.id === id);
 
