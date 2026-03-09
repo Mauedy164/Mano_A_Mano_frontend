@@ -51,10 +51,15 @@ function descriptionIsValid(){
     }
 
     let descripcionProducto = formularioDescripcionProducto.value.trim()
-    if (descripcionProducto==="" || descripcionProducto.length <=5 || descripcionProducto.length>=600){
+    if (descripcionProducto==="" || descripcionProducto.length <=15 || descripcionProducto.length>=600){
         formularioDescripcionProducto.classList.add("is-invalid")
        let errorDescripcion = document.createElement("div")
-       errorDescripcion.textContent = "Ingresa una descripción con al menos 5 carácteres"
+       if(descripcionProducto.length <=15){
+        errorDescripcion.textContent = "Ingresa una descripción con al menos 15 carácteres"
+       } else if(descripcionProducto.length>=600){
+        errorDescripcion.textContent = "El límite de 600 caracteres"
+       }
+       
        errorDescripcion.classList.add("invalid-feedback");
        
        descriptionProductForm_container.appendChild(errorDescripcion)
