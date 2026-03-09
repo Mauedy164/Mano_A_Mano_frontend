@@ -195,12 +195,37 @@ document.addEventListener("DOMContentLoaded", function () {
 
     telefonoInput.classList.remove("is-valid", "is-invalid");
 
-    // Solo números y exactamente 10 dígitos
-    if (/^\d{10}$/.test(telefono)) {
-      telefonoInput.classList.add("is-valid");
-    } else {
+    // Debe tener exactamente 10 números
+    if (!/^\d{10}$/.test(telefono)) {
       telefonoInput.classList.add("is-invalid");
+      return;
     }
+
+    // Evitar todos los números iguales (0000000000, 1111111111...)
+    if (/^(\d)\1{9}$/.test(telefono)) {
+      telefonoInput.classList.add("is-invalid");
+      return;
+    }
+
+    // Evitar 4 o más números iguales consecutivos
+    if (/(\d)\1{3,}/.test(telefono)) {
+      telefonoInput.classList.add("is-invalid");
+      return;
+    }
+
+    // Evitar secuencias consecutivas ascendentes o descendentes
+    const secuenciaAsc = "0123456789";
+    const secuenciaDesc = "9876543210";
+
+    if (
+      secuenciaAsc.includes(telefono) ||
+      secuenciaDesc.includes(telefono)
+    ) {
+      telefonoInput.classList.add("is-invalid");
+      return;
+    }
+
+    telefonoInput.classList.add("is-valid");
   });
 });
 
