@@ -31,7 +31,25 @@ a svg {
 |           Footer           |
 ==============================
 */
+.piedepagina {
+  width: 100%;
+  margin: 0;
+}
 
+.piedepagina-container {
+  width: 100%;
+  padding-left: 0;
+  padding-right: 0;
+}.piedepagina {
+  width: 100%;
+  margin: 0;
+}
+
+.piedepagina-container {
+  width: 100%;
+  padding-left: 0;
+  padding-right: 0;
+}
 /*
 ==============================
 |  index (página de inicio)  |
@@ -47,6 +65,400 @@ body {
 main {
   flex: 1;
 }
+
+.banner-cat{
+  display: flex;
+  flex-direction: row;
+}
+
+/* Sidebar */
+.sidebar {
+  background: #ffffff;
+  border-right: 1px solid #eee;
+  padding: 24px 20px;
+  height: 25%;
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 24px;
+  margin-left: 100px;
+}
+
+.menu a {
+  display: block;
+  color: #555;
+  text-decoration: none;
+  font-size: 20px;
+  margin-bottom: 10px;
+  margin-left: 100px;
+}
+
+.menu a:hover {
+  color: #e53935;
+}
+
+/* Hero */
+.hero {
+  margin-left: 9%;
+  width: 60%;
+  height: 60%;
+  
+}
+
+.tag {
+  font-size: 13px;
+  font-weight: 600;
+  color: #e53935;
+  border-left: 8px solid #e53935;
+  border-radius: 2px;
+  padding-left: 8px;
+  margin-right: 200px;
+}
+
+.offers {
+  background: #fff;
+  border-radius: 10px;
+  padding: 24px 22px 20px;
+  margin: 32px 35px 32px 35px;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.05);
+  align-items: space-between;
+}
+
+.offers-header {
+  display: flex;
+  margin-bottom: 18px;
+}
+
+.offers-header h2 {
+  font-size: 27px;
+  margin-top: 4px;
+}
+
+.offers-arrow {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.offers-arrow .offers-prev{
+  margin-left: 300px;
+}
+
+.offers-arrow:hover {
+  background: #e53935;
+  color: #fff;
+}
+
+.offers-controls{
+  align-items: end;
+  font-size: 25px;
+}
+
+.countdown {
+  display: flex;
+  gap: 14px;
+  margin-left: 0px;
+  font-size: 20px;
+  margin-right: 1100px;
+}
+
+.countdown span{
+  font-size: 12px;
+}
+
+.countdown strong {
+  display: block;
+  font-size: 20px;
+  align-items: center;
+}
+
+/* Carrusel de productos */
+.offers-slider {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding-bottom: 6px;
+}
+
+.offers-slider::-webkit-scrollbar {
+  height: 6px;
+}
+
+.offers-slider::-webkit-scrollbar-thumb {
+  background: #ddd;
+  border-radius: 999px;
+}
+
+.product-card {
+  flex: 0 0 260px;
+}
+
+.product-card .card {
+  background: #fafafa;
+  border-radius: 10px;
+}
+
+.image-container img,
+.product-card img {
+  width: 100%;
+  display: block;
+}
+
+.btn-ver-todo {
+  width: 20%;
+}
+
+/* Footer de ofertas */
+.offers-footer {
+  margin-top: 14px;
+  text-align: center;
+  width: 20%;
+  justify-content: center;
+  margin-left: 40%;
+}
+
+.btn-primary {
+  border-radius: 999px;
+  border: none;
+  background: #e53935;
+  color: #fff;
+  padding: 8px 26px;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+/* Categorías */
+.categories {
+  background: #fff;
+  border-radius: 10px;
+  padding: 22px;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.05);
+  width: 96.3%;
+  margin-left: 35px;
+}
+
+.categories h2 {
+  font-size: 20px;
+  margin-top: 6px;
+  margin-bottom: 16px;
+}
+
+.categories-row {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+}
+
+.cat-card {
+  border-radius: 10px;
+  border: 1px solid #eee;
+  padding: 14px 10px;
+  text-align: center;
+  cursor: pointer;
+  background: #fff;
+}
+
+.cat-card p {
+  font-size: 13px;
+  margin-top: 6px;
+}
+
+.cat-icon {
+  font-size: 22px;
+}
+
+.cat-card:hover {
+  border-color: #e53935;
+}
+
+@media (max-width: 900px) {
+  .page {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-inline: 1rem;
+    border-bottom: 1px solid #eee;
+    border-right: none;
+  }
+
+  .logo {
+    margin-bottom: 0;
+  }
+
+  .menu {
+    display: flex;
+    gap: 0.75rem;
+    overflow-x: auto;
+    padding: 0.5rem 0;
+  }
+
+  .menu a {
+    white-space: nowrap;
+    font-size: 0.75rem;
+    margin-bottom: 0;
+  }
+
+  .main {
+    padding: 16px;
+  }
+
+  .hero {
+    height: 200px;
+  }
+
+  .product-card {
+    flex: 0 0 70%;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    height: 180px;
+  }
+
+  .hero-overlay {
+    padding: 16px;
+  }
+
+  .hero-overlay h1 {
+    font-size: 18px;
+  }
+
+  .hero-overlay p {
+    font-size: 12px;
+  }
+
+  .offers,
+  .categories {
+    padding: 16px;
+  }
+
+  .offers-header {
+    align-items: flex-start;
+  }
+
+  .offers-controls {
+    flex-direction: column;
+    align-items: flex-end;
+  }
+  .product-card {
+    flex: 0 0 100%;
+  }
+}
+
+/* =========================
+   Responsive solo para celular
+   ========================= */
+@media (max-width: 576px) {
+
+  /* Layout lateral + banner uno debajo de otro */
+  .banner-cat {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    height: auto;
+    margin: 0;
+    border-right: none;
+    border-bottom: 1px solid #eee;
+  }
+
+  .logo {
+    margin-left: 0;
+  }
+
+  .menu a {
+    margin-left: 0;
+    font-size: 16px;
+  }
+
+  .hero {
+    margin-left: 0;
+    width: 100%;
+    height: auto;
+  }
+
+  /* Grandes ofertas más compactas */
+  .offers {
+    margin: 16px 10px;
+    padding: 16px;
+  }
+
+  .offers-header {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .countdown {
+    margin-right: 0;
+    font-size: 16px;
+    gap: 8px;
+  }
+
+  .offers-slider {
+    gap: 12px;
+  }
+
+  .product-card {
+    flex: 0 0 100%;
+  }
+
+  /* Botón “Ver todo” (si usas btn-ver-todo) */
+  .btn-ver-todo {
+    width: 100%;
+  }
+
+  /* Tarjetas “Este mes” y “Explorar” a 1 por fila */
+  #masVendidosContainer .col-md-3,
+  #explorarContainer .col-md-3 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+
+  /* Footer en una columna */
+  .piedepagina-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .piedepagina .col {
+    text-align: left;
+  }
+
+  .botones-seccion {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .botones-seccion a {
+    width: 100%;
+  }
+
+  /* Beneficios: 1 columna en celular */
+  .benefits {
+    grid-template-columns: 1fr;
+    max-width: 100%;
+    padding: 2rem 1.5rem;
+  }
+}
+
 
 /*
 |================  Tarjetas de productos  ===============|
