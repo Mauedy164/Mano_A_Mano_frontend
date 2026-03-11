@@ -376,6 +376,7 @@ if (footer_container_index) {
                         <p>Contacto</p>
                     </div>
 
+                    <!--
                     <div class="col"> 
                         <h4>Descarga la app</h4>
                     <div class="app-section d-flex flex-column align-items-center">
@@ -396,9 +397,8 @@ if (footer_container_index) {
                                 <a href="URL_DE_TU_LINKEDIN" target="_blank"><i class="fab fa-linkedin"></i></a>
                             </div>
 
-
-
                     </div>
+                    -->
 
                 </div>
             </div>
@@ -449,6 +449,7 @@ if (footer_container) {
                         <p>Contacto</p>
                     </div>
 
+                    <!--
                     <div class="col"> 
                         <h4>Descarga la app</h4>
                     <div class="app-section d-flex flex-column align-items-center">
@@ -469,9 +470,8 @@ if (footer_container) {
                                 <a href="URL_DE_TU_LINKEDIN" target="_blank"><i class="fab fa-linkedin"></i></a>
                             </div>
 
-
-
                     </div>
+                    -->
 
                 </div>
             </div>
