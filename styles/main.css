@@ -107,26 +107,6 @@ a svg {
     object-fit:contain;
 }
 
-.perfil-menu{
-position:relative;
-margin-top:12px;
-border-radius:10px;
-}
-
-/* muesca */
-.perfil-menu::before{
-content:"";
-position:absolute;
-top:-8px;
-right:8px;  
-width:16px;
-height:16px;
-background:white;
-transform:rotate(45deg);
-border-left:1px solid #ddd;
-border-top:1px solid #ddd;
-}
-
 
 /*
 ==============================

@@ -74,27 +74,13 @@ if (navbar_container_index) {
 
                                 <!-- boton de perfil -->
 
-                                    <div class="dropdown">
 
-                                    <button class="btn p-0" data-bs-toggle="dropdown">
-
+                                
                                     <a href="../pages/comprador.html" class="btn p-0">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
                                             <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/>
                                         </svg>
                                     </a>
-
-                                    </button>
-
-                                    <ul class="dropdown-menu dropdown-menu-end perfil-menu" id="perfil_menu">
-
-                                    <!-- aquí se llenará dinámicamente -->
-
-                                    </ul>
-
-                                    </div>
-
-
                                 
                                </div>
 
