@@ -16,6 +16,7 @@ a svg {
 #logo_Ajolote {
   width: 300px;
   height: 70px;
+  border-radius: 50%;
 }
 
 @media (max-width: 768px) {
