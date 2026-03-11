@@ -7,110 +7,137 @@ SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,N
 -- -----------------------------------------------------
 -- Schema mydb
 -- -----------------------------------------------------
+-- -----------------------------------------------------
+-- Schema ManoAMano
+-- -----------------------------------------------------
 
 -- -----------------------------------------------------
--- Schema mydb
+-- Schema ManoAMano
 -- -----------------------------------------------------
-CREATE SCHEMA IF NOT EXISTS `mydb` DEFAULT CHARACTER SET utf8 ;
-USE `mydb` ;
+CREATE SCHEMA IF NOT EXISTS `ManoAMano` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci ;
+USE `ManoAMano` ;
 
 -- -----------------------------------------------------
--- Table `mydb`.`Producto`
+-- Table `ManoAMano`.`usuarios`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`Producto` (
-  `id_producto` INT NOT NULL AUTO_INCREMENT,
-  `name` VARCHAR(45) NOT NULL,
-  `description` TEXT(600) NOT NULL,
-  `img` VARCHAR(100) NOT NULL,
-  `imgSecundaria1` VARCHAR(100) NULL,
-  `imgSecundaria2` VARCHAR(100) NULL,
-  `imgSecundaria3` VARCHAR(100) NULL,
-  `imgSecundaria4` VARCHAR(100) NULL,
-  `price` DOUBLE NOT NULL,
-  `tags` VARCHAR(250) NOT NULL,
-  `seller` VARCHAR(46) NOT NULL,
-  `color1` VARCHAR(7) NULL,
-  `color2` VARCHAR(7) NULL,
-  `color3` VARCHAR(7) NULL,
-  `brand` VARCHAR(45) NULL,
-  `size` CHAR(1) NULL,
-  `model` VARCHAR(45) NULL,
-  `dimensions` INT NULL,
-  `dimensionsLarge` DOUBLE NULL,
-  `dimensionsHeight` DOUBLE NULL,
-  `dimensionsWidith` DOUBLE NULL,
-  `weight` DOUBLE NULL,
-  `volume` DOUBLE NULL,
-  `isMen` INT NULL,
-  `isWomen` INT NULL,
-  `isClothes` INT NULL,
-  `isAccessories` INT NULL,
-  `isDecoration` INT NULL,
-  `isFood` INT NULL,
-  PRIMARY KEY (`id_producto`))
-ENGINE = InnoDB;
+CREATE TABLE IF NOT EXISTS `ManoAMano`.`usuarios` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `nombre` VARCHAR(100) NOT NULL,
+  `correo` VARCHAR(100) NOT NULL,
+  `telefono` VARCHAR(10) NOT NULL,
+  `password` VARCHAR(255) NOT NULL,
+  `tipo_usuario` VARCHAR(20) NULL DEFAULT 'comprador',
+  `fecha_registro` DATETIME NULL DEFAULT CURRENT_TIMESTAMP,
+  `activo` TINYINT(1) NULL DEFAULT '1',
+  PRIMARY KEY (`id`),
+  UNIQUE INDEX `correo` (`correo` ASC) VISIBLE)
+ENGINE = InnoDB
+AUTO_INCREMENT = 1
+DEFAULT CHARACTER SET = utf8mb4
+COLLATE = utf8mb4_0900_ai_ci;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`usuarios`
+-- Table `ManoAMano`.`productos`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`usuarios` (
-  `id_usuario` INT NOT NULL AUTO_INCREMENT,
-  `name` VARCHAR(45) NOT NULL,
-  `email` VARCHAR(45) NOT NULL,
-  `phone` VARCHAR(10) NOT NULL,
-  `password` VARCHAR(45) NOT NULL,
-  PRIMARY KEY (`id_usuario`))
-ENGINE = InnoDB;
+CREATE TABLE IF NOT EXISTS `ManoAMano`.`productos` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `vendedor_id` INT NOT NULL,
+  `nombre` VARCHAR(70) NOT NULL,
+  `descripcion` VARCHAR(600) NULL DEFAULT NULL,
+  `precio` DECIMAL(10,2) NOT NULL,
+  `cantidad_disponible` INT NOT NULL,
+  `imagen_url` VARCHAR(500) NULL DEFAULT NULL,
+  `marca` VARCHAR(100) NULL DEFAULT NULL,
+  `peso` DECIMAL(8,2) NULL DEFAULT NULL,
+  `volumen` DECIMAL(8,2) NULL DEFAULT NULL,
+  `largo` DECIMAL(8,2) NULL DEFAULT NULL,
+  `ancho` DECIMAL(8,2) NULL DEFAULT NULL,
+  `alto` DECIMAL(8,2) NULL DEFAULT NULL,
+  `tags` VARCHAR(500) NULL DEFAULT NULL,
+  `colores` VARCHAR(200) NULL DEFAULT NULL,
+  `talla` VARCHAR(100) NULL DEFAULT NULL,
+  `fecha_creacion` DATETIME NULL DEFAULT CURRENT_TIMESTAMP,
+  `activo` TINYINT(1) NULL DEFAULT '1',
+  PRIMARY KEY (`id`),
+  INDEX `vendedor_id` (`vendedor_id` ASC) VISIBLE,
+  CONSTRAINT `productos_ibfk_1`
+    FOREIGN KEY (`vendedor_id`)
+    REFERENCES `ManoAMano`.`usuarios` (`id`))
+ENGINE = InnoDB
+AUTO_INCREMENT = 1
+DEFAULT CHARACTER SET = utf8mb4
+COLLATE = utf8mb4_0900_ai_ci;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`pedidos`
+-- Table `ManoAMano`.`carrito`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`pedidos` (
-  `id_pedido` INT NOT NULL,
-  `id_usuario` INT NOT NULL,
-  `estado` VARCHAR(20) NOT NULL,
-  `fecha` VARCHAR(45) NOT NULL,
-  `total` DOUBLE NOT NULL,
-  `direccion` VARCHAR(100) NOT NULL,
-  `metodo_pago` VARCHAR(30) NOT NULL,
-  `numero_guia` VARCHAR(45) NOT NULL,
-  `paqueteria` VARCHAR(45) NOT NULL,
-  PRIMARY KEY (`id_pedido`),
-  INDEX `fk_pedidos_usuarios1_idx` (`id_usuario` ASC) VISIBLE,
-  CONSTRAINT `fk_pedidos_usuarios1`
-    FOREIGN KEY (`id_usuario`)
-    REFERENCES `mydb`.`usuarios` (`id_usuario`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
-
-
--- -----------------------------------------------------
--- Table `mydb`.`detalles_pedido`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`detalles_pedido` (
-  `id_detalles_pedido` INT NOT NULL,
-  `id_producto` INT NOT NULL,
-  `id_pedido` INT NOT NULL,
+CREATE TABLE IF NOT EXISTS `ManoAMano`.`carrito` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `usuario_id` INT NOT NULL,
+  `producto_id` INT NOT NULL,
   `cantidad` INT NOT NULL,
-  `precio_unitario` DOUBLE NOT NULL,
-  `subtotal` DOUBLE NOT NULL,
-  PRIMARY KEY (`id_detalles_pedido`),
-  INDEX `fk_detalles_pedido_pedidos1_idx` (`id_pedido` ASC) VISIBLE,
-  INDEX `fk_detalles_pedido_Producto1_idx` (`id_producto` ASC) VISIBLE,
-  CONSTRAINT `fk_detalles_pedido_pedidos1`
-    FOREIGN KEY (`id_pedido`)
-    REFERENCES `mydb`.`pedidos` (`id_pedido`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_detalles_pedido_Producto1`
-    FOREIGN KEY (`id_producto`)
-    REFERENCES `mydb`.`Producto` (`id_producto`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
+  `fecha_agregado` DATETIME NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`),
+  UNIQUE INDEX `usuario_id` (`usuario_id` ASC, `producto_id` ASC) VISIBLE,
+  INDEX `producto_id` (`producto_id` ASC) VISIBLE,
+  CONSTRAINT `carrito_ibfk_1`
+    FOREIGN KEY (`usuario_id`)
+    REFERENCES `ManoAMano`.`usuarios` (`id`),
+  CONSTRAINT `carrito_ibfk_2`
+    FOREIGN KEY (`producto_id`)
+    REFERENCES `ManoAMano`.`productos` (`id`))
+ENGINE = InnoDB
+AUTO_INCREMENT = 1
+DEFAULT CHARACTER SET = utf8mb4
+COLLATE = utf8mb4_0900_ai_ci;
+
+
+-- -----------------------------------------------------
+-- Table `ManoAMano`.`ordenes`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `ManoAMano`.`ordenes` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `usuario_id` INT NOT NULL,
+  `total` DECIMAL(10,2) NOT NULL,
+  `estado` VARCHAR(20) NULL DEFAULT 'pendiente',
+  `fecha_orden` DATETIME NULL DEFAULT CURRENT_TIMESTAMP,
+  `fecha_actualizacion` DATETIME NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`),
+  INDEX `usuario_id` (`usuario_id` ASC) VISIBLE,
+  CONSTRAINT `ordenes_ibfk_1`
+    FOREIGN KEY (`usuario_id`)
+    REFERENCES `ManoAMano`.`usuarios` (`id`))
+ENGINE = InnoDB
+AUTO_INCREMENT = 1
+DEFAULT CHARACTER SET = utf8mb4
+COLLATE = utf8mb4_0900_ai_ci;
+
+
+-- -----------------------------------------------------
+-- Table `ManoAMano`.`orden_productos`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `ManoAMano`.`orden_productos` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `orden_id` INT NOT NULL,
+  `producto_id` INT NOT NULL,
+  `cantidad` INT NOT NULL,
+  `precio_unitario` DECIMAL(10,2) NOT NULL,
+  `subtotal` DECIMAL(10,2) NOT NULL,
+  PRIMARY KEY (`id`),
+  INDEX `orden_id` (`orden_id` ASC) VISIBLE,
+  INDEX `producto_id` (`producto_id` ASC) VISIBLE,
+  CONSTRAINT `orden_productos_ibfk_1`
+    FOREIGN KEY (`orden_id`)
+    REFERENCES `ManoAMano`.`ordenes` (`id`),
+  CONSTRAINT `orden_productos_ibfk_2`
+    FOREIGN KEY (`producto_id`)
+    REFERENCES `ManoAMano`.`productos` (`id`))
+ENGINE = InnoDB
+AUTO_INCREMENT = 1
+DEFAULT CHARACTER SET = utf8mb4
+COLLATE = utf8mb4_0900_ai_ci;
 
 
 SET SQL_MODE=@OLD_SQL_MODE;
