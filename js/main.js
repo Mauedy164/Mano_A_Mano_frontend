@@ -14,11 +14,75 @@ const navbar_container = document.getElementById("navbar_container");
 if (navbar_container_index) {
   navbar_container_index.innerHTML = `
             <nav>
-                <nav class="navbar navbar-expand-lg bg-light px-4">
+<nav class="navbar navbar-expand-lg bg-light px-4">
                     <div class="container-fluid">
 
                         <!-- Logo ManoAMano -->
-                      <img id="logo_Ajolote" src="../media/NavBar/Logoajolote5.png"
+                        <img id="logo_Ajolote" src="../media/NavBar/Logoajolote5.png">
+
+                        <!-- Buscador -->
+                            <div class="d-flex align-items-center gap-3 order-lg-last">
+                                
+                                 <form class="d-none d-lg-flex align-items-center border rounded-pill px-3 search-box">
+                                    <input class="form-control border-0 shadow-none" type="search" placeholder="¿Qué buscas?">
+                                    
+                                 </form>
+
+                                     <!-- icono buscar en responsive -->
+                                    <button class="btn p-0 d-lg-none toggle-buscador" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#buscadorExpandido">
+                                    <img src="../media/NavBar/iconobusqueda.png"
+                                    alt="Buscar"
+                                    class="icon-search">
+                                    </button>
+
+                                    <div class="collapse collapse-horizontal d-lg-none" id="buscadorExpandido" data-bs-parent=".navbar">
+                                        <div class="d-flex align-items-center" style="width: 40vw; margin-left: 10px;">
+                                            <form class="w-100 border-0 rounded-pill px-3 search-box-res">
+                                                <input class="form-control border-0 bg-transparent p-0" type="text" placeholder="¿Qué buscas?" style="font-size: 0.9rem;">
+                                                <button class="btn p-0 border-0 ms-2" type="button" data-bs-toggle="collapse" data-bs-target="#buscadorExpandido">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" class="bi bi-x-lg" viewBox="0 0 16 16">
+                                                        <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z"/>
+                                                    </svg>
+                                                </button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                
+                            <!-- Botón Favoritos -->
+                                <button class="btn p-0" type="button" data-bs-toggle="offcanvas"
+                                    data-bs-target="#offcanvasFavoritos" aria-controls="offcanvasFavoritos">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23"
+                                        fill="currentColor" class="bi bi-heart-fill" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
+                                    </svg>
+                                </button>
+
+                            <!-- Botón Carrito -->
+                            <button class="btn p-0 position-relative" type="button"
+                                data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
+                                aria-controls="offcanvasRight">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23"
+                                        fill="currentColor" class="bi bi-cart-fill" viewBox="0 0 16 16">
+                                    <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7
+                                        0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2" />
+                                </svg>
+
+                                <!-- Contador carrito-->
+                                    <span id = "cuenta_carrito"> 0 </span>
+                            </button>
+
+                                <!-- boton de perfil -->
+
+
+                                
+                                    <a href="../pages/comprador.html" class="btn p-0">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
+                                            <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/>
+                                        </svg>
+                                    </a>
+                                
+                               </div>
 
                         <!-- Botón responsivo -->
                         <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -27,80 +91,33 @@ if (navbar_container_index) {
                         </button>
 
                         <!-- Contenido -->
-                        <div class="collapse navbar-collapse" id="navbarContent">
+                        <div class="collapse navbar-collapse" id="navbarContent" data-bs-parent=".navbar">
 
                             <!-- Menú -->
-                            <ul class="navbar-nav mx-auto mb-2 mb-lg-0 gap-4">
+                            <ul class="navbar-nav mx-auto mb-2 mb-lg-0 text-center">
+
                                 <li class="nav-item">
-                                    <a class="nav-link text-dark" href="./index.html">Inicio</a>
+                                    <a class="nav-link text-dark" href="../index.html">Inicio</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link text-dark" href="./pages/products.html">Productos</a>
+                                    <a class="nav-link text-dark" href="./products.html">Productos</a>
+                                </li>
+                                
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" href="../pages/contact.html">Contacto</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link text-dark" href="./pages/contact.html">Contacto</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link text-dark" href="./pages/aboutMe.html">Nosotros</a>
+                                    <a class="nav-link text-dark" href="../pages/aboutMe.html">Nosotros</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link text-dark" href="../pages/iniciarSesion.html">Iniciar Sesión</a>
                                 </li>
                             </ul>
 
-                            <!-- Buscador y iconos -->
-                            <div class="d-flex align-items-center gap-3">
-                                <form class="d-flex align-items-center border rounded-pill px-2">
-                                    <input class="form-control border-0" type="search" placeholder="¿Qué buscas?">
-                                    <i class="bi bi-search"></i>
-                                </form>
-
-                            <!-- Icono de favoritos-->
-                                <button class="btn p-0" type="button"
-                                data-bs-toggle="offcanvas"
-                                data-bs-target="#offcanvasFavoritos"
-                                aria-controls="offcanvasFavoritos">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23"
-                                fill="currentColor" class="bi bi-heart-fill" viewBox="0 0 16 16">
-                            <path fill-rule="evenodd"
-                                d="M8 1.314C12.438-3.248 23.534 4.735 8 15
-                                -7.534 4.736 3.562-3.248 8 1.314z"/>
-                            </svg>
-                        </button>
-
-                        <!-- Icono Carrito -->
-                        <button class="btn p-0 position-relative" type="button"
-                                data-bs-toggle="offcanvas"
-                                data-bs-target="#offcanvasRight"
-                                aria-controls="offcanvasRight">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23"
-                                fill="currentColor" class="bi bi-cart-fill" viewBox="0 0 16 16">
-                                <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5
-                                0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01
-                                3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7
-                                0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1
-                                1 0 1 1 0 2 1 1 0 0 1 0-2" />
-                            </svg>
-
-                            <!-- Contador carrito-->
-                            <span id = "cuenta_carrito"> 0 </span>
-
-                        </button>
-
-                                <i class="bi bi-person-fill fs-5">
-                                <a href="./pages/comprador.html">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
-                                    <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/>
-                                    </svg>
-                                </a>
-
-                                </i>
-                            </div>
-
+                            
                         </div>
                     </div>
                 </nav>
-
             </nav>
 
            <!-- Offcanvas CARRITO -->
@@ -152,12 +169,73 @@ if (navbar_container_index) {
 if (navbar_container) {
   navbar_container.innerHTML = `
               <nav>
-
-                <nav class="navbar navbar-expand-lg bg-light px-4">
+ <nav class="navbar navbar-expand-lg bg-light px-4">
                     <div class="container-fluid">
 
                         <!-- Logo ManoAMano -->
-                        <img id="logo_Ajolote" src="../media/NavBar/Logoajolote5.png"
+                        <img id="logo_Ajolote" src="../media/NavBar/Logoajolote5.png">
+
+                        <!-- Buscador -->
+                            <div class="d-flex align-items-center gap-3 order-lg-last">
+                                
+                                 <form class="d-none d-lg-flex align-items-center border rounded-pill px-3 search-box">
+                                    <input class="form-control border-0 shadow-none" type="search" placeholder="¿Qué buscas?">
+                                    
+                                 </form>
+
+                                     <!-- icono buscar en responsive -->
+                                    <button class="btn p-0 d-lg-none toggle-buscador" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#buscadorExpandido">
+                                    <img src="../media/NavBar/iconobusqueda.png"
+                                    alt="Buscar"
+                                    class="icon-search">
+                                    </button>
+
+
+                                    <div class="collapse collapse-horizontal d-lg-none" id="buscadorExpandido" data-bs-parent=".navbar">
+                                        <div class="d-flex align-items-center">
+                                            <form class="w-100 border-0 rounded-pill px-3 search-box-res">
+                                                <input class="form-control border-0 bg-transparent p-0" type="text" placeholder="¿Qué buscas?" style="font-size: 0.9rem;">
+                                                <button class="btn p-0 border-0 ms-2" type="button" data-bs-toggle="collapse" data-bs-target="#buscadorExpandido">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" class="bi bi-x-lg" viewBox="0 0 16 16">
+                                                        <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z"/>
+                                                    </svg>
+                                                </button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                
+                            <!-- Botón Favoritos -->
+                                <button class="btn p-0" type="button" data-bs-toggle="offcanvas"
+                                    data-bs-target="#offcanvasFavoritos" aria-controls="offcanvasFavoritos">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23"
+                                        fill="currentColor" class="bi bi-heart-fill" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
+                                    </svg>
+                                </button>
+
+                            <!-- Botón Carrito -->
+                            <button class="btn p-0 position-relative" type="button"
+                                data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
+                                aria-controls="offcanvasRight">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23"
+                                        fill="currentColor" class="bi bi-cart-fill" viewBox="0 0 16 16">
+                                    <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7
+                                        0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2" />
+                                </svg>
+
+                                <!-- Contador carrito-->
+                                    <span id = "cuenta_carrito"> 0 </span>
+                            </button>
+
+                                
+                                    <a href="../pages/comprador.html" class="btn p-0">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
+                                            <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/>
+                                        </svg>
+                                    </a>
+                                
+                               </div>
 
                         <!-- Botón responsivo -->
                         <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -166,10 +244,11 @@ if (navbar_container) {
                         </button>
 
                         <!-- Contenido -->
-                        <div class="collapse navbar-collapse" id="navbarContent">
+                        <div class="collapse navbar-collapse" id="navbarContent" data-bs-parent=".navbar">
 
                             <!-- Menú -->
-                            <ul class="navbar-nav mx-auto mb-2 mb-lg-0 gap-4">
+                            <ul class="navbar-nav mx-auto mb-2 mb-lg-0 text-center">
+
                                 <li class="nav-item">
                                     <a class="nav-link text-dark" href="../index.html">Inicio</a>
                                 </li>
@@ -188,60 +267,12 @@ if (navbar_container) {
                                 </li>
                             </ul>
 
-                            <!-- Buscador y iconos -->
-                            <div class="d-flex align-items-center gap-3">
-                                <form class="d-flex align-items-center border rounded-pill px-2">
-                                    <input class="form-control border-0" type="search" placeholder="¿Qué buscas?">
-                                    <i class="bi bi-search"></i>
-                                </form>
-
-                                <button class="btn p-0" type="button"
-                                data-bs-toggle="offcanvas"
-                                data-bs-target="#offcanvasFavoritos"
-                                aria-controls="offcanvasFavoritos">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23"
-                                fill="currentColor" class="bi bi-heart-fill" viewBox="0 0 16 16">
-                            <path fill-rule="evenodd"
-                                d="M8 1.314C12.438-3.248 23.534 4.735 8 15
-                                -7.534 4.736 3.562-3.248 8 1.314z"/>
-                            </svg>
-                        </button>
-
-                        <!-- Botón Carrito -->
-                        <button class="btn p-0 position-relative" type="button"
-                                data-bs-toggle="offcanvas"
-                                data-bs-target="#offcanvasRight"
-                                aria-controls="offcanvasRight">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23"
-                                fill="currentColor" class="bi bi-cart-fill" viewBox="0 0 16 16">
-                            <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5
-                                0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01
-                                3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7
-                                0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1
-                                1 0 1 1 0 2 1 1 0 0 1 0-2" />
-                            </svg>
-
-                            <!-- Contador carrito-->
-                            <span id = "cuenta_carrito"> 0 </span>
-                        </button>
-
-                                <i class="bi bi-person-fill fs-5">
-                                <a href="../pages/comprador.html">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
-                                    <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/>
-                                    </svg>
-                                </a>
-
-                                </i>
-
-                                
-                                    
-
-                               </div>
-
+                            
                         </div>
                     </div>
                 </nav>
+
+                
 
             </nav>
 

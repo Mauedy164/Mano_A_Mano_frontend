@@ -26,6 +26,88 @@ a svg {
   }
 }
 
+.search-box{
+    width:220px;
+    background:white;
+}
+
+.search-box input{
+    font-size:14px;
+}
+
+.search-box i{
+    font-size:16px;
+    color:#666;
+}
+
+.search-box{
+    width:200px;
+    transition:0.3s;
+}
+
+.search-box:focus-within{
+    width:260px;
+}
+
+/* Este efecto SOLO se aplica en pantallas menores a 992px (Móvil/Tablet) */
+@media (max-width:991px){
+
+    /* posicionar buscador en la misma linea del logo */
+    #buscadorExpandido{
+        position:absolute;
+        left:160px; 
+        top:50%;
+        transform:translateY(-50%);
+        width:40vw;
+    }
+
+    /* esconder iconos cuando se abre buscador */
+    #buscadorExpandido.show ~ button,
+    #buscadorExpandido.show ~ a{
+        display:none !important;
+    }
+
+    /* esconder lupa cuando se abre buscador */
+    #buscadorExpandido.show + .toggle-buscador{
+        display:none !important;
+    }
+
+
+}
+
+
+
+.search-box-res{
+    width:50px;
+    background:white;
+    height: 35px;
+    display:flex;
+    align-items:center;
+}
+
+.search-box-res input{
+    font-size:14px;
+}
+
+.search-box-res i{
+    font-size:16px;
+    color:#666;
+}
+
+.search-box-res input:focus, 
+.form-control:focus {
+    box-shadow: none !important;
+    outline: none !important;
+    
+}
+
+.icon-search{
+    width:29px;
+    height:29px;
+    object-fit:contain;
+}
+
+
 /*
 ==============================
 |           Footer           |
