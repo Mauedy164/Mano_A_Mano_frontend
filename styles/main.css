@@ -63,7 +63,8 @@ a svg {
 
     /* esconder iconos cuando se abre buscador */
     #buscadorExpandido.show ~ button,
-    #buscadorExpandido.show ~ a{
+    #buscadorExpandido.show ~ a,
+    #buscadorExpandido.show ~ .dropdown{
         display:none !important;
     }
 
@@ -106,6 +107,19 @@ a svg {
     height:29px;
     object-fit:contain;
 }
+
+/*quita la palomita*/
+.dropdown-toggle::after{
+    display: none !important;
+}
+
+/*
+Source - https://stackoverflow.com/a/34066798
+Posted by RiesvGeffen
+Retrieved 2026-03-12, License - CC BY-SA 3.0
+*/
+
+
 
 
 /*
