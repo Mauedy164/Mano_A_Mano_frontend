@@ -74,14 +74,19 @@ if (navbar_container_index) {
 
                                 <!-- boton de perfil -->
 
+                            <div class="dropdown">
+                                <button class="btn p-0 dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
 
-                                
-                                    <a href="../pages/comprador.html" class="btn p-0">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
-                                            <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/>
-                                        </svg>
-                                    </a>
-                                
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
+                                        <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/>
+                                    </svg>
+
+                                </button>
+
+    <ul class="dropdown-menu dropdown-menu-end" id="menuPerfil">
+    </ul>
+                            </div>
+                              
                                </div>
 
                         <!-- Botón responsivo -->
@@ -228,13 +233,21 @@ if (navbar_container) {
                                     <span id = "cuenta_carrito"> 0 </span>
                             </button>
 
-                                
-                                    <a href="../pages/comprador.html" class="btn p-0">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
-                                            <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/>
-                                        </svg>
-                                    </a>
-                                
+                                <!-- Boton Perfil-->
+
+                            <div class="dropdown">
+                                <button class="btn p-0 dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
+                                        <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/>
+                                    </svg>
+
+                                </button>
+
+    <ul class="dropdown-menu dropdown-menu-end" id="menuPerfil">
+    </ul>
+                            </div>
+                          
                                </div>
 
                         <!-- Botón responsivo -->
@@ -323,6 +336,57 @@ if (navbar_container) {
             
   `;
 }
+
+//funciones cuando ha iniciado sesion o no
+const menuPerfil = document.getElementById("menuPerfil");
+
+function cargarMenuPerfil(){
+
+    const menuPerfil = document.getElementById("menuPerfil");
+
+    if(!menuPerfil) return;
+
+    const usuarioGuardado = localStorage.getItem("usuarioActivo");
+
+    if(usuarioGuardado){
+
+        const usuario = JSON.parse(usuarioGuardado);
+
+        menuPerfil.innerHTML = `
+            <li class="dropdown-item-text fw-bold">
+                Hola, ${usuario.nombre.split(" ")[0]}!
+            </li>
+
+            <li><hr class="dropdown-divider"></li>
+
+            <li><a class="dropdown-item" href="../pages/comprador.html">Mi perfil</a></li>
+
+            <li><button class="dropdown-item" id="cerrarSesion">Cerrar sesión</button></li>
+        `;
+
+    }else{
+
+        menuPerfil.innerHTML = `
+            <li><a class="dropdown-item" href="../pages/iniciarSesion.html">Iniciar sesión</a></li>
+            <li><a class="dropdown-item" href="../pages/crearCuenta.html">Crear cuenta</a></li>
+        `;
+    }
+}
+cargarMenuPerfil();
+
+
+/*para cerrar sesion */
+document.addEventListener("click", function(e){
+
+    if(e.target.id === "cerrarSesion"){
+
+        localStorage.removeItem("usuarioActivo");
+
+        window.location.reload();
+    }
+
+});
+
 
 /*
 ==============================

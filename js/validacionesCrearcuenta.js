@@ -271,3 +271,38 @@ function validarFormularioCompleto() {
 
   return true;
 }
+
+const registerBtn = document.getElementById("register_btn");
+
+registerBtn.addEventListener("click", function(e){
+  e.preventDefault();
+
+  if(validarFormularioCompleto()){
+
+    const nombreInput = document.getElementById("nombreInput");
+    const correoInput = document.getElementById("correo");
+    const telefonoInput = document.getElementById("telefono");
+    const passwordInput = document.getElementById("password");
+
+    const users = JSON.parse(localStorage.getItem("users")) || [];
+
+    const nuevoUsuario = {
+      nombre: nombreInput.value.trim(),
+      correo: correoInput.value.trim(),
+      telefono: telefonoInput.value.trim(),
+      password: passwordInput.value
+    };
+
+    users.push(nuevoUsuario);
+
+    localStorage.setItem("users", JSON.stringify(users));
+
+    Swal.fire({
+      icon: "success",
+      title: "Cuenta creada",
+      text: "Tu cuenta se registró correctamente"
+    });
+
+    window.location.href = "../pages/iniciarSesion.html";
+  }
+});

@@ -73,3 +73,38 @@ function validarFormularioLogin() {
 
   return true;
 }
+
+
+/*para mandar info al dropdown del perfil*/
+iniciaSesion_btn.addEventListener("click", function(e){
+
+  e.preventDefault();
+
+  if(!validarFormularioLogin()){
+    return;
+  }
+
+  const users = JSON.parse(localStorage.getItem("users")) || [];
+
+  const usuarioEncontrado = users.find(user =>
+    user.correo === correo.value.trim() &&
+    user.password === password.value
+  );
+
+  if(usuarioEncontrado){
+
+    localStorage.setItem("usuarioActivo", JSON.stringify(usuarioEncontrado));
+
+    window.location.href = "../index.html";
+
+  }else{
+
+    Swal.fire({
+      icon:"error",
+      title:"Datos incorrectos",
+      text:"Correo o contraseña incorrectos"
+    });
+
+  }
+
+});
