@@ -23,8 +23,8 @@ if (navbar_container_index) {
                         <!-- Buscador -->
                             <div class="d-flex align-items-center gap-3 order-lg-last">
                                 
-                                 <form class="d-none d-lg-flex align-items-center border rounded-pill px-3 search-box">
-                                    <input class="form-control border-0 shadow-none" type="search" placeholder="¿Qué buscas?">
+                                 <form id="searchFormLg" class="d-none d-lg-flex align-items-center border rounded-pill px-3 search-box">
+                                    <input id="searchInputLg" class="form-control border-0 shadow-none" type="search" placeholder="¿Qué buscas?">
                                     
                                  </form>
 
@@ -38,8 +38,8 @@ if (navbar_container_index) {
 
                                     <div class="collapse collapse-horizontal d-lg-none" id="buscadorExpandido" data-bs-parent=".navbar">
                                         <div class="d-flex align-items-center" style="width: 40vw; margin-left: 10px;">
-                                            <form class="w-100 border-0 rounded-pill px-3 search-box-res">
-                                                <input class="form-control border-0 bg-transparent p-0" type="text" placeholder="¿Qué buscas?" style="font-size: 0.9rem;">
+                                            <form id="searchFormSm" class="w-100 border-0 rounded-pill px-3 search-box-res">
+                                                <input id="searchInputSm" class="form-control border-0 bg-transparent p-0" type="text" placeholder="¿Qué buscas?" style="font-size: 0.9rem;">
                                                 <button class="btn p-0 border-0 ms-2" type="button" data-bs-toggle="collapse" data-bs-target="#buscadorExpandido">
                                                     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" class="bi bi-x-lg" viewBox="0 0 16 16">
                                                         <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z"/>
@@ -105,7 +105,7 @@ if (navbar_container_index) {
                                     <a class="nav-link text-dark" href="../index.html">Inicio</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link text-dark" href="./products.html">Productos</a>
+                                    <a class="nav-link text-dark" href="../pages/products.html">Productos</a>
                                 </li>
                                 
                                 <li class="nav-item">
@@ -183,8 +183,8 @@ if (navbar_container) {
                         <!-- Buscador -->
                             <div class="d-flex align-items-center gap-3 order-lg-last">
                                 
-                                 <form class="d-none d-lg-flex align-items-center border rounded-pill px-3 search-box">
-                                    <input class="form-control border-0 shadow-none" type="search" placeholder="¿Qué buscas?">
+                                 <form id="searchFormLg" class="d-none d-lg-flex align-items-center border rounded-pill px-3 search-box">
+                                    <input id="searchInputLg" class="form-control border-0 shadow-none" type="search" placeholder="¿Qué buscas?">
                                     
                                  </form>
 
@@ -196,11 +196,10 @@ if (navbar_container) {
                                     class="icon-search">
                                     </button>
 
-
                                     <div class="collapse collapse-horizontal d-lg-none" id="buscadorExpandido" data-bs-parent=".navbar">
-                                        <div class="d-flex align-items-center">
-                                            <form class="w-100 border-0 rounded-pill px-3 search-box-res">
-                                                <input class="form-control border-0 bg-transparent p-0" type="text" placeholder="¿Qué buscas?" style="font-size: 0.9rem;">
+                                        <div class="d-flex align-items-center" style="width: 40vw; margin-left: 10px;">
+                                            <form id="searchFormSm" class="w-100 border-0 rounded-pill px-3 search-box-res">
+                                                <input id="searchInputSm" class="form-control border-0 bg-transparent p-0" type="text" placeholder="¿Qué buscas?" style="font-size: 0.9rem;">
                                                 <button class="btn p-0 border-0 ms-2" type="button" data-bs-toggle="collapse" data-bs-target="#buscadorExpandido">
                                                     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" class="bi bi-x-lg" viewBox="0 0 16 16">
                                                         <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z"/>
@@ -233,7 +232,7 @@ if (navbar_container) {
                                     <span id = "cuenta_carrito"> 0 </span>
                             </button>
 
-                                <!-- Boton Perfil-->
+                                <!-- boton de perfil -->
 
                             <div class="dropdown">
                                 <button class="btn p-0 dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -247,7 +246,7 @@ if (navbar_container) {
     <ul class="dropdown-menu dropdown-menu-end" id="menuPerfil">
     </ul>
                             </div>
-                          
+                              
                                </div>
 
                         <!-- Botón responsivo -->
@@ -266,7 +265,7 @@ if (navbar_container) {
                                     <a class="nav-link text-dark" href="../index.html">Inicio</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link text-dark" href="./products.html">Productos</a>
+                                    <a class="nav-link text-dark" href="../pages/products.html">Productos</a>
                                 </li>
                                 
                                 <li class="nav-item">
@@ -387,6 +386,40 @@ document.addEventListener("click", function(e){
 
 });
 
+//*funciones de busqueda*/
+
+function initSearchHandlers() {
+
+  function buscar(query) {
+    query = query.trim();
+
+    if (query !== "") {
+      window.location.href = `../pages/products.html?q=${encodeURIComponent(query)}`;
+    }
+  }
+
+  const formLg = document.getElementById("searchFormLg");
+  const inputLg = document.getElementById("searchInputLg");
+
+  if (formLg) {
+    formLg.addEventListener("submit", (e) => {
+      e.preventDefault();
+      buscar(inputLg.value);
+    });
+  }
+
+  const formSm = document.getElementById("searchFormSm");
+  const inputSm = document.getElementById("searchInputSm");
+
+  if (formSm) {
+    formSm.addEventListener("submit", (e) => {
+      e.preventDefault();
+      buscar(inputSm.value);
+    });
+  }
+}
+
+document.addEventListener("DOMContentLoaded", initSearchHandlers);
 
 /*
 ==============================
