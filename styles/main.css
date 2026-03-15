@@ -64,7 +64,8 @@ a svg {
 
     /* esconder iconos cuando se abre buscador */
     #buscadorExpandido.show ~ button,
-    #buscadorExpandido.show ~ a{
+    #buscadorExpandido.show ~ a,
+    #buscadorExpandido.show ~ .dropdown{
         display:none !important;
     }
 
@@ -107,6 +108,19 @@ a svg {
     height:29px;
     object-fit:contain;
 }
+
+/*quita la palomita*/
+.dropdown-toggle::after{
+    display: none !important;
+}
+
+/*
+Source - https://stackoverflow.com/a/34066798
+Posted by RiesvGeffen
+Retrieved 2026-03-12, License - CC BY-SA 3.0
+*/
+
+
 
 
 /*
@@ -319,14 +333,7 @@ main {
 }
 
 /* Categorías */
-.categories {
-  background: #fff;
-  border-radius: 10px;
-  padding: 22px;
-  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.05);
-  width: 96.3%;
-  margin-left: 35px;
-}
+
 
 .categories h2 {
   font-size: 20px;

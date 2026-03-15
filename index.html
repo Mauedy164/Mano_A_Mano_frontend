@@ -39,6 +39,8 @@
       <div class="page">
         <!-- MENÚ LATERAL -->
       <div class="banner-cat">
+
+        <!-- Comentado para implementar despúes
         <aside class="sidebar">
           <h2 class="logo">Tienda</h2>
           <nav class="menu">
@@ -52,6 +54,7 @@
             <a href="#">Salud y Cuidado personal</a>
           </nav>
         </aside>
+        -->
 
         <img src="./media/products/Productos_Mexicanos.png" class="hero"  alt="ProductosMexicanos">
       </div>    
@@ -66,6 +69,7 @@
       <h2>Grandes Ofertas</h2>
     </div>
 
+    <!--
     <div class="offers-controls">
       <div class="countdown">
         <div>
@@ -86,7 +90,9 @@
         </div>
       </div>
     </div>
+    -->
 
+    
     <!-- Botones carrusel -->
     <button class="offers-arrow offers-prev" aria-label="Anterior">‹</button>
     <button class="offers-arrow offers-next" aria-label="Siguiente">›</button>
@@ -104,42 +110,51 @@
 </section>
 
 
-          <!-- BUSCA POR CATEGORÍA -->
-          <section class="categories">
-            <span class="tag">Categorías</span>
-            <h2>Busca por categoría</h2>
 
-            <div class="categories-row">
-              <div class="cat-card">
-                <span class="cat-icon">📱</span>
-                <p>Teléfonos</p>
-              </div>
-              <div class="cat-card">
-                <span class="cat-icon">💻</span>
-                <p>Computadoras</p>
-              </div>
-              <div class="cat-card">
-                <span class="cat-icon">⌚</span>
-                <p>Smartwatch</p>
-              </div>
-              <div class="cat-card">
-                <span class="cat-icon">🎁</span>
-                <p>Recuerdos</p>
-              </div>
-              <div class="cat-card">
-                <span class="cat-icon">🎧</span>
-                <p>Audífonos</p>
-              </div>
-              <div class="cat-card">
-                <span class="cat-icon">🧸</span>
-                <p>Juguetes</p>
-              </div>
-            </div>
-          </section>
         </section>
       </div>
     </main>
-      <!--Aqui termina Gabo -->
+  <!-- BUSCA POR CATEGORÍA -->
+          <section class="container my-5">
+            <span class="tag">Categorías</span>
+            <h2 class="titulo-seccion" >Busca por categoría</h2>
+
+            <div class="categories-row">
+
+              <div class="cat-card" onclick="irCategoria('ropa')">
+                <span class="cat-icon">👗</span>
+                <p>Ropa</p>
+              </div>
+
+              <div class="cat-card" onclick="irCategoria('accesorios')">
+                <span class="cat-icon">👜</span>
+                <p>Accesorios</p>
+              </div>
+
+              <div class="cat-card" onclick="irCategoria('alimentos')">
+                <span class="cat-icon">🍯</span>
+                <p>Alimentos</p>
+              </div>
+
+              <div class="cat-card" onclick="irCategoria('cocina')">
+                <span class="cat-icon">🍽️</span>
+                <p>Cocina</p>
+              </div>
+
+              <div class="cat-card" onclick="irCategoria('decoracion')">
+                <span class="cat-icon">🏺</span>
+                <p>Decoración</p>
+              </div>
+
+              <div class="cat-card" onclick="irCategoria('recuerdos')">
+                <span class="cat-icon">🎁</span>
+                <p>Recuerdos</p>
+              </div>
+
+            </div>
+          </section>
+
+
 
 <!-- Este mes -->
 

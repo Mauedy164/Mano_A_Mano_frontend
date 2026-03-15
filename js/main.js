@@ -23,8 +23,8 @@ if (navbar_container_index) {
                         <!-- Buscador -->
                             <div class="d-flex align-items-center gap-3 order-lg-last">
                                 
-                                 <form class="d-none d-lg-flex align-items-center border rounded-pill px-3 search-box">
-                                    <input class="form-control border-0 shadow-none" type="search" placeholder="¿Qué buscas?">
+                                 <form id="searchFormLg" class="d-none d-lg-flex align-items-center border rounded-pill px-3 search-box">
+                                    <input id="searchInputLg" class="form-control border-0 shadow-none" type="search" placeholder="¿Qué buscas?">
                                     
                                  </form>
 
@@ -38,8 +38,8 @@ if (navbar_container_index) {
 
                                     <div class="collapse collapse-horizontal d-lg-none" id="buscadorExpandido" data-bs-parent=".navbar">
                                         <div class="d-flex align-items-center" style="width: 40vw; margin-left: 10px;">
-                                            <form class="w-100 border-0 rounded-pill px-3 search-box-res">
-                                                <input class="form-control border-0 bg-transparent p-0" type="text" placeholder="¿Qué buscas?" style="font-size: 0.9rem;">
+                                            <form id="searchFormSm" class="w-100 border-0 rounded-pill px-3 search-box-res">
+                                                <input id="searchInputSm" class="form-control border-0 bg-transparent p-0" type="text" placeholder="¿Qué buscas?" style="font-size: 0.9rem;">
                                                 <button class="btn p-0 border-0 ms-2" type="button" data-bs-toggle="collapse" data-bs-target="#buscadorExpandido">
                                                     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" class="bi bi-x-lg" viewBox="0 0 16 16">
                                                         <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z"/>
@@ -74,14 +74,19 @@ if (navbar_container_index) {
 
                                 <!-- boton de perfil -->
 
+                            <div class="dropdown">
+                                <button class="btn p-0 dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
 
-                                
-                                    <a href="../pages/comprador.html" class="btn p-0">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
-                                            <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/>
-                                        </svg>
-                                    </a>
-                                
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
+                                        <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/>
+                                    </svg>
+
+                                </button>
+
+    <ul class="dropdown-menu dropdown-menu-end" id="menuPerfil">
+    </ul>
+                            </div>
+                              
                                </div>
 
                         <!-- Botón responsivo -->
@@ -100,7 +105,7 @@ if (navbar_container_index) {
                                     <a class="nav-link text-dark" href="../index.html">Inicio</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link text-dark" href="./products.html">Productos</a>
+                                    <a class="nav-link text-dark" href="../pages/products.html">Productos</a>
                                 </li>
                                 
                                 <li class="nav-item">
@@ -178,8 +183,8 @@ if (navbar_container) {
                         <!-- Buscador -->
                             <div class="d-flex align-items-center gap-3 order-lg-last">
                                 
-                                 <form class="d-none d-lg-flex align-items-center border rounded-pill px-3 search-box">
-                                    <input class="form-control border-0 shadow-none" type="search" placeholder="¿Qué buscas?">
+                                 <form id="searchFormLg" class="d-none d-lg-flex align-items-center border rounded-pill px-3 search-box">
+                                    <input id="searchInputLg" class="form-control border-0 shadow-none" type="search" placeholder="¿Qué buscas?">
                                     
                                  </form>
 
@@ -191,11 +196,10 @@ if (navbar_container) {
                                     class="icon-search">
                                     </button>
 
-
                                     <div class="collapse collapse-horizontal d-lg-none" id="buscadorExpandido" data-bs-parent=".navbar">
-                                        <div class="d-flex align-items-center">
-                                            <form class="w-100 border-0 rounded-pill px-3 search-box-res">
-                                                <input class="form-control border-0 bg-transparent p-0" type="text" placeholder="¿Qué buscas?" style="font-size: 0.9rem;">
+                                        <div class="d-flex align-items-center" style="width: 40vw; margin-left: 10px;">
+                                            <form id="searchFormSm" class="w-100 border-0 rounded-pill px-3 search-box-res">
+                                                <input id="searchInputSm" class="form-control border-0 bg-transparent p-0" type="text" placeholder="¿Qué buscas?" style="font-size: 0.9rem;">
                                                 <button class="btn p-0 border-0 ms-2" type="button" data-bs-toggle="collapse" data-bs-target="#buscadorExpandido">
                                                     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" class="bi bi-x-lg" viewBox="0 0 16 16">
                                                         <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z"/>
@@ -228,13 +232,21 @@ if (navbar_container) {
                                     <span id = "cuenta_carrito"> 0 </span>
                             </button>
 
-                                
-                                    <a href="../pages/comprador.html" class="btn p-0">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
-                                            <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/>
-                                        </svg>
-                                    </a>
-                                
+                                <!-- boton de perfil -->
+
+                            <div class="dropdown">
+                                <button class="btn p-0 dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
+                                        <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/>
+                                    </svg>
+
+                                </button>
+
+    <ul class="dropdown-menu dropdown-menu-end" id="menuPerfil">
+    </ul>
+                            </div>
+                              
                                </div>
 
                         <!-- Botón responsivo -->
@@ -253,7 +265,7 @@ if (navbar_container) {
                                     <a class="nav-link text-dark" href="../index.html">Inicio</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link text-dark" href="./products.html">Productos</a>
+                                    <a class="nav-link text-dark" href="../pages/products.html">Productos</a>
                                 </li>
                                 
                                 <li class="nav-item">
@@ -324,6 +336,91 @@ if (navbar_container) {
   `;
 }
 
+//funciones cuando ha iniciado sesion o no
+const menuPerfil = document.getElementById("menuPerfil");
+
+function cargarMenuPerfil(){
+
+    const menuPerfil = document.getElementById("menuPerfil");
+
+    if(!menuPerfil) return;
+
+    const usuarioGuardado = localStorage.getItem("usuarioActivo");
+
+    if(usuarioGuardado){
+
+        const usuario = JSON.parse(usuarioGuardado);
+
+        menuPerfil.innerHTML = `
+            <li class="dropdown-item-text fw-bold">
+                Hola, ${usuario.nombre.split(" ")[0]}!
+            </li>
+
+            <li><hr class="dropdown-divider"></li>
+
+            <li><a class="dropdown-item" href="../pages/comprador.html">Mi perfil</a></li>
+
+            <li><button class="dropdown-item" id="cerrarSesion">Cerrar sesión</button></li>
+        `;
+
+    }else{
+
+        menuPerfil.innerHTML = `
+            <li><a class="dropdown-item" href="../pages/iniciarSesion.html">Iniciar sesión</a></li>
+            <li><a class="dropdown-item" href="../pages/crearCuenta.html">Crear cuenta</a></li>
+        `;
+    }
+}
+cargarMenuPerfil();
+
+
+/*para cerrar sesion */
+document.addEventListener("click", function(e){
+
+    if(e.target.id === "cerrarSesion"){
+
+        localStorage.removeItem("usuarioActivo");
+
+        window.location.reload();
+    }
+
+});
+
+//*funciones de busqueda*/
+
+function initSearchHandlers() {
+
+  function buscar(query) {
+    query = query.trim();
+
+    if (query !== "") {
+      window.location.href = `../pages/products.html?q=${encodeURIComponent(query)}`;
+    }
+  }
+
+  const formLg = document.getElementById("searchFormLg");
+  const inputLg = document.getElementById("searchInputLg");
+
+  if (formLg) {
+    formLg.addEventListener("submit", (e) => {
+      e.preventDefault();
+      buscar(inputLg.value);
+    });
+  }
+
+  const formSm = document.getElementById("searchFormSm");
+  const inputSm = document.getElementById("searchInputSm");
+
+  if (formSm) {
+    formSm.addEventListener("submit", (e) => {
+      e.preventDefault();
+      buscar(inputSm.value);
+    });
+  }
+}
+
+document.addEventListener("DOMContentLoaded", initSearchHandlers);
+
 /*
 ==============================
 |           Footer           |
@@ -376,6 +473,7 @@ if (footer_container_index) {
                         <p>Contacto</p>
                     </div>
 
+                    <!--
                     <div class="col"> 
                         <h4>Descarga la app</h4>
                     <div class="app-section d-flex flex-column align-items-center">
@@ -396,9 +494,8 @@ if (footer_container_index) {
                                 <a href="URL_DE_TU_LINKEDIN" target="_blank"><i class="fab fa-linkedin"></i></a>
                             </div>
 
-
-
                     </div>
+                    -->
 
                 </div>
             </div>
@@ -449,6 +546,7 @@ if (footer_container) {
                         <p>Contacto</p>
                     </div>
 
+                    <!--
                     <div class="col"> 
                         <h4>Descarga la app</h4>
                     <div class="app-section d-flex flex-column align-items-center">
@@ -469,9 +567,8 @@ if (footer_container) {
                                 <a href="URL_DE_TU_LINKEDIN" target="_blank"><i class="fab fa-linkedin"></i></a>
                             </div>
 
-
-
                     </div>
+                    -->
 
                 </div>
             </div>

@@ -66,7 +66,7 @@ body {
   display: flex;
   flex-direction: column-reverse;
   gap: 1rem;
-  height: 300px;
+  height: auto;
 }
 
 .gallery-main-image {
@@ -77,12 +77,9 @@ body {
 }
 
 .gallery-main-image img {
-  display: block;
-  width: 100% !important;
-  height: auto !important;
-  max-height: none !important;
-  object-fit: contain !important;
-  transition: transform 0.4s ease;
+ width: 100%;
+  height: auto;
+  object-fit: contain;
 }
 
 .gallery-main-image:hover img {
@@ -184,7 +181,7 @@ body {
 .variant-label {
   display: block;
   font-weight: 600;
-  margin-bottom: 0.5rem;
+  
   color: var(--text-dark);
 }
 
@@ -354,6 +351,31 @@ body {
 /* =========================================
    PRODUCTOS RELACIONADOS
 ========================================= */
+.etiqueta-mes {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.cuadro-rosa {
+    width: 12px;
+    height: 25px;
+    background-color: #e74c3c; 
+    border-radius: 3px;
+}
+
+.texto-mes {
+    color: #e74c3c;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.titulo-seccion {
+    font-family: 'Poppins', sans-serif;
+    font-size: 28px;
+}
+
 .related-products-section {
   margin-top: 4rem;
   padding-top: 3rem;
@@ -362,7 +384,7 @@ body {
 
 .section-header {
   text-align: left;
-  margin-bottom: 3rem;
+  
   position: relative;
 }
 
@@ -371,11 +393,6 @@ body {
   font-weight: 600;
   color: var(--accent-color);
   margin: 0;
-  position: relative;
-  z-index: 1;
-  padding: 0 2rem;
-  background: #fff;
-  display: inline-block;
 }
 
 /* Grid responsivo de tarjetas */
@@ -393,7 +410,6 @@ body {
   border: none;
   border-radius: var(--border-radius);
   overflow: hidden;
-  box-shadow: var(--shadow-sm);
   background: #fff;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -497,7 +513,11 @@ body {
   font-size: 1rem;
   font-weight: 600;
   color: var(--text-dark);
-  margin-bottom: 0.5rem;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  padding: 0;
+  margin: 0;
 }
 
 .card-price {
