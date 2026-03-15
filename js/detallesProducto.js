@@ -67,7 +67,7 @@ relacionados.forEach(item => {
             </button>
         </div>
 
-        <img src="${item.img}" alt="${item.Name}">
+        <img src="${item.img}" alt="${item.Name}" onclick="verProducto(${item.id})">
 
         <button class="btn-add-to-cart"
         onclick="agregarAlCarrito(${item.id}, '${item.Name}', ${item.Price}, '${item.img}')">
@@ -95,3 +95,6 @@ relacionados.forEach(item => {
     
     }
 
+function verProducto(id){
+    window.location.href = `detallesProducto.html?id=${id}`;
+}
