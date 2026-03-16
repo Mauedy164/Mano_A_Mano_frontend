@@ -294,7 +294,7 @@ main {
 .banner-cat {
   display: block;
   height: 40rem;
-  width: 390px;
+  width: 94.5rem;
   margin-left: -24px;
   background-size: 100%;
   animation: slider 12s linear infinite;
@@ -311,6 +311,7 @@ main {
 
 @media (max-width: 576px) {
   .banner-cat{
+    width: 24.4rem;
     height: 10rem;
   }
 }
