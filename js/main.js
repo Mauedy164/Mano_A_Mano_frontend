@@ -430,73 +430,99 @@ document.addEventListener("DOMContentLoaded", initSearchHandlers);
 const footer_container_index = document.getElementById("footer_container_index");
 const footer_container = document.getElementById("footer_container");
 
+
+
+
 if (footer_container_index) {
+    var flecha_abajo="./media/footer/flecha_abajo.png"
+    var flecha_arriba = "./media/footer/flecha_arriba.png"
   footer_container_index.innerHTML = `
-  <div class="piedepagina">
+  <div class="piedepagina" id="piedepagina_contenedor">
             <div class="piedepagina-container container-fluid">
                 <div class="piedepagina-grid row row-col-1 row-col-md-12">
                     <div class="col">
-                        <h4>Exclusivo</h4>
-                        <p>Suscribirse</p>
-                        <p>Obtén 10% en tu primera orden</p>
-                        <div class="input-wrapper">
-                            <input type="email" id="footer_email" placeholder="Ingresa tu correo" required />
-                            <button type="button" id="footer_subscribe">
-                                <span class="arrow-icon">➤</span>
-                            </button>
+                        <div class="subtitle_footer">
+                            <h4>Exclusivo</h4>
+                            <img src="${flecha_abajo}" alt="flecha apuntando hacia abajo" class="subtitle_footer_row row_down"">
+                            <!-- Cambiar ruta de imagen -->
                         </div>
-                        <div id="footer_email_error" class="footer-error"></div>
+                        <div class="description_footer">
+                            <p>Suscribirse</p>
+                            <p>Obtén 10% en tu primera orden</p>
+                            <div class="input-wrapper">
+                                <input type="email" id="footer_email" placeholder="Ingresa tu correo" required />
+                                <button type="button" id="footer_subscribe">
+                                    <span class="arrow-icon">➤</span>
+                                </button>
+                            </div>
+                            <div id="footer_email_error" class="footer-error"></div>
+                        </div>
+                        
                     </div>
 
                     
                     <div class="col">
-                        <h4>Soporte</h4>
-                        <p>Reforma 226 Piso 15, CDMX</p>
-                        <p>auxiliarmanoamano@gmail.com</p>
-                        <p>+5445125545</p>
-                    </div>
-
-                    <div class="col">
-                        <h4>Cuenta</h4>
-                        <p>Mi cuenta</p>
-                        <p>Ingresar / Registrar</p>
-                        <p>Carrito</p>
-                        <p>Lista de deseos</p>
-                        <p>Tienda</p>
-                    </div>
-
-                    <div class="col">
-                        <h4>Enlace rápido</h4>
-                        <p>Política de privacidad</p>
-                        <p>Términos de uso</p>
-                        <p>FAQ</p>
-                        <p>Contacto</p>
-                    </div>
-
-                    <!--
-                    <div class="col"> 
-                        <h4>Descarga la app</h4>
-                    <div class="app-section d-flex flex-column align-items-center">
-                            <img src="../media/aboutMe/codigoQR.PNG" alt="QR" class="qr img-fluid">
-                        <div class="botones-seccion d-flex flex-column flex-md-row gap-2 mt-3">
-                            <a href="URL_APP_STORE" target="_blank">
-                            <img src="../media/aboutMe/AppStore.png" alt="Descargar en App Store" class="img-fluid store-logo"></a>
-                            <a href="URL_PLAY_STORE" target="_blank">
-                            <img src="../media/aboutMe/GooglePlay.png" alt="Disponible en Google Play" class="img-fluid store-logo"></a>
+                        <div class="subtitle_footer">
+                            <h4>Soporte</h4>
+                            <img src="${flecha_abajo}" alt="flecha apuntando hacia abajo" class="subtitle_footer_row row_down">
+                        </div>
+                        <div class="description_footer">
+                            <p>Reforma 226 Piso 15, CDMX</p>
+                            <p>auxiliarmanoamano@gmail.com</p>
+                            <p>+5445125545</p>
                         </div>
                     </div>
 
+                    <div class="col">
+                        <div class="subtitle_footer">
+                            <h4>Cuenta</h4>
+                            <img src="${flecha_abajo}" alt="flecha apuntando hacia abajo" class="subtitle_footer_row row_down">
+                        </div>
+                        <div class="description_footer">
+                            <p>Mi cuenta</p>
+                            <p>Ingresar / Registrar</p>
+                            <p>Carrito</p>
+                            <p>Lista de deseos</p>
+                            <p>Tienda</p>
+                        </div>
+                    </div>
 
+                    <div class="col">
+                        <div class="subtitle_footer">
+                            <h4>Enlace rápido</h4>
+                            <img src="${flecha_abajo}" alt="flecha apuntando hacia abajo" class="subtitle_footer_row row_down">
+                        </div>
+                        <div class="description_footer">
+                            <p>Política de privacidad</p>
+                            <p>Términos de uso</p>
+                            <p>FAQ</p>
+                            <p>Contacto</p>
+                        </div>
+                    </div>
+
+                    <div class="col"> 
+                        <div class="subtitle_footer">
+                            <h4>Descarga la app</h4>
+                            <img src="${flecha_abajo}" alt="flecha apuntando hacia abajo" class="subtitle_footer_row row_down">
+                        </div>
+                        <div class="description_footer">
+                            <div class="app-section d-flex flex-column align-items-center">
+                                <img src="../media/aboutMe/codigoQR.PNG" alt="QR" class="qr img-fluid">
+                                <div class="botones-seccion d-flex flex-column flex-md-row gap-2 mt-3">
+                                    <a href="URL_APP_STORE" target="_blank">
+                                    <img src="../media/aboutMe/AppStore.png" alt="Descargar en App Store" class="img-fluid store-logo"></a>
+                                    <a href="URL_PLAY_STORE" target="_blank">
+                                    <img src="../media/aboutMe/GooglePlay.png" alt="Disponible en Google Play" class="img-fluid store-logo"></a>
+                                </div>
+                            </div>
                             <div class="social-icons">
                                 <a href="URL_DE_TU_INSTAGRAM" target="_blank"><i class="fab fa-instagram"></i></a>
                                 <a href="URL_DE_TU_X" target="_blank"><i class="fab fa-twitter"></i></a>
                                 <a href="URL_DE_TU_FACEBOOK" target="_blank"><i class="fab fa-facebook"></i></a>
                                 <a href="URL_DE_TU_LINKEDIN" target="_blank"><i class="fab fa-linkedin"></i></a>
                             </div>
-
+                        </div>
                     </div>
-                    -->
-
                 </div>
             </div>
         </div>
@@ -504,72 +530,95 @@ if (footer_container_index) {
 }
 
 if (footer_container) {
+    var flecha_abajo="../media/footer/flecha_abajo.png"
+    var flecha_arriba = "../media/footer/flecha_arriba.png"
   footer_container.innerHTML = `
-          <div class="piedepagina">
+  <div class="piedepagina" id="piedepagina_contenedor">
             <div class="piedepagina-container container-fluid">
                 <div class="piedepagina-grid row row-col-1 row-col-md-12">
                     <div class="col">
-                        <h4>Exclusivo</h4>
-                        <p>Suscribirse</p>
-                        <p>Obtén 10% en tu primera orden</p>
-                        <div class="input-wrapper">
-                            <input type="email" id="footer_email" placeholder="Ingresa tu correo" required />
-                            <button type="button" id="footer_subscribe">
-                                <span class="arrow-icon">➤</span>
-                            </button>
+                        <div class="subtitle_footer">
+                            <h4>Exclusivo</h4>
+                            <img src="${flecha_abajo}" alt="flecha apuntando hacia abajo" class="subtitle_footer_row row_down"">
+                            <!-- Cambiar ruta de imagen -->
                         </div>
-                        <div id="footer_email_error" class="footer-error"></div>
+                        <div class="description_footer">
+                            <p>Suscribirse</p>
+                            <p>Obtén 10% en tu primera orden</p>
+                            <div class="input-wrapper">
+                                <input type="email" id="footer_email" placeholder="Ingresa tu correo" required />
+                                <button type="button" id="footer_subscribe">
+                                    <span class="arrow-icon">➤</span>
+                                </button>
+                            </div>
+                            <div id="footer_email_error" class="footer-error"></div>
+                        </div>
+                        
                     </div>
 
                     
                     <div class="col">
-                        <h4>Soporte</h4>
-                        <p>Reforma 226 Piso 15, CDMX</p>
-                        <p>auxiliarmanoamano@gmail.com</p>
-                        <p>+5445125545</p>
-                    </div>
-
-                    <div class="col">
-                        <h4>Cuenta</h4>
-                        <p>Mi cuenta</p>
-                        <p>Ingresar / Registrar</p>
-                        <p>Carrito</p>
-                        <p>Lista de deseos</p>
-                        <p>Tienda</p>
-                    </div>
-
-                    <div class="col">
-                        <h4>Enlace rápido</h4>
-                        <p>Política de privacidad</p>
-                        <p>Términos de uso</p>
-                        <p>FAQ</p>
-                        <p>Contacto</p>
-                    </div>
-
-                    <!--
-                    <div class="col"> 
-                        <h4>Descarga la app</h4>
-                    <div class="app-section d-flex flex-column align-items-center">
-                            <img src="../media/aboutMe/codigoQR.PNG" alt="QR" class="qr img-fluid">
-                        <div class="botones-seccion d-flex flex-column flex-md-row gap-2 mt-3">
-                            <a href="URL_APP_STORE" target="_blank">
-                            <img src="../media/aboutMe/AppStore.png" alt="Descargar en App Store" class="img-fluid store-logo"></a>
-                            <a href="URL_PLAY_STORE" target="_blank">
-                            <img src="../media/aboutMe/GooglePlay.png" alt="Disponible en Google Play" class="img-fluid store-logo"></a>
+                        <div class="subtitle_footer">
+                            <h4>Soporte</h4>
+                            <img src="${flecha_abajo}" alt="flecha apuntando hacia abajo" class="subtitle_footer_row row_down">
+                        </div>
+                        <div class="description_footer">
+                            <p>Reforma 226 Piso 15, CDMX</p>
+                            <p>auxiliarmanoamano@gmail.com</p>
+                            <p>+5445125545</p>
                         </div>
                     </div>
 
+                    <div class="col">
+                        <div class="subtitle_footer">
+                            <h4>Cuenta</h4>
+                            <img src="${flecha_abajo}" alt="flecha apuntando hacia abajo" class="subtitle_footer_row row_down">
+                        </div>
+                        <div class="description_footer">
+                            <p>Mi cuenta</p>
+                            <p>Ingresar / Registrar</p>
+                            <p>Carrito</p>
+                            <p>Lista de deseos</p>
+                            <p>Tienda</p>
+                        </div>
+                    </div>
 
+                    <div class="col">
+                        <div class="subtitle_footer">
+                            <h4>Enlace rápido</h4>
+                            <img src="${flecha_abajo}" alt="flecha apuntando hacia abajo" class="subtitle_footer_row row_down">
+                        </div>
+                        <div class="description_footer">
+                            <p>Política de privacidad</p>
+                            <p>Términos de uso</p>
+                            <p>FAQ</p>
+                            <p>Contacto</p>
+                        </div>
+                    </div>
+
+                    <div class="col"> 
+                        <div class="subtitle_footer">
+                            <h4>Descarga la app</h4>
+                            <img src="${flecha_abajo}" alt="flecha apuntando hacia abajo" class="subtitle_footer_row row_down">
+                        </div>
+                        <div class="description_footer">
+                            <div class="app-section d-flex flex-column align-items-center">
+                                <img src="../media/aboutMe/codigoQR.PNG" alt="QR" class="qr img-fluid">
+                                <div class="botones-seccion d-flex flex-column flex-md-row gap-2 mt-3">
+                                    <a href="URL_APP_STORE" target="_blank">
+                                    <img src="../media/aboutMe/AppStore.png" alt="Descargar en App Store" class="img-fluid store-logo"></a>
+                                    <a href="URL_PLAY_STORE" target="_blank">
+                                    <img src="../media/aboutMe/GooglePlay.png" alt="Disponible en Google Play" class="img-fluid store-logo"></a>
+                                </div>
+                            </div>
                             <div class="social-icons">
                                 <a href="URL_DE_TU_INSTAGRAM" target="_blank"><i class="fab fa-instagram"></i></a>
                                 <a href="URL_DE_TU_X" target="_blank"><i class="fab fa-twitter"></i></a>
                                 <a href="URL_DE_TU_FACEBOOK" target="_blank"><i class="fab fa-facebook"></i></a>
                                 <a href="URL_DE_TU_LINKEDIN" target="_blank"><i class="fab fa-linkedin"></i></a>
                             </div>
-
+                        </div>
                     </div>
-                    -->
-
                 </div>
             </div>
         </div>
@@ -624,6 +673,214 @@ document.addEventListener("click", function (e) {
     });
   }
 });
+
+/*
+==============================
+|   Footer lista en mobile   |
+==============================
+*/
+
+const subtitle_footer = document.getElementsByClassName("subtitle_footer");
+const description_footer = document.getElementsByClassName("description_footer");
+const subtitle_footer_row = document.getElementsByClassName("subtitle_footer_row");
+const piedepagina_contenedor = document.getElementById("piedepagina_contenedor")
+
+
+
+function ocultaElementos(){
+    let exclusivoOculto = true;
+    let soporteOculto = true;
+    let cuentaOculto = true;
+    let enlaceOculto = true;
+    let appOculto = true;
+
+    for(let i=0; i<subtitle_footer.length;i++){
+        description_footer[i].style.display="none";
+    }
+    
+    subtitle_footer[0].addEventListener("click", ()=>{
+        if(!exclusivoOculto){
+            description_footer[0].style.display="none"
+            exclusivoOculto=true
+            subtitle_footer[0].innerHTML=`<h4>Exclusivo</h4>
+                                <img src="${flecha_abajo}" alt="flecha apuntando hacia abajo" class="subtitle_footer_row row_up">`
+        } else {
+            description_footer[0].style.display=""
+            exclusivoOculto=false
+            subtitle_footer[0].innerHTML=`<h4>Exclusivo</h4>
+                                <img src="${flecha_arriba}" alt="flecha apuntando hacia abajo" class="subtitle_footer_row row_down">`
+        }
+    })
+
+    subtitle_footer[1].addEventListener("click", ()=>{
+        if(!soporteOculto){
+            description_footer[1].style.display="none"
+            soporteOculto=true
+            subtitle_footer[1].innerHTML=`<h4>Soporte</h4>
+                                <img src="${flecha_abajo}" alt="flecha apuntando hacia abajo" class="subtitle_footer_row row_up">`
+        } else {
+            description_footer[1].style.display=""
+            soporteOculto=false
+            subtitle_footer[1].innerHTML=`<h4>Soporte</h4>
+                                <img src="${flecha_arriba}" alt="flecha apuntando hacia abajo" class="subtitle_footer_row row_down">`
+        }
+    })
+
+    subtitle_footer[2].addEventListener("click", ()=>{
+        if(!cuentaOculto){
+            description_footer[2].style.display="none"
+            cuentaOculto=true
+            subtitle_footer[2].innerHTML=`<h4>Cuenta</h4>
+                                <img src="${flecha_abajo}" alt="flecha apuntando hacia abajo" class="subtitle_footer_row row_up">`
+        } else {
+            description_footer[2].style.display=""
+            cuentaOculto=false
+            subtitle_footer[2].innerHTML=`<h4>Cuenta</h4>
+                                <img src="${flecha_arriba}" alt="flecha apuntando hacia abajo" class="subtitle_footer_row row_down">`
+        }
+    })
+
+    subtitle_footer[3].addEventListener("click", ()=>{
+        if(!enlaceOculto){
+            description_footer[3].style.display="none"
+            enlaceOculto=true
+            subtitle_footer[3].innerHTML=`<h4>Enlace rápido</h4>
+                                <img src="${flecha_abajo}" alt="flecha apuntando hacia abajo" class="subtitle_footer_row row_up">`
+        } else {
+            description_footer[3].style.display=""
+            enlaceOculto=false
+            subtitle_footer[3].innerHTML=`<h4>Enlace rápido</h4>
+                                <img src="${flecha_arriba}" alt="flecha apuntando hacia abajo" class="subtitle_footer_row row_down">`
+        }
+    })
+
+    subtitle_footer[4].addEventListener("click", ()=>{
+        if(!appOculto){
+            description_footer[4].style.display="none"
+            appOculto=true
+            subtitle_footer[4].innerHTML=`<h4>Descarga la app</h4>
+                                <img src="${flecha_abajo}" alt="flecha apuntando hacia abajo" class="subtitle_footer_row row_up">`
+        } else {
+            description_footer[4].style.display=""
+            appOculto=false
+            subtitle_footer[4].innerHTML=`<h4>Descarga la app</h4>
+                                <img src="${flecha_arriba}" alt="flecha apuntando hacia abajo" class="subtitle_footer_row row_down">`
+        }
+    })
+
+}
+
+window.addEventListener("resize", ()=>{
+
+    const ancho = window.innerWidth;
+
+    if(ancho < 768){
+        for(let i=0; i<subtitle_footer_row.length; i++){
+            subtitle_footer_row[i].style.display="";
+        }
+        ocultaElementos();
+    } else{
+        for(let i=0; i<subtitle_footer_row.length; i++){
+            subtitle_footer_row[i].style.display="none";
+        }
+
+        piedepagina_contenedor.innerHTML= `
+        <div class="piedepagina-container container-fluid">
+                <div class="piedepagina-grid row row-col-1 row-col-md-12">
+                    <div class="col">
+                        <div class="subtitle_footer">
+                            <h4>Exclusivo</h4>
+                            <img src="${flecha_abajo}" alt="flecha apuntando hacia abajo" class="subtitle_footer_row row_down"">
+                            <!-- Cambiar ruta de imagen -->
+                        </div>
+                        <div class="description_footer">
+                            <p>Suscribirse</p>
+                            <p>Obtén 10% en tu primera orden</p>
+                            <div class="input-wrapper">
+                                <input type="email" id="footer_email" placeholder="Ingresa tu correo" required />
+                                <button type="button" id="footer_subscribe">
+                                    <span class="arrow-icon">➤</span>
+                                </button>
+                            </div>
+                            <div id="footer_email_error" class="footer-error"></div>
+                        </div>
+                        
+                    </div>
+
+                    
+                    <div class="col">
+                        <div class="subtitle_footer">
+                            <h4>Soporte</h4>
+                            <img src="${flecha_abajo}" alt="flecha apuntando hacia abajo" class="subtitle_footer_row row_down">
+                        </div>
+                        <div class="description_footer">
+                            <p>Reforma 226 Piso 15, CDMX</p>
+                            <p>auxiliarmanoamano@gmail.com</p>
+                            <p>+5445125545</p>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="subtitle_footer">
+                            <h4>Cuenta</h4>
+                            <img src="${flecha_abajo}" alt="flecha apuntando hacia abajo" class="subtitle_footer_row row_down">
+                        </div>
+                        <div class="description_footer">
+                            <p>Mi cuenta</p>
+                            <p>Ingresar / Registrar</p>
+                            <p>Carrito</p>
+                            <p>Lista de deseos</p>
+                            <p>Tienda</p>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="subtitle_footer">
+                            <h4>Enlace rápido</h4>
+                            <img src="${flecha_abajo}" alt="flecha apuntando hacia abajo" class="subtitle_footer_row row_down">
+                        </div>
+                        <div class="description_footer">
+                            <p>Política de privacidad</p>
+                            <p>Términos de uso</p>
+                            <p>FAQ</p>
+                            <p>Contacto</p>
+                        </div>
+                    </div>
+
+                    <div class="col"> 
+                        <div class="subtitle_footer">
+                            <h4>Descarga la app</h4>
+                            <img src="${flecha_abajo}" alt="flecha apuntando hacia abajo" class="subtitle_footer_row row_down">
+                        </div>
+                        <div class="description_footer">
+                            <div class="app-section d-flex flex-column align-items-center">
+                                <img src="../media/aboutMe/codigoQR.PNG" alt="QR" class="qr img-fluid">
+                                <div class="botones-seccion d-flex flex-column flex-md-row gap-2 mt-3">
+                                    <a href="URL_APP_STORE" target="_blank">
+                                    <img src="../media/aboutMe/AppStore.png" alt="Descargar en App Store" class="img-fluid store-logo"></a>
+                                    <a href="URL_PLAY_STORE" target="_blank">
+                                    <img src="../media/aboutMe/GooglePlay.png" alt="Disponible en Google Play" class="img-fluid store-logo"></a>
+                                </div>
+                            </div>
+                            <div class="social-icons">
+                                <a href="URL_DE_TU_INSTAGRAM" target="_blank"><i class="fab fa-instagram"></i></a>
+                                <a href="URL_DE_TU_X" target="_blank"><i class="fab fa-twitter"></i></a>
+                                <a href="URL_DE_TU_FACEBOOK" target="_blank"><i class="fab fa-facebook"></i></a>
+                                <a href="URL_DE_TU_LINKEDIN" target="_blank"><i class="fab fa-linkedin"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        `
+    }
+
+})
+
+if (window.innerWidth < 768) {
+    ocultaElementos();
+}
+
 
 /*
 ==============================
