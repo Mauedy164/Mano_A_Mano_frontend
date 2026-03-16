@@ -21,9 +21,8 @@ a svg {
 
 @media (max-width: 768px) {
   #logo_Ajolote {
-    width: 180px;
-    height: 50px;
-    margin-left: -25px;
+    display: flex;
+    width: 100%;
   }
 }
 
@@ -137,16 +136,15 @@ Retrieved 2026-03-12, License - CC BY-SA 3.0
   width: 100%;
   padding-left: 0;
   padding-right: 0;
-}.piedepagina {
+}
+
+.piedepagina {
   width: 100%;
   margin: 0;
 }
 
-.piedepagina-container {
-  width: 100%;
-  padding-left: 0;
-  padding-right: 0;
-}
+
+
 /*
 ==============================
 |  index (página de inicio)  |
@@ -163,17 +161,28 @@ main {
   flex: 1;
 }
 
-.banner-cat{
-  display: flex;
-  flex-direction: row;
+.banner-cat {
+  display: block;
+  height: 40rem;
+  width: 390px;
+  margin-left: -24px;
+  background-size: 100%;
+  animation: slider 12s linear infinite;
+}
+.banner-cat:hover {
+  cursor: pointer;
+}
+@keyframes slider {
+0%{background-image: url(../media/products/Banner1.png);}
+33%{background-image: url(../media/products/Banner2.png);}
+66%{background-image: url(../media/products/Banner4.png);}
+100%{background-image: url(../media/products/Banner3.png);}
 }
 
-/* Sidebar */
-.sidebar {
-  background: #ffffff;
-  border-right: 1px solid #eee;
-  padding: 24px 20px;
-  height: 25%;
+@media (max-width: 576px) {
+  .banner-cat{
+    height: 10rem;
+  }
 }
 
 .logo {
@@ -258,22 +267,9 @@ main {
   font-size: 25px;
 }
 
-.countdown {
-  display: flex;
-  gap: 14px;
-  margin-left: 0px;
-  font-size: 20px;
-  margin-right: 1100px;
-}
+.containerBC {
+  margin-top: 2rem;
 
-.countdown span{
-  font-size: 12px;
-}
-
-.countdown strong {
-  display: block;
-  font-size: 20px;
-  align-items: center;
 }
 
 /* Carrusel de productos */
@@ -350,15 +346,15 @@ main {
 .cat-card {
   border-radius: 10px;
   border: 1px solid #eee;
-  padding: 14px 10px;
+  padding: 1rem;
   text-align: center;
   cursor: pointer;
   background: #fff;
 }
 
 .cat-card p {
-  font-size: 13px;
-  margin-top: 6px;
+  font-size: 15px;
+  margin-top: .5rem;
 }
 
 .cat-icon {
@@ -372,18 +368,6 @@ main {
 @media (max-width: 900px) {
   .page {
     grid-template-columns: 1fr;
-  }
-
-  .sidebar {
-    position: sticky;
-    top: 0;
-    z-index: 20;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding-inline: 1rem;
-    border-bottom: 1px solid #eee;
-    border-right: none;
   }
 
   .logo {
@@ -456,23 +440,6 @@ main {
    ========================= */
 @media (max-width: 576px) {
 
-  /* Layout lateral + banner uno debajo de otro */
-  .banner-cat {
-    flex-direction: column;
-  }
-
-  .sidebar {
-    width: 100%;
-    height: auto;
-    margin: 0;
-    border-right: none;
-    border-bottom: 1px solid #eee;
-  }
-
-  .logo {
-    margin-left: 0;
-  }
-
   .menu a {
     margin-left: 0;
     font-size: 16px;
@@ -484,7 +451,6 @@ main {
     height: auto;
   }
 
-  /* Grandes ofertas más compactas */
   .offers {
     margin: 16px 10px;
     padding: 16px;
@@ -495,12 +461,6 @@ main {
     gap: 0.75rem;
   }
 
-  .countdown {
-    margin-right: 0;
-    font-size: 16px;
-    gap: 8px;
-  }
-
   .offers-slider {
     gap: 12px;
   }
@@ -509,9 +469,12 @@ main {
     flex: 0 0 100%;
   }
 
-  /* Botón “Ver todo” (si usas btn-ver-todo) */
   .btn-ver-todo {
     width: 100%;
+  }
+
+  .offers-arrow{
+    display: none;
   }
 
   /* Tarjetas “Este mes” y “Explorar” a 1 por fila */
@@ -525,7 +488,7 @@ main {
   .piedepagina-grid {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 1.2rem;
   }
 
   .piedepagina .col {
@@ -547,6 +510,11 @@ main {
     max-width: 100%;
     padding: 2rem 1.5rem;
   }
+
+  .tagUN {
+    display: flex;
+    width: 100%;
+  }
 }
 
 
@@ -554,15 +522,12 @@ main {
 |================  Tarjetas de productos  ===============|
 */
 
-/* Botones izquierda derecha */
-
 .btn_left_right {
   display: flex;
   justify-content: end;
   margin-right: 2vh;
 }
 
-/* Evita que el texto se encime si no hay imagen */
 .product-card img {
   display: block;
   margin: 0 auto;
@@ -1016,6 +981,14 @@ div p {
   width: 100%;
   margin: 0 auto; /* centra horizontalmente */
   padding: 3rem 2.5rem;
+}
+
+@media (max-width: 576px) {
+  .benefits {
+    display: flex;
+    flex-direction: column;
+    
+  }
 }
 
 .benefit-item {
