@@ -6,9 +6,9 @@
     <title>Cart</title>
 
     <!-- Estilos -->
+     <link rel="stylesheet" href="../styles/carrito.css">
     <link rel="stylesheet" href="../styles/aboutMe.css" />
     <link rel="stylesheet" href="../styles/main.css" />
-
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -31,7 +31,76 @@
       </section>
     </header>
     <main class="content container-fluid">
-      <h1></h1>
+      <!-- Breadcrumb -->
+      <nav aria-label="breadcrumb" class="text-decoration-none text-muted breadcrumb">
+        <ul>
+          <a href="../index.html">Inicio /</a>
+          <a href="./carrito.html"><strong>Carrito</strong></a>
+        </ul>
+      </nav>
+
+      <!-- Lista de productos -->
+      <div class="container">
+        <h2>Carrito de Compras</h2>
+
+        <table class="productos-table">
+          <thead>
+            <tr>
+              <th>Producto</th>
+              <th>Precio</th>
+              <th>Cantidad</th>
+              <th>Subtotal</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="producto-info">
+                <img
+                  src="../media/productos_carrito/Alebrije_de_madera.png"
+                  alt="Alebrije de madera"
+                />
+                <span>Alebrije de madera</span>
+              </td>
+              <td>$800</td>
+              <td><input type="number" class="cantidad" value="1" min="1" /></td>
+              <td class="subtotal">$800</td>
+            </tr>
+            <tr>
+              <td class="producto-info">
+                <img src="../media/productos_carrito/Taza_de_barro_pintada_a_mano.png" alt="Taza de barro pintada a mano" />
+                <span>Taza de barro pintada a mano</span>
+              </td>
+              <td>$800</td>
+              <td><input type="number" class="cantidad" value="1" min="1" /></td>
+              <td class="subtotal">$800</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div>
+          <button>Regresar a la tienda</button>
+          <button>Actualizar carrito</button>
+        </div>
+
+        <div class="descuentos-section">
+          <div class="descuento-input">
+            <input type="text" placeholder="Código de descuento" />
+            <button class="btn-descuento">Aplicar descuento</button>
+          </div>
+          <div class="totales">
+            <div class="total-row">
+              <span>Subtotal</span>
+              <span class="total-valor">$1,600</span>
+            </div>
+            <div class="total-row">
+              <span>Total</span>
+              <span class="total-valor final-total">$1,600</span>
+            </div>
+          </div>
+        </div>
+
+        <button class="btn-pago">Proceder al pago</button>
+      </div>
     </main>
 
     <footer id="footer_container">
