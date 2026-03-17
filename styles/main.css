@@ -177,7 +177,7 @@ div.subtitle_footer {
 .piedepagina-container {
   background-color: #0D0D0D;
   padding: 10px;
-
+  
 }
 
 .piedepagina-grid {
@@ -297,7 +297,7 @@ main {
   width: 94.5rem;
   margin-left: -24px;
   background-size: 100%;
-  animation: slider 12s linear infinite;
+  animation: slider 15s linear infinite;
 }
 .banner-cat:hover {
   cursor: pointer;
@@ -352,6 +352,7 @@ main {
   border-radius: 2px;
   padding-left: 8px;
   margin-right: 200px;
+  
 }
 
 .offers {
@@ -365,6 +366,8 @@ main {
 
 .offers-header {
   display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   margin-bottom: 18px;
 }
 
@@ -384,8 +387,8 @@ main {
   align-items: center;
 }
 
-.offers-arrow .offers-prev{
-  margin-left: 300px;
+.arrows {
+display: flex;
 }
 
 .offers-arrow:hover {
