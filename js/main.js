@@ -421,6 +421,50 @@ function initSearchHandlers() {
 
 document.addEventListener("DOMContentLoaded", initSearchHandlers);
 
+/*banner principal*/
+
+const categorias = [
+  {
+    nombre: "gastronomía →",
+    imagen: "../media/NavBar/gastronomia.jpg"
+  },
+  {
+    nombre: "textiles →",
+    imagen: "../media/NavBar/textiles.jpg"
+  },
+  {
+    nombre: "artesanías →",
+    imagen: "../media/NavBar/artesanias1.webp"
+  },
+  {
+    nombre: "accesorios →",
+    imagen: "../media/NavBar/accesorios.webp"
+  },
+  {
+    nombre: "cocina y hogar →",
+    imagen: "../media/NavBar/cocina.jpg"
+  }
+];
+
+let index = 0;
+
+const heroRight = document.getElementById("heroRight");
+const categoriaTexto = document.getElementById("categoria");
+
+function cambiarCategoria() {
+  const item = categorias[index];
+
+  heroRight.style.backgroundImage = `url(${item.imagen})`;
+  categoriaTexto.textContent = item.nombre;
+
+  index = (index + 1) % categorias.length;
+}
+
+// inicial
+cambiarCategoria();
+
+// cambia cada 4 segundos
+setInterval(cambiarCategoria, 4000);
 /*
 ==============================
 |           Footer           |
