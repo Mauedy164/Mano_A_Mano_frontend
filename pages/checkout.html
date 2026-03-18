@@ -35,15 +35,15 @@
       <nav aria-label="breadcrumb" class="text-decoration-none text-muted breadcrumb">
         <ul>
           <a href="../index.html">Inicio / </a>
-          <a href="./comprador.html"><strong>Mi cuenta / </strong></a>
-          <a href="./products.html"><strong>Producto / </strong></a>
-          <a href="./carrito.html"><strong>Carrito / </strong></a>
+          <a href="./comprador.html">Mi cuenta / </a>
+          <a href="./products.html">Producto / </a>
+          <a href="./carrito.html">Carrito / </a>
           <a href="./checkout.html"><strong>Finalizar compra</strong></a>
         </ul>
       </nav>
 
       <div>
-        <div id="container_checkout" class="container">
+        <div id="container_checkout" class="container col-md-5">
           <div class="container_title">
             <h2>Datos de facturación:</h2>
           </div>
@@ -171,34 +171,34 @@
             </div>
           </div>
         </div>
-        <div class="container_cuenta">
-          <div class="articles">
-            <article>
+        <div class="container_cuenta container col-12 col-md-5">
+          <div class="articles col-12 col-md-5 ">
+          <article class="d-flex flex-row justify-content-between">
             <img src="../media/productos_carrito/Bolso_artesanal_de_palma.png" alt="" style="height: 20vh;">
             <p>Bolso artesanal de palma</pp>
             <p>$350</p>
           </article>
-          <article>
+          <article class="d-flex flex-row justify-content-between">
             <img src="../media/productos_carrito/Collar_artesanal_de_chaquira.png" alt="" style="height: 20vh;">
             <p>Collar artesanal de chaquira</pp>
             <p>$220</p>
           </article>
           </div>
           <div class="calculosCuenta">
-            <section id="subtotal">
+            <section id="subtotal" class="d-flex flex-row justify-content-between">
               <p>Subtotal:</p>
               <p>$570</p>
             </section>
-            <section id="envio">
+            <section id="envio" class="d-flex flex-row justify-content-between">
               <p>Envío</p>
               <p>Gratis</p>
             </section>
-            <section id="total">
+            <section id="total" class="d-flex flex-row justify-content-between">
               <p>Total</p>
               <p>$570</p>
             </section>
           </div>
-          <div id="botones">
+          <div id="botones" class="container d-flex">
             <input
                 type="text"
                 class="form-control"
@@ -209,7 +209,7 @@
                 Aplicar descuento
               </button>
           </div>
-          <div id="realizarPedido">
+          <div id="realizarPedido" class="container">
             <button type="button" class="btn-primary" id="iniciaSesion_btn">
                 Realizar pedido
               </button>
