@@ -335,6 +335,100 @@ main {
 .menu a:hover {
   color: #e53935;
 }
+/* hero banner */ 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins";
+}
+
+.hero-banner {
+  display: flex;
+  height: 80vh;
+}
+
+/* IZQUIERDA */
+.hero-left {
+  width: 40%;
+  background: #f2554a;
+  color: white;
+  padding: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.hero-left h1 {
+  font-size: 80px;
+  line-height: 0.7;
+  letter-spacing: -5px;
+}
+
+.hero-left p {
+  font-size: 28px;
+  max-width: 400px;
+  line-height: 0.8;
+}
+
+/* DERECHA */
+.hero-right {
+  width: 60%;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  cursor: pointer;
+  transition: 0.3s ease;
+  overflow: hidden;
+}
+
+/* OVERLAY */
+.overlay {
+  position: absolute;
+  bottom: 30px;
+  left: 30px;
+  color: white;
+  font-size: 28px;
+  padding: 10px 20px;
+  transition: 0.3s ease;
+}
+
+
+.hero-right:hover .overlay {
+  background: white;
+  color: black;
+  border-radius: 5px;
+}
+
+@media (max-width: 900px) {
+  .hero-banner {
+    flex-direction: column; 
+    height: auto;
+  }
+
+  .hero-left,
+  .hero-right {
+    width: 100%;
+  }
+
+  .hero-left {
+    padding: 40px 20px;
+  }
+
+  .hero-left h1 {
+    font-size: 50px;
+  }
+
+  .hero-left p {
+    font-size: 20px;
+  }
+
+  .hero-right {
+    height: 300px; 
+  }
+}
+
+
 
 /* Hero */
 .hero {
