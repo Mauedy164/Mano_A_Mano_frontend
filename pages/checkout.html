@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cart</title>
+
+    <!-- Estilos -->
+     <link rel="stylesheet" href="../styles/carrito.css">
+    <link rel="stylesheet" href="../styles/aboutMe.css" />
+    <link rel="stylesheet" href="../styles/main.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <header>
+      <section><!-- barra anuncio oferta --></section>
+
+      <section id="navbar_container">
+        <!-- Navbar -->
+        <!-- Añadido mediante JavaScript -->
+      </section>
+    </header>
+    <main class="content container-fluid">
+      <!-- Breadcrumb -->
+      <nav aria-label="breadcrumb" class="text-decoration-none text-muted breadcrumb">
+        <ul>
+          <a href="../index.html">Inicio / </a>
+          <a href="./comprador.html">Mi cuenta / </a>
+          <a href="./products.html">Producto / </a>
+          <a href="./carrito.html">Carrito / </a>
+          <a href="./checkout.html"><strong>Finalizar compra</strong></a>
+        </ul>
+      </nav>
+
+      <div>
+        <div id="container_checkout" class="container col-md-5">
+          <div class="container_title">
+            <h2>Datos de facturación:</h2>
+          </div>
+          <div class="container_form">
+            <div class="campo_formulario">
+              <label for="userName" class="form-label">
+                Nombre completo de quien recibe<strong class="required">*</strong>
+              </label>
+              <input
+                type="text"
+                class="form-control"
+                id="userName"
+                placeholder="Tal cual aparece en la identificación a mostrar"
+              />
+            </div>
+            <div class="campo_formulario">
+              <label for="userPhone" class="form-label">
+                Teléfono de contacto<strong class="required">*</strong>
+              </label>
+              <input
+                type="text"
+                class="form-control"
+                id="userPhone"
+                placeholder="Ej: 552533959"
+              />
+            </div>
+            <div class="campo_formulario">
+              <label for="userCP" class="form-label">
+                Código Postal<strong class="required">*</strong>
+              </label>
+              <input
+                type="text"
+                class="form-control"
+                id="userCP"
+                placeholder="Ej: 54960"
+              />
+            </div>
+            <div class="campo_formulario">
+              <label for="userState" class="form-label">
+                Estado<strong class="required">*</strong>
+              </label>
+              <input
+                type="text"
+                class="form-control"
+                id="userState"
+                placeholder="Ej: Estado de México"
+              />
+            </div>
+            <div class="campo_formulario">
+              <label for="userMunicipio" class="form-label">
+                Delegación o Municipio<strong class="required">*</strong>
+              </label>
+              <input
+                type="text"
+                class="form-control"
+                id="userMunicipio"
+                placeholder="Ej: Zapopan"
+              />
+            </div>
+            <div class="campo_formulario">
+              <label for="userColonia" class="form-label">
+                Colonia<strong class="required">*</strong>
+              </label>
+              <input
+                type="text"
+                class="form-control"
+                id="userColonia"
+                placeholder="Ej: Herodiales"
+              />
+            </div>
+            <div class="campo_formulario">
+              <label for="userCalle" class="form-label">
+                Calle<strong class="required">*</strong>
+              </label>
+              <input
+                type="text"
+                class="form-control"
+                id="userCalle"
+                placeholder="Ej: Pirules"
+              />
+            </div>
+            <div class="campo_formulario">
+              <label for="userCalles" class="form-label">
+                Entre calles<strong class="required">*</strong>
+              </label>
+              <input
+                type="text"
+                class="form-control"
+                id="userCalles"
+                placeholder="Ej: Entre Calle Juárez y Calle Hidalgo"
+              />
+            </div>
+            <div class="campo_formulario">
+              <div class="numero">
+              <label for="numeroExterior" class="form-label">
+                Número exterior<strong class="required">*</strong>
+              </label>
+              <input
+                type="text"
+                class="form-control"
+                id="numeroExterior"
+              />
+              </div>
+              <div class="numero">
+                <label for="numeroInterior" class="form-label">
+                Número interior<strong>*</strong>
+              </label>
+              <input
+                type="text"
+                class="form-control"
+                id="numeroInterior"
+              />
+              </div>
+            </div>
+            <div class="campo_formulario">
+              <label for="userReferencias" class="form-label">
+                Referencias adicionales<strong class="required">*</strong>
+              </label>
+              <input
+                type="text"
+                class="form-control"
+                id="userReferencias"
+                placeholder="Ej: Puerta con enrejado blanco"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="container_cuenta container col-12 col-md-5">
+          <div class="articles col-12 col-md-5 ">
+          <article class="d-flex flex-row justify-content-between">
+            <img src="../media/productos_carrito/Bolso_artesanal_de_palma.png" alt="" style="height: 20vh;">
+            <p>Bolso artesanal de palma</pp>
+            <p>$350</p>
+          </article>
+          <article class="d-flex flex-row justify-content-between">
+            <img src="../media/productos_carrito/Collar_artesanal_de_chaquira.png" alt="" style="height: 20vh;">
+            <p>Collar artesanal de chaquira</pp>
+            <p>$220</p>
+          </article>
+          </div>
+          <div class="calculosCuenta">
+            <section id="subtotal" class="d-flex flex-row justify-content-between">
+              <p>Subtotal:</p>
+              <p>$570</p>
+            </section>
+            <section id="envio" class="d-flex flex-row justify-content-between">
+              <p>Envío</p>
+              <p>Gratis</p>
+            </section>
+            <section id="total" class="d-flex flex-row justify-content-between">
+              <p>Total</p>
+              <p>$570</p>
+            </section>
+          </div>
+          <div id="botones" class="container d-flex">
+            <input
+                type="text"
+                class="form-control"
+                id="cupon"
+                placeholder="Código de descuento"
+              />
+              <button type="button" class="btn-primary" id="iniciaSesion_btn">
+                Aplicar descuento
+              </button>
+          </div>
+          <div id="realizarPedido" class="container">
+            <button type="button" class="btn-primary" id="iniciaSesion_btn">
+                Realizar pedido
+              </button>
+          </div>
+        </div>
+      </div>
+
+     
+    </main>
+
+    <footer id="footer_container">
+      <!-- Footer -->
+      <!-- Añadido mediante JavaScript -->
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/carrito.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
