@@ -4,27 +4,33 @@
 const categorias = [
   {
     nombre: "gastronomía →",
+    categoria: "gastronomia",
     imagen: "../media/NavBar/gastronomia.jpg"
   },
   {
     nombre: "textiles →",
+    categoria: "textiles",
     imagen: "../media/NavBar/textiles.jpg"
   },
   {
     nombre: "artesanías →",
+    categoria: "artesanias",
     imagen: "../media/NavBar/artesanias1.webp"
   },
   {
     nombre: "accesorios →",
+    categoria: "accesorios",
     imagen: "../media/NavBar/accesorios.webp"
   },
   {
     nombre: "cocina y hogar →",
+    categoria: "cocina",
     imagen: "../media/NavBar/cocina.jpg"
   }
 ];
 
 let index = 0;
+let categoriaActual = "";
 
 const heroRight = document.getElementById("heroRight");
 const categoriaTexto = document.getElementById("categoria");
@@ -37,12 +43,34 @@ if (heroRight && categoriaTexto) {
     heroRight.style.backgroundImage = `url(${item.imagen})`;
     categoriaTexto.textContent = item.nombre;
 
+    categoriaActual = item.categoria;
+
     index = (index + 1) % categorias.length;
   }
 
   cambiarCategoria();
   setInterval(cambiarCategoria, 4000);
+
+  heroRight.addEventListener("click", () => {
+
+  if (categoriaActual) {
+    window.location.href = `./pages/products.html?cat=${categoriaActual}`;
+  }
+
+});
 }
+
+/* redirige a ´productos relacionados a la categoria"*/
+
+document.querySelectorAll(".cat-card").forEach(card => {
+  card.addEventListener("click", () => {
+
+    const categoria = card.dataset.categoria;
+
+    window.location.href = `./pages/products.html?cat=${categoria}`;
+  });
+});
+
 
 
 /*
@@ -175,7 +203,7 @@ function mostrarProductos() {
 
                 <img src="${producto.img}" 
                      class="card-img-top"
-                     style="height: 220px; object-fit: contain; cursor:pointer;" 
+                     style="height: 220px; object-fit: contain; cursor:pointer; transition:0.3s;" 
                      alt="${producto.Name}"
                      onclick="verProducto(${producto.id})">
 
@@ -342,7 +370,7 @@ async function cargarGrandesOfertas() {
             <img
               src="${producto.img}"
               class="img-fluid p-3"
-              style="max-height: 260px; object-fit: contain ;cursor:pointer;"
+              style="max-height: 260px; object-fit: contain ;cursor:pointer; transition:0.3s;"
               alt="${producto.Name}"
               onclick="verProducto(${producto.id})"
             />

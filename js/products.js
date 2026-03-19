@@ -7,6 +7,15 @@ function getQueryParam(name) {
     return params.get(name);
 }
 
+const categoriasMap = {
+  textiles: ["ropa", "rebozo", "textil"],
+  gastronomia: ["cafe"],
+  accesorios: ["collar", "pulsera", "joyería", "sombrero"],
+  cocina: ["taza", "cocina"],
+  artesanias: ["alebrije", "barro", "arte"],
+  hogar: ["hogar", "canasta", "mimbre", "decoración"]
+};
+
 async function listaProductos() {
 
     try {
@@ -20,6 +29,7 @@ async function listaProductos() {
         // obtener parametro de busqueda
         const params = new URLSearchParams(window.location.search);
         const query = params.get("q");
+        const categoria = params.get("cat");
 
         let productosFiltrados = productos;
 
@@ -37,6 +47,22 @@ async function listaProductos() {
 
             });
 
+        }
+
+        if (categoria) {
+
+            const tagsCategoria = categoriasMap[categoria.toLowerCase()];
+
+            if (tagsCategoria) {
+                productosFiltrados = productosFiltrados.filter(producto => {
+
+                    const tagsProducto = producto.Tags.map(t => t.toLowerCase());
+
+                    return tagsProducto.some(tag =>
+                        tagsCategoria.includes(tag)
+                    );
+                });
+            }
         }
 
         productosFiltrados.forEach(producto => {
@@ -115,3 +141,4 @@ function escapeJs(str) {
   if (!str) return '';
   return String(str).replace(/'/g, "\\'").replace(/"/g, '\\"');
 }
+
