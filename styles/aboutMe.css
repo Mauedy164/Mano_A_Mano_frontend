@@ -158,3 +158,20 @@ h4 {
 
 
 
+div {
+  font-family: "Poppins", sans-serif;
+}
+
+div h4 {
+  color: #db4444;
+  font-weight: 700;
+}
+
+div h6 {
+  font-weight: 600;
+}
+
+div p {
+  font-weight: 400;
+}
+
