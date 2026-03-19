@@ -345,7 +345,7 @@ main {
 
 .hero-banner {
   display: flex;
-  height: 80vh;
+  height: 60vh;
 }
 
 /* IZQUIERDA */
@@ -493,7 +493,7 @@ main {
 }
 
 .quick-card {
-  width: 210px;
+  width: 230px;
   height: 90px;
   border-radius: 12px;
 
@@ -535,6 +535,20 @@ main {
   }
 }
 
+/*cursor en imagenes para detalles de productos*/
+.clickable-img {
+  cursor: pointer;
+  z-index: 1;
+  position: relative;
+}
+.btn-favorito {
+  z-index: 2;
+}
+
+.btn-add-to-cart {
+  z-index: 2;
+}
+
 /* hover */
 .quick-card:hover {
   background: #e91e63;
@@ -565,7 +579,7 @@ main {
   border-radius: 10px;
   padding: 24px 22px 20px;
   margin: 32px 35px 32px 35px;
-  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.05);
+  
   align-items: space-between;
 }
 
@@ -704,6 +718,33 @@ display: flex;
   background: #e91e63;
   
   color: white;
+}
+
+@media (max-width: 768px) {
+
+  .categories h2 {
+    font-size: 18px;
+    text-align: center;
+  }
+
+  .categories-row {
+    grid-template-columns: repeat(2, 1fr); /* 2 columnas */
+    gap: 12px;
+  }
+
+  .cat-card {
+    padding: 0.8rem;
+    border-radius: 8px;
+  }
+
+  .cat-card p {
+    font-size: 20px;
+  }
+
+  .cat-icon {
+    font-size: 20px;
+  }
+
 }
 
 

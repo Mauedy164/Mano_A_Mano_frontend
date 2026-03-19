@@ -72,12 +72,13 @@ async function cargarMasVendidos() {
             card.innerHTML = `
     <div class="card h-100 shadow-sm card-masvendidos">
 
-        <div class="position-relative">
+        <div class="position-relative" style="height:250px" justify-content:center;>
 
             <img src="${producto.img}" 
                  class="card-img-top"
-                 style="height: 250px; object-fit: cover;" 
-                 alt="${producto.Name}">
+                 style="height: 220px; object-fit: contain; cursor:pointer" 
+                 alt="${producto.Name}"
+                 onclick="verProducto(${producto.id})">
 
             <!-- Botón Favorito -->
             <button class="btn-favorito">
@@ -168,14 +169,15 @@ function mostrarProductos() {
         card.classList.add("col-md-3", "mb-4");
 
         card.innerHTML = `
-        <div class="card h-100 shadow-sm card-masvendidos">
+        <div class="card h-100 shadow-sm card-masvendidos" >
 
-            <div class="position-relative">
+            <div class="position-relative" style="height:250px" justify-content:center;>
 
                 <img src="${producto.img}" 
                      class="card-img-top"
-                     style="height: 250px; object-fit: cover;" 
-                     alt="${producto.Name}">
+                     style="height: 220px; object-fit: contain; cursor:pointer;" 
+                     alt="${producto.Name}"
+                     onclick="verProducto(${producto.id})">
 
                 <button class="btn-favorito">
                     <img src="./media/products/botonfavoritos.png" alt="Favorito">
@@ -206,6 +208,7 @@ function mostrarProductos() {
         contenedor.appendChild(card);
     });
 }
+
 
 /*
 ==============================
@@ -244,7 +247,7 @@ function crearCarousel(id, productos) {
   let index = 0;
 
   container.innerHTML = `
-    <img src="${productos[0].img}" alt="">
+    <img src="${productos[0].img}" onclick="verProducto(${productos[0].id})" alt="">
     <button class="carousel-btn carousel-prev">&#10094;</button>
     <button class="carousel-btn carousel-next">&#10095;</button>
   `;
@@ -333,29 +336,15 @@ async function cargarGrandesOfertas() {
                 </svg>
               </button>
 
-              <button class="btn-ver-producto" aria-label="Ver producto">
-                <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21"
-                     fill="currentColor" class="bi bi-eye" viewBox="0 0 16 16">
-                  <path
-                    d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8
-                       M1.173 8a13 13 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5s3.879 1.168
-                       5.168 2.457A13 13 0 0 1 14.828 8q-.086.13-.195.288c-.335.48-.83 1.12
-                       -1.465 1.755C11.879 11.332 10.119 12.5 8 12.5s-3.879-1.168-5.168-2.457
-                       A13 13 0 0 1 1.172 8z"
-                  />
-                  <path
-                    d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5
-                       M4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0"
-                  />
-                </svg>
-              </button>
+              
             </div>
 
             <img
               src="${producto.img}"
               class="img-fluid p-3"
-              style="max-height: 200px; object-fit: contain"
+              style="max-height: 260px; object-fit: contain ;cursor:pointer;"
               alt="${producto.Name}"
+              onclick="verProducto(${producto.id})"
             />
             <div class="add-to-cart-overlay position-absolute bottom-0 start-0 w-100 p-2">
               <button
@@ -389,6 +378,7 @@ async function cargarGrandesOfertas() {
     console.error("Error cargando grandes ofertas:", error);
   }
 }
+
 
 
 document.addEventListener('DOMContentLoaded', async () => {
@@ -522,5 +512,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
-
-
+/*funcion para ver detalles del producto de la tarjeta*/
+function verProducto(id){
+    window.location.href = `../pages/detallesProducto.html?id=${id}`;
+}
