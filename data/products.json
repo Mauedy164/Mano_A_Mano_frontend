@@ -198,8 +198,27 @@
         "volume" :"N/A" 
     }
 
-}
+},
 
+    {
+    "id": 11,
+    "Name": "Café Molino de Veracruz",
+    "Description":"Café en grano descafeinado de especialidad, 454g, con un equilibrio perfecto entre amargor y acidez. De origen único y tostado medio, este café presenta una acidez balanceada y un aroma de especies florales y caramelo. Ideal para disfrutar sin cafeína.",
+    "img": "../media/productos_carrito/cafedeveracruz.jfif",
+    "Price": 420,
+    "Tags" : ["cafe", "veracruz"],
+    "Seller": "Etnia 52",
+    "Product_details" : {
+        "color" : ["natural"],
+        "brand" : "Tradición",
+        "sizes" : ["mediano"],
+        "model" : "SH-300",
+        "dimensions" : "40 x 35 cm",
+        "weight" :"454 g",
+        "volume" :"N/A" 
+    }
+
+}
 
 
 ]
