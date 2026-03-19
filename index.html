@@ -48,81 +48,101 @@
         </div>
        
       </section>
-    <main class="content container-fluid">
+    
 
 
-      
+    <!--  navegacion con botones -->
+        <section class="quick-nav container my-5" >
+
+           <div class="quick-nav-row">
+
+            <a href="#categorias" class="quick-card">
+              <p>Categorías</p>
+            </a>
+
+            <a href="#ofertas" class="quick-card">
+              <p>Ofertas</p>
+            </a>
+
+            <a href="#mas-vendidos" class="quick-card">
+              <p>Más vendidos</p>
+            </a>
+
+            <a href="#explorar" class="quick-card">
+              <p>Explorar</p>
+            </a>
+
+            <a href="#novedades" class="quick-card">
+              <p>Novedades</p>
+            </a>
+
+          </div>
+
+        </section>      
+
+<!--banner comercio jsuto-->
+<section class="banner-slider">
+
+  <div class="banner-slide">
+    <img src="./media/NavBar/comerciojusto.jpg" alt="Comercio justo">
+
+    <div class="banner-overlay">
+      <h2>Comercio justo</h2>
+      <p>
+        En Mano a Mano celebramos el talento de quienes dan vida a nuestras piezas.
+        Cada creación nace de las manos de los mejores maestros artesanos de nuestro país,
+        elaborada con dedicación y bajo principios de comercio justo.
+      </p>
+    </div>
+
+   
+  </div>
+
+</section>        
 
   <!-- BUSCA POR CATEGORÍA -->
-          <section class="container containerBC">
+          <section class="container containerBC" id="categorias">
             <span class="tag">Categorías</span>
             <h2 class="titulo-seccion" >Busca por categoría</h2>
 
             <div class="categories-row">
 
-              <div class="cat-card" onclick="irCategoria('ropa')">
-                <span class="cat-icon">👗</span>
-                <p>Ropa</p>
+              <div class="cat-card" data-categoria="textiles">
+                <p>Textiles</p>
               </div>
 
-              <div class="cat-card" onclick="irCategoria('accesorios')">
-                <span class="cat-icon">👜</span>
+              <div class="cat-card" data-categoria="gastronomia">
+                <p>Gastronomía</p>
+              </div>
+
+              <div class="cat-card" data-categoria="accesorios">
                 <p>Accesorios</p>
               </div>
 
-              <div class="cat-card" onclick="irCategoria('alimentos')">
-                <span class="cat-icon">🍯</span>
-                <p>Alimentos</p>
-              </div>
-
-              <div class="cat-card" onclick="irCategoria('cocina')">
-                <span class="cat-icon">🍽️</span>
+              <div class="cat-card" data-categoria="cocina">
                 <p>Cocina</p>
               </div>
 
-              <div class="cat-card" onclick="irCategoria('decoracion')">
-                <span class="cat-icon">🏺</span>
-                <p>Decoración</p>
+              <div class="cat-card" data-categoria="artesanias">
+                <p>Artesanías</p>
               </div>
 
-              <div class="cat-card" onclick="irCategoria('recuerdos')">
-                <span class="cat-icon">🎁</span>
-                <p>Recuerdos</p>
+              <div class="cat-card" data-categoria="hogar">
+                <p>Hogar</p>
               </div>
 
             </div>
           </section>
 
+
                     <!-- GRANDES OFERTAS -->
-<section class="offers">
+<section class="offers" id= "ofertas" >
   <div class="offers-header">
     <div>
       <span class="tag tagUN">Últimas novedades</span>
       <h2>Grandes Ofertas</h2>
     </div>
 
-    <!--
-    <div class="offers-controls">
-      <div class="countdown">
-        <div>
-          <span>Días</span>
-          <strong>03 :</strong>
-        </div>
-        <div>
-          <span>Horas</span>
-          <strong>23 :</strong>
-        </div>
-        <div>
-          <span>Minutos</span>
-          <strong>19 :</strong>
-        </div>
-        <div>
-          <span>Segundos</span>
-          <strong>56</strong>
-        </div>
-      </div>
-    </div>
-    -->
 
     
     <!-- Botones carrusel -->
@@ -147,7 +167,7 @@
 
 <!-- Este mes -->
 
-<section class="container my-5">
+<section class="container my-5" id="mas-vendidos">
     <div class="etiqueta-mes">
         <span class="cuadro-rosa"></span>
         <span class="texto-mes">Este mes</span>
@@ -164,7 +184,7 @@
 
 <!-- Nuestro productos -->
 
-<section class="container my-5">
+<section class="container my-5" id="explorar">
       <div class="etiqueta-mes">
         <span class="cuadro-rosa"></span>
         <span class="texto-mes">Nuestros Productos</span>
@@ -200,7 +220,7 @@
 
 <!-- Destacados -->
 
-<section class="container my-5">
+<section class="container my-5" id="novedades">
 
     <div class="etiqueta-mes">
         <span class="cuadro-rosa"></span>
