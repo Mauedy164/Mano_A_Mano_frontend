@@ -49,7 +49,7 @@ if (navbar_container_index) {
                                         </div>
                                     </div>
                                 
-                            <!-- Botón Favoritos -->
+                            <!-- Botón Favoritos ----SE COMENTA PARA IMPLEMENTAR DESPÚES---
                                 <button class="btn p-0" type="button" data-bs-toggle="offcanvas"
                                     data-bs-target="#offcanvasFavoritos" aria-controls="offcanvasFavoritos">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23"
@@ -57,6 +57,7 @@ if (navbar_container_index) {
                                         <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
                                     </svg>
                                 </button>
+                            -->
 
                             <!-- Botón Carrito -->
                             <button class="btn p-0 position-relative" type="button"
@@ -148,7 +149,7 @@ if (navbar_container_index) {
                     
 
 
-                        <!-- Offcanvas FAVORITOS -->
+                        <!-- Offcanvas FAVORITOS 
                         <div class="offcanvas offcanvas-end" tabindex="-1"
                             id="offcanvasFavoritos" aria-labelledby="offcanvasFavoritosLabel">
                         <div class="offcanvas-header">
@@ -167,6 +168,7 @@ if (navbar_container_index) {
                             </div>
                         </div>
                         </div>
+                        -->
 
   `;
 }
@@ -209,7 +211,7 @@ if (navbar_container) {
                                         </div>
                                     </div>
                                 
-                            <!-- Botón Favoritos -->
+                            <!-- Botón Favoritos 
                                 <button class="btn p-0" type="button" data-bs-toggle="offcanvas"
                                     data-bs-target="#offcanvasFavoritos" aria-controls="offcanvasFavoritos">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23"
@@ -217,6 +219,7 @@ if (navbar_container) {
                                         <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
                                     </svg>
                                 </button>
+                            -->
 
                             <!-- Botón Carrito -->
                             <button class="btn p-0 position-relative" type="button"
@@ -311,7 +314,7 @@ if (navbar_container) {
             </div>
 
 
-            <!-- Offcanvas FAVORITOS -->
+            <!-- Offcanvas FAVORITOS 
             <div class="offcanvas offcanvas-end" tabindex="-1"
                 id="offcanvasFavoritos" aria-labelledby="offcanvasFavoritosLabel">
                 <div class="offcanvas-header">
@@ -332,7 +335,7 @@ if (navbar_container) {
                     </div>
                 </div>
             </div>
-            
+            -->
   `;
 }
 
