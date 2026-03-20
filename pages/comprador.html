@@ -52,6 +52,10 @@
             <span class="perfil-menu-icon">&#128214</span>
             <span>Mis pedidos</span>
           </button>
+          <button class="perfil-menu-item" data-tab="productos">
+            <span class="perfil-menu-icon">&#128224</span>
+            <span>Mis productos</span>
+          </button>          
           <button class="perfil-menu-item" data-tab="direcciones">
             <span class="perfil-menu-icon">&#128204</span>
             <span>Direcciones</span>
@@ -196,6 +200,71 @@
             </table>
           </div>
         </div>
+
+        <!-- PRODUCTOS -->
+        <div class="perfil-tab" id="tab-productos">
+          <header class="perfil-header">
+            <h1>Mis productos</h1>
+            <p>Administra los productos que tienes a la venta.</p>
+          </header>
+
+            <article class="perfil-stat-card">
+              <p class="perfil-stat-label">Productos en venta</p>
+              <p class="perfil-stat-value" id="resumen-total-pedidos">12</p>
+              <p class="perfil-stat-extra">2 en camino</p>
+            </article>
+
+          <!-- BOTONES -->
+          <div class="perfil-productos-actions">
+
+              <a href="./registrarProducto.html" class="btn-primary" id="btn-agregar-producto">
+                Agregar Producto Nuevo
+              </a>
+
+
+          </div>
+
+          <!-- LISTA DE PRODUCTOS -->
+          <div class="perfil-table-wrapper">
+            <table class="perfil-table" id="tabla-pedidos">
+              <thead>
+                <tr>
+                  <th>Información del producto</th>
+                  <th>Precio</th>
+                  <th>Precio Oferta</th>
+                  <th>Stock</th>
+                  <th>Oferta</th>
+                  <th>Acciones</th>
+                </tr>
+              </thead>
+              <tbody id="tbody-pedidos">
+                <tr>
+                  <td>#MM-1024</td>
+                  <td>12/03/2026</td>
+                  <td><span class="perfil-badge perfil-badge-success">Entregado</span></td>
+                  <td>$849 MXN</td>
+                  <td><button class="perfil-table-link">Ver detalle</button></td>
+                </tr>
+                <tr>
+                  <td>#MM-1023</td>
+                  <td>08/03/2026</td>
+                  <td><span class="perfil-badge perfil-badge-warning">En camino</span></td>
+                  <td>$399 MXN</td>
+                  <td><button class="perfil-table-link">Ver detalle</button></td>
+                </tr>
+                <tr>
+                  <td>#MM-1022</td>
+                  <td>02/03/2026</td>
+                  <td><span class="perfil-badge perfil-badge-info">En preparación</span></td>
+                  <td>$1,299 MXN</td>
+                  <td><button class="perfil-table-link">Ver detalle</button></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>          
+
+
+        </div>        
 
         <!-- DIRECCIONES -->
         <div class="perfil-tab" id="tab-direcciones">

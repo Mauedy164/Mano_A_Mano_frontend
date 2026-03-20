@@ -86,3 +86,110 @@ if (btnLogout) {
     // window.location.href = "/logout";
   });
 }
+
+
+//pestaña de prodcutso del vendedor
+function obtenerProductos() {
+  return JSON.parse(localStorage.getItem("productos")) || [];
+}
+
+function guardarProductos(productos) {
+  localStorage.setItem("productos", JSON.stringify(productos));
+}
+
+function renderizarProductos() {
+  const tbody = document.getElementById("tbody-productos");
+  if (!tbody) return;
+
+  const productos = obtenerProductos();
+  tbody.innerHTML = "";
+
+  if (productos.length === 0) {
+    tbody.innerHTML = `
+      <tr>
+        <td colspan="6" style="text-align:center;">
+          No tienes productos registrados
+        </td>
+      </tr>
+    `;
+    return;
+  }
+
+  productos.forEach((p, index) => {
+    const fila = `
+      <tr>
+        <td>${p.nombre}</td>
+        <td>$${p.precio}</td>
+
+        <td>
+          ${
+            p.oferta
+              ? `<input type="number" value="${p.precioOferta || ""}" 
+                 onchange="actualizarPrecioOferta(${index}, this.value)">`
+              : "-"
+          }
+        </td>
+
+        <td>
+          <label class="switch">
+            <input type="checkbox" ${p.stock ? "checked" : ""}
+              onchange="toggleStock(${index})">
+            <span class="slider"></span>
+          </label>
+        </td>
+
+        <td>
+          <label class="switch">
+            <input type="checkbox" ${p.oferta ? "checked" : ""}
+              onchange="toggleOferta(${index})">
+            <span class="slider"></span>
+          </label>
+        </td>
+
+        <td>
+          <button onclick="eliminarProducto(${index})">
+            🗑️
+          </button>
+        </td>
+      </tr>
+    `;
+
+    tbody.innerHTML += fila;
+  });
+}
+
+function toggleStock(index) {
+  const productos = obtenerProductos();
+  productos[index].stock = !productos[index].stock;
+  guardarProductos(productos);
+  renderizarProductos();
+}
+
+function toggleOferta(index) {
+  const productos = obtenerProductos();
+  productos[index].oferta = !productos[index].oferta;
+
+  if (!productos[index].oferta) {
+    productos[index].precioOferta = null;
+  }
+
+  guardarProductos(productos);
+  renderizarProductos();
+}
+
+function actualizarPrecioOferta(index, valor) {
+  const productos = obtenerProductos();
+  productos[index].precioOferta = valor;
+  guardarProductos(productos);
+}
+
+function eliminarProducto(index) {
+  const productos = obtenerProductos();
+  productos.splice(index, 1);
+  guardarProductos(productos);
+  renderizarProductos();
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  renderizarProductos();
+});
