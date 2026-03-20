@@ -1,0 +1,69 @@
+.breadcrumb {
+    margin-top: 20px;
+    margin-left: 100px;
+}
+.required {
+  color: #db4444;
+}
+
+.row {
+    display: flex;
+    align-items:center;
+}
+
+#container_checkout {
+    padding-bottom: 60px;
+    padding-left: 100px;
+    padding-right: 100px;
+}
+
+#container_cuenta {
+    padding-bottom: 60px;
+    padding-left: 100px;
+    padding-right: 100px;
+}
+
+.container_title{
+    padding-bottom: 20px;
+}
+
+#iniciaSesion_btn {
+    background-color: #db4444;
+    border: #db4444;
+    color: white;
+}
+
+.article {
+    display: flex;
+    align-items: center;
+}
+
+.articles {
+    padding: 50px;
+}
+
+.calculosCuenta {
+    padding: 20px;
+}
+
+#botones {
+    display:flex;
+    gap: 10px;
+    padding:20px;
+}
+
+#botones .form-control,
+#botones button {
+    flex: 1;
+    border-radius: 5px;
+}
+
+.form-control{
+    padding-right: 50px;
+}
+
+#realizarPedido button {
+    width: 100%;
+    height: 45px;
+    border-radius: 5px;
+}
