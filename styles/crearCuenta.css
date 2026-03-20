@@ -47,9 +47,14 @@
   transition: all 0.3s ease;
 }
 
+.form-group input:hover {
+  border-bottom: 1px solid rgb(245, 19, 19);
+  transform: scale(1.1);
+}
+
 .form-group input:focus {
   outline: none;
-  border-color: #4285f4;
+  border-color: #f44242;
   background: white;
   box-shadow: 0 0 0 4px rgba(66, 133, 244, 0.1);
 }
@@ -134,7 +139,7 @@
 }
 
 .btn_crear_cuenta:hover {
-  border-color: #4285f4;
+  border-color: #f44242;
   box-shadow: 0 4px 12px rgba(66, 133, 244, 0.15);
 }
 
