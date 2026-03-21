@@ -1,3 +1,38 @@
+/*cargar nombre del usuario desde el storage*/
+
+function cargarDatosUsuarioPerfil() {
+  const usuarioGuardado = localStorage.getItem("usuarioActivo");
+
+  if (!usuarioGuardado) return;
+
+  const usuario = JSON.parse(usuarioGuardado);
+
+  const nombre = document.getElementById("perfil-nombre");
+  const email = document.getElementById("perfil-email");
+  const avatar = document.querySelector(".perfil-avatar");
+
+  if (nombre) {
+    nombre.textContent = `¡Hola, ${usuario.nombre.split(" ")[0]}!`;
+  }
+
+  if (email) {
+    email.textContent = usuario.correo;
+  }
+
+  if (avatar) {
+    const iniciales = usuario.nombre
+      .split(" ")
+      .map(n => n[0])
+      .join("")
+      .substring(0, 2)
+      .toUpperCase();
+
+    avatar.textContent = iniciales;
+  }
+}
+
+
+
 // Navegación de pestañas
 const menuItems = document.querySelectorAll(".perfil-menu-item");
 const tabs = document.querySelectorAll(".perfil-tab");
@@ -78,15 +113,21 @@ if (filtroEstado && filtroBusqueda && tbodyPedidos) {
 }
 
 // Logout (placeholder)
-const btnLogout = document.getElementById("btn-logout");
+/*const btnLogout = document.getElementById("btn-logout");
 if (btnLogout) {
   btnLogout.addEventListener("click", () => {
     // Aquí conectarías tu lógica real de logout
     alert("Sesión cerrada (ejemplo).");
     // window.location.href = "/logout";
   });
-}
+}*/
 
+document.addEventListener("click", (e) => {
+  if (e.target.closest('[data-tab="logout"]')) {
+    localStorage.removeItem("usuarioActivo");
+    window.location.href = "../pages/iniciarSesion.html";
+  }
+});
 
 //pestaña de prodcutso del vendedor
 function obtenerProductos() {
@@ -147,7 +188,7 @@ function renderizarProductos() {
         </td>
 
         <td>
-          <button onclick="eliminarProducto(${index})">
+          <button class="btn-delete" onclick="eliminarProducto(${index})">
             🗑️
           </button>
         </td>
@@ -188,8 +229,23 @@ function eliminarProducto(index) {
   productos.splice(index, 1);
   guardarProductos(productos);
   renderizarProductos();
+  actualizarContadorProductos();
 }
 
 document.addEventListener("DOMContentLoaded", () => {
   renderizarProductos();
+  actualizarContadorProductos()
+  cargarDatosUsuarioPerfil();
 });
+
+function actualizarContadorProductos() {
+  const productos = JSON.parse(localStorage.getItem("productos")) || [];
+
+  const total = productos.length;
+
+  const contador = document.getElementById("resumen-total-productos");
+
+  if (contador) {
+    contador.textContent = total;
+  }
+}
