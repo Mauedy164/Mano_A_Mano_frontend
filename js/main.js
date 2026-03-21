@@ -515,6 +515,7 @@ if (footer_container_index) {
                         </div>
                     </div>
 
+                    <!--
                     <div class="col"> 
                         <div class="subtitle_footer">
                             <h4>Descarga la app</h4>
@@ -538,6 +539,8 @@ if (footer_container_index) {
                             </div>
                         </div>
                     </div>
+                    -->
+
                 </div>
             </div>
         </div>
@@ -611,6 +614,7 @@ if (footer_container) {
                         </div>
                     </div>
 
+                    <!--
                     <div class="col"> 
                         <div class="subtitle_footer">
                             <h4>Descarga la app</h4>
@@ -634,6 +638,8 @@ if (footer_container) {
                             </div>
                         </div>
                     </div>
+                    -->
+                    
                 </div>
             </div>
         </div>
