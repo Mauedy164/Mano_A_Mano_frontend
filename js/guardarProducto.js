@@ -78,7 +78,33 @@ document.addEventListener("DOMContentLoaded", () => {
   if (btn) {
     btn.addEventListener("click", () => {
       console.log("CLICK detectado");
-      registrarProducto();
+      
+  const producto = registrarProducto();
+
+  const productos = JSON.parse(localStorage.getItem("productos")) || [];
+
+  const productoCompleto = {
+    ...producto,
+    id: Date.now(),
+    stock: true,
+    oferta: false,
+    precioOferta: null
+  };
+
+  productos.push(productoCompleto);
+
+  localStorage.setItem("productos", JSON.stringify(productos));
+
+  console.log("Guardado:", productos);
+
+  Swal.fire({
+    icon: "success",
+    title: "Producto registrado"
+  });
+
+  setTimeout(() => {
+    window.location.href = "./comprador.html";
+  }, 1000);
     });
   }
 });

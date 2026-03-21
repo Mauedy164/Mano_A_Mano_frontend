@@ -19,6 +19,7 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
   </head>
 
   <body>
@@ -38,30 +39,43 @@
         <div class="perfil-user">
           <div class="perfil-avatar">U1</div>
           <div>
-            <p class="perfil-name">¡Hola, usuario 1!</p>
-            <p class="perfil-email">correo@ejemplo.com</p>
+          <p class="perfil-name" id="perfil-nombre">¡Hola!</p>
+          <p class="perfil-email" id="perfil-email">correo@ejemplo.com</p>
           </div>
         </div>
 
         <nav class="perfil-menu" aria-label="Menú de mi cuenta">
+          <div class="perfil-seccion">
+            <span class="perfil-seccion-titulo">Comprador</span>
+            <div class="perfil-seccion-linea"></div>
+          </div>
+          <button class="perfil-menu-item" data-tab="direcciones">
+            <span class="perfil-menu-icon"><i class="bi bi-cart"></i></span>
+            <span>Mis compras</span>
+          </button>
+          <div class="perfil-seccion">
+            <span class="perfil-seccion-titulo">Vendedor</span>
+            <div class="perfil-seccion-linea"></div>
+          </div>
           <button class="perfil-menu-item active" data-tab="resumen">
-            <span class="perfil-menu-icon">&#128100</span>
+            <span class="perfil-menu-icon"><i class="bi bi-graph-up"></i></span>
             <span>Resumen</span>
           </button>
           <button class="perfil-menu-item" data-tab="pedidos">
-            <span class="perfil-menu-icon">&#128214</span>
+            <span class="perfil-menu-icon"><i class="bi bi-box"></i></span>
             <span>Mis pedidos</span>
           </button>
-          <button class="perfil-menu-item" data-tab="direcciones">
-            <span class="perfil-menu-icon">&#128204</span>
-            <span>Direcciones</span>
-          </button>
+          <button class="perfil-menu-item" data-tab="productos">
+            <span class="perfil-menu-icon"><i class="bi bi-tag"></i></span>
+            <span>Mis productos</span>
+          </button>          
+ 
           <button class="perfil-menu-item" data-tab="configuracion">
-            <span class="perfil-menu-icon">&#9881</span>
+            <span class="perfil-menu-icon"><i class="bi bi-gear"></i></span>
             <span>Configuración</span>
           </button>
           <button class="perfil-menu-item perfil-menu-item-salir" data-tab="logout">
-            <span class="perfil-menu-icon">&#10006</span>
+            <span class="perfil-menu-icon"><i class="bi bi-box-arrow-right"></i></span>
             <span>Cerrar sesión</span>
           </button>
         </nav>
@@ -197,45 +211,126 @@
           </div>
         </div>
 
-        <!-- DIRECCIONES -->
-        <div class="perfil-tab" id="tab-direcciones">
+        <!-- PRODUCTOS -->
+        <div class="perfil-tab" id="tab-productos">
           <header class="perfil-header">
-            <h1>Direcciones</h1>
-            <p>Administra tus direcciones de envío y facturación.</p>
+            <h1>Mis productos</h1>
+            <p>Administra los productos que tienes a la venta.</p>
           </header>
 
-          <div class="perfil-direcciones-grid">
-            <article class="perfil-direccion-card perfil-direccion-principal">
-              <div class="perfil-direccion-header">
-                <span class="perfil-badge perfil-badge-primary">Principal</span>
-                <button class="perfil-icon-button" aria-label="Editar dirección">
-                  &#9998
-                </button>
-              </div>
-              <h2>Casa</h2>
-              <p>
-                Mi casa ejemplo XXXX
-              </p>
+            <div class="perfil-productos-header">
+
+              <article class="perfil-stat-card small">
+                <p class="perfil-stat-label">Productos en venta</p>
+                <p class="perfil-stat-value" id="resumen-total-productos">12</p>
+             </article>
+
+              <a href="./registrarProducto.html" class="btn-agregar-producto">
+                + Agregar un producto nuevo
+              </a>
+
+            </div>
+
+          <!-- LISTA DE PRODUCTOS -->
+          <div class="perfil-table-wrapper">
+            <table class="perfil-table" id="tabla-pedidos">
+              <thead>
+                <tr>
+                  <th>Información del producto</th>
+                  <th>Precio</th>
+                  <th>Precio Oferta</th>
+                  <th>Stock</th>
+                  <th>Oferta</th>
+                  <th>Eliminar</th>
+                </tr>
+              </thead>
+              <tbody id="tbody-productos">
+                
+              </tbody>
+            </table>
+          </div>          
+
+
+        </div>        
+
+        <!-- Mis compras -->
+        <div class="perfil-tab" id="tab-direcciones">
+          <header class="perfil-header">
+            <h1>Mis Compras</h1>
+            <p>Consulta tus compras en mano a mano</p>
+          </header>
+        <div class="perfil-stats">
+
+            <article class="perfil-stat-card">
+              <p class="perfil-stat-label">Total compras</p>
+              <p class="perfil-stat-value" id="total-compras">3</p>
             </article>
 
-            <article class="perfil-direccion-card">
-              <div class="perfil-direccion-header">
-                <span class="perfil-badge perfil-badge-muted">Secundaria</span>
-                <button class="perfil-icon-button" aria-label="Editar dirección">
-                  &#9998
-                </button>
-              </div>
-              <h2>Oficina</h2>
-              <p>
-              Santa Fe XXXX
-              </p>
+            <article class="perfil-stat-card">
+              <p class="perfil-stat-label">En camino</p>
+              <p class="perfil-stat-value" id="compras-envio">1</p>
             </article>
 
-            <button class="perfil-add-direccion">
-              <span class="perfil-add-icon">＋</span>
-              <span>Agregar nueva dirección</span>
-            </button>
+            <article class="perfil-stat-card">
+              <p class="perfil-stat-label">Entregadas</p>
+              <p class="perfil-stat-value" id="compras-entregadas">2</p>
+            </article>
+
           </div>
+
+        <div class="perfil-table-wrapper">
+          <table class="perfil-table">
+            <thead>
+              <tr>
+                <th>Producto</th>
+                <th>Fecha</th>
+                
+                <th>Estado</th>
+                <th>Total</th>
+                <th>Acciones</th>
+              </tr>
+            </thead>
+
+            <tbody>
+
+              <tr>
+                <td>Bolso elegante</td>
+                <td>20/03/2026</td>
+                
+                <td><span class="badge estado-envio">En camino</span></td>
+                <td>$1,200</td>
+                <td>
+                  <button class="btn-table">Ver detalle</button>
+                </td>
+              </tr>
+
+              <tr>
+                <td>Audífonos inalámbricos</td>
+                <td>18/03/2026</td>
+                
+                <td><span class="badge estado-entregado">Entregado</span></td>
+                <td>$850</td>
+                <td>
+                  <button class="btn-table">Ver detalle</button>
+                </td>
+              </tr>
+
+              <tr>
+                <td>Lámpara moderna</td>
+                <td>15/03/2026</td>
+                
+                <td><span class="badge estado-entregado">Entregado</span></td>
+                <td>$600</td>
+                <td>
+                  <button class="btn-table">Ver detalle</button>
+                </td>
+              </tr>
+
+            </tbody>
+          </table>
+        </div>
+
+          
         </div>
 
         <!-- CONFIGURACIÓN -->
@@ -268,6 +363,14 @@
               </div>
             </div>
 
+                        <div class="perfil-form-row">
+              <div class="perfil-field">
+                <label for="perfil-email">Nombre de tu emprendimiento</label>
+                <input type="email" id="perfil-email" placeholder="emprendimiento">
+              </div>
+              
+            </div>
+
             <fieldset class="perfil-fieldset">
               <legend>Preferencias</legend>
               <label class="perfil-checkbox">
@@ -284,8 +387,8 @@
           </form>
         </div>
 
-        <!-- LOGOUT -->
-        <div class="perfil-tab" id="tab-logout">
+        <!-- LOGOUT -
+       */ <div class="perfil-tab" id="tab-logout">
           <header class="perfil-header">
             <h1>¿Cerrar sesión?</h1>
             <p>Confirma si deseas salir de tu cuenta.</p>
@@ -294,7 +397,7 @@
           <button class="btn-primary btn-danger" id="btn-logout">
             Cerrar sesión
           </button>
-        </div>
+        </div> -->
       </section>
     </section>
   </main>
