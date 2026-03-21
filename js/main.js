@@ -127,23 +127,34 @@ if (navbar_container_index) {
             </nav>
 
            <!-- Offcanvas CARRITO -->
-            <div class="offcanvas offcanvas-end" tabindex="-1"
-                id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
-                <div class="offcanvas-header">
+            <div class="offcanvas offcanvas-end" tabindex="-1" 
+            id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+
+                <div class="offcanvas-header p-3 pb-2">
                     <h5 id="offcanvasRightLabel">Carrito de compras</h5>
                     <button type="button" class="btn-close text-reset"
-                         data-bs-dismiss="offcanvas" aria-label="Close">
+                    data-bs-dismiss="offcanvas" aria-label="Close">
                     </button>
                 </div>
                 
-                <div id="carrito_productos" class="offcanvas-body">
-                    Total:$<span id="total_carrito"> 0 </span>
-                </div>
 
-                <div class="mt-auto">
-                    <a href="../pages/carrito.html" class="btn btn-dark w-100">
+                <div class="offcanvas-body p-0 d-flex flex-column">
+
+                    <div class="p-3 pt-0 bg-white sticky-top border-bottom">
+                        <h5 class="mb-0">
+                        Total: $<span id="total_carrito">0</span>
+                    </h5>
+                    </div>
+
+                    <div id="carrito_productos" class="p-3 overflow-auto" style="flex:1;">
+                    </div>
+
+                    <div class="p-3 border-top">
+                        <a href="../pages/carrito.html" class="btn btn-dark w-100">
                         Proceder al pago
-                    </a>
+                        </a>
+                    </div>
+
                 </div>
             </div>
                     

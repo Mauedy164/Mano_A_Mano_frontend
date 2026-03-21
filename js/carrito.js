@@ -67,7 +67,7 @@ function actualizarCarrito() {
               <h6>${item.nombre}</h6>
               <p>$${item.precio}</p>
               <p>Cantidad: ${item.cantidad}</p>
-              <p><strong>Total: $${item.precio * item.cantidad}</strong></p>
+              <p><strong>Subtotal: $${item.precio * item.cantidad}</strong></p>
             </div>
           </div>
         </div>
