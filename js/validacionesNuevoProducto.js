@@ -573,3 +573,117 @@ document.addEventListener('DOMContentLoaded', function() {
   // Inicialización al cargar la página
   actualizarEstadoColores();
 });
+
+
+
+
+//Almacenar en localStorage el objeto JSON de registro de producto
+
+const btnRegistrar = document.getElementById("btnRegistrar");
+
+// evitar múltiples eventos
+btnRegistrar.onclick = function (e) {
+    e.preventDefault(); // evita submit automático
+
+    console.log("CLICK DETECTADO"); 
+
+    // =========================
+    // VALIDACIONES
+    // =========================
+    nameIsValid();
+    descriptionIsValid();
+    isValidPrice();
+    isValdidAmount();
+    isValidTag();
+    isValidBrand();
+    isValidModelo();
+    isValidPeso();
+    isValidVolumen();
+    isValidDimensiones();
+
+    const camposConError = document.querySelectorAll(".is-invalid");
+    const urlImagenPrincipal = document.getElementById("imagenPrincipalURL").value;
+
+    // =========================
+    // VALIDAR ERRORES
+    // =========================
+    if (camposConError.length > 0) {
+        Swal.fire({
+            icon: 'error',
+            title: '¡Espera!',
+            text: 'Hay errores en el formulario. Revisa los campos en rojo.',
+        });
+        return;
+    }
+
+    if (!urlImagenPrincipal) {
+        Swal.fire({
+            icon: 'warning',
+            title: 'Falta la imagen',
+            text: 'Debes subir la imagen principal.',
+        });
+        return;
+    }
+
+    // =========================
+    // CREAR OBJETO
+    // =========================
+    const nuevoProducto = {
+        nombre: document.getElementById("formularioNombreProducto").value.trim(),
+        descripcion: document.getElementById("formularioDescripcionProducto").value.trim(),
+        precio: parseFloat(document.getElementById("formularioPrecioProducto").value),
+        cantidad: parseInt(document.getElementById("formularioCantidadProducto").value),
+        tags: document.getElementById("formularioTagsProducto").value.split(/\s+/),
+        imagenPrincipal: urlImagenPrincipal,
+        imagenesAdicionales: JSON.parse(document.getElementById("imagenesAdicionalesURL").value || "[]"),
+        detalles: {
+            colorSin: document.getElementById("coloresSin").checked,
+            colorPrincipal: document.getElementById("colorPrincipal").value,
+            colorSecundario: document.getElementById("colorSecundario").value,
+            marca: document.getElementById("marcaCheck").checked ? "Sin Marca" : document.getElementById("marcaTexto").value,
+            modelo: document.getElementById("modeloSin").checked ? "Sin Modelo" : document.getElementById("modeloTexto").value,
+            tamano: document.querySelector('input[name="tamano"]:checked')?.value || "No aplica",
+            peso: document.getElementById("pesoNo").checked ? null : document.getElementById("pesoNum").value,
+            volumen: document.getElementById("volumenNo").checked ? null : document.getElementById("volumenNum").value,
+            dimensiones: document.getElementById("dimensionesNo").checked ? null : {
+                largo: document.getElementById("largo").value,
+                ancho: document.getElementById("ancho").value,
+                alto: document.getElementById("alto").value
+            }
+        }
+    };
+
+    // =========================
+    // PROTECCIÓN ANTI VACÍOS
+    // =========================
+    if (!nuevoProducto.nombre && !nuevoProducto.descripcion) {
+        console.warn("Producto vacío detectado, no se guarda");
+        return;
+    }
+
+    // =========================
+    // GUARDAR
+    // =========================
+    guardarEnLocalStorage(nuevoProducto);
+};
+
+
+// =========================
+// LOCAL STORAGE
+// =========================
+function guardarEnLocalStorage(producto) {
+
+    let productosGuardados = JSON.parse(localStorage.getItem("misProductos")) || [];
+
+    productosGuardados.push(producto);
+
+    localStorage.setItem("misProductos", JSON.stringify(productosGuardados));
+
+    // Mensaje
+    Swal.fire({
+        icon: 'success',
+        title: '¡Producto Registrado!',
+        text: 'Se guardó correctamente en el almacenamiento local.',
+        confirmButtonText: 'OK'
+    });
+}
