@@ -80,9 +80,11 @@ async function listaProductos() {
                          style="height: 250px; object-fit: cover; cursor:pointer;"
                          onclick="verProducto(${producto.id})">
 
+                    <!-- SE COMENTA PARA IMPLEMENTAR DESPúES    
                     <button class="btn-favorito">
                         <img src="../media/products/botonfavoritos.png">
                     </button>
+                    -->
 
                     <button class="btn btn-dark w-100 py-2 fw-bold text-uppercase btn-add-to-cart"
                      onclick="agregarAlCarrito(${producto.id}, '${producto.Name}', ${producto.Price},'${producto.img}')">
