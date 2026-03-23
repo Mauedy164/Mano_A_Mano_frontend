@@ -73,11 +73,11 @@ async function listaProductos() {
             card.innerHTML = `
             <div class="card h-100 shadow-sm card-masvendidos">
 
-                <div class="position-relative">
+                <div class="position-relative" style="height:250px" justify-content:center;>
 
                     <img src="${producto.img}" 
                          class="card-img-top"
-                         style="height: 250px; object-fit: cover; cursor:pointer;"
+                         style="height: 220px; object-fit: contain; cursor:pointer; transition:0.3s;"
                          onclick="verProducto(${producto.id})">
 
                     <!-- SE COMENTA PARA IMPLEMENTAR DESPúES    
