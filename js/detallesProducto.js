@@ -65,7 +65,7 @@ relacionados.forEach(item => {
             
         </div>
 
-        <img src="${item.img}" alt="${item.Name}" onclick="verProducto(${item.id})">
+        <img src="${item.img}" alt="${item.Name}" style="height: 220px; object-fit: contain; cursor:pointer; transition:0.3s; onclick="verProducto(${item.id})">
 
         <button class="btn-add-to-cart"
         onclick="agregarAlCarrito(${item.id}, '${item.Name}', ${item.Price}, '${item.img}')">
