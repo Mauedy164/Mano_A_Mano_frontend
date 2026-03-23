@@ -48,3 +48,11 @@
     background-position: right calc(0.375em + 0.1875rem) center !important;
     padding-right: calc(1.5em + 0.75rem) !important;
 }
+
+#btnRegistrar {
+     background-color: #db4444;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    padding: 10px 15px;
+}
