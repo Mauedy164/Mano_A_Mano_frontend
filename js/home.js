@@ -200,7 +200,7 @@ function mostrarProductos() {
 
                 <img src="${producto.img}" 
                      class="card-img-top"
-                     style="height: 200px; object-fit: contain; cursor:pointer; transition:0.3s;" 
+                     style="height: 220px; object-fit: contain; cursor:pointer; transition:0.3s;" 
                      alt="${producto.Name}"
                      onclick="verProducto(${producto.id})">
 
