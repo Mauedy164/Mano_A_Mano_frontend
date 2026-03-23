@@ -62,9 +62,7 @@ relacionados.forEach(item => {
         <span class="discount-badge">40%</span>
 
         <div class="card-hover-actions">
-            <button class="btn-icon">
-                <img src="../media/products/botonfavoritos.png">
-            </button>
+            
         </div>
 
         <img src="${item.img}" alt="${item.Name}" onclick="verProducto(${item.id})">
