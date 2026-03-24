@@ -1,33 +1,52 @@
 /*cargar nombre del usuario desde el storage*/
 
-function cargarDatosUsuarioPerfil() {
-  const usuarioGuardado = localStorage.getItem("usuarioActivo");
-
-  if (!usuarioGuardado) return;
-
-  const usuario = JSON.parse(usuarioGuardado);
-
-  const nombre = document.getElementById("perfil-nombre");
-  const email = document.getElementById("perfil-email");
-  const avatar = document.querySelector(".perfil-avatar");
-
-  if (nombre) {
-    nombre.textContent = `¡Hola, ${usuario.nombre.split(" ")[0]}!`;
+async function cargarDatosUsuarioPerfil() {
+  // 1. Intentamos obtener el correo guardado en el login
+  const usuarioActivo = JSON.parse(sessionStorage.getItem("usuarioActivo"));
+  
+  if (!usuarioActivo || !usuarioActivo.correo) {
+    // Si no hay sesión, mandamos al usuario al login
+    window.location.href = "../pages/iniciarSesion.html";
+    return;
   }
 
-  if (email) {
-    email.textContent = usuario.correo;
-  }
+  try {
+    // 2. Consultamos a tu API de Spring Boot
+    const response = await fetch("http://34.201.41.216/ecommerce/usuarios/");
+    if (!response.ok) throw new Error("Error al conectar con la API");
 
-  if (avatar) {
-    const iniciales = usuario.nombre
-      .split(" ")
-      .map(n => n[0])
-      .join("")
-      .substring(0, 2)
-      .toUpperCase();
+    const usuarios = await response.json();
 
-    avatar.textContent = iniciales;
+    // 3. Buscamos los datos completos de ese correo en la base de datos
+    const usuario = usuarios.find(u => u.correo === usuarioActivo.correo);
+
+    if (usuario) {
+      // ACTUALIZACIÓN DEL CORREO EN EL SIDEBAR
+      const emailSidebar = document.getElementById("perfil-email");
+      if (emailSidebar) {
+        emailSidebar.textContent = usuario.correo; // Aquí se cambia 'correo@ejemplo.com' por el real
+      }
+
+      // ACTUALIZACIÓN DEL NOMBRE EN EL SIDEBAR
+      const nombreSidebar = document.getElementById("perfil-nombre");
+      if (nombreSidebar) {
+        nombreSidebar.textContent = `¡Hola, ${usuario.nombre.split(" ")[0]}!`;
+      }
+
+      // ACTUALIZACIÓN DEL AVATAR (Círculo con iniciales)
+      const avatar = document.querySelector(".perfil-avatar");
+      if (avatar) {
+        const iniciales = usuario.nombre
+          .split(" ")
+          .map(n => n[0])
+          .join("")
+          .substring(0, 2)
+          .toUpperCase();
+        avatar.textContent = iniciales;
+      }
+    }
+  } catch (error) {
+    console.error("Error al cargar los datos:", error);
   }
 }
 
