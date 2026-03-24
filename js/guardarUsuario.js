@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
       try {
         // Enviamos los datos a la API
-        const response = await fetch("http://34.201.41.216/ecommerce/usuarios/", {
+        const response = await fetch("https://34.201.41.216/ecommerce/usuarios/", {
           method: "POST", // Método para CREAR datos
           headers: {
             "Content-Type": "application/json" // Enviamos un JSON
