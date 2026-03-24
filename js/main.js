@@ -515,32 +515,6 @@ if (footer_container_index) {
                         </div>
                     </div>
 
-                    <!--
-                    <div class="col"> 
-                        <div class="subtitle_footer">
-                            <h4>Descarga la app</h4>
-                            <img src="${flecha_abajo}" alt="flecha apuntando hacia abajo" class="subtitle_footer_row row_down">
-                        </div>
-                        <div class="description_footer">
-                            <div class="app-section d-flex flex-column align-items-center">
-                                <img src="../media/aboutMe/codigoQR.PNG" alt="QR" class="qr img-fluid">
-                                <div class="botones-seccion d-flex flex-column flex-md-row gap-2 mt-3">
-                                    <a href="URL_APP_STORE" target="_blank">
-                                    <img src="../media/aboutMe/AppStore.png" alt="Descargar en App Store" class="img-fluid store-logo"></a>
-                                    <a href="URL_PLAY_STORE" target="_blank">
-                                    <img src="../media/aboutMe/GooglePlay.png" alt="Disponible en Google Play" class="img-fluid store-logo"></a>
-                                </div>
-                            </div>
-                            <div class="social-icons">
-                                <a href="URL_DE_TU_INSTAGRAM" target="_blank"><i class="fab fa-instagram"></i></a>
-                                <a href="URL_DE_TU_X" target="_blank"><i class="fab fa-twitter"></i></a>
-                                <a href="URL_DE_TU_FACEBOOK" target="_blank"><i class="fab fa-facebook"></i></a>
-                                <a href="URL_DE_TU_LINKEDIN" target="_blank"><i class="fab fa-linkedin"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    -->
-
                 </div>
             </div>
         </div>
@@ -614,31 +588,6 @@ if (footer_container) {
                         </div>
                     </div>
 
-                    <!--
-                    <div class="col"> 
-                        <div class="subtitle_footer">
-                            <h4>Descarga la app</h4>
-                            <img src="${flecha_abajo}" alt="flecha apuntando hacia abajo" class="subtitle_footer_row row_down">
-                        </div>
-                        <div class="description_footer">
-                            <div class="app-section d-flex flex-column align-items-center">
-                                <img src="../media/aboutMe/codigoQR.PNG" alt="QR" class="qr img-fluid">
-                                <div class="botones-seccion d-flex flex-column flex-md-row gap-2 mt-3">
-                                    <a href="URL_APP_STORE" target="_blank">
-                                    <img src="../media/aboutMe/AppStore.png" alt="Descargar en App Store" class="img-fluid store-logo"></a>
-                                    <a href="URL_PLAY_STORE" target="_blank">
-                                    <img src="../media/aboutMe/GooglePlay.png" alt="Disponible en Google Play" class="img-fluid store-logo"></a>
-                                </div>
-                            </div>
-                            <div class="social-icons">
-                                <a href="URL_DE_TU_INSTAGRAM" target="_blank"><i class="fab fa-instagram"></i></a>
-                                <a href="URL_DE_TU_X" target="_blank"><i class="fab fa-twitter"></i></a>
-                                <a href="URL_DE_TU_FACEBOOK" target="_blank"><i class="fab fa-facebook"></i></a>
-                                <a href="URL_DE_TU_LINKEDIN" target="_blank"><i class="fab fa-linkedin"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    -->
                     
                 </div>
             </div>
@@ -775,19 +724,6 @@ function ocultaElementos(){
         }
     })
 
-    subtitle_footer[4].addEventListener("click", ()=>{
-        if(!appOculto){
-            description_footer[4].style.display="none"
-            appOculto=true
-            subtitle_footer[4].innerHTML=`<h4>Descarga la app</h4>
-                                <img src="${flecha_abajo}" alt="flecha apuntando hacia abajo" class="subtitle_footer_row row_up">`
-        } else {
-            description_footer[4].style.display=""
-            appOculto=false
-            subtitle_footer[4].innerHTML=`<h4>Descarga la app</h4>
-                                <img src="${flecha_arriba}" alt="flecha apuntando hacia abajo" class="subtitle_footer_row row_down">`
-        }
-    })
 
 }
 
@@ -865,30 +801,6 @@ window.addEventListener("resize", ()=>{
                             <p>Términos de uso</p>
                             <p>FAQ</p>
                             <p>Contacto</p>
-                        </div>
-                    </div>
-
-                    <div class="col"> 
-                        <div class="subtitle_footer">
-                            <h4>Descarga la app</h4>
-                            <img src="${flecha_abajo}" alt="flecha apuntando hacia abajo" class="subtitle_footer_row row_down">
-                        </div>
-                        <div class="description_footer">
-                            <div class="app-section d-flex flex-column align-items-center">
-                                <img src="../media/aboutMe/codigoQR.PNG" alt="QR" class="qr img-fluid">
-                                <div class="botones-seccion d-flex flex-column flex-md-row gap-2 mt-3">
-                                    <a href="URL_APP_STORE" target="_blank">
-                                    <img src="../media/aboutMe/AppStore.png" alt="Descargar en App Store" class="img-fluid store-logo"></a>
-                                    <a href="URL_PLAY_STORE" target="_blank">
-                                    <img src="../media/aboutMe/GooglePlay.png" alt="Disponible en Google Play" class="img-fluid store-logo"></a>
-                                </div>
-                            </div>
-                            <div class="social-icons">
-                                <a href="URL_DE_TU_INSTAGRAM" target="_blank"><i class="fab fa-instagram"></i></a>
-                                <a href="URL_DE_TU_X" target="_blank"><i class="fab fa-twitter"></i></a>
-                                <a href="URL_DE_TU_FACEBOOK" target="_blank"><i class="fab fa-facebook"></i></a>
-                                <a href="URL_DE_TU_LINKEDIN" target="_blank"><i class="fab fa-linkedin"></i></a>
-                            </div>
                         </div>
                     </div>
                 </div>
