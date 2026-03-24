@@ -142,7 +142,7 @@ function obtenerProducto(id) {
       id: prod.id,
       nombre: prod.nombre,
       precio: prod.precio,
-      imagen: prod.img || 'https://maestrasartesanas.com/cdn/shop/files/Bolsa_Palma2_perfil_1800x1800.jpg?v=1699554737'
+      imagen: prod.imagenUrl
     };
   }
   return null;
