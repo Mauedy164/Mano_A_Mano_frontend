@@ -20,12 +20,12 @@ const categorias = [
   {
     nombre: "accesorios →",
     categoria: "accesorios",
-    imagen: "../media/NavBar/accesorios.webp"
+    imagen: "../media/NavBar/accesorios.png"
   },
   {
     nombre: "cocina y hogar →",
     categoria: "cocina",
-    imagen: "../media/NavBar/cocina.jpg"
+    imagen: "../media/NavBar/talavera.jpg"
   }
 ];
 
