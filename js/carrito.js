@@ -1,4 +1,4 @@
-const API_PRODUCTOS = 'http://localhost:8080/ecommerce/productos/';
+const API_PRODUCTOS = 'http://34.201.41.216/ecommerce/productos/';
 
 
 // Cargar carrito desdelocalStorage
