@@ -2,7 +2,7 @@ const API_PRODUCTOS = 'http://34.201.41.216/ecommerce/productos/';
 
 
 // Cargar carrito desdelocalStorage
-let carrito = JSON.parse(localStorage.getItem("")) || [];
+let carrito = JSON.parse(localStorage.getItem("ZapatosSAM")) || [];
 
 //Guardar carrito
 function guardarCarrito() {
@@ -61,8 +61,8 @@ function actualizarCarrito() {
         cantidad += item.cantidad;
         html += `
   <div class="card mb-2">
-    <div class="row g-0">
-      <div class="col-4">
+    <div class="row g-0 align-items-center">
+      <div class="col-4 d-flex align-items-center justify-content-center">
         <img src="${producto.imagen}" class="img-fluid rounded-start" alt="${producto.nombre}" style="height: 120px; object-fit: cover;">
       </div>
       <div class="col-8">
