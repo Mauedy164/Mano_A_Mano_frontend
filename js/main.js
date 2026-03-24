@@ -359,15 +359,16 @@ function cargarMenuPerfil(){
 
     if(!menuPerfil) return;
 
-    const usuarioGuardado = localStorage.getItem("usuarioActivo");
+    const usuarioGuardado = sessionStorage.getItem("usuarioActivo");
 
     if(usuarioGuardado){
 
         const usuario = JSON.parse(usuarioGuardado);
+        const primerNombre = usuario.nombre ? usuario.nombre.split(" ")[0] : "Usuario";
 
         menuPerfil.innerHTML = `
             <li class="dropdown-item-text fw-bold">
-                Hola, ${usuario.nombre.split(" ")[0]}!
+                ¡Hola, ${primerNombre}!
             </li>
 
             <li><hr class="dropdown-divider"></li>
@@ -393,9 +394,10 @@ document.addEventListener("click", function(e){
 
     if(e.target.id === "cerrarSesion"){
 
+        sessionStorage.removeItem("usuarioActivo");
         localStorage.removeItem("usuarioActivo");
 
-        window.location.reload();
+        window.location.href = "../index.html";
     }
 
 });

@@ -23,14 +23,30 @@ document.addEventListener("DOMContentLoaded", function () {
         });
 
         if (response.ok) {
-          // Objeto con el Token (JWT)
           const data = await response.json(); 
           
-          // Token para futuras peticiones protegidas
+          // Guardamos el Token
           localStorage.setItem("token", data.accessToken);
           
-          // Guardar el correo para saber quién inició sesión
-          sessionStorage.setItem("usuarioActivo", JSON.stringify({ correo: loginData.correo }));
+          // BUSCAMOS LOS DATOS COMPLETOS
+          try {
+            const resUsuarios = await fetch("http://34.201.41.216/ecommerce/usuarios/");
+            const usuarios = await resUsuarios.json();
+            
+            // Buscamos al usuario que acaba de loguearse
+            const usuarioCompleto = usuarios.find(u => u.correo === loginData.correo);
+
+            if (usuarioCompleto) {
+              // GUARDAMOS EL OBJETO COMPLETO (Trae nombre, correo, etc.)
+              sessionStorage.setItem("usuarioActivo", JSON.stringify(usuarioCompleto));
+            } else {
+              // Por si no lo encuentra en la lista por alguna razón
+              sessionStorage.setItem("usuarioActivo", JSON.stringify({ correo: loginData.correo }));
+            }
+          } catch (error) {
+            console.error("Error al obtener datos extra del usuario:", error);
+            sessionStorage.setItem("usuarioActivo", JSON.stringify({ correo: loginData.correo }));
+          }
 
           Swal.fire({
             icon: "success",
