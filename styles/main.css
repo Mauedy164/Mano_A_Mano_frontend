@@ -6,87 +6,271 @@
 
 /* barra anuncio oferta */
 
-
-
-
 /* Navbar */
 
-a svg{
-    color: rgb(41, 41, 41);
-    text-decoration: none;
+a svg {
+  color: rgb(41, 41, 41);
+  text-decoration: none;
 }
+
+#logo_Ajolote {
+  height: 10vh;
+}
+
+@media (max-width: 768px) {
+  #logo_Ajolote {
+    display: flex;
+    height: 5vh;
+  }
+}
+
+.search-box{
+    width:220px;
+    background:rgb(255, 255, 255);
+}
+
+.search-box input{
+    font-size:14px;
+}
+
+.search-box i{
+    font-size:16px;
+}
+
+.search-box{
+    width:200px;
+    transition:0.3s;
+}
+
+.search-box:focus-within{
+    width:260px;
+}
+
+
+@media (max-width:991px){
+
+    /* posicionar buscador en la misma linea del logo */
+    #buscadorExpandido{
+        position:absolute;
+        left:160px; 
+        top:50%;
+        transform:translateY(-50%);
+        width:40vw;
+    }
+
+    /* esconder iconos cuando se abre buscador */
+    #buscadorExpandido.show ~ button,
+    #buscadorExpandido.show ~ a,
+    #buscadorExpandido.show ~ .dropdown{
+        display:none !important;
+    }
+
+    /* esconder lupa cuando se abre buscador */
+    #buscadorExpandido.show + .toggle-buscador{
+        display:none !important;
+    }
+
+
+}
+
+
+
+.search-box-res{
+    width:50px;
+    background:white;
+    height: 35px;
+    display:flex;
+    align-items:center;
+}
+
+.search-box-res input{
+    font-size:14px;
+}
+
+.search-box-res i{
+    font-size:16px;
+    color:#666;
+}
+
+.search-box-res input:focus, 
+.form-control:focus {
+    box-shadow: none !important;
+    outline: none !important;
+    
+}
+
+.icon-search{
+    width:29px;
+    height:29px;
+    object-fit:contain;
+}
+
+/*quita la palomita*/
+.dropdown-toggle::after{
+    display: none !important;
+}
+
+/*
+Source - https://stackoverflow.com/a/34066798
+Posted by RiesvGeffen
+Retrieved 2026-03-12, License - CC BY-SA 3.0
+*/
+
+
+
 
 /*
 ==============================
 |           Footer           |
 ==============================
 */
+.piedepagina {
+  width: 100%;
+  margin: 0;
+}
 
+.piedepagina-container {
+  width: 100%;
+  padding-left: 0;
+  padding-right: 0;
+}
 
+.piedepagina {
+  width: 100%;
+  margin: 0;
+}
 
-
-/*
-==============================
-|  index (página de inicio)  |
-==============================
-*/
-
-body{
-
+div.subtitle_footer{
     display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+    justify-content:start;
+    align-items: center;
 }
 
-main{
-    flex: 1;
+div.subtitle_footer h4 {
+    margin-bottom: 0;
 }
 
-/*
-|================  Tarjetas de productos  ===============|
-*/
 
-/* Botones izquierda derecha */
-
-.btn_left_right{
+div.subtitle_footer {
     display: flex;
-    justify-content: end;
-    margin-right: 2vh;
+    justify-content: start;
+    align-items: center;
+    margin-bottom: 15px; 
 }
 
-/* Evita que el texto se encime si no hay imagen */
-.product-card img {
-    display: block;
-    margin: 0 auto;
+.subtitle_footer_row{
+    height: 1vh;
+    margin-left: 2%;
+  display: none;
 }
 
-
-.text-warning {
-    color: #ffc107 !important;
-    font-size: 1.1rem;
+@media (max-width: 767px) {
+    .subtitle_footer_row {
+        display: inline-block !important; 
+    }
 }
 
-
-.add-to-cart-overlay {
-    opacity: 0;
-    transform: translateY(10px);
-    transition: 0.3s ease;
+/* Pie de página */
+.piedepagina-container {
+  background-color: #0D0D0D;
+  padding: 10px;
+  
 }
 
-.product-card:hover .add-to-cart-overlay {
-    opacity: 1;
-    transform: translateY(0);
+.piedepagina-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  color: white;
+  font-family: 'Poppins', sans-serif;
 }
 
+.piedepagina-grid h4 {
+  font-size: 18px;
+  font-weight: 600;
+  color:white;
+  margin-bottom: 15px;
+  text-align: left;
+}
 
+.piedepagina-grid p {
+  font-size: 16px;
+  margin-bottom: 8px;
+  opacity: 0.8;
+  cursor: pointer;
+}
 
-/*
-==============================
-|    singUp (Crear cuenta)   |
-==============================
-*/
+.piedepagina-grid input {
+  margin-top: 10px;
+  padding: 10px;
+  background: transparent;
+  border: 1px solid white;
+  width: 100%;
+}
 
+.piedepagina-grid input[type="email"] {
+    width: 80%;        
+    padding: 8px;
+    border-radius: 4px;
+}
 
+.input-wrapper {
+  display: flex;
+  border: 1px solid white;
+  border-radius: 10px;
+  overflow: hidden;
+  width: 100%;
+  max-width: 400px;
+}
+
+.input-wrapper input {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  outline: none;
+  color: white;
+  background-color: #0D0D0D;
+}
+
+.input-wrapper input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.input-wrapper button {
+  border: none;
+  margin: 0;
+  padding: 10px 15px;
+  background-color: #0D0D0D;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  flex-shrink: 0;
+}
+
+.input-wrapper button:hover {
+  background-color: white;
+}
+
+.arrow-icon {
+  display: inline-block;
+  transition: transform 0.2s ease;
+}
+
+.input-wrapper button:hover .arrow-icon {
+  transform: translateX(3px);
+  color: #0D0D0D;
+} 
+
+.qr {
+    width: 80px;
+}
+
+.social-icons a {
+  color: #aaa;
+  font-size: 20px;
+  margin-right: 18px;
+  transition: 0.3s ease;
+}
 
 
 
@@ -96,9 +280,14 @@ main{
 |   logIn (Iniciar sesión)   |
 ==============================
 */
+.login{
+  color: #e6182d !important;
+  font-weight: 100 !important;
+}
 
-
-
+.login-container{
+  align-content: center;
+}
 
 /*
 ==============================
@@ -106,56 +295,25 @@ main{
 ==============================
 */
 
+#cuenta_carrito {
+  position: absolute; /* Saca el número del flujo normal */
+  top: -5px;
+  right: -8px;
 
-/*
-=================================
-|  checkOut (pasarela de pago)  |
-=================================
-*/
+  min-width: 20px;
+  height: 20px;
+  padding: 0 6px;
 
+  background-color: #db4444;
+  color: white;
 
+  border-radius: 999px;
 
-/*
-==================================
-|  aboutMe (Acerca de nosotros)  |
-==================================
-*/
-div {
-    font-family: 'Poppins', sans-serif;
+  font-size: 10px; /* Tamaño del número */
+  font-weight: bold;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-div h4 {
-    color: #DB4444;
-    font-weight: 700;
-}
-
-div h6{
-    font-weight: 600;
-}
-
-div p {
-    font-weight: 400;
-}
-
-/*  NUESTRA HISTORIA */
-
-/*  NUESTRO NÚMEROS */
-
-/*  EQUIPO DE TRABAJO */
-
-/* NUESTROS SELLOS */
-
-
-/*
-==================================
-|  contact (Página de contacto)  |
-==================================
-*/
-
-
-
-/*
-===================================
-|  producto (Página de producto)  |
-===================================
-*/

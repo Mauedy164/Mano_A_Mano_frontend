@@ -3,23 +3,24 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sobre nosotros</title>
+    <title>Mano A Mano</title>
 
     <!-- Estilos -->
-    <link rel="stylesheet" href="./styles/aboutMe.css" />
+   
+    <link rel="stylesheet" href="./styles/home.css" />
     <link rel="stylesheet" href="./styles/main.css" />
-    <link rel="stylesheet" href="./styles/">
-
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
       crossorigin="anonymous"
     />
+    
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
+    <link rel="shortcut icon" href="../media/NavBar/ajolote.png" type="image/x-icon">
   </head>
 
   <body>
@@ -32,154 +33,285 @@
       </section>
     </header>
 
-    <main class="content container-fluid">
-      <!-- <h1></h1>
-
-      <div class="card" style="width: 18rem">
-        <img src="./media/productos_carrito/ZapatosSAM.png" class="card-img-top" alt="ZapatosSAM" />
-
-        <div class="card-body">
-          <h5 class="card-title">Zapatos SAM</h5>
-          <p class="card-text">$ 450 MX</p>
-          <button
-            class="btn btn-dark"
-            onclick="
-              agregarAlCarrito(1, 'Zapato Guinda', 450, './media/productos_carrito/ZapatosSAM.png')
-            "
-          >
-            Agregar al carrito
-          </button>
+    <section class="hero-banner">
+        <!-- LADO IZQUIERDO -->
+        <div class="hero-left">
+          <h1>mano<br>a mano</h1>
+          <p>Descubre a México a través de sus productos</p>
         </div>
-      </div> -->
 
-<!-- Tarjeta de productos -->
+        <!-- LADO DERECHO -->
+        <div class="hero-right" id="heroRight">
+          
+          <div class="overlay">
+            <span id="categoria">gastronomía →</span>
+          </div>
+        </div>
+       
+      </section>
+    
 
-<section class="btn_left_right">
-  <button><img src="./media/products/Fill_With_Left_Arrow.png" alt="Botón de flecha apuntando hacia la izquierda" id="btn_left"></button>
-  <button><img src="./media/products/Fill_with_Right_Arrow.png" alt="Botón de flecha apuntando hacia la derecha" id="btn_right"></button>
+
+    <!--  navegacion con botones -->
+        <section class="quick-nav container-fluid p-0 my-5" >
+
+           <div class="quick-nav-row">
+
+            <a href="#categorias" class="quick-card">
+              <p>Categorías</p>
+            </a>
+
+            <a href="#ofertas" class="quick-card">
+              <p>Ofertas</p>
+            </a>
+
+            <a href="#mas-vendidos" class="quick-card">
+              <p>Más vendidos</p>
+            </a>
+
+            <a href="#explorar" class="quick-card">
+              <p>Explorar</p>
+            </a>
+
+            <a href="#novedades" class="quick-card">
+              <p>Novedades</p>
+            </a>
+
+          </div>
+
+        </section>      
+
+<!--banner comercio jsuto-->
+<section class="banner-slider">
+
+  <div class="banner-slide">
+    <img src="./media/NavBar/comerciojusto.jpg" alt="Comercio justo">
+
+    <div class="banner-overlay">
+      <h2>Comercio justo</h2>
+      <p>
+        En Mano a Mano celebramos el talento de quienes dan vida a nuestras piezas.
+        Cada creación nace de las manos de los mejores maestros artesanos de nuestro país,
+        elaborada con dedicación y bajo principios de comercio justo.
+      </p>
+    </div>
+
+   
+  </div>
+
+</section>        
+
+  <!-- BUSCA POR CATEGORÍA -->
+          <section class="container containerBC" id="categorias">
+            <span class="tag">Categorías</span>
+            <h2 class="titulo-seccion" >Busca por categoría</h2>
+
+            <div class="categories-row">
+
+              <div class="cat-card" data-categoria="textiles">
+                <p>Textiles</p>
+              </div>
+
+              <div class="cat-card" data-categoria="gastronomia">
+                <p>Gastronomía</p>
+              </div>
+
+              <div class="cat-card" data-categoria="accesorios">
+                <p>Accesorios</p>
+              </div>
+
+              <div class="cat-card" data-categoria="cocina">
+                <p>Cocina</p>
+              </div>
+
+              <div class="cat-card" data-categoria="artesanias">
+                <p>Artesanías</p>
+              </div>
+
+              <div class="cat-card" data-categoria="hogar">
+                <p>Hogar</p>
+              </div>
+
+            </div>
+          </section>
+
+
+<!-- GRANDES OFERTAS -->
+<section class="offers container my-5" id= "ofertas" >
+  <div class="offers-header">
+    <div>
+      <span class="tag tagUN">Últimas novedades</span>
+      <h2>Grandes Ofertas</h2>
+    </div>
+
+
+    
+    <!-- Botones carrusel -->
+     <div class="arrows">
+    <button class="offers-arrow offers-prev" aria-label="Anterior">‹</button>
+    <button class="offers-arrow offers-next" aria-label="Siguiente">›</button>
+    </div>
+  </div>
+
+  <!-- CONTENEDOR desde el JSON -->
+  <div class="offers-slider" id="offersCarousel">
+    <!-- Cards desde JSON -->
+  </div>
+  <div class="text-center mt-4">
+    <a href="./pages/products.html" class="btn btn-danger py-3 fw-bold btn-ver-todo">
+      Ver todo
+    </a>
+  </div>
+</section>
+
+
+
+<!-- Este mes -->
+
+<section class="container my-3" id="mas-vendidos">
+    <div class="etiqueta-mes">
+        <span class="cuadro-rosa"></span>
+        <span class="texto-mes">Este mes</span>
+    </div>
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2 class="titulo-seccion">Más vendidos</h2>
+        <button class="btn btn-danger">Ver todo</button>
+    </div>
+
+    <div class="row" id="masVendidosContainer">
+        <!-- Aquí se insertan los productos dinámicamente del json-->
+    </div>
+</section>
+
+<!-- Nuestro productos -->
+
+<section class="container my-5" id="explorar">
+      <div class="etiqueta-mes">
+        <span class="cuadro-rosa"></span>
+        <span class="texto-mes">Nuestros Productos</span>
+    </div>
+    
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <div>
+          <h2 class="titulo-seccion">Explora nuestros productos</h2>
+
+        </div>
+
+        <div>
+            <button class="btn btn-light rounded-circle shadow-sm me-2" id="btnAnterior">
+                ←
+            </button>
+            <button class="btn btn-light rounded-circle shadow-sm" id="btnSiguiente">
+                →
+            </button>
+        </div>
+    </div>
+
+    <!-- Contenedor de cards -->
+    <div class="row" id="explorarContainer"></div>
+
+    <!-- Botón ver todo -->
+    <div class="text-center mt-4">
+      <a href="./pages/products.html" class="btn btn-danger px-4 py-2">
+        Ver todo
+      </a>
+    </div>
 
 </section>
 
-<div class="container py-4 " id="product_container_big_deals">
-  <div class="row g-4"> <div class="col-4 col-sm-6 col-lg-3">
-      <div class="card border shadow-sm h-100 product-card">
-        <div class="position-relative bg-light rounded-3 overflow-hidden image-container" style="min-height: 250px; display: flex; align-items: center; justify-content: center;">
-          <span class="badge bg-danger position-absolute top-0 start-0 m-3 z-3">-40%</span>          
-          <img src="https://m.media-amazon.com/images/I/71WkOT2KsxL._AC_SY300_SX300_QL70_ML2_.jpg" class="img-fluid p-3" style="max-height: 200px; object-fit: contain;" alt="Producto">
-          <div class="add-to-cart-overlay position-absolute bottom-0 start-0 w-100 p-2">
-            <button class="btn btn-dark w-100 py-2 fw-bold text-uppercase" style="font-size: 0.75rem;">
-              Añadir al carrito
-            </button>
-          </div>
-        </div>
-        <div class="card-body border px-1 py-3">
-          <h5 class="card-title fw-bold fs-6 mb-2">Organizador para relojes y anillos</h5>
-          <div class="d-flex align-items-center gap-2 mb-2">
-            <span class="text-danger fw-bold fs-5">$120</span>
-            <span class="text-muted text-decoration-line-through small">$160</span>
-          </div>
-          <div class="d-flex align-items-center">
-            <div class="text-warning me-2">
-              <span style="letter-spacing: -2px;">★★★★★</span>
-            </div>
-            <span class="text-secondary small fw-bold">(88)</span>
-          </div>
-        </div>
-      </div>
+
+
+<!-- Destacados -->
+
+<section class="container my-5" id="novedades">
+
+    <div class="etiqueta-mes">
+        <span class="cuadro-rosa"></span>
+        <span class="texto-mes">Destacados</span>
+    </div>
+  <h2 class="titulo-seccion">Novedades</h2>
+
+  <div class="row g-3">
+
+    <div class="col-md-6">
+      <div id="carousel1" class="custom-carousel"></div>
     </div>
 
-    <div class="col-4 col-sm-6 col-lg-3">
-      <div class="card border shadow-sm h-100 product-card">
-        <div class="position-relative bg-light rounded-3 overflow-hidden image-container" style="min-height: 250px; display: flex; align-items: center; justify-content: center;">
-          <span class="badge bg-danger position-absolute top-0 start-0 m-3 z-3">-40%</span>          
-          <img src="https://m.media-amazon.com/images/I/71WkOT2KsxL._AC_SY300_SX300_QL70_ML2_.jpg" class="img-fluid p-3" style="max-height: 200px; object-fit: contain;" alt="Producto">
-          <div class="add-to-cart-overlay position-absolute bottom-0 start-0 w-100 p-2">
-            <button class="btn btn-dark w-100 py-2 fw-bold text-uppercase" style="font-size: 0.75rem;">
-              Añadir al carrito
-            </button>
-          </div>
+    <div class="col-md-6">
+      <div id="carousel2" class="custom-carousel mb-3"></div>
+      <div class="row g-3">
+        <div class="col-6">
+          <div id="carousel3" class="custom-carousel small-carousel"></div>
         </div>
-        <div class="card-body border px-1 py-3">
-          <h5 class="card-title fw-bold fs-6 mb-2">Organizador para relojes y anillos</h5>
-          <div class="d-flex align-items-center gap-2 mb-2">
-            <span class="text-danger fw-bold fs-5">$120</span>
-            <span class="text-muted text-decoration-line-through small">$160</span>
-          </div>
-          <div class="d-flex align-items-center">
-            <div class="text-warning me-2">
-              <span style="letter-spacing: -2px;">★★★★★</span>
-            </div>
-            <span class="text-secondary small fw-bold">(88)</span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-4 col-sm-6 col-lg-3">
-      <div class="card border shadow-sm h-100 product-card">
-        <div class="position-relative bg-light rounded-3 overflow-hidden image-container" style="min-height: 250px; display: flex; align-items: center; justify-content: center;">
-          <span class="badge bg-danger position-absolute top-0 start-0 m-3 z-3">-40%</span>          
-          <img src="https://m.media-amazon.com/images/I/71WkOT2KsxL._AC_SY300_SX300_QL70_ML2_.jpg" class="img-fluid p-3" style="max-height: 200px; object-fit: contain;" alt="Producto">
-          <div class="add-to-cart-overlay position-absolute bottom-0 start-0 w-100 p-2">
-            <button class="btn btn-dark w-100 py-2 fw-bold text-uppercase" style="font-size: 0.75rem;">
-              Añadir al carrito
-            </button>
-          </div>
-        </div>
-        <div class="card-body border px-1 py-3">
-          <h5 class="card-title fw-bold fs-6 mb-2">Organizador para relojes y anillos</h5>
-          <div class="d-flex align-items-center gap-2 mb-2">
-            <span class="text-danger fw-bold fs-5">$120</span>
-            <span class="text-muted text-decoration-line-through small">$160</span>
-          </div>
-          <div class="d-flex align-items-center">
-            <div class="text-warning me-2">
-              <span style="letter-spacing: -2px;">★★★★★</span>
-            </div>
-            <span class="text-secondary small fw-bold">(88)</span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-4 col-sm-6 col-lg-3">
-      <div class="card border shadow-sm h-100 product-card">
-        <div class="position-relative bg-light rounded-3 overflow-hidden image-container" style="min-height: 250px; display: flex; align-items: center; justify-content: center;">
-          <span class="badge bg-danger position-absolute top-0 start-0 m-3 z-3">-40%</span>          
-          <img src="https://m.media-amazon.com/images/I/71WkOT2KsxL._AC_SY300_SX300_QL70_ML2_.jpg" class="img-fluid p-3" style="max-height: 200px; object-fit: contain;" alt="Producto">
-          <div class="add-to-cart-overlay position-absolute bottom-0 start-0 w-100 p-2">
-            <button class="btn btn-dark w-100 py-2 fw-bold text-uppercase" style="font-size: 0.75rem;">
-              Añadir al carrito
-            </button>
-          </div>
-        </div>
-        <div class="card-body border px-1 py-3">
-          <h5 class="card-title fw-bold fs-6 mb-2">Organizador para relojes y anillos</h5>
-          <div class="d-flex align-items-center gap-2 mb-2">
-            <span class="text-danger fw-bold fs-5">$120</span>
-            <span class="text-muted text-decoration-line-through small">$160</span>
-          </div>
-          <div class="d-flex align-items-center">
-            <div class="text-warning me-2">
-              <span style="letter-spacing: -2px;">★★★★★</span>
-            </div>
-            <span class="text-secondary small fw-bold">(88)</span>
-          </div>
+        <div class="col-6">
+          <div id="carousel4" class="custom-carousel small-carousel"></div>
         </div>
       </div>
     </div>
 
   </div>
-</div>
 
-    </main>
+</section>
+
+<!-- Beneficios -->
+
+<section class="benefits">
+
+    <!-- Envíos -->
+    <div class="benefit-item">
+      <div class="icon-wrapper">
+        <div class="icon-inner">
+          <svg viewBox="0 0 24 24">
+            <rect x="1" y="3" width="15" height="13" rx="1"/>
+            <path d="M16 8h4l3 5v4h-7V8z"/>
+            <circle cx="5.5" cy="18.5" r="2.5"/>
+            <circle cx="18.5" cy="18.5" r="2.5"/>
+          </svg>
+        </div>
+      </div>
+      <span class="benefit-title">Envíos gratis y rápidos</span>
+      <p class="benefit-desc">Envío gratis a todas las compras arriba de $1500 MXN.</p>
+    </div>
+
+    <!-- Atención -->
+    <div class="benefit-item">
+      <div class="icon-wrapper">
+        <div class="icon-inner">
+          <svg viewBox="0 0 24 24">
+            <path d="M3 18v-6a9 9 0 0 1 18 0v6"/>
+            <path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3z"/>
+            <path d="M3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/>
+          </svg>
+        </div>
+      </div>
+      <span class="benefit-title">Atención al cliente 24/7</span>
+      <p class="benefit-desc">El mejor servicio al consumidor 24/7.</p>
+    </div>
+
+    <!-- Garantía -->
+    <div class="benefit-item">
+      <div class="icon-wrapper">
+        <div class="icon-inner">
+          <svg viewBox="0 0 24 24">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            <polyline points="9 12 11 14 15 10"/>
+          </svg>
+        </div>
+      </div>
+      <span class="benefit-title">Garantía de satisfacción</span>
+      <p class="benefit-desc">Reembolsos dentro de los primeros 30 días.</p>
+    </div>
+
+  </section>
 
     <footer id="footer_container_index">
       <!-- Footer -->
       <!-- Añadido mediante JavaScript -->
     </footer>
 
+    
     <script src="./js/main.js"></script>
+    <script src="./js/home.js"></script>
     <script src="./js/carrito.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"

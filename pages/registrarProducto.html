@@ -1,0 +1,579 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register Product</title>
+
+    <!-- Cloudinary -->
+    <script src="https://upload-widget.cloudinary.com/global/all.js"></script>
+
+    <!-- Estilos -->
+    <link rel="stylesheet" href="../styles/main.css" />
+    <link rel="stylesheet" href="../styles/aboutMe.css" />
+    <link rel="stylesheet" href="../styles/registrarProducto.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="shortcut icon" href="../media/NavBar/ajolote.png" type="image/x-icon">
+  </head>
+
+  <body>
+    <header>
+      <section><!-- barra anuncio oferta --></section>
+
+      <section id="navbar_container">
+        <!-- Navbar -->
+        <!-- Añadido mediante JavaScript -->
+      </section>
+    </header>
+
+    <main>
+      <nav aria-label="breadcrumb" class="text-decoration-none breadcrumb mt-4">
+        <ol>
+          <a href="#PorDefinir" class="text-decoration-none text-reset">Cuenta /</a>
+          <!-- Por definir el enlace -->
+          <a href="#MiCuenta" class="text-decoration-none text-reset">Mi cuenta /</a>
+          <!-- Por definir el enlace -->
+          <a href="#Vendedor" class="text-decoration-none text-reset">Vendedor /</a>
+          <!-- Por definir el enlace -->
+          <a
+            href="./registrarProducto.html"
+            class="text-decoration-none text-reset active"
+          >
+            <strong>Registrar producto</strong>
+          </a>
+        </ol>
+      </nav>
+
+      <div class="container my-4 col-12">
+        <div class="row mx-5 g-5">
+          <!-- Columna izquierda -->
+          <div class="col-12 col-lg-7">
+            <h2>Datos del producto:</h2>
+            <br />
+
+            <div class="mb-3" id="nameProductForm_container">
+              <label for="formularioNombreProducto" class="form-label">
+                Nombre del producto<strong class="required">*</strong>
+              </label>
+              <input
+                type="text"
+                class="form-control"
+                id="formularioNombreProducto"
+                placeholder="Bolso de cuero artesanal"
+              />
+            </div>
+
+            <div class="mb-3" id="descriptionProductForm_container">
+              <label for="formularioDescripcionProducto" class="form-label">
+                Descripción del producto<strong class="required">*</strong>
+              </label>
+              <textarea
+                class="form-control"
+                id="formularioDescripcionProducto"
+                rows="3"
+                placeholder="Bolso 100% cuero de vaca con incrustaciones de diamantes y bañado en oro"
+              ></textarea>
+            </div>
+
+            <div class="mb-3" id="priceProductForm_container">
+              <label for="formularioPrecioProducto" class="form-label">
+                Precio Individual (MXN)<strong class="required">*</strong>
+              </label>
+              <input
+                type="number"
+                class="form-control"
+                id="formularioPrecioProducto"
+                placeholder="1499.99"
+                min="0.01"
+                step="0.01"
+                max="100000"
+                required
+              />
+            </div>
+
+            <div class="mb-3" id="amountProductForm_container">
+              <label for="formularioCantidadProducto" class="form-label">
+                Cantidad de productos a vender<strong class="required">*</strong>
+              </label>
+              <input
+                type="number"
+                class="form-control"
+                id="formularioCantidadProducto"
+                placeholder="0"
+                min="1.00"
+                step="1"
+                max="150"
+                required
+              />
+            </div>
+
+            <div class="mb-3" id="tagProductForm_container">
+              <label for="formularioTagsProducto" class="form-label">
+                Tags<strong class="required">*</strong>
+              </label>
+              <input
+                type="text"
+                class="form-control"
+                id="formularioTagsProducto"
+                placeholder="Añade hasta 20 etiquetas para encontar tu producto. Ej: #bolso #cuero "
+              />
+            </div>
+
+            <!-- Imagen principal -->
+            <div class="mb-3">
+              <label class="form-label" for="formularioImagenPrincipalProducto">
+                Agrega tu imagen principal <strong class="required">*</strong>
+              </label>
+              <label
+                for="formularioImagenPrincipalProducto"
+                class="form-control border-dashed d-flex flex-column align-items-center justify-content-center py-4 text-center bg-light drop-zone"
+                id="dropZonaPrincipal"
+                style="cursor: pointer"
+              >
+                <i class="bi bi-cloud-arrow-up fs-1 text-muted mb-2"></i>
+                <span class="fw-semibold">Haz click aquí</span>
+                <span class="text-muted d-block">Para subir tu imagen</span>
+                <input
+                  class="d-none"
+                  type="file"
+                  id="formularioImagenPrincipalProducto"
+                  accept="image/jpeg,image/png"
+                />
+              </label>
+              <div id="previewPrincipal" class="mt-2"></div>
+            </div>
+
+            <!-- Imágenes adicionales -->
+            <div class="mb-3">
+              <label class="form-label" for="formularioImagenesAdicionalesProducto">
+                Agrega más imágenes en diferentes ángulos
+              </label>
+              <label
+                for="formularioImagenesAdicionalesProducto"
+                class="form-control border-dashed d-flex flex-column align-items-center justify-content-center py-4 text-center bg-light drop-zone"
+                id="dropZonaAdicionales"
+                style="cursor: pointer"
+              >
+                <i class="bi bi-cloud-arrow-up fs-1 text-muted mb-2"></i>
+                <span class="fw-semibold">Haz click aquí</span>
+                <span class="text-muted d-block">Para subir tus imágenes</span>
+                <input
+                  class="d-none"
+                  type="file"
+                  id="formularioImagenesAdicionalesProducto"
+                  accept="image/jpeg,image/png"
+                  multiple
+                />
+              </label>
+              <div id="previewAdicionales" class="mt-2 d-flex flex-wrap gap-2"></div>
+            </div>
+
+            <input type="hidden" id="imagenPrincipalURL">
+            <input type="hidden" id="imagenesAdicionalesURL">
+
+            <div class="derecha">
+              <span><strong class="required">*</strong>Campos obligatorios</span>
+            </div>
+          </div>
+
+          <!-- Columna derecha -->
+          <div class="col-12 col-lg-5">
+            <h6 class="mt-5">Detalles del producto:</h6>
+            <div class="row g-4 ms-4">
+              <!-- Contenedor checks -->
+              <div class="row g-4">
+        
+                
+
+                <!-- Colores -->
+        <div class="col-md-6" id="colores_main_container">
+          <h6 class="form-label fw-bold mb-3">Colores:</h6>
+
+          <div class="form-check mb-3">
+            <input 
+              class="form-check-input" 
+              type="checkbox" 
+              id="coloresSin" 
+              value="sin" 
+              checked
+              />
+            <label class="form-check-label" for="coloresSin">
+              Sin Colores
+            </label>
+          </div>
+
+          <div id="opciones_color_group">
+            <div class="form-check mb-3">
+              <input 
+                class="form-check-input radio-color" 
+                type="radio" 
+                name="colores" 
+                id="coloresSi" 
+                value="si" 
+                disabled
+                />
+              <label class="form-check-label" for="coloresSi">
+                Agrega un color
+              </label>
+            </div>
+
+            <div class="form-check mb-3">
+              <input 
+                class="form-check-input radio-color" 
+                type="radio" 
+                name="colores" 
+                id="coloresMas" 
+                value="mas" 
+                disabled
+              />
+              <label class="form-check-label" for="coloresMas">
+                Agrega otro color
+              </label>
+            </div>
+          </div>
+
+          <div class="mt-3 mb-3" id="colorPrincipal_container" style="display: none;">
+            <label class="form-label fw-semibold">
+              Color principal:
+            </label>
+            <input 
+              type="color" 
+              id="colorPrincipal" 
+              class="form-control form-control-color w-100" 
+              value="#007bff">
+          </div>
+
+          <div class="mt-3" id="colorSecundario_container" style="display: none;">
+            <label class="form-label fw-semibold">
+              Color secundario:
+            </label>
+            <input 
+              type="color" 
+              id="colorSecundario" 
+              class="form-control form-control-color w-100" 
+              value="#dc3545">
+          </div>
+        </div>
+
+
+
+                <!-- Marca -->
+                <div class="col-md-6">
+                  <h6>Marca:</h6>
+
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      name="marca"
+                      id="marcaCheck"
+                      checked
+                    />
+                    <label class="form-check-label" for="marcaCheck">
+                      Sin Marca
+                    </label>
+                  </div>
+
+                  <div class="mt-2" id="marcaTexto_container">
+                    <label class="form-label" for="marcaTexto">Marca:</label>
+                    <input
+                      type="text"
+                      id="marcaTexto"
+                      class="form-control"
+                      placeholder=""
+                      disabled
+                    />
+                  </div>
+                </div>
+
+                <!-- Tamaño -->
+                <div class="col-md-6" id="tamano_container">
+                  <h6>Tamaño:</h6>
+
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      name="tamano"
+                      id="tamanoNo"
+                      value="no"
+                      checked
+                    />
+                    <label class="form-check-label" for="tamanoNo">
+                      No aplica
+                    </label>
+                  </div>
+
+                  <div class="form-check">
+                    <input
+                      class="form-check-input radio-size"
+                      type="radio"
+                      name="tamano"
+                      id="tamanoGrande"
+                      value="grande"
+                    />
+                    <label class="form-check-label" for="tamanoGrande">
+                      Grande
+                    </label>
+                  </div>
+
+                  <div class="form-check">
+                    <input
+                      class="form-check-input radio-size"
+                      type="radio"
+                      name="tamano"
+                      id="tamanoMediana"
+                      value="mediana"
+                    />
+                    <label class="form-check-label" for="tamanoMediana">
+                      Mediana
+                    </label>
+                  </div>
+
+                  <div class="form-check">
+                    <input
+                      class="form-check-input radio-size"
+                      type="radio"
+                      name="tamano"
+                      id="tamanoPequena"
+                      value="pequena"
+                    />
+                    <label class="form-check-label" for="tamanoPequena">
+                      Pequeña
+                    </label>
+                  </div>
+                </div>
+
+                <!-- Modelo -->
+                <div class="col-md-6">
+                  <h6>Modelo:</h6>
+
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      name="modelo"
+                      id="modeloSin"
+                      value="sin"
+                      checked
+                    />
+                    <label class="form-check-label" for="modeloSin">
+                      Sin Modelo
+                    </label>
+                  </div>
+
+                  <div class="mt-2" id="modeloTexto_container">
+                    <label class="form-label" for="modeloTexto">
+                      Modelo:
+                    </label>
+                    <input
+                      type="text"
+                      id="modeloTexto"
+                      class="form-control"
+                      placeholder=""
+                    />
+                  </div>
+                </div>
+
+                <!-- Dimensiones -->
+               <div class="col-md-6" id="dimensiones_main_container">
+                <h6 class="fw-bold mb-3">Dimensiones del producto:</h6>
+
+                <div class="form-check mb-2">
+                  <input 
+                    class="form-check-input" 
+                    type="radio" 
+                    name="dimensiones" 
+                    id="dimensionesNo" 
+                    value="no" 
+                    checked 
+                  />
+                  <label class="form-check-label" for="dimensionesNo">
+                    No aplica
+                  </label>
+                </div>
+
+                <div class="form-check col-12">
+                  <input 
+                    class="form-check-input" 
+                    type="radio" 
+                    name="dimensiones" 
+                    id="dimensionesSi" 
+                    value="si" 
+                  />
+                  <label class="form-check-label" for="dimensionesSi">
+                    Dimensiones (cm)
+                  </label>
+    
+                  <div class="row g-1 mt-2 ps-0" id="dimensionesInputs_container">
+                    <div class="row">
+                      <label for="largo" class="small fw-secondary text-muted">
+                        Largo
+                      </label>
+                      <input 
+                        type="number" 
+                        class="form-control form-control-sm input-dimension" 
+                        id="largo" 
+                        placeholder="0" 
+                        min="0" 
+                        disabled 
+                      />
+                    </div>
+                  
+                    <div class="row">
+                      <label for="ancho" class="small fw-secondary text-muted">
+                        Ancho
+                      </label>
+                      <input 
+                        type="number" 
+                        class="form-control form-control-sm input-dimension" 
+                        id="ancho" 
+                        placeholder="0" 
+                        min="0" 
+                        disabled 
+                      />
+                    </div>
+                  
+                    <div class="row">
+                      <label for="alto" class="small fw-secondary text-muted">
+                        Alto
+                      </label>
+                      <input 
+                        type="number" 
+                        class="form-control form-control-sm input-dimension" 
+                        id="alto" 
+                        placeholder="0" 
+                        min="0" 
+                        disabled 
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+                <!-- Peso -->
+                <div class="col-6" id="peso_container">
+                  <h6 class="fw-bold">Peso:</h6>
+
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="opcionPeso"
+                      id="pesoNo"
+                      value="no"
+                      checked
+                    />
+                    <label class="form-check-label" for="pesoNo">
+                      No aplica
+                    </label>
+                  </div>
+
+                  <div class="form-check mt-2">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="opcionPeso"
+                      id="pesoSi"
+                      value="si"
+                    />
+                    <label class="form-check-label" for="pesoSi">
+                      Peso (gramos):
+                    </label>
+                  </div>
+
+                  <div class="mt-2" id="pesoNum_container">
+                    <input
+                      type="number"
+                      class="form-control"
+                      id="pesoNum"
+                      placeholder="0"
+                      min="0"
+                      disabled
+                    />
+                  </div>
+                </div>
+
+                <!-- Volumen -->
+                <div class="col-md-6">
+                  <h6>Volumen:</h6>
+
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="volumen"
+                      id="volumenNo"
+                      value="no"
+                      checked
+                    />
+                    <label class="form-check-label" for="volumenNo">
+                      No aplica
+                    </label>
+                  </div>
+
+                  <div class="form-check mt-2">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="volumen"
+                      id="volumenSi"
+                      value="si"
+                    />
+                    <label class="form-check-label" for="volumenSi">
+                      Volumen (litros):
+                    </label>
+                  </div>
+
+                  <div class="mt-2" id="volumenNum_container">
+                    <input
+                      type="number"
+                      class="form-control"
+                      id="volumenNum"
+                      placeholder="0"
+                      min="0"
+                      disabled
+                    />
+                  </div>
+                </div>
+
+                <!-- Botón -->
+                <div class="col-12 text-end mt-3">
+                  <button id="btnRegistrar" type="button">
+                    Registrar Producto
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div> 
+        </div>
+      </div>
+    </main>
+
+    <footer id="footer_container">
+      <!-- Footer -->
+      <!-- Añadido mediante JavaScript -->
+    </footer>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/validacionesNuevoProducto.js"></script>
+    <script src="../js/cloudinary.js"></script>
+    <script src="../js/guardarProducto.js"></script>
+  </body>
+</html>

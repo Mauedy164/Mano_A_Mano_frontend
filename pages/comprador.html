@@ -1,14 +1,14 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sobre nosotros</title>
+    <title>Comprador</title>
 
     <!-- Estilos -->
-    <link rel="stylesheet" href="../styles/aboutMe.css" />
-    <link rel="stylesheet" href="../styles/main.css" />
-
+    <link rel="stylesheet" href="../styles/comprador.css" />
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/aboutMe.css">
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -19,6 +19,8 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    <link rel="shortcut icon" href="../media/NavBar/ajolote.png" type="image/x-icon">
   </head>
 
   <body>
@@ -30,15 +32,389 @@
         <!-- Añadido mediante JavaScript -->
       </section>
     </header>
-    <main class="content container-fluid">
-      <h1></h1>
-    </main>
+
+<main class="perfil-main">
+    <section class="perfil-container">
+      <!-- Sidebar -->
+      <aside class="perfil-sidebar">
+        <div class="perfil-user">
+          <div class="perfil-avatar">U1</div>
+          <div>
+          <p class="perfil-name" id="perfil-nombre">¡Hola!</p>
+          <p class="perfil-email" id="perfil-email">correo@ejemplo.com</p>
+          </div>
+        </div>
+
+        <nav class="perfil-menu" aria-label="Menú de mi cuenta">
+          <div class="perfil-seccion">
+            <span class="perfil-seccion-titulo">Comprador</span>
+            <div class="perfil-seccion-linea"></div>
+          </div>
+          <button class="perfil-menu-item" data-tab="direcciones">
+            <span class="perfil-menu-icon"><i class="bi bi-cart"></i></span>
+            <span>Mis compras</span>
+          </button>
+          <div class="perfil-seccion">
+            <span class="perfil-seccion-titulo">Vendedor</span>
+            <div class="perfil-seccion-linea"></div>
+          </div>
+          <!-- 
+          <button class="perfil-menu-item active" data-tab="resumen">
+            <span class="perfil-menu-icon"><i class="bi bi-graph-up"></i></span>
+            <span>Resumen</span>
+          </button>
+          <button class="perfil-menu-item" data-tab="pedidos">
+            <span class="perfil-menu-icon"><i class="bi bi-box"></i></span>
+            <span>Mis pedidos</span>
+          </button> 
+           -->
+          <button class="perfil-menu-item" data-tab="productos">
+            <span class="perfil-menu-icon"><i class="bi bi-tag"></i></span>
+            <span>Mis productos</span>
+          </button>          
+ 
+          <button class="perfil-menu-item" data-tab="configuracion">
+            <span class="perfil-menu-icon"><i class="bi bi-gear"></i></span>
+            <span>Configuración</span>
+          </button>
+          <button class="perfil-menu-item perfil-menu-item-salir" data-tab="logout">
+            <span class="perfil-menu-icon"><i class="bi bi-box-arrow-right"></i></span>
+            <span>Cerrar sesión</span>
+          </button>
+        </nav>
+      </aside>
+
+      <!--  -->
+      <section class="perfil-content">
+        <!-- RESUMEN -->
+        <div class="perfil-tab active" id="tab-resumen">
+          <header class="perfil-header">
+            <h1>Mi cuenta</h1>
+            <p>Revisa rápidamente tu actividad en Mano a Mano.</p>
+          </header>
+
+          <div class="perfil-stats">
+            <article class="perfil-stat-card">
+              <p class="perfil-stat-label">Pedidos totales</p>
+              <p class="perfil-stat-value" id="resumen-total-pedidos">12</p>
+              <p class="perfil-stat-extra">2 en camino</p>
+            </article>
+
+            <article class="perfil-stat-card">
+              <p class="perfil-stat-label">Último pedido</p>
+              <p class="perfil-stat-value" id="resumen-ultimo-pedido">#MM-1024</p>
+              <p class="perfil-stat-extra">12/03/2026</p>
+            </article>
+
+            <article class="perfil-stat-card">
+              <p class="perfil-stat-label">Dirección principal</p>
+              <p class="perfil-stat-value" id="resumen-direccion">
+                Mi casa XXXX
+              </p>
+            </article>
+          </div>
+
+          <section class="perfil-section">
+            <div class="perfil-section-header">
+              <h2>Pedidos recientes</h2>
+              <button class="perfil-link" data-tab-trigger="pedidos">
+                Ver todos
+              </button>
+            </div>
+
+            <div class="perfil-orders-list">
+              <article class="perfil-order-card">
+                <div>
+                  <p class="perfil-order-id">Pedido #MM-1024</p>
+                  <p class="perfil-order-date">12/03/2026</p>
+                </div>
+                <div class="perfil-order-right">
+                  <span class="perfil-badge perfil-badge-success">Entregado</span>
+                  <p class="perfil-order-total">$849 MXN</p>
+                </div>
+              </article>
+
+              <article class="perfil-order-card">
+                <div>
+                  <p class="perfil-order-id">Pedido #MM-1023</p>
+                  <p class="perfil-order-date">08/03/2026</p>
+                </div>
+                <div class="perfil-order-right">
+                  <span class="perfil-badge perfil-badge-warning">En camino</span>
+                  <p class="perfil-order-total">$399 MXN</p>
+                </div>
+              </article>
+            </div>
+          </section>
+        </div>
+
+        <!-- PEDIDOS -->
+        <div class="perfil-tab" id="tab-pedidos">
+          <header class="perfil-header">
+            <h1>Mis pedidos</h1>
+            <p>Consulta el estado y detalle de tus compras.</p>
+          </header>
+
+          <div class="perfil-filtros">
+            <div class="perfil-field">
+              <label for="filtro-estado">Estado</label>
+              <select id="filtro-estado">
+                <option value="all">Todos</option>
+                <option value="delivered">Entregado</option>
+                <option value="shipping">En camino</option>
+                <option value="processing">En preparación</option>
+              </select>
+            </div>
+
+            <div class="perfil-field">
+              <label for="filtro-busqueda">Buscar por # de pedido</label>
+              <input
+                type="text"
+                id="filtro-busqueda"
+                placeholder="Ej. MM-1024"
+              />
+            </div>
+          </div>
+
+          <div class="perfil-table-wrapper">
+            <table class="perfil-table" id="tabla-pedidos">
+              <thead>
+                <tr>
+                  <th>Pedido</th>
+                  <th>Fecha</th>
+                  <th>Estado</th>
+                  <th>Total</th>
+                  <th>Acciones</th>
+                </tr>
+              </thead>
+              <tbody id="tbody-pedidos">
+                <tr>
+                  <td>#MM-1024</td>
+                  <td>12/03/2026</td>
+                  <td><span class="perfil-badge perfil-badge-success">Entregado</span></td>
+                  <td>$849 MXN</td>
+                  <td><button class="perfil-table-link">Ver detalle</button></td>
+                </tr>
+                <tr>
+                  <td>#MM-1023</td>
+                  <td>08/03/2026</td>
+                  <td><span class="perfil-badge perfil-badge-warning">En camino</span></td>
+                  <td>$399 MXN</td>
+                  <td><button class="perfil-table-link">Ver detalle</button></td>
+                </tr>
+                <tr>
+                  <td>#MM-1022</td>
+                  <td>02/03/2026</td>
+                  <td><span class="perfil-badge perfil-badge-info">En preparación</span></td>
+                  <td>$1,299 MXN</td>
+                  <td><button class="perfil-table-link">Ver detalle</button></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- PRODUCTOS -->
+        <div class="perfil-tab" id="tab-productos">
+          <header class="perfil-header">
+            <h1>Mis productos</h1>
+            <p>Administra los productos que tienes a la venta.</p>
+          </header>
+
+            <div class="perfil-productos-header">
+
+              <article class="perfil-stat-card small">
+                <p class="perfil-stat-label">Productos en venta</p>
+                <p class="perfil-stat-value" id="resumen-total-productos">12</p>
+             </article>
+
+              <a href="./registrarProducto.html" class="btn-agregar-producto">
+                + Agregar un producto nuevo
+              </a>
+
+            </div>
+
+          <!-- LISTA DE PRODUCTOS -->
+          <div class="perfil-table-wrapper">
+            <table class="perfil-table" id="tabla-pedidos">
+              <thead>
+                <tr>
+                  <th>Información del producto</th>
+                  <th>Precio</th>
+                  <th>Precio Oferta</th>
+                  <th>Stock</th>
+                  <th>Oferta</th>
+                  <th>Eliminar</th>
+                </tr>
+              </thead>
+              <tbody id="tbody-productos">
+                
+              </tbody>
+            </table>
+          </div>          
+
+
+        </div>        
+
+        <!-- Mis compras -->
+        <div class="perfil-tab" id="tab-direcciones">
+          <header class="perfil-header">
+            <h1>Mis Compras</h1>
+            <p>Consulta tus compras en mano a mano</p>
+          </header>
+        <div class="perfil-stats">
+
+            <article class="perfil-stat-card">
+              <p class="perfil-stat-label">Total compras</p>
+              <p class="perfil-stat-value" id="total-compras">3</p>
+            </article>
+
+            <article class="perfil-stat-card">
+              <p class="perfil-stat-label">En camino</p>
+              <p class="perfil-stat-value" id="compras-envio">1</p>
+            </article>
+
+            <article class="perfil-stat-card">
+              <p class="perfil-stat-label">Entregadas</p>
+              <p class="perfil-stat-value" id="compras-entregadas">2</p>
+            </article>
+
+          </div>
+
+        <div class="perfil-table-wrapper">
+          <table class="perfil-table">
+            <thead>
+              <tr>
+                <th>Producto</th>
+                <th>Fecha</th>
+                
+                <th>Estado</th>
+                <th>Total</th>
+                <th>Acciones</th>
+              </tr>
+            </thead>
+
+            <tbody>
+
+              <tr>
+                <td>Bolso elegante</td>
+                <td>20/03/2026</td>
+                
+                <td><span class="badge estado-envio">En camino</span></td>
+                <td>$1,200</td>
+                <td>
+                  <button class="btn-table">Ver detalle</button>
+                </td>
+              </tr>
+
+              <tr>
+                <td>Audífonos inalámbricos</td>
+                <td>18/03/2026</td>
+                
+                <td><span class="badge estado-entregado">Entregado</span></td>
+                <td>$850</td>
+                <td>
+                  <button class="btn-table">Ver detalle</button>
+                </td>
+              </tr>
+
+              <tr>
+                <td>Lámpara moderna</td>
+                <td>15/03/2026</td>
+                
+                <td><span class="badge estado-entregado">Entregado</span></td>
+                <td>$600</td>
+                <td>
+                  <button class="btn-table">Ver detalle</button>
+                </td>
+              </tr>
+
+            </tbody>
+          </table>
+        </div>
+
+          
+        </div>
+
+        <!-- CONFIGURACIÓN -->
+        <div class="perfil-tab" id="tab-configuracion">
+          <header class="perfil-header">
+            <h1>Configuración</h1>
+            <p>Actualiza tus datos personales y preferencias.</p>
+          </header>
+
+          <form class="perfil-form" id="form-config">
+            <div class="perfil-form-row">
+              <div class="perfil-field">
+                <label for="perfil-nombre">Nombre</label>
+                <input type="text" id="perfil-nombre" placeholder="Juan" />
+              </div>
+              <div class="perfil-field">
+                <label for="perfil-apellidos">Apellidos</label>
+                <input type="text" id="perfil-apellidos" placeholder="Pérez" />
+              </div>
+            </div>
+
+            <div class="perfil-form-row">
+              <div class="perfil-field">
+                <label for="perfil-email">Correo electrónico</label>
+                <input type="email" id="perfil-email" placeholder="correo@ejemplo.com">
+              </div>
+              <div class="perfil-field">
+                <label for="perfil-telefono">Teléfono</label>
+                <input type="tel" id="perfil-telefono" placeholder="+52 55 0000 0000" />
+              </div>
+            </div>
+
+                        <div class="perfil-form-row">
+              <div class="perfil-field">
+                <label for="perfil-email">Nombre de tu emprendimiento</label>
+                <input type="email" id="perfil-email" placeholder="emprendimiento">
+              </div>
+              
+            </div>
+
+            <fieldset class="perfil-fieldset">
+              <legend>Preferencias</legend>
+              <label class="perfil-checkbox">
+                <input type="checkbox" checked />
+                Recibir notificaciones de ofertas y seguimiento de pedidos
+              </label>
+            </fieldset>
+
+            <div class="perfil-form-actions">
+              <button type="submit" class="btn-primary">
+                Guardar cambios
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <!-- LOGOUT -
+       */ <div class="perfil-tab" id="tab-logout">
+          <header class="perfil-header">
+            <h1>¿Cerrar sesión?</h1>
+            <p>Confirma si deseas salir de tu cuenta.</p>
+          </header>
+
+          <button class="btn-primary btn-danger" id="btn-logout">
+            Cerrar sesión
+          </button>
+        </div> -->
+      </section>
+    </section>
+  </main>
+
+  <script src="../js/comprador.js"></script>
+</body>
+</html>
+
 
     <footer id="footer_container">
       <!-- Footer -->
       <!-- Añadido mediante JavaScript -->
     </footer>
-
+    <script src="../js/comprador.js"></script>
     <script src="../js/main.js"></script>
     <script src="../js/carrito.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>

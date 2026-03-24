@@ -329,6 +329,23 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
+  function limpiarValidaciones(form) {
+  form.reset(); 
+
+  
+  const inputs = form.querySelectorAll("input, textarea");
+  inputs.forEach(input => {
+    input.classList.remove("is-valid", "is-invalid");
+  });
+
+  
+  const errores = form.querySelectorAll(".invalid-feedback");
+  errores.forEach(err => {
+    err.textContent = "";
+    err.style.display = "none";
+  });
+}
+
   // ==================== EVENT LISTENERS BLUR ====================
 
   inputNombre.addEventListener("blur", validateNombre);
@@ -360,9 +377,7 @@ document.addEventListener("DOMContentLoaded", function () {
       confirmButtonText: "Aceptar",
       confirmButtonColor: "#db4444"
       });
-        form.reset();
-        const counter = document.getElementById("charCounter");
-        if (counter) counter.style.display = "none";
+        limpiarValidaciones(form);
       })
       .catch(function (error) {
         console.log("Error:", error);
