@@ -2,42 +2,62 @@ document.addEventListener("DOMContentLoaded", function () {
   const loginBtn = document.getElementById("iniciaSesion_btn");
 
   if (loginBtn) {
-    loginBtn.addEventListener("click", function (e) {
+    loginBtn.addEventListener("click", async function (e) {
       e.preventDefault();
 
-      if (!validarFormularioLogin()) {
-        return;
-      }
+      if (!validarFormularioLogin()) return;
 
-      const correoIngresado = document.getElementById("correo").value.trim();
-      const passwordIngresado = document.getElementById("password").value;
+      const loginData = {
+        correo: document.getElementById("correo").value.trim(),
+        password: document.getElementById("password").value
+      };
 
-      const users = JSON.parse(localStorage.getItem("users")) || [];
+      try {
+        // Al endpoint de LOGIN (no al de usuarios)
+        const response = await fetch("http://34.201.41.216/ecommerce/login/", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(loginData)
+        });
 
-      const usuario = users.find((user) => user.correo === correoIngresado);
+        if (response.ok) {
+          // Objeto con el Token (JWT)
+          const data = await response.json(); 
+          
+          // Token para futuras peticiones protegidas
+          localStorage.setItem("token", data.accessToken);
+          
+          // Guardar el correo para saber quién inició sesión
+          sessionStorage.setItem("usuarioActivo", JSON.stringify({ correo: loginData.correo }));
 
-      if (!usuario || usuario.password !== passwordIngresado) {
-        document.getElementById("correo").classList.remove("is-valid", "is-invalid");
-        document.getElementById("password").classList.remove("is-valid", "is-invalid");
+          Swal.fire({
+            icon: "success",
+            title: "¡Sesión iniciada!",
+            text: "Cargando tu perfil...",
+            timer: 1500,
+            showConfirmButton: false
+          }).then(() => {
+            window.location.href = "../pages/comprador.html";
+          });
+
+        } else {
+          Swal.fire({
+            icon: "error",
+            title: "Credenciales inválidas",
+            text: "El correo o la contraseña no coinciden."
+          });
+        }
+
+      } catch (error) {
+        console.error("Error en el login:", error);
         Swal.fire({
           icon: "error",
-          title: "Error de inicio de sesión",
-          text: "Correo y/o contraseña incorrectos",
+          title: "Error de servidor",
+          text: "No se pudo conectar con el servicio de autenticación."
         });
-        return;
       }
-
-      sessionStorage.setItem("usuarioActivo", JSON.stringify(usuario));
-
-      Swal.fire({
-        icon: "success",
-        title: "¡Bienvenido!",
-        text: `Hola ${usuario.nombre}`,
-        timer: 2000,
-        showConfirmButton: false,
-      }).then(() => {
-        window.location.href = "../pages/comprador.html";
-      });
     });
   }
 });
