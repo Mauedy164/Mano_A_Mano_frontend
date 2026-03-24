@@ -1,7 +1,7 @@
 /*cargar nombre del usuario desde el storage*/
 
 async function cargarDatosUsuarioPerfil() {
-  // 1. Intentamos obtener el correo guardado en el login
+  // Correo guardado en el login
   const usuarioActivo = JSON.parse(sessionStorage.getItem("usuarioActivo"));
   
   if (!usuarioActivo || !usuarioActivo.correo) {
@@ -11,13 +11,10 @@ async function cargarDatosUsuarioPerfil() {
   }
 
   try {
-    // 2. Consultamos a tu API de Spring Boot
     const response = await fetch("http://34.201.41.216/ecommerce/usuarios/");
     if (!response.ok) throw new Error("Error al conectar con la API");
 
     const usuarios = await response.json();
-
-    // 3. Buscamos los datos completos de ese correo en la base de datos
     const usuario = usuarios.find(u => u.correo === usuarioActivo.correo);
 
     if (usuario) {
