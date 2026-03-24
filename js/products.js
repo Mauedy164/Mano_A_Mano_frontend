@@ -1,10 +1,10 @@
 window.addEventListener("load", () => {
-    listaProductos();
+  listaProductos();
 });
 
 function getQueryParam(name) {
-    const params = new URLSearchParams(window.location.search);
-    return params.get(name);
+  const params = new URLSearchParams(window.location.search);
+  return params.get(name);
 }
 
 const categoriasMap = {
@@ -13,134 +13,139 @@ const categoriasMap = {
   accesorios: ["collar", "pulsera", "joyería", "sombrero"],
   cocina: ["taza", "cocina"],
   artesanias: ["alebrije", "barro", "arte"],
-  hogar: ["hogar", "canasta", "mimbre", "decoración"]
+  hogar: ["hogar", "canasta", "mimbre", "decoración"],
 };
 
 async function listaProductos() {
+  try {
+    // CHANGED: Fetch from your API instead of JSON file
+    const response = await fetch("http://34.201.41.216/ecommerce/productos/");
 
-    try {
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
 
-        const response = await fetch("../data/products.json");
-        const productos = await response.json();
+    const productos = await response.json();
 
-        const contenedor = document.getElementById("listaProductos");
-        contenedor.innerHTML = "";
+    const contenedor = document.getElementById("listaProductos");
+    contenedor.innerHTML = "";
 
-        // obtener parametro de busqueda
-        const params = new URLSearchParams(window.location.search);
-        const query = params.get("q");
-        const categoria = params.get("cat");
+    // obtener parametro de busqueda
+    const params = new URLSearchParams(window.location.search);
+    const query = params.get("q");
+    const categoria = params.get("cat");
 
-        let productosFiltrados = productos;
+    let productosFiltrados = productos;
 
-        if (query) {
+    if (query) {
+      const busqueda = query.toLowerCase();
 
-            const busqueda = query.toLowerCase();
+      productosFiltrados = productos.filter((producto) => {
+        // CHANGED: Updated field names to match your database
+        const nombre = (producto.nombre || "").toLowerCase();
+        const tags = (producto.tags || "").toLowerCase();
 
-            productosFiltrados = productos.filter(producto => {
+        return nombre.includes(busqueda) || tags.includes(busqueda);
+      });
+    }
 
-                const nombre = producto.Name.toLowerCase();
+    if (categoria) {
+      const tagsCategoria = categoriasMap[categoria.toLowerCase()];
 
-                const tags = producto.Tags.join(" ").toLowerCase();
+      if (tagsCategoria) {
+        productosFiltrados = productosFiltrados.filter((producto) => {
+          // CHANGED: Handle tags as string, not array
+          const tagsProducto = (producto.tags || "")
+            .toLowerCase()
+            .split(",")
+            .map((t) => t.trim());
 
-                return nombre.includes(busqueda) || tags.includes(busqueda);
+          return tagsProducto.some((tag) => tagsCategoria.includes(tag));
+        });
+      }
+    }
 
-            });
+    productosFiltrados.forEach((producto) => {
+      const card = document.createElement("div");
+      card.classList.add("col-md-3", "mb-4");
 
-        }
-
-        if (categoria) {
-
-            const tagsCategoria = categoriasMap[categoria.toLowerCase()];
-
-            if (tagsCategoria) {
-                productosFiltrados = productosFiltrados.filter(producto => {
-
-                    const tagsProducto = producto.Tags.map(t => t.toLowerCase());
-
-                    return tagsProducto.some(tag =>
-                        tagsCategoria.includes(tag)
-                    );
-                });
-            }
-        }
-
-        productosFiltrados.forEach(producto => {
-
-            const card = document.createElement("div");
-            card.classList.add("col-md-3", "mb-4");
-
-            card.innerHTML = `
+      // CHANGED: Updated to use database field names
+      card.innerHTML = `
             <div class="card h-100 shadow-sm card-masvendidos">
 
                 <div class="position-relative" style="height:250px" justify-content:center;>
 
-                    <img src="${producto.img}" 
+                    <img src="${producto.imagenUrl || "../media/products/default.png"}" 
                          class="card-img-top"
                          style="height: 220px; object-fit: contain; cursor:pointer; transition:0.3s;"
                          onclick="verProducto(${producto.id})">
 
-                    <!-- SE COMENTA PARA IMPLEMENTAR DESPúES    
+                    <!-- SE COMENTA PARA IMPLEMENTAR DESPUÉS    
                     <button class="btn-favorito">
                         <img src="../media/products/botonfavoritos.png">
                     </button>
                     -->
 
                     <button class="btn btn-dark w-100 py-2 fw-bold text-uppercase btn-add-to-cart"
-                     onclick="agregarAlCarrito(${producto.id}, '${producto.Name}', ${producto.Price},'${producto.img}')">
+                     onclick="agregarAlCarrito(${producto.id}, '${escapeJs(producto.nombre)}', ${producto.precio},'${escapeJs(producto.imagenUrl)}')">
                         Agregar al carrito
                     </button>
 
                 </div>
 
                 <div class="card-body">
-                    <h6 class="card-title">${producto.Name}</h6>
+                    <h6 class="card-title">${escapeHtml(producto.nombre)}</h6>
 
                     <p class="text-danger fw-bold">
-                        $${producto.Price}
+                        $${producto.precio}
                     </p>
 
                     <p class="text-muted small">
-                        ${producto.Seller}
+                        ${escapeHtml(producto.marca || "")}
                     </p>
                 </div>
 
             </div>
             `;
 
-            contenedor.appendChild(card);
+      contenedor.appendChild(card);
+    });
 
-        });
-
-        if(productosFiltrados.length === 0){
-
-            contenedor.innerHTML = `
+    if (productosFiltrados.length === 0) {
+      contenedor.innerHTML = `
             <div class="text-center mt-5">
                 <h4>No se encontraron productos</h4>
             </div>
             `;
-
-        }
-
-    } catch (error) {
-
-        console.error("Error cargando productos:", error);
-
     }
+  } catch (error) {
+    console.error("Error cargando productos:", error);
 
+    // Show user-friendly error message
+    const contenedor = document.getElementById("listaProductos");
+    contenedor.innerHTML = `
+        <div class="text-center mt-5">
+            <h4>Error al cargar productos</h4>
+            <p class="text-muted">Por favor, intenta de nuevo más tarde</p>
+        </div>
+        `;
+  }
 }
 
-function verProducto(id){
-    window.location.href = `detallesProducto.html?id=${id}`;
+function verProducto(id) {
+  window.location.href = `detallesProducto.html?id=${id}`;
 }
 
-//fiunciones para elformato
+//funciones para el formato
 function escapeHtml(str) {
-  if (!str) return '';
-  return str.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+  if (!str) return "";
+  return str
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;");
 }
 function escapeJs(str) {
-  if (!str) return '';
+  if (!str) return "";
   return String(str).replace(/'/g, "\\'").replace(/"/g, '\\"');
 }
-
